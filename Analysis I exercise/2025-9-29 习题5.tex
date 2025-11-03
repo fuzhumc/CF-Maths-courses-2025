@@ -1,0 +1,168 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{ctexart}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
+\title{习题5}
+\author{}
+\date{2025年9月29日}
+
+% 先加载 enumitem 宏包
+\usepackage{enumitem}
+
+% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \setlist[enumerate,2]{
+    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
+    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
+    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
+  }
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+%%\maketitle
+%
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年9月29日}
+\chead{习题5}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  证明:若\(\lim\limits_{x \to \infty}a_n=a\),则\(\lim\limits_{n \to \infty}\frac{a_1+\cdots+a_n}{n}=a\).
+\item
+  证明:若数列\((a_n)\)满足\(\lim\limits_{n \to \infty}(a_{n+1}-a_n)=0\)证明:\(\lim\limits_{n \to \infty}\frac{a_n}{n}=0\).
+\item
+  设\((a_n)\)满足\(\lim\limits_{n \to \infty}a_n=a\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:\(\lim\limits_{n \to \infty}\frac{a_1+2a_2+\cdots+na_n}{n^2}=\frac{a}{2}\).
+  \item
+    利用(1)结果计算下列极限(\(0 < a < 1\)) \[
+     \lim\limits_{n \to \infty} \frac{1}{n^2} \left( a+2^2a^2+\cdots+n^2a^2 \right)
+     \] \[
+     \lim\limits_{n \to \infty} \frac{1}{n^2} \left( 1+\sqrt{2^3}+\cdots+\sqrt[n]{n^{n+1}} \right)
+     \]
+  \end{enumerate}
+\item
+  设序列\((a_n)\)满足\(\lim\limits_{n \to \infty}\left( a_n-a_{n-2} \right)=0\),证明:
+  \[
+  \lim\limits_{n \to \infty} \frac{1}{n} \left( a_n-a_{n-1} \right) = 0
+  \]
+\item
+  设\((a_n),(b_n)\)满足\(\lim\limits_{n \to \infty}a_n=a,\lim\limits_{n \to \infty}b_n=b\).定义序列\((c_n)\)如下:
+  \[
+  c_n=\frac{1}{n} \left( a_1b_n+a_2b_{n-1}+\cdots+a_nb_1 \right)
+  \] 证明:存在常数\(M>0\)使得 \[
+  \vert c_n-ab \rvert \leq \frac{M}{n} \sum_{j=1}^n \left( \vert a_j-a \rvert + \vert b_j-b \rvert \right)
+  \] 进一步地,证明:\(\lim\limits_{n \to \infty}c_n=ab\).
+\item
+  假设序列\((x_n),(y_n)\)满足:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(y_n<y_{n+1}\).
+  \item
+    \(\lim\limits_{n \to \infty}y_n=+\infty\).
+  \item
+    \(\lim\limits_{n \to \infty} \frac{x_{n+1}-x_n}{y_{n+1}-y_n} = a \in \mathbb{R}\)或\(\infty\).
+  \end{enumerate}
+
+  证明:\(\lim\limits_{n \to \infty} \frac{x_n}{y_n} = \lim\limits_{n \to \infty} \frac{x_{n+1}-x_n}{y_{n+1}-y_n}\).利用该结果证明下列极限:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(\lim\limits_{n \to \infty} \frac{1^k+2^k+\cdots+n^k}{n^{k+1}} = \frac{1}{k+1}\).
+  \item
+    \(\lim\limits_{n \to \infty} \frac{1^k+3^k+\cdots+(2n+1)^k}{n^{k+1}} = \frac{2^k}{k+1}\).
+  \end{enumerate}
+\item
+  设\(a_k>0,k \in \mathbb{N}\),定义\(A_n=a_1+\cdots+a_n\),假设\((A_n)\)发散,但\(\lim\limits_{n \to \infty} \frac{a_n}{A_n} = 0\),证明:
+  \[
+  \lim\limits_{n \to \infty} \frac{a_1A_1^{-1}+\cdots+a_nA_n^{-1}}{\ln A_n} = 1
+  \]
+\item
+  设\((a_n),(b_n)\)满足:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(b_n<b_{n+1},\lim\limits_{n \to \infty} b_n = +\infty\).
+  \item
+    \(\lim\limits_{n \to \infty} \left( a_1+a_2+\cdots+a_n \right) = a\).
+  \end{enumerate}
+
+  证明: \[
+   \lim\limits_{n \to \infty} \frac{a_1b_1+a_2b_2+\cdots+a_nb_n}{b_n} = 0
+   \]
+\end{enumerate}
+
+\end{document}
