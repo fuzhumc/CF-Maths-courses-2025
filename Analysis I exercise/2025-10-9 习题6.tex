@@ -1,0 +1,233 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{ctexart}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
+\title{习题6}
+\author{}
+\date{2025年10月9日}
+
+% 先加载 enumitem 宏包
+\usepackage{enumitem}
+
+% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \setlist[enumerate,2]{
+    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
+    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
+    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
+  }
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+%%\maketitle
+%
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年10月9日}
+\chead{习题6}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  利用极限定义证明:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(\lim\limits_{x \to 0} x \sin \frac{1}{x} = 0\).
+  \item
+    \(\lim\limits_{x \to +\infty} \frac{[x]}{x} = 1\).
+  \item
+    \(\lim\limits_{x \to +\infty} \left( \sqrt{x^2+x}-x \right) = \frac{1}{2}\).
+  \item
+    \(\lim\limits_{x \to n} x-[x]\)不存在,其中\(n \in \mathbb{Z}\).
+  \end{enumerate}
+\item
+  设\(f:\mathbb{R} \to \mathbb{R}\)是以\(T\)为周期的周期函数,证明:若\(\lim\limits_{x \to \infty} f(x) = A\),则\(f\)恒等于\(A\).
+\item
+  对函数 \[
+  f(x)=
+  \begin{cases}
+  x, & x \in \mathbb{Q} \\
+  -x, & x \notin \mathbb{Q}
+  \end{cases}
+  \]
+  证明:\(\lim\limits_{x \to 0} f(x) = 0\);对任意\(a \neq 0\),\(\lim\limits_{x \to a} f(x)\)不存在.
+\item
+  计算下列极限(\textbf{禁用洛必达}):
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(\lim\limits_{x \to 0} \frac{\sin x}{x}\).
+  \item
+    \(\lim\limits_{x \to 0} \frac{\sin ax}{\sin bx}\).
+  \item
+    \(\lim\limits_{x \to 0} \frac{1-\cos x}{x^2}\).
+  \item
+    \(\lim\limits_{x \to 0} \frac{\sin(\sin(\sin x))}{x}\).
+  \item
+    \(\lim\limits_{x \to 0} \frac{(1+mx)^n-(1+nx)^m}{x^2},m,n \in \mathbb{N}\).
+  \item
+    \(\lim\limits_{x \to 0} \frac{\sqrt[n]{1+x}-1}{x}\).
+  \end{enumerate}
+\item
+  默写函数在一点处左连续、右连续以及连续的定义.
+\item
+  我们总结一下间断点(不连续点)的定义:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    若\(\lim\limits_{x \to a^-}f(x)\)存在,但不等于\(f(a)\),则称\(a\)是\(f\)的\textbf{第一类左侧间断点}.(类似可定义\textbf{第一类右侧间断点})
+  \item
+    若\(\lim\limits_{x \to a^-}f(x)\)不存在,则称\(a\)是\(f\)的\textbf{第二类左侧间断点}.(类似可定义\textbf{第二类右侧间断点})
+  \item
+    若\(a\)同时是\(f\)的第一类左、右侧间断点,则称\(a\)是\(f\)的\textbf{第一类间断点}.
+  \item
+    若进一步有\(\lim\limits_{x \to a^-}f(x)=\lim\limits_{x \to a^+}f(x)\),则称\(a\)是\(f\)的\textbf{可去间断点}.
+  \item
+    若\(a\)是\(f\)的间断点,但不是第一类间断点,则称\(a\)是\(f\)的\textbf{第二类间断点}.
+  \end{itemize}
+\item
+  判断以下间断点类型
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(x=0\), \[
+     g(x)=
+     \begin{cases}
+     \frac{\sin x}{x}, &x \neq 0 \\
+     2, &x=0
+     \end{cases}
+     \]
+  \item
+    \(x=0,f(x)=\mathrm{sgn}x\)
+  \item
+    \(x=0\), \[
+     f(x)=
+     \begin{cases}
+     \sin \frac{1}{x}, & x \neq 0 \\
+     0, & x=0
+     \end{cases}
+     \]
+  \item
+    对于函数 \[
+     f(x)=
+     \begin{cases}
+     0, & x \in \mathbb{Q}^C \setminus \{0\} \\
+     1, & x=0 \\
+     \frac{1}{p}, & x=\frac{q}{p},(p,q)=1
+     \end{cases}
+     \] 考虑所有点的间断性质.
+  \item
+    对于函数 \[
+     f(x)=
+     \begin{cases}
+     1, & x \in \mathbb{Q} \\
+     0, & x \notin \mathbb{Q}
+     \end{cases}
+     \] 考虑所有点的间断性质.
+  \end{enumerate}
+\item
+  设函数\(f\)满足:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    对任意\(x,y \in \mathbb{R},f(x)+f(y)=f(x+y)\).
+  \item
+    \(f\)在\(x=0\)处连续.
+  \end{enumerate}
+
+  证明:\(f\)在任意点处都连续.
+\item
+  设\(A \subseteq \mathbb{R}\)非空,定义\({} D(A)=\sup\limits_{x,y \in A} \vert x-y \rvert {}\).设\(f\)为有界函数,定义\(\omega(f,x)=\inf\limits_{U\text{为}x\text{的开邻域}}D(f(U))\).证明:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(f\)在\(x\)处连续,当且仅当\(\omega(f,x)=0\).
+  \item
+    对任意\(\epsilon > 0,E=\{ x \in \mathbb{R} \mid \omega(f,x) \geq \varepsilon \}\)为闭集.
+  \end{enumerate}
+\item
+  设\(f:[a,b] \to \mathbb{R}\)的每一个间断点都是可去间断点.证明:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    对任意\(\varepsilon > 0,E_\varepsilon=\{ x \in [a,b] \mid \vert \lim\limits_{y \to x} f(y)-f(x) \rvert > \varepsilon \}\)为有限集.
+  \item
+    \(f\)的间断点集是可数集.
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
