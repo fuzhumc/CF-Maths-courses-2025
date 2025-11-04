@@ -1,0 +1,265 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{ctexart}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
+\title{Ch8习题}
+\author{}
+\date{\today}
+
+% 先加载 enumitem 宏包
+\usepackage{enumitem}
+
+% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \setlist[enumerate,2]{
+    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
+    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
+    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
+  }
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+  \apptocmd{\tightlist}{\def\labelenumiii{(\alph{enumiii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+%%\maketitle
+%
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{\today}
+\chead{Ch8习题}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  证明集合\(A=\{ \frac{k}{2^n} \mid k \in [0,2^n] \}\)在\([0,1]\)上稠密.
+\item
+  两个有下界实序列的乘积是否还是有下界序列?
+\item
+  设序列\((u_n)\)单调.证明:序列\(v_n=\frac{1}{n}\sum\limits_{k=1}^nu_k=\frac{1}{n}(u_1+u_2+\cdots+u_n)\)是单调的,且与序列\((u_n)\)有相同的单调性.
+\item
+  证明若某序列从某项开始递增,则其有下界.
+\item
+  设\((u_n)\)为实序列.在下面这些序列中,找出那些是另一个序列的子列的序列.
+  \[
+   (u_{3n}),(u_{6n}),(u_{2n}),(u_{3 \times 2^n}),(u_{3 \times 2^{2_n+1}}),(u_{2^n}),(u_{2^{n+1}})
+   \]
+\item
+  设\(u\)为实序列,\(v\)为\(u\)的子列,证明\(v\)的任何子列都是\(u\)的子列.
+\item
+  研究如下序列的极限:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(u_n=\frac{sin(n^2)}{n}\).
+  \item
+    \(u_n=\frac{a^n-b^n}{a^n+b^n},a,b>0\).
+  \item
+    \(u_n=\frac{n^3+5n}{5n^3+\cos n+\frac{1}{n^2}}\).
+  \item
+    \(u_n=\frac{2n+(-1)^n}{5n+(-1)^{n+1}}\).
+  \end{enumerate}
+\item
+  设两实序列\((a_n)\)与\((b_n)\)分别收敛于\(l\)与\(l'\).考虑两序列\(u_n=\min\{a_n,b_n\}\)与\(v_n=\max\{a_n,b_n\}\).证明这两序列分别收敛于\(\min\{l,l'\}\)与\(\max\{l,l'\}\).
+\item
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    设实序列\(u\)递增,且有一有上界子列,求证\(u\)收敛.
+  \item
+    设实序列\(u\)递增,且满足: \[
+     \forall p \in \mathbb{N} , \vert u_{2^p}-u_{2^{p+1}} \rvert \leq \frac{1}{2^p}
+     \] 求证\({} u {}\)收敛.
+  \end{enumerate}
+\item
+  设两正序列\((u_n),(v_n)\)满足: \[
+  \forall n \in \mathbb{N},u_{n+1}=\sqrt{u_nv_n},v_{n+1}=\frac{u_n+v_n}{2}
+  \] 证明这两个序列收敛于同一个极限.
+\item
+  设正序列\((u_n)\)满足:对于任意\(k \in \mathbb{N}\),集合\(\{ n \in \mathbb{N} \mid u_n > 10^{-k} \}\)有限.求证该序列收敛于\(0\).
+\item
+  考虑以\(u_n=\frac{1}{n(n+1)(n+2)}\)为通项的实序列.确定三个实数\(a,b,c\)使得\(\forall n \in \mathbb{N}^*,u_n=\frac{a}{n}+\frac{b}{n+1}+\frac{c}{n+2}\).考虑序列\(v_n=\sum\limits_{k=1}^n v_n\)的极限.
+\item
+  研究定义在\(\mathbb{N}\)上的序列\(u_n=\begin{cases} 1+\frac{1}{p}, & n=2p \\ 1-\frac{1}{p^2}, & n=2p+1 \end{cases}\)
+\item
+  求证任意无上界的序列都有一个子序列发散至\(+\infty\).
+\item
+  设实序列\((u_n)\)每项都为整数.求证若这个序列收敛,那么它是常数列.
+\item
+  考虑如下定义的序列\((u_n)\)与\((v_n)\) \[
+  u_n=\sum\limits_{k=0}^n \frac{1}{k!},v_n=u_n+\frac{1}{n \cdot n!}
+  \]
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明这两个序列\(u\)与\(v\)是相伴的.
+  \item
+    证明它们的公共极限是一个无理数.
+    \emph{我们假设公共极限是有理的,并且将利用事实}\({} \forall n \in \mathbb{N}^* ,u_n<l<v_n {}\)\emph{来证明这是不可能的}
+  \item
+    对于\(a,b \in \mathbb{R}\),用\(l\)的函数确定以\(\sum\limits_{k=0}^n \frac{ak+b}{k!}\)为通项的序列的极限.
+  \end{enumerate}
+\item
+  证明序列\(u_n=\frac{5n^2+\sin n}{3(n+2)^2\cos \frac{n\pi}{5}}\)不收敛.
+\item
+  研究序列\(u_n=\left( 5 \sin \frac{1}{n^2} + \frac{1}{5} \cos n \right)^n\)的敛散性.
+\item
+  设实序列\((u_n)\)有界且使得序列\((u_{n+1}-u_n)\)单调.证明\((u_n)\)收敛.
+\item
+  设序列\(u\)满足:存在一个趋于\(0\)的序列\((\alpha_p)\)使得: \[
+  \forall n,p \in \mathbb{N},\vert u_n \rvert \leq \alpha_p+\frac{p}{n+1}
+  \] 求证序列\((u_n)\)趋于\(0\).
+\item
+  \textbf{Cesàro定理} 设\((u_n)\)为实序列,定义序列\((v_n)\)如下: \[
+  v_n=\frac{u_1+u_2+\cdots+u_n}{n}
+  \]
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    在这一小问中设\((u_n)\)收敛于\(0\). 希望证明\((v_n)\)也收敛于\(0\).
+    设\(\varepsilon>0\).
+
+    \begin{enumerate}
+    \def\labelenumiii{\arabic{enumiii}.}
+    \tightlist
+    \item
+      证明存在一项\(n_0\),使得当\(n \geq n_0\)时,有: \[
+       \vert \frac{u_{n_0}+u_{n_0+1}+\cdots+u_n}{n} \rvert \leq \frac{\varepsilon}{2}
+       \] 下面\(n_0\)表示这一项.
+    \item
+      证明存在一项\(n_1\),使得当\(n \geq n_1\)时,有: \[
+       \vert \frac{u_1+u_2+\cdots+u_{n_0-1}}{n} \rvert \leq \frac{\varepsilon}{2}
+       \] 下面\(n_0\)表示这一项.
+    \item
+      然后推出所宣称的结果.
+    \end{enumerate}
+  \item
+    由此推断,更普遍地,若序列\((u_n)\)收敛,则序列\((v_n)\)也收敛,且与\((u_n)\)有相同的极限.
+    证明其逆命题不成立.
+  \end{enumerate}
+\item
+  设\((u_n)\)为实序列,定义序列\((v_n)\)如下: \[
+  v_n=\frac{u_1+2u_2+\cdots+nu_n}{n^2}
+  \] 证明:如果序列\(u\)收敛,那么序列\(v\)也收敛.
+  \emph{我们将借鉴第21题中所使用的方法,从考察序列为常数的情形开始.}
+\item
+  考虑序列\((u_0)\)由已知数\(u_0\)与这样的递归关系定义: \[
+  u_{n+1}-(n+1)u_n=2^n(n+1)!
+  \] 确定\(u_n\)关于\(n\)的表达式.
+  \emph{可以提出}\(v_n=\frac{u_n}{n!}\).
+\item
+  我们考虑两个序列\(u\)与\(v\)发散至\(+\infty\),且\(\lim\limits_{n \to \infty} (u_{n+1}-u_n)=0\).给定\(\varepsilon>0\),考虑项\(n_0\),从这一项起有\(\vert u_{n+1}-u_n \rvert \leq \varepsilon\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:对于任意实数\(x\)满足\(x \geq u_{n_0}\),存在序列中一项\(u_p\)满足\(\vert u_p-x \rvert \leq \varepsilon\).
+  \item
+    使用\((v_n)\)发散至\(+\infty\)的事实,证明:对于任意实数\(x\),存在\(p,m\in\mathbb{N}\)满足\(\vert (u_p-v_m)-x \rvert \leq \varepsilon\).
+  \item
+    推出集合\(\{ u_p-v_m \mid p,m \in \mathbb{N} \}\)在\(\mathbb{R}\)中稠密.
+  \end{enumerate}
+\item
+  以下命题是真的吗?
+  设\(u\)与\(v\)为两序列,从某项开始不为\(0\)且等价.如果\(u\)从某项开始单调,那么\(v\)从某项开始单调.
+\item
+  找出下列序列的简单等价:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(u_n=\sqrt{n+2}-\sqrt{n+1}\).
+  \item
+    \(v_n=e^{\frac{1}{n}}-e^\frac{1}{n+1}\).
+  \item
+    \({} w_n=\sqrt{1-\frac{1}{\ln n+1}}-1 {}\).
+  \end{enumerate}
+\item
+  设\(u_0\geq0\),\(u_{n+1}=\frac{u_n}{1+u_n}\).通过考虑\(\frac{1}{u_n}\),证明\(u_n \sim \frac{1}{n}\).
+\item
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明: \[
+     \forall k \in \mathbb{N}^*,\frac{1}{2\sqrt{k+1}} \leq \sqrt{k+1}-\sqrt{k} \leq \frac{1}{2\sqrt{k}}
+     \]
+  \item
+    推出\(u_n=\sum\limits_{k=1}^n \frac{1}{\sqrt{k}}\)的简单等价.
+  \end{enumerate}
+\item
+  使用符号\(o\)比较如下定义的四个序列: \[
+  u_n=n^{\left( \ln n \right)^2},v_n=\left( n^2 \right )^{\ln n},w_n=\left( \ln n \right)^{n \ln n},z_n=\left( n \ln n \right)^n
+  \]
+\item
+  证明\(\sum_{k=1}^n k! \sim n!\).
+\end{enumerate}
+
+\end{document}
