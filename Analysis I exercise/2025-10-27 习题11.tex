@@ -1,0 +1,160 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{ctexart}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
+\title{习题11}
+\author{}
+\date{2025年10月27日}
+
+% 先加载 enumitem 宏包
+\usepackage{enumitem}
+
+% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \setlist[enumerate,2]{
+    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
+    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
+    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
+  }
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+%%\maketitle
+%
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年10月27日}
+\chead{习题11}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\section{不等式主题日-续}\label{ux4e0dux7b49ux5f0fux4e3bux9898ux65e5-ux7eed}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  回顾\textbf{Legendre变换}的定义:设\(f:\mathbb{R} \to \mathbb{R}\),则称
+  \[
+   f^*(x)=\sup\limits_{y \in \mathbb{R}}\{ xy-f(y) \}
+   \] 为\(f\)的Legendre变换(有时也叫\textbf{凸共轭}).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    计算下列函数各自的Legendre变换:\(f(x)=\frac{x^p}{p},p>1;g(x)=\vert x \rvert;h(x)=e^x\).注意上述函数的定义域!
+  \item
+    Legendre变换的几何意义是什么?
+  \item
+    回顾一下\textbf{Young不等式}:\(ab \leq \frac{a^p}{p}+\frac{b^q}{q},\frac{1}{p}+\frac{1}{q}=1,p,q>1\)的证明.
+  \item
+    证明:对一列函数\((f_n)\),有\(\left(\inf\limits_{n}f_n\right)^*(x)\geq\sup\limits_{n}f_n^*(x)\).
+  \item
+    证明:对任意\(f,g\)及\(0\leq\lambda\leq1\),有 \[
+     ((1-\lambda)f+\lambda g)^*\leq(1-\lambda)f^*+\lambda g^*
+     \]
+  \item
+    证明更一般的Young不等式: \[
+     ab \leq f(a)+f^*(b)
+     \]
+  \end{enumerate}
+\item
+  利用Hölder不等式证明:对任意\({} p,q,r>1,0<\lambda<1,\frac{1}{p}=\frac{\lambda}{q}+\frac{1-\lambda}{r} {}\),有:
+  \[
+  \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^p \right)^\frac{1}{p} \leq \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^q \right)^\frac{\lambda}{q} \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^r \right)^\frac{1-\lambda}{r}  
+  \]
+\item
+  证明如下逆Hölder不等式: \[
+  \sum\limits_{n=1}^\infty \vert a_nb_n \rvert \geq \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^\frac{1}{p} \right)^p \left( \sum\limits_{n=1}^\infty \vert b_n \rvert^\frac{1}{1-p} \right)^{1-p}
+  \] 其中我们假设\(p>1\)且各个求和均有意义.
+\item
+  证明如下逆Minkowski不等式: \[
+  \left( \sum\limits_{n=1}^\infty \vert a_n+b_n \rvert^p \right)^\frac{1}{p} \geq \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^p \right)^\frac{1}{p}+\left( \sum\limits_{n=1}^\infty \vert b_n \rvert^p \right)^\frac{1}{p}
+  \] 其中\(0<p<1\).
+\item
+  证明下面两个不等式:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \[
+     \sum\limits_{n=1}^\infty \vert \frac{a_n+b_n}{2} \rvert^p + \sum\limits_{n=1}^\infty \vert \frac{a_n-b_n}{2} \rvert \leq \frac{1}{2} \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^p + \sum\limits_{n=1}^\infty \vert b_n \rvert^p \right)
+     \] 其中\(p \geq 2\).
+  \item
+    \[
+     \left( \sum\limits_{n=1}^\infty \vert \frac{a_n+b_n}{2} \rvert^p \right)^\frac{q}{p} + \left( \sum\limits_{n=1}^\infty \vert \frac{a_n-b_n}{2} \rvert^p \right)^\frac{q}{p} \leq \frac{1}{2} \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^p + \sum\limits_{n=1}^\infty \vert b_n \rvert^p \right)^\frac{q}{p}
+     \] 其中\(1<p<2,\frac{1}{p}+\frac{1}{q}=1\).
+  \end{enumerate}
+\item
+  证明:若存在一个正常数\(C\)使得不等式 \[
+  \sum\limits_{n=1}^\infty \vert a_nb_n \rvert \leq C \left( \sum\limits_{n=1}^\infty \vert b_n \rvert^p \right)^\frac{1}{p}
+  \]
+  对任意序列\((b_n)\)成立,则\(\left( \sum\limits_{n=1}^\infty \vert a_n \rvert^q \right)^\frac{1}{q} \leq C\),其中\(\frac{1}{p}+\frac{1}{q}=1\).
+\item
+  证明不等式: \[
+  \left(\sum\limits_{N=0}^{\infty}\left(\sum_{n=0}^{N}\vert a_nb_{N-n}\rvert \right)^r\right)^\frac{1}{r}\leq\left(\sum_{n=0}^\infty\vert a_n\rvert ^p\right)^\frac{1}{p}\left(\sum_{n=0}^\infty\vert b_n\rvert^q\right)^\frac{1}{q}
+  \] 其中\(p,q,r \geq 1\)且\(\frac{1}{p}+\frac{1}{q}=1+\frac{1}{r}\).
+\item
+  如果你学过一点积分知识,尝试吧今天所有的不等式写成积分形式,思考一下他们在说什么事情.
+\end{enumerate}
+
+\end{document}
