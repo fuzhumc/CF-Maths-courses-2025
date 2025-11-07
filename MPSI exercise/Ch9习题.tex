@@ -1,0 +1,211 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{ctexart}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
+\title{Ch9习题}
+\author{}
+\date{\today}
+
+% 先加载 enumitem 宏包
+\usepackage{enumitem}
+
+% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \setlist[enumerate,2]{
+    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
+    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
+    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
+  }
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+%%\maketitle
+%
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{\today}
+\chead{Ch9习题}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  什么函数\(f:\mathbb{R}\to\mathbb{R}\)满足 \[
+   \forall \varepsilon > 0 , \exists \eta > 0 , \forall x \in \mathbb{R} , \left( \vert x \rvert < \eta \Rightarrow \vert f(x) \rvert < \varepsilon \right)
+   \]
+\item
+  求下列极限:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \({} \lim\limits_{x\to+\infty} \dfrac{x^3+^2+5}{5x^3-x^2+2} {}\).
+  \item
+    \(\lim\limits_{x\to+\infty} \sqrt{x^2+2x}-x\).
+  \item
+    \({} \lim\limits_{x\to0} \dfrac{\tan 5x}{\sin 2x} {}\).
+  \item
+    \({} \lim\limits_{x\to+\infty} \dfrac{e^{3x}+2x+7}{e^x+e^{-x}} {}\).
+  \item
+    \(\lim\limits_{x\to0^+} \dfrac{\sin \sqrt{x}}{\ln x}\).
+  \end{enumerate}
+\item
+  确定在\(+\infty\)处有极限的周期函数.
+\item
+  定义\(\mathbb{R}_+\)上的函数\(f\)如下: \[
+   f(x)=
+   \begin{cases}
+   1, & x\text{为素数} \\
+   0, & \text{其他情形}
+   \end{cases}
+   \] 证明对于任意\(x>1\),都有\(\lim\limits_{n \to \infty} f(nx)=0\).
+  \(f\)在\(+\infty\)处有极限吗?
+\item
+  设\(f:I\to\mathbb{R}\),证明下列断言等价
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    对于\(I\)中任意以\(a\)为极限的序列\((x_n)\),序列\((f(x_n))\)有无限的或有限的极限.
+  \item
+    \(f\)在\(a\)处有无限的或有限的极限.
+  \end{enumerate}
+\item
+  设\(f:\mathbb{R}\to\mathbb{R}\)在\(0\)处连续,且满足\[\forall x \in \mathbb{R},f(2x)=f(x)\]证明\(f\)为常值函数.
+\item
+  设\(f:\mathbb{R}\to\mathbb{R}\)连续且满足\[\forall x,y \in \mathbb{R},f(x+y)=f(x)+f(y)\]令\(\alpha=f(1)\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    计算\(f\)关于\(x,\alpha\)的函数,分别对于\(x\in\mathbb{N}\),\({} x\in\mathbb{Z} {}\)与\(x\in\mathbb{Q}\).
+  \item
+    确定\(f\).
+  \end{enumerate}
+\item
+  设\(\alpha\in\mathbb{R}_+\setminus\mathbb{Q}_+\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:\(\forall n \in \mathbb{N}^*,\exists p_n \in [a,b],q_n \in \mathbb{Z},\vert p_n\alpha+q_n \rvert \leq \frac{1}{n}\).\emph{我们可以考虑}\(\alpha_k=k\alpha-\lfloor k\alpha \rfloor,k\in[0,n]\).
+  \item
+    证明:同时以\(1\)与\(\alpha\)为周期的连续函数为常值函数.
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:存在唯一\(f:\mathbb{R}\to\mathbb{R}\)以\(1\)为周期且满足\[\forall x \in [-\frac{1}{2},\frac{1}{2}),f(x)=\vert x \rvert\]
+  \item
+    证明\(f\)连续.
+  \end{enumerate}
+\item
+  设\(f:I \to I\)单调减,序列\((u_n)\)满足\(u_0 \in I\)且\(u_{n+1}=f(u_n)\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明\(f \circ f\)单调增.
+  \item
+    由此推出,序列\((u_{2n})\)与序列\((u_{2n+1})\)是单调的,进而它们具有相反的单调性.
+  \item
+    研究如下定义的序列\((u_n)\):\(u_0\in[0,1],u_{n+1}=(1-u_n)^2\).
+  \end{enumerate}
+\item
+  研究如下定义的序列:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(u_0 \in \mathbb{R}^+,u_{n+1}=\tanh u_n\).
+  \item
+    \(u_0 \in \mathbb{R}^+,u_{n+1}=\sinh u_n\).
+  \end{enumerate}
+\item
+  给出一个连续函数\(f:[0,+\infty)\to\mathbb{R}\)使得\(f([0,+\infty))=(-1,1)\).\emph{可以用正弦函数构造一个例子}.
+\item
+  设\(a<b\),\(f:[a,b]\to[a,b]\)连续.证明\(f\)存在一个不动点,即\(\exists c \in [a,b],f(c)=c\).
+\item
+  设\(f:\mathbb{R}\to\mathbb{R}\)连续且满足\(\lim\limits_{x\to+\infty}f(x)=\lim\limits_{x\to-\infty}f(x)=+\infty\).证明\(f\)有下界且下确界可以取到.
+\item
+  确定连续函数\(f:[0,1]\to[0,1]\)满足\(f \circ f=f\).\emph{从确定}\(f\vert_{f[0,1]}\)\emph{开始}.
+\item
+  设定义在\([0,1]\)上的两函数\(f,g\)连续.对于任意实数\(x\),定义\[\varphi(x)=\sup\limits_{t\in[0,1]}\{ f(t)+xg(t) \}\]证明\(f\)是Lipschitz的.
+\item
+  设\(f:\mathbb{R}\to\mathbb{R}\)单调增,使得\(g(x)=\frac{f(x)}{x}\)单调减.求证\(f\)连续.
+\item
+  给出一个\([0,1]\)到其自身的双射,使得它在每一点处都不连续.
+\item
+  证明:定义在实数上的连续周期函数是一致连续的.
+\item
+  设\(f:\mathbb{R}\to\mathbb{R}\)一致连续.求证:\({} \exists a,b\in\mathbb{R}_+,\forall x \in \mathbb{R},\vert f(x) \rvert < a \vert x \rvert + b {}\).
+\end{enumerate}
+
+\end{document}
