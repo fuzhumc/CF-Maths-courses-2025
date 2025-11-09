@@ -1,0 +1,209 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{ctexart}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
+\title{习题8}
+\author{}
+\date{2025年10月17日}
+
+% 先加载 enumitem 宏包
+\usepackage{enumitem}
+
+% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \setlist[enumerate,2]{
+    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
+    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
+    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
+  }
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+%%\maketitle
+%
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年10月17日}
+\chead{习题8}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  考虑Dirichlet函数 \[
+   D(x)=
+   \begin{cases}
+   1, & x \in \mathbb{Q} \\
+   0, & x \notin \mathbb{Q}
+   \end{cases}
+   \]
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:\(D\)处处不可导.
+  \item
+    证明:\(g(x)=x^2D(x)\)只在\(x=0\)处可导且\(g’(0)=0\).
+  \end{enumerate}
+\item
+  考虑函数 \[
+  f(x)=
+  \begin{cases}
+  x^2 \vert \sin \frac{\pi}{x} \rvert, & x \neq 0 \\
+  0, & x=0
+  \end{cases}
+  \]
+  证明:\(f\)在\(x=0\)的任何邻域内都有不可导的点,但在\(x=0\)处可导,且\(f’(0)=0\).
+\item
+  设函数\(f:\mathbb{R} \to \mathbb{R}\)在\(x=0\)连续,且\(f(0)=0\).证明:若\(\lim\limits_{x \to 0} \frac{f(2x)-f(x)}{x} = A\),则\(f\)在\(x=0\)处可导且\(f’(0)=A\).
+\item
+  设\(f,g\)在\(a\)处均可导,证明:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    若\(f(a)\neq 0\),则\(\vert f \rvert\)在\(a\)处也可导.
+  \item
+    若\(f(a) \neq g(a)\),则函数\(m(x)=\min \{f(x),g(x)\},M(x)=\max \{f(x),g(x)\}\)在\(a\)处也可导.
+  \end{enumerate}
+\item
+  计算导数:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(f(x)=\frac{1}{\left( 1+ \vert x \rvert ^2 \right)^\alpha}\).
+  \item
+    \(f(x)=\arcsin \left( \cos x^2 \right)\).
+  \item
+    \(f(x)=\ln \left( \cosh x \right)+\frac{1}{2 \sinh^2 x}\).
+  \item
+    \(f(x)={\sin x}^{\cos x}+{\cos x}^{\sin x}\).
+  \item
+    \(f(x)=\left( \ln x \right)^{x^\alpha}+x^{\alpha \ln x}\).
+  \end{enumerate}
+\item
+  设函数\(f\)满足\(f(x)^x=x^{f(x)}\),试算\(f’(x)\).
+\item
+  利用函数\((x-a)^n(x-b)^m\)证明 \[
+  \binom{n}{0}^2+\binom{n}{1}^2+\cdots+\binom{n}{n}^2=\frac{2n(2n-1) \cdots (n+1)}{n!}
+  \]
+\item
+  证明函数 \[
+  f(x)=
+  \begin{cases}
+  e^{\frac{1}{\vert x \rvert^2-1}}, & \vert x \rvert \leq 1 \\
+  0, & \vert x \rvert > 1
+  \end{cases}
+  \] 是\(C^\infty\)的(任意阶可导).
+\item
+  证明\textbf{Legendre多项式} \[
+  P_n(x)=\frac{1}{2^n n!}\left[ \left( x^2-1 \right)^n \right]^{(n)}
+  \] 满足方程 \[
+  \left( 1-x^2 \right)P’’_n(x)-2xP’_n(x)+n(n+1)P_n(x)=0
+  \]
+\item
+  设函数\(f,g:[a,b] \to \mathbb{R}\)满足:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(f,g\)在\([a,b]\)上连续.
+  \item
+    \(f,g\)在\((a,b)\)上可导,且\(\left( f’ \right)^2+\left( g’ \right)^2 \neq 0\).
+  \item
+    \(g(a) \neq g(b)\).
+  \end{enumerate}
+
+  证明:存在\(\xi \in (a,b)\)使得 \[
+  \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f’(\xi)}{g’(\xi)}
+  \]
+\item
+  证明:在\(e^x \sin x = 1\)的两个实根中至少有\(e^x \cos x = -1\)的一个实根.
+\item
+  设\(f:[a,b] \to \mathbb{R}\)是任意函数,对\(\alpha > 0\),我们称\(f\)为\textbf{\(\alpha\)次Lipschitz函数},如果存在\(k>0\)(称为\textbf{Lipschitz系数})使得
+  \[
+  \vert f(x)-f(y) \rvert \leq k \vert x-y \rvert ^\alpha,\forall x,y \in [a,b]
+  \]
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:若\(f\)在\([a,b]\)上是连续可导的,则\(f\)是1次Lipschitz函数(简称为\textbf{Lipschitz函数}).
+  \item
+    证明:若\(f\)是可导的Lipschitz函数,则\(f’\)在\([a,b]\)上有界.
+  \item
+    证明:若\(f\)是\(\alpha > 1\)次Lipschitz函数,则\(f\)在\([a,b]\)上为常值函数.
+  \end{enumerate}
+\item
+  设\(f(x):\mathbb{R} \to \mathbb{R}\)为Lipschitz函数,我们称\(E=\{(x,f(x)) \in \mathbb{R}^2 \mid x \in \mathbb{R}\}\)为\textbf{Lipchitz图像}.设\(f(x)\)在\(x=x_1\)处可导,向量\((1,f’(x_1))\)称为图像在\(x=x_1\)处的\textbf{切向量},\(\nu(x_1)=\frac{1}{\sqrt{1+ \vert f’(x_1) \rvert ^2}}\left( f’(x_1),-1 \right)\)称为此处的\textbf{单位外法向量}.现考虑两点\(X_1=\left( x_1,f\left( x_1 \right) \right),X_2=\left( x_2,y_2 \right)\),其中\(y_2 \geq f\left( x_2 \right)\).定义\(dist \left( X,E \right)=\inf_{Y \in E} \vert X-Y \rvert\).若存在\(C>0\)使得
+  \[
+  \frac{1}{C}dist \left( X_2,E \right) \leq |X_1-X_2| \leq Cdist \left( X_2,E \right)
+  \]
+  证明:存在\(\varepsilon > 0\)使得当Lipschitz常数\(k < \varepsilon\)时,\(\left( X_1-X_2 \right) \cdot \nu \left( X_2 \right) \geq 0\).(思考一下这个问题在说一件什么事情?)
+\end{enumerate}
+
+\end{document}
