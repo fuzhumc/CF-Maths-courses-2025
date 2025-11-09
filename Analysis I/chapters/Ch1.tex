@@ -1,0 +1,55 @@
+\chapter{集合与映射}
+
+\begin{deff} 
+    设$S,T$为两集合,称$S$与$T$等势,若存在双射$f:S \to T$.记为$\left\lvert S \right\rvert = \left\lvert T \right\rvert$.
+\end{deff}
+
+\begin{deff}
+    设$S$为集合,称$S$为有限集,若$S$为空集或存在$n\in\mathbb{N}^*$,使得${1,2,\cdots,n}$与$S$等势.记为$\left\lvert S \right\rvert = n$.
+\end{deff}
+
+\begin{exer}
+$\left\lvert (0,1) \right\rvert = \left\lvert [0,1] \right\rvert$.
+\end{exer}
+
+\begin{thm}
+    设$S,T$为两集合,若存在单射$f:S \to T,g:T \to S$,则$\left\lvert S \right\rvert = \left\lvert T \right\rvert$.
+\end{thm}
+
+\begin{pf}
+    先证明一个引理.
+    \begin{lem}
+        若$B \subseteq A$,存在单射$f:A \to B$,则$\left\lvert A \right\rvert = \left\lvert B \right\rvert$.
+    \end{lem}
+    \begin{pf}
+        记$Y=A \setminus B,X=Y \cup f(Y) \cup f(f(Y)) \cup \cdots$.
+        则$X=Y \cup f(X),A=Y \cup B$.
+        因此$A \setminus X = B \setminus f(X)$.
+        进而$A \setminus X \subseteq B$.
+        而$A=X \cup (A \setminus X),B=f(X) \cup (B \setminus f(X))$.
+        记映射$F:A \to B,F(X)=\begin{cases} f(x), & x \in X \\ x, & x \in A \setminus X \end{cases}$
+        则$F$为双射,故$\left\lvert A \right\rvert = \left\lvert B \right\rvert$.
+    \end{pf}
+    由题意知$f(S) \subseteq T$,存在单射$f \circ g:T \to S \to f(S)$.
+    由引理知$\left\lvert T \right\rvert = \left\lvert f(S) \right\rvert$.
+    显然$\left\lvert S \right\rvert = \left\lvert f(S) \right\rvert$.
+    故$\left\lvert S \right\rvert = \left\lvert T \right\rvert$.
+
+\end{pf}
+
+\begin{deff}
+    设$S$为集合,记$2^S$或$\mathcal{P}(S)$为$S$的子集的全体,称为$S$的幂集.
+\end{deff}
+
+\begin{thm}
+    $\left\lvert S \right\rvert \neq \left\lvert \mathcal{P}(S) \right\rvert$.
+\end{thm}
+
+\begin{pf}
+    若存在$f:S \to \mathcal{P}(S)$为双射.
+    设$A=\{ x \in S \mid x \notin f(x) \} \in \mathcal{P}(S)$.
+    则存在$a \in S$使得$f(a)=A$.
+    若$a \in A$,则$a \notin f(a)=A$,矛盾.
+    若$a \notin A$,则$a \in f(a)=A$,矛盾.
+    故不存在这样的双射$f$.即$\left\lvert S \right\rvert \neq \left\lvert \mathcal{P}(S) \right\rvert$.
+\end{pf}
