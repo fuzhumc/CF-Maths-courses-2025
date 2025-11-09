@@ -1,0 +1,160 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{ctexart}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
+\title{习题12}
+\author{}
+\date{2025年11月3日}
+
+% 先加载 enumitem 宏包
+\usepackage{enumitem}
+
+% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \setlist[enumerate,2]{
+    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
+    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
+    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
+  }
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+%%\maketitle
+%
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年11月3日}
+\chead{习题12}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+本周我们开始学习积分,在接触严格的理论证明前,我们先建立起对于积分的感性认识.
+(非常不严格的)\textbf{定义}
+对于函数\(f:[a,b] \to \mathbb{R}\),如果\({} f(x)\geq0 {}\)我们称\(f\)的图像与\(x\)轴所围成的面积为\(f\)从\(a\)到\(b\)的积分,记为\(\int_a^b f(x)\mathrm{d}x\).如果\(f\)是变号的,则记\(\int_a^b f(x)\mathrm{d}x=\int_a^b f^+(x)\mathrm{d}x-\int_a^b f^-(x)\mathrm{d}x\).
+1. 依据上面的定义,计算下面的积分: 1. \(\int_{-2}^2 2x+3\mathrm{d}x\). 2.
+\(\int_{-\frac{\sqrt{2}}{2}}^1 \sqrt{1-x^2}\mathrm{d}x\). 3.
+\(\int_0^{\pi} \cos x \mathrm{d}x\). 2.
+对于不规则的区域我们显然不能用上面的方法计算``积分''.事实上,我们从未严格定义过``面积''这一概念.但目前不妨仍秉持着对``面积''朴素的认知,来计算一下\(\int_0^1 x^2\mathrm{d}x\).
+先把\([0,1]\)区间平均分成\(n\)等份,记分割点为\(0=x_0<x_1<x_2<\cdots<x_{n-1}<x_n=1\).
+1.
+对于区间\([x_j,x_{j+1}]\),作一个矩形,宽为区间长度\(\frac{1}{n}\),高为函数在\(x_j\)处的取值,即\(x_j^2\).试计算这\(n\)个矩形的面积之和(记为\(L_n\)).
+2.
+在上一问中稍作改变,把每一个矩形的高度改为函数在\(x_{j+1}\)处的取值,即\(x_{j+1}^2\).试再计算这\(n\)个矩形的面积之和(记为\(R_n\)).
+3.
+计算\(\lim\limits_{n \to \infty}L_n\)与\(\lim\limits_{n \to \infty}R_n\),你发现了什么?这是巧合吗?
+
+\begin{verbatim}
+我们把这个极限称为$f(x)=x^2$再$[0,1]$上的积分.
+我们把这个积分定义为$f(x)=x^2$与$x$轴所围成的面积!
+试想一下,这个定义有没有什么问题?
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  利用上面的办法,试着计算一下下列函数的积分:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(\int_0^1 e^x\mathrm{d}x\).
+  \item
+    \(\int_1^2 \frac{1}{x}\mathrm{d}x\).
+  \item
+    \({} \int_{-1}^1 x^2-x+1 \mathrm{d}x {}\).
+  \item
+    \(\int_0^{\pi} \sin x \mathrm{d}x\).
+  \end{enumerate}
+\item
+  显然我们不能每次计算积分都把上述操作做一遍,重新考虑\(\int_0^1 x^2 \mathrm{d}x\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    问自己一个问题,什么样的函数\(F\),满足\(F’(x)=x^2\).
+  \item
+    对这样的\(F\),计算一下\(F(1)-F(0)\).你发现了什么?这是巧合吗?
+  \end{enumerate}
+\item
+  对于\(f\geq0\),验证下面三件事:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(\int_a^a f(x)\mathrm{d}x=0\).
+  \item
+    对任意区间\([a,b]\),\(\int_a^b f(x) \mathrm{d}x \geq 0\).
+  \item
+    考虑一串区间\(a_0 \leq a_1 \leq a_2 \leq \cdots \leq a_n\),有\(\sum\limits_{j=0}^{n-1} \int_{a_j}^{a_{j+1}} f(x)\mathrm{d}x=\int_{a_0}^{a_n}f(x)\mathrm{d}x\).
+  \item
+    令\(n \to \infty\),是否仍然成立?
+  \item
+    这是在说什么事情?
+  \end{enumerate}
+\item
+  若\(f:\mathbb{R}\to\mathbb{R}\)连续,利用微分和积分的定义(目前还不太严格)证明:\(\frac{\mathrm{d}}{\mathrm{d}x}\int_0^xf(t)\mathrm{d}t=f(x)\).
+\end{enumerate}
+
+\end{document}
