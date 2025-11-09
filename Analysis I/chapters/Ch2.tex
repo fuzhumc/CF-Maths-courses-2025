@@ -1,0 +1,138 @@
+\chapter{公理化实数}
+
+希望$\mathbb{R}$为拥有以下性质的集合:
+
+\begin{enumerate}
+    \item $\mathbb{R}$上有两个运算$+,\times$,满足$(\mathbb{R},+,\times)$为一个域.
+    \item $\mathbb{R}$上有一个序关系$\leqslant$,满足$(\mathbb{R},\leqslant)$为一个全序集.
+    \item $+,\times$与$\leqslant$的关系:
+    \begin{itemize}
+        \item $\forall x,y,z \in \mathbb{R},x \leqslant y \Rightarrow x+z \leqslant y+z$.
+        \item $\forall x,y \in \mathbb{R},x,y \geqslant 0 \Rightarrow xy \geqslant 0$.
+    \end{itemize}
+    \item \textbf{Dedekind完备} 若$\varnothing \neq A \subseteq \mathbb{R}$,且$A$有上界,则$A$有最小上界.
+\end{enumerate}
+
+\section{$\mathbb{R}$的Archimedean性质与完备性}
+
+\begin{thm}[Archimedean性质]
+    设$a,b \in \mathbb{R}_+^*$,则存在$n \in \mathbb{N}$使得$na>b$.
+\end{thm}
+
+\begin{deff}
+    $$
+    \left\lvert x \right\rvert = \begin{cases} x, & x \geqslant 0 \\ -x, & x < 0 \end{cases}
+    $$
+\end{deff}
+
+\begin{deff}
+    设$(x_n)$为$\mathbb{R}$中序列,$x \in mathbb{R}$.称$(x_n)$收敛于$x$,若
+    $$
+    \forall \varepsilon>0,\exists N \in \mathbb{N},\text{当}n>N\text{时,有}\left\lvert x_n - x \right\rvert < \varepsilon.
+    $$
+    记为$\lim\limits_{n \to \infty}x_n=x$.
+\end{deff}
+
+\begin{deff}
+    序列$(x_n)$称为\textbf{实Cauchy列},若
+    $$
+    \forall \varepsilon>0,\exists N \in \mathbb{N},\text{当}m,n>N\text{时,有}\left\lvert x_n - x_m \right\rvert < \varepsilon.
+    $$
+\end{deff}
+
+称"\textbf{Cauchy完备}"为:任何Cauchy列都收敛.
+
+\begin{exer}
+    设$R(x)=\{ \sum\limits_{k=-n}^\infty a_k^k \mid n \in \mathbb{N},a_k \in \mathbb{R} \}$,仿照多项式的加法与乘法定义$R(x)$的加法与乘法.
+    设$A(x)=\sum\limits_{k=-n}^\infty a_k^k \in R(x)$,称$A(x) \geqslant 0$当且仅当$A(x)$的第一个非零系数非负.
+    进一步可以定义$R(x)$上的序关系$\leqslant$.
+    \begin{enumerate}
+        \item 验证$R(x)$Cauch完备.
+        \item 验证$R(x)$没有Archimedean性质.
+    \end{enumerate}
+\end{exer}
+
+\begin{prop}
+    Dedekind完备$\Leftrightarrow$ Cauchy完备 + Archimedean性质.
+\end{prop}
+
+\begin{exer}
+    Archimedean性质$\Leftrightarrow \forall \alpha \in \mathbb{R},\lim\limits_{n\to\infty} \frac{\alpha}{2^n} = 0$.
+\end{exer}
+
+\section{$\mathbb{R}$的唯一性}
+
+设$(\mathbb{R},0_\mathbb{R},1_\mathbb{R},+_\mathbb{R},\times_\mathbb{R},\leqslant_\mathbb{R})$
+与$(\mathbb{S},0_\mathbb{S},1_\mathbb{S},+_\mathbb{S},\times_\mathbb{S},\leqslant_\mathbb{S})$都是实数的构造.
+则必存在双射$f:\mathbb{R} \to \mathbb{S}$,满足
+\begin{itemize}
+    \item $f(0_\mathbb{R})=0_\mathbb{S},f(1_\mathbb{R})=1_\mathbb{S}$.
+    \item $f(x +_\mathbb{R} y)=f(x) +_\mathbb{S} f(y),\forall x,y \in \mathbb{R}$.
+    \item $f(x \times_\mathbb{R} y)=f(x) \times_\mathbb{S} f(y),\forall x,y \in \mathbb{R}$.
+    \item $x \leqslant_\mathbb{R} y \Leftrightarrow f(x) \leqslant_\mathbb{S} f(y),\forall x,y \in \mathbb{R}$.
+\end{itemize}
+因此,实数的构造是唯一的(同构意义下).
+
+\section{用Cauch列构造$\mathbb{R}$}
+
+\begin{deff}
+    设$(a_n)$为$\mathbb{Q}$中序列.称$(a_n)$为\textbf{有理Cauchy列},若
+    $$
+    \forall \varepsilon \in \mathbb{Q}_+^*,\exists N \in \mathbb{N},\text{当}m,n>N\text{时,有}\left\lvert x_n - x_m \right\rvert < \varepsilon.
+    $$
+    记$X$为有理Cauchy列的全体.
+\end{deff}
+
+设$X$上的一个等价关系$\sim$为:$(a_n) \sim (b_n) \Leftrightarrow \forall \varepsilon \in \mathbb{Q}_+^*,\exists N \in \mathbb{N},\text{当}n>N\text{时,有}\left\lvert a_n - b_n \right\rvert < \varepsilon$.
+
+接下来我们这样定义$\mathbb{R}$:
+\begin{itemize}
+    \item $\mathbb{R}=X / \sim$.
+    \item $0_\mathbb{R}=[(0)]$.
+    \item $1_\mathbb{R}=[(1)]$.
+    \item $[(a_n)]+_\mathbb{R}[(b_n)]=[(a_n+b_n)]$.
+    \item $[(a_n)] \times_\mathbb{R} [(b_n)]=[(a_n b_n)]$.
+    \item $[(a_n)] \leqslant_\mathbb{R} [(b_n)] \Leftrightarrow (a_n) \sim (b_n) \text{或} \forall \varepsilon \in \mathbb{Q}_+^*,\exists N \in \mathbb{N},\text{当}n>N\text{时,有}b_n-a_n>\varepsilon$.
+\end{itemize}
+
+\begin{exer}
+    验证$\leqslant_\mathbb{R}$是良定义的.
+\end{exer}
+
+\begin{exer}
+    证明:$\forall x \in \mathbb{R}^*,\exists y \in \mathbb{R}^*,xy=1_\mathbb{R}$.
+\end{exer}
+
+\begin{thm}
+    上面定义的$\mathbb{R}$是Dedekind完备的.
+\end{thm}
+
+\section{六大完备性定理}
+
+\begin{thm}[确界原理]
+    非空有上界集合必有上确界.
+\end{thm}
+
+\begin{thm}[单调有界原理]
+    单调有界序列必收敛.
+\end{thm}
+
+\begin{thm}[致密性定理]
+    有界序列必有收敛子列.
+\end{thm}
+
+\begin{thm}[Cauchy收敛准则]
+    Cauchy列必收敛.
+\end{thm}
+
+\begin{thm}[闭区间套定理]
+    若$[a_n,b_n] \subseteq \mathbb{R},[a_{n+1},b_{n+1}] \subseteq \mathbb{R}$,则$\bigcap\limits_{n=1}^\infty[a_n,b_n]$非空.
+    进一步,若$\lim\limits_{n \to \infty}\left( b_n - a_n \right)=0$,则上面的集合是单点集.
+\end{thm}
+
+\begin{thm}[有限覆盖定理]
+    设有一组开区间$\left( a_\alpha,b_\alpha \right),\alpha \in I$,
+    使得$[a,b]\subseteq\bigcup\limits_{\alpha \in I}\left( a_\alpha,b_\alpha \right)$.
+    则存在$\alpha_1,\alpha_2,\cdots,\alpha_n \in I,n \in \mathbb{N}$,
+    使得$[a,b] \subseteq \bigcup\limits_{j=1}^n\left( a_\alpha,b_\alpha \right)$.
+\end{thm}
