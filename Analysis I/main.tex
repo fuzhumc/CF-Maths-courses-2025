@@ -1,0 +1,66 @@
+\documentclass[a4paper,oneside]{book}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{booktabs}
+
+\usepackage{amsmath}
+\usepackage{amsthm, amssymb} % Required for theorem formatting
+\usepackage{tikz-cd} % Commutative diagrams support
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+
+\setlist[enumerate,1]{label=\arabic*.}
+\setlist[enumerate,2]{label=(\arabic*)}
+\setlist[enumerate,3]{label=(\roman*)}
+
+\renewcommand{\proofname}{pf.}
+\renewcommand{\contentsname}{目录}
+\renewcommand{\chaptername}{Ch}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+\theoremstyle{definition}
+\newtheorem{prop}{Prop}[section]
+
+\theoremstyle{definition}
+\newtheorem{ax}{Ax}[section]
+
+\theoremstyle{definition}
+\newtheorem{thm}{Thm}[section]
+
+\theoremstyle{definition}
+\newtheorem{lem}{Lem}[section]
+
+\theoremstyle{definition}
+\newtheorem{deff}{Def}[section]
+
+\theoremstyle{definition}
+\newtheorem{exer}{Exer}[section]
+
+\theoremstyle{remark}
+\newtheorem*{pf}{pf}
+
+\theoremstyle{remark}
+\newtheorem*{rqq}{Rq}
+
+\theoremstyle{remark}
+\newtheorem{coro}{Coro}[section]
+
+\title{Analysis I}
+\author{陈世炳}
+\date{2025 秋}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\tableofcontents
+%\input{chapters/annotations}
+\mainmatter
+%\input{chapters/set}
+%\input{chapters/test}
+\input{chapters/Ch1}
+\input{chapters/Ch2}
+
+\end{document}
