@@ -18,10 +18,10 @@
 
 \begin{pf}
     设$\lim\limits_{n \to \infty} u_n = l$且$\lim\limits_{n \to \infty} u_n = \tilde{l}$.
-    令$\varepsilon=\frac{\left\lvert l-\tilde{l} \right\rvert}{47}$.
+    令$\varepsilon=\dfrac{\left\lvert l-\tilde{l} \right\rvert}{47}$.
     则存在$N_1$,当$n>N_1$时,$\left\lvert u_n - l \right\rvert < \varepsilon$.
     存在$N_2$,当$n>N_2$时,$\left\lvert u_n - \tilde{l} \right\rvert < \varepsilon$.
-    令$N=\max\{N_1,N_2\}$,当$n>N$时,$\left\lvert l - \tilde{l} \right\rvert \leq \left\lvert l - u_n \right\rvert + \left\lvert u_n - \tilde{l} \right\rvert < 2\varepsilon = \frac{2\left\lvert l-\tilde{l} \right\rvert}{47}$.
+    令$N=\max\{N_1,N_2\}$,当$n>N$时,$\left\lvert l - \tilde{l} \right\rvert \leq \left\lvert l - u_n \right\rvert + \left\lvert u_n - \tilde{l} \right\rvert < 2\varepsilon = \dfrac{2\left\lvert l-\tilde{l} \right\rvert}{47}$.
     因此$l=\tilde{l}$,即极限唯一.
 \end{pf}
 
@@ -82,7 +82,7 @@
         \item $\lim\limits_{n\to\infty}(u_n+v_n)=u+v$.
         \item $\lim\limits_{n\to\infty}(u_n-v_n)=u-v$.
         \item $\lim\limits_{n\to\infty}(u_nv_n)=uv$.
-        \item 若$v_n \neq 0,v \neq 0$,则$\lim\limits_{n\to\infty}\frac{u_n}{v_n}=\frac{u}{v}$.
+        \item 若$v_n \neq 0,v \neq 0$,则$\lim\limits_{n\to\infty}\dfrac{u_n}{v_n}=\dfrac{u}{v}$.
     \end{enumerate}
 \end{thm}
 
@@ -102,4 +102,61 @@
 \begin{prop}
     若$\varlimsup\limits_{n\to\infty}u_n=l$,
     则存在$(u_n)$的一个子列收敛于$l$.
+\end{prop}
+
+\begin{pf}
+    记$b_n=\sup\limits_{m \geqslant n}u_n \to l$.
+    则对于任意$\varepsilon>0$,存在$N\in\mathbb{N}$,使得$\left\lvert b_N-l \right\rvert \leqslant \varepsilon$.
+    取$\varepsilon=\frac{1}{2n},\varphi(n) \geqslant N$满足$b_n-\frac{1}{2n}<a_{\varphi(n)}<b_N$.
+    则$\lim\limits_{n\to\infty}a_{\varphi(n)}=l$.
+\end{pf}
+
+\section{$\mathbb{R}$中稠密类}
+
+\begin{deff}
+    设$A \subset \mathbb{R}$,称$A$在$\mathbb{R}$中稠密,若对于任意$a,b \in \mathbb{R},a<b$,
+    存在$x \in A$,使得$a<x<b$.
+\end{deff}
+
+\begin{prop}
+    $A$在$\mathbb{R}$中稠密$\Leftrightarrow$对于任意$x \in \mathbb{R},\varepsilon>0,
+    (x-\varepsilon,x+\varepsilon) \cap A \neq \varnothing$.
+\end{prop}
+
+\begin{prop}
+    $A$在$\mathbb{R}$中稠密$\Leftrightarrow$对于任意$x \in \mathbb{R}$,存在$A$中序列收敛于$x$.
+\end{prop}
+
+\begin{prop}
+    设$A\subseteq\mathbb{R}$有上界$s$,且$A$在$\mathbb{R}$中稠密.
+    则$s=\sup A$当且仅当存在$A$中序列收敛于$s$.
+\end{prop}
+
+\section{序列之间的比较关系}
+
+\begin{deff}
+    设序列$u=(u_n),v=(v_n)$从某项开始非$0$.
+    称$(u_n)$等价于$(v_n)$,若$\lim\limits_{n\to\infty}\frac{u_n}{v_n}=1$.
+    记为$u \sim v$或$u_n \sim v_n$.
+\end{deff}
+
+\begin{prop}
+    设$u \sim u',v \sim v'$,则$uu' \sim vv'$.
+\end{prop}
+
+\begin{deff}
+    设序列$u=(u_n),v=(v_n)$从某项开始非$0$.
+    称$u$受$v$控制,若存在$N \in \mathbb{N}$,当$n>N$时,$\left\lvert \frac{u_n}{v_n} \right\rvert$有界.
+    记为$u = O(v)$或$u_n = O(v_n)$.
+\end{deff}
+
+\begin{deff}
+    设序列$u=(u_n),v=(v_n)$从某项开始非$0$.
+    称$u$在$v$前可忽略,若$\lim\limits_{n\to\infty}\frac{u_n}{v_n}=0$.
+    记为$u = o(v)$或$u_n = o(v_n)$.
+\end{deff}
+
+\begin{prop}
+    设序列$u=(u_n),v=(v_n)$从某项开始非$0$.
+    则$u \sim v \Leftrightarrow u-v=O(v)$.
 \end{prop}
