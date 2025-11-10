@@ -1,5 +1,5 @@
 # Analysis I exercise
-Here are the course materials for the analysis I exercise class. The teacher of this course is [Jungang Li](https://sites.google.com/site/junganglihome/home).
+Here are the course materials for the analysis I exercise class(also called Gang analysis I). The teacher of this course is [Jungang Li](https://sites.google.com/site/junganglihome/home).
 
 There might be several typos in the materials ~~because Professor Li is quite unreliable~~. The solutions of the exercises are not provided. If you are confused about the problems, you should ask Professor Li in person.
 

@@ -1,0 +1,105 @@
+\chapter{序列极限}
+
+让我们回顾一下序列收敛的定义.
+
+\begin{deff}
+    设$(x_n)$为$\mathbb{R}$中序列,$x \in \mathbb{R}$.称$(x_n)$收敛于$x$,若
+    $$
+    \forall \varepsilon>0,\exists N \in \mathbb{N},\text{当}n>N\text{时,有}\left\lvert x_n - x \right\rvert < \varepsilon.
+    $$
+    记为$\lim\limits_{n \to \infty}x_n=x$.
+\end{deff}
+
+\section{收敛序列的性质}
+
+\begin{thm}
+    收敛序列的极限唯一.
+\end{thm}
+
+\begin{pf}
+    设$\lim\limits_{n \to \infty} u_n = l$且$\lim\limits_{n \to \infty} u_n = \tilde{l}$.
+    令$\varepsilon=\frac{\left\lvert l-\tilde{l} \right\rvert}{47}$.
+    则存在$N_1$,当$n>N_1$时,$\left\lvert u_n - l \right\rvert < \varepsilon$.
+    存在$N_2$,当$n>N_2$时,$\left\lvert u_n - \tilde{l} \right\rvert < \varepsilon$.
+    令$N=\max\{N_1,N_2\}$,当$n>N$时,$\left\lvert l - \tilde{l} \right\rvert \leq \left\lvert l - u_n \right\rvert + \left\lvert u_n - \tilde{l} \right\rvert < 2\varepsilon = \frac{2\left\lvert l-\tilde{l} \right\rvert}{47}$.
+    因此$l=\tilde{l}$,即极限唯一.
+\end{pf}
+
+\begin{prop}
+    若$\lim\limits_{n\to\infty}u_n=u$,则$\lim\limits_{n\to\infty} \left\lvert u_n \right\rvert = \left\lvert u \right\rvert$.
+\end{prop}
+
+\begin{pf}
+    由$\left\lvert \left\lvert u_n \right\rvert - \left\lvert u \right\rvert \right\rvert \leq \left\lvert u_n - u \right\rvert$易证.
+\end{pf}
+
+\begin{prop}
+    收敛序列一定有界.
+\end{prop}
+
+\begin{pf}
+    收敛序列必为Cauchy列,而Cauchy列必有界.
+\end{pf}
+
+\begin{prop}
+    设序列$(u_n)$收敛且$u_n \geqslant l$,则$\lim\limits_{n\to\infty}u_n \geqslant l$.
+\end{prop}
+
+\begin{prop}
+    设序列$(u_n)$收敛且$\lim\limits_{n\to\infty} u_n \geqslant l$,
+    则存在$N \in \mathbb{N}$,当$n>N$时,$u_n \geqslant l$.
+\end{prop}
+
+\begin{deff}
+    称序列$(u_n)$发散至$+\infty(-\infty)$,若对于任意$M \in \mathbb{R}$,存在$N \in \mathbb{N}$,
+    当$n>N$时,$u_n>M(u_n<M)$.
+\end{deff}
+
+\begin{rqq}
+    此时也称$(u_n)$极限不存在.
+\end{rqq}
+
+\begin{prop}
+    若序列$(u_n)$收敛于$l$,则$(u_n)$的任何子列都收敛于$l$.
+\end{prop}
+
+\begin{prop}
+    若序列$(u_n)$单调增且无上界,则$(u_n)$发散至$+\infty$.
+\end{prop}
+
+\begin{deff}
+    称两序列$(u_n),(v_n)$是相邻的,若$(u_n)$单调增,$(v_n)$单调减,
+    且$\lim\limits_{n\to\infty}(u_n-v_n)=0$.
+\end{deff}
+
+\begin{thm}
+    相邻序列均收敛,且极限相同.
+\end{thm}
+
+\begin{thm}[极限的运算]
+    设$\lim\limits_{n\to\infty}u_n=u,\lim\limits_{n\to\infty}v_n=v$.
+    \begin{enumerate}
+        \item $\lim\limits_{n\to\infty}(u_n+v_n)=u+v$.
+        \item $\lim\limits_{n\to\infty}(u_n-v_n)=u-v$.
+        \item $\lim\limits_{n\to\infty}(u_nv_n)=uv$.
+        \item 若$v_n \neq 0,v \neq 0$,则$\lim\limits_{n\to\infty}\frac{u_n}{v_n}=\frac{u}{v}$.
+    \end{enumerate}
+\end{thm}
+
+\begin{deff}
+    设$(u_n)$为实序列,
+    记$\varlimsup\limits_{n\to\infty}u_n=\lim\limits_{n\to\infty}\sup\limits_{m \geqslant n}u_n$
+    称为$(u_n)$的上极限,
+    记$\varliminf\limits_{n\to\infty}u_n=\lim\limits_{n\to\infty}\inf\limits_{m \geqslant n}u_n$
+    称为$(u_n)$的下极限.
+\end{deff}
+
+\begin{thm}
+    $\lim\limits_{n\to\infty}u_n=l \Leftrightarrow 
+    \varlimsup\limits_{n\to\infty}u_n=\varliminf\limits_{n\to\infty}u_n=l.$
+\end{thm}
+
+\begin{prop}
+    若$\varlimsup\limits_{n\to\infty}u_n=l$,
+    则存在$(u_n)$的一个子列收敛于$l$.
+\end{prop}
