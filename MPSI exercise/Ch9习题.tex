@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[
   a4paper,
-]{ctexart}
+]{article}
 
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
@@ -20,14 +20,8 @@
 \urlstyle{same}
 
 \usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \usepackage{lmodern}
 
 \makeatletter
@@ -51,22 +45,13 @@
 
 
 \usepackage{titling}
-% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
 \title{Ch9习题}
 \author{}
 \date{\today}
 
-% 先加载 enumitem 宏包
 \usepackage{enumitem}
-
-% 重新用 enumitem 定义列表样式（此时无命令覆盖）
 \usepackage{etoolbox}
 \AtBeginEnvironment{enumerate}{
-  \setlist[enumerate,2]{
-    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
-    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
-    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
-  }
   \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
 }
 
@@ -74,8 +59,8 @@
 \usepackage{fancyhdr}
 
 \begin{document}
-%%\maketitle
-%
+\maketitle
+
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -90,7 +75,7 @@
 \tightlist
 \item
   什么函数\(f:\mathbb{R}\to\mathbb{R}\)满足 \[
-   \forall \varepsilon > 0 , \exists \eta > 0 , \forall x \in \mathbb{R} , \left( \vert x \rvert < \eta \Rightarrow \vert f(x) \rvert < \varepsilon \right)
+   \forall \varepsilon > 0 , \exists \eta > 0 , \forall x \in \mathbb{R} , \left( \left\lvert x \right\rvert < \eta \Rightarrow \left\lvert f(x) \right\rvert < \varepsilon \right)
    \]
 \item
   求下列极限:
@@ -151,7 +136,7 @@
   \def\labelenumii{\arabic{enumii}.}
   \tightlist
   \item
-    证明:\(\forall n \in \mathbb{N}^*,\exists p_n \in [a,b],q_n \in \mathbb{Z},\vert p_n\alpha+q_n \rvert \leq \frac{1}{n}\).\emph{我们可以考虑}\(\alpha_k=k\alpha-\lfloor k\alpha \rfloor,k\in[0,n]\).
+    证明:\(\forall n \in \mathbb{N}^*,\exists p_n \in [a,b],q_n \in \mathbb{Z},\left\lvert p_n\alpha+q_n \right\rvert \leq \frac{1}{n}\).\emph{我们可以考虑}\(\alpha_k=k\alpha-\lfloor k\alpha \rfloor,k\in[0,n]\).
   \item
     证明:同时以\(1\)与\(\alpha\)为周期的连续函数为常值函数.
   \end{enumerate}
@@ -160,7 +145,7 @@
   \def\labelenumii{\arabic{enumii}.}
   \tightlist
   \item
-    证明:存在唯一\(f:\mathbb{R}\to\mathbb{R}\)以\(1\)为周期且满足\[\forall x \in [-\frac{1}{2},\frac{1}{2}),f(x)=\vert x \rvert\]
+    证明:存在唯一\(f:\mathbb{R}\to\mathbb{R}\)以\(1\)为周期且满足\[\forall x \in [-\frac{1}{2},\frac{1}{2}),f(x)=\left\lvert x \right\rvert\]
   \item
     证明\(f\)连续.
   \end{enumerate}
@@ -205,7 +190,7 @@
 \item
   证明:定义在实数上的连续周期函数是一致连续的.
 \item
-  设\(f:\mathbb{R}\to\mathbb{R}\)一致连续.求证:\({} \exists a,b\in\mathbb{R}_+,\forall x \in \mathbb{R},\vert f(x) \rvert < a \vert x \rvert + b {}\).
+  设\(f:\mathbb{R}\to\mathbb{R}\)一致连续.求证:\({} \exists a,b\in\mathbb{R}_+,\forall x \in \mathbb{R},\left\lvert f(x) \right\rvert < a \left\lvert x \right\rvert + b {}\).
 \end{enumerate}
 
 \end{document}

@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[
   a4paper,
-]{ctexart}
+]{article}
 
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
@@ -20,14 +20,8 @@
 \urlstyle{same}
 
 \usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \usepackage{lmodern}
 
 \makeatletter
@@ -51,22 +45,13 @@
 
 
 \usepackage{titling}
-% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
 \title{Ch10习题}
 \author{}
 \date{\today}
 
-% 先加载 enumitem 宏包
 \usepackage{enumitem}
-
-% 重新用 enumitem 定义列表样式（此时无命令覆盖）
 \usepackage{etoolbox}
 \AtBeginEnvironment{enumerate}{
-  \setlist[enumerate,2]{
-    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
-    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
-    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
-  }
   \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
 }
 
@@ -74,8 +59,8 @@
 \usepackage{fancyhdr}
 
 \begin{document}
-%%\maketitle
-%
+\maketitle
+
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -102,7 +87,7 @@
 \item
   设\(f:\mathbb{R}\to\mathbb{R}\)在\(0\)处连续,满足\({} \lim\limits_{x\to0}\dfrac{f(2x)-f(x)}{x} {}\)存在且有限,求证\(f\)在\(0\)处可导.
 \item
-  设\(a \in I\),函数\(f:I\to\mathbb{R}\)在\(a\)处可导.设\(\varphi(x)=f(a)+f’(a)(x-a),g(x)=\mu+\lambda(x-a)\),其中\(\lambda,\mu\in\mathbb{R}\)证明:若\((\lambda,\mu)\neq(f’(a),f(a))\),则存在\(\eta>0\)使得当\(x \in I\)满足\(0<\vert x-a \rvert \leq \eta {}\)时,有\(\vert f(x)-g(x) \rvert < \vert f(x)-\varphi(x) \rvert\).\emph{分为情形}\(\mu \neq f(a)\)\emph{与}\(\mu = f(a),\lambda \neq f’(a)\).
+  设\(a \in I\),函数\(f:I\to\mathbb{R}\)在\(a\)处可导.设\(\varphi(x)=f(a)+f’(a)(x-a),g(x)=\mu+\lambda(x-a)\),其中\(\lambda,\mu\in\mathbb{R}\)证明:若\((\lambda,\mu)\neq(f’(a),f(a))\),则存在\(\eta>0\)使得当\(x \in I\)满足\(0<\left\lvert x-a \right\rvert \leqslant \eta {}\)时,有\(\left\lvert f(x)-g(x) \right\rvert < \left\lvert f(x)-\varphi(x) \right\rvert\).\emph{分为情形}\(\mu \neq f(a)\)\emph{与}\(\mu = f(a),\lambda \neq f’(a)\).
 \item
   设两函数\(f,g\)在\([a,b]\)上连续,在\((a,b)\)上可导.证明:\[\exists c \in (a,b),(f(a)-f(b))g’(c)=(g(a)-g(b))f’(c)\]
 \item
@@ -110,7 +95,7 @@
 \item
   设函数\(f:\mathbb{R}_+\to\mathbb{R}\)在\(\mathbb{R}_+^*\)上可导,满足\(f(0)=\lim\limits_{x\to+\infty}f(x)=0\).求证:\(\exists c \in (0,+\infty),f’(c)=0\).
 \item
-  证明不等式:\[\forall x \in [0,\frac{\pi}{2}],\frac{2}{\pi}x \leq \sin x \leq x\]
+  证明不等式:\[\forall x \in [0,\frac{\pi}{2}],\frac{2}{\pi}x \leqslant \sin x \leqslant x\]
 \item
   设\(f\)在\(I\)上可导.
 
@@ -123,9 +108,9 @@
     \textbf{Thm.(Darboux)} 证明\(f’(I)\)为区间.
   \end{enumerate}
 \item
-  设两函数\(f,g\)在\(I\)上连续,在\(I\)的内部可导,设\(\vert f’(x) \rvert \leq g’(x)\).证明:\(\vert f(a)-f(b) \rvert \leq g(a)-g(b)\).
+  设两函数\(f,g\)在\(I\)上连续,在\(I\)的内部可导,设\(\left\lvert f’(x) \right\rvert \leqslant g’(x)\).证明:\(\left\lvert f(a)-f(b) \right\rvert \leqslant g(a)-g(b)\).
 \item
-  设\(a\)为\(I\)内点,函数\(f:i\to\mathbb{R}\)在\(I\)上可导,且在\(a\)处二阶可导(即\(f’\)在\(a\)处可导).称\(f\)在\(a\)处取到\textbf{严格局部最小值},若存在\(\eta>0\)使得当\(x \in I\)满足\(0<\vert x-a \rvert \leq \eta\)时,有\(f(x)>f(a)\).证明:若\(f’(a)=0,f’’(a)>0\),则\(a\)为一个严格局部最小值.
+  设\(a\)为\(I\)内点,函数\(f:i\to\mathbb{R}\)在\(I\)上可导,且在\(a\)处二阶可导(即\(f’\)在\(a\)处可导).称\(f\)在\(a\)处取到\textbf{严格局部最小值},若存在\(\eta>0\)使得当\(x \in I\)满足\(0<\left\lvert x-a \right\rvert \leqslant \eta\)时,有\(f(x)>f(a)\).证明:若\(f’(a)=0,f’’(a)>0\),则\(a\)为一个严格局部最小值.
 \item
   设\({} f(x)=\dfrac{1}{\sqrt{1-x^2}},x\in[0,1) {}\).证明:对于任意自然数\(n\)与\(x\in[0,1)\),有\(f^{(n)}(x)\geq0\).\emph{思考}\(f^{(n+1)}\)\emph{与}\(f^{(n)}\)\emph{之间的关系}.
 \item
@@ -168,7 +153,7 @@
     得出结论.
   \end{enumerate}
 \item
-  设\(f:I \to I\)可导,序列\((u_n)\)满足\(u_{n+1}=f(u_n),u_0 \in I\).再设\(c \in I\)为\(f\)的不动点,\(\vert f'(c) \rvert>1\),\((u_n)\)收敛于\(c\).
+  设\(f:I \to I\)可导,序列\((u_n)\)满足\(u_{n+1}=f(u_n),u_0 \in I\).再设\(c \in I\)为\(f\)的不动点,\(\left\lvert f'(c) \right\rvert>1\),\((u_n)\)收敛于\(c\).
 
   \begin{enumerate}
   \def\labelenumii{\arabic{enumii}.}
@@ -195,15 +180,15 @@
   \end{enumerate}
 \item
   \textbf{有限增量不等式}
-  设\(f:[a,b]\to\mathbb{C}\)在\((a,b)\)上可导,存在实数\(M\)使得\(\vert f'(x) \rvert \leq M\).
+  设\(f:[a,b]\to\mathbb{C}\)在\((a,b)\)上可导,存在实数\(M\)使得\(\left\lvert f'(x) \right\rvert \leqslant M\).
 
   \begin{enumerate}
   \def\labelenumii{\arabic{enumii}.}
   \tightlist
   \item
-    在这一问中,设\(f(a),f(b)\)都是实数.证明\(\vert f(a)-f(b) \rvert \leq M \vert a-b \rvert\).
+    在这一问中,设\(f(a),f(b)\)都是实数.证明\(\left\lvert f(a)-f(b) \right\rvert \leqslant M \left\lvert a-b \right\rvert\).
   \item
-    不再假设\(f(a),f(b)\)是实数.考虑\(g(x)=u(f(x)-f(a))\),其中选取适当\(u \in \mathbb{C}\).证明\(\vert f(a)-f(b) \rvert \leq M \vert a-b \rvert\).
+    不再假设\(f(a),f(b)\)是实数.考虑\(g(x)=u(f(x)-f(a))\),其中选取适当\(u \in \mathbb{C}\).证明\(\left\lvert f(a)-f(b) \right\rvert \leqslant M \left\lvert a-b \right\rvert\).
   \end{enumerate}
 \end{enumerate}
 

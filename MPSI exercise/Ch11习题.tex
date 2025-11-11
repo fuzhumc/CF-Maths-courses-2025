@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[
   a4paper,
-]{ctexart}
+]{article}
 
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
@@ -20,14 +20,8 @@
 \urlstyle{same}
 
 \usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \usepackage{lmodern}
 
 \makeatletter
@@ -51,22 +45,13 @@
 
 
 \usepackage{titling}
-% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
 \title{Ch11习题}
 \author{}
 \date{\today}
 
-% 先加载 enumitem 宏包
 \usepackage{enumitem}
-
-% 重新用 enumitem 定义列表样式（此时无命令覆盖）
 \usepackage{etoolbox}
 \AtBeginEnvironment{enumerate}{
-  \setlist[enumerate,2]{
-    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
-    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
-    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
-  }
   \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
 }
 
@@ -74,8 +59,8 @@
 \usepackage{fancyhdr}
 
 \begin{document}
-%%\maketitle
-%
+\maketitle
+
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -109,14 +94,14 @@
   \def\labelenumii{\arabic{enumii}.}
   \tightlist
   \item
-    设\(f\in\mathcal{C}([a,b],\mathbb{R})\).证明:\(\vert \int_{[a,b]}f \rvert = \int_{[a,b]}\vert f \rvert\)当且仅当\(f\)有一个固定的符号.
+    设\(f\in\mathcal{C}([a,b],\mathbb{R})\).证明:\(\left\lvert \int_{[a,b]}f \right\rvert = \int_{[a,b]}\left\lvert f \right\rvert\)当且仅当\(f\)有一个固定的符号.
   \item
-    设\(f\in\mathcal{C}([a,b],\mathbb{C})\).给出\(\vert \int_{[a,b]}f \rvert = \int_{[a,b]}\vert f \rvert\)的一个充要条件.\emph{我们回到情形}\(\int_{[a,b]} f=\vert \int_{[a,b]} f \rvert\)\emph{开始}.
+    设\(f\in\mathcal{C}([a,b],\mathbb{C})\).给出\(\left\lvert \int_{[a,b]}f \right\rvert = \int_{[a,b]}\left\lvert f \right\rvert\)的一个充要条件.\emph{我们回到情形}\(\int_{[a,b]} f=\left\lvert \int_{[a,b]} f \right\rvert\)\emph{开始}.
   \end{enumerate}
 \item
-  设\(f\in\mathcal{C}([a,b],\mathcal{R}_+)\).证明:\[\lim\limits_{n\to+\infty}\left(\int_{[a,b]}f^n\right)^\frac{1}{n}=\sup\limits_{x\in[a,b]}\vert f(x) \rvert\]
+  设\(f\in\mathcal{C}([a,b],\mathcal{R}_+)\).证明:\[\lim\limits_{n\to+\infty}\left(\int_{[a,b]}f^n\right)^\frac{1}{n}=\sup\limits_{x\in[a,b]}\left\lvert f(x) \right\rvert\]
 \item
-  设\(f\in\mathcal{CM}([0,1],\mathbb{R})\).对于自然数\(n\),记\(I_n=\int_{[a,b]}\vert f \rvert^n\).证明\(I_n^2 \leqslant I_{n-1}I_{n+1}\).
+  设\(f\in\mathcal{CM}([0,1],\mathbb{R})\).对于自然数\(n\),记\(I_n=\int_{[a,b]}\left\lvert f \right\rvert^n\).证明\(I_n^2 \leqslant I_{n-1}I_{n+1}\).
 \item
   设\(f\in\mathcal{C}([0,1],\mathbb{R})\),满足\(f(1)=0\).
 
