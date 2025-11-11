@@ -100,7 +100,7 @@
   \def\labelenumii{\arabic{enumii}.}
   \tightlist
   \item
-    计算下列函数各自的Legendre变换:\(f(x)=\frac{x^p}{p},p>1;g(x)=\vert x \rvert;h(x)=e^x\).注意上述函数的定义域!
+    计算下列函数各自的Legendre变换:\(f(x)=\frac{x^p}{p},p>1;g(x)=\left\lvert x \right\rvert;h(x)=e^x\).注意上述函数的定义域!
   \item
     Legendre变换的几何意义是什么?
   \item
@@ -119,15 +119,15 @@
 \item
   利用Hölder不等式证明:对任意\({} p,q,r>1,0<\lambda<1,\frac{1}{p}=\frac{\lambda}{q}+\frac{1-\lambda}{r} {}\),有:
   \[
-  \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^p \right)^\frac{1}{p} \leq \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^q \right)^\frac{\lambda}{q} \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^r \right)^\frac{1-\lambda}{r}  
+  \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p \right)^\frac{1}{p} \leq \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^q \right)^\frac{\lambda}{q} \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^r \right)^\frac{1-\lambda}{r}  
   \]
 \item
   证明如下逆Hölder不等式: \[
-  \sum\limits_{n=1}^\infty \vert a_nb_n \rvert \geq \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^\frac{1}{p} \right)^p \left( \sum\limits_{n=1}^\infty \vert b_n \rvert^\frac{1}{1-p} \right)^{1-p}
+  \sum\limits_{n=1}^\infty \left\lvert a_nb_n \right\rvert \geq \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^\frac{1}{p} \right)^p \left( \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^\frac{1}{1-p} \right)^{1-p}
   \] 其中我们假设\(p>1\)且各个求和均有意义.
 \item
   证明如下逆Minkowski不等式: \[
-  \left( \sum\limits_{n=1}^\infty \vert a_n+b_n \rvert^p \right)^\frac{1}{p} \geq \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^p \right)^\frac{1}{p}+\left( \sum\limits_{n=1}^\infty \vert b_n \rvert^p \right)^\frac{1}{p}
+  \left( \sum\limits_{n=1}^\infty \left\lvert a_n+b_n \right\rvert^p \right)^\frac{1}{p} \geq \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p \right)^\frac{1}{p}+\left( \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)^\frac{1}{p}
   \] 其中\(0<p<1\).
 \item
   证明下面两个不等式:
@@ -137,21 +137,21 @@
   \tightlist
   \item
     \[
-     \sum\limits_{n=1}^\infty \vert \frac{a_n+b_n}{2} \rvert^p + \sum\limits_{n=1}^\infty \vert \frac{a_n-b_n}{2} \rvert \leq \frac{1}{2} \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^p + \sum\limits_{n=1}^\infty \vert b_n \rvert^p \right)
+     \sum\limits_{n=1}^\infty \left\lvert \frac{a_n+b_n}{2} \right\rvert^p + \sum\limits_{n=1}^\infty \left\lvert \frac{a_n-b_n}{2} \right\rvert \leq \frac{1}{2} \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p + \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)
      \] 其中\(p \geq 2\).
   \item
     \[
-     \left( \sum\limits_{n=1}^\infty \vert \frac{a_n+b_n}{2} \rvert^p \right)^\frac{q}{p} + \left( \sum\limits_{n=1}^\infty \vert \frac{a_n-b_n}{2} \rvert^p \right)^\frac{q}{p} \leq \frac{1}{2} \left( \sum\limits_{n=1}^\infty \vert a_n \rvert^p + \sum\limits_{n=1}^\infty \vert b_n \rvert^p \right)^\frac{q}{p}
+     \left( \sum\limits_{n=1}^\infty \left\lvert \frac{a_n+b_n}{2} \right\rvert^p \right)^\frac{q}{p} + \left( \sum\limits_{n=1}^\infty \left\lvert \frac{a_n-b_n}{2} \right\rvert^p \right)^\frac{q}{p} \leq \frac{1}{2} \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p + \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)^\frac{q}{p}
      \] 其中\(1<p<2,\frac{1}{p}+\frac{1}{q}=1\).
   \end{enumerate}
 \item
   证明:若存在一个正常数\(C\)使得不等式 \[
-  \sum\limits_{n=1}^\infty \vert a_nb_n \rvert \leq C \left( \sum\limits_{n=1}^\infty \vert b_n \rvert^p \right)^\frac{1}{p}
+  \sum\limits_{n=1}^\infty \left\lvert a_nb_n \right\rvert \leq C \left( \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)^\frac{1}{p}
   \]
-  对任意序列\((b_n)\)成立,则\(\left( \sum\limits_{n=1}^\infty \vert a_n \rvert^q \right)^\frac{1}{q} \leq C\),其中\(\frac{1}{p}+\frac{1}{q}=1\).
+  对任意序列\((b_n)\)成立,则\(\left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^q \right)^\frac{1}{q} \leq C\),其中\(\frac{1}{p}+\frac{1}{q}=1\).
 \item
   证明不等式: \[
-  \left(\sum\limits_{N=0}^{\infty}\left(\sum_{n=0}^{N}\vert a_nb_{N-n}\rvert \right)^r\right)^\frac{1}{r}\leq\left(\sum_{n=0}^\infty\vert a_n\rvert ^p\right)^\frac{1}{p}\left(\sum_{n=0}^\infty\vert b_n\rvert^q\right)^\frac{1}{q}
+  \left(\sum\limits_{N=0}^{\infty}\left(\sum_{n=0}^{N}\left\lvert a_nb_{N-n} \right\rvert \right)^r\right)^\frac{1}{r}\leq\left(\sum_{n=0}^\infty\left\lvert a_n \right\rvert ^p\right)^\frac{1}{p}\left(\sum_{n=0}^\infty\left\lvert b_n \right\rvert^q\right)^\frac{1}{q}
   \] 其中\(p,q,r \geq 1\)且\(\frac{1}{p}+\frac{1}{q}=1+\frac{1}{r}\).
 \item
   如果你学过一点积分知识,尝试吧今天所有的不等式写成积分形式,思考一下他们在说什么事情.
