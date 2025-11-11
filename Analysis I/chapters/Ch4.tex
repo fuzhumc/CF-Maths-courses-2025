@@ -1,0 +1,58 @@
+\chapter{函数极限和函数连续性}
+
+\begin{deff}
+    称$\lim\limits_{x \to a} f(x)=l$,若对于任意$\varepsilon>0$,存在$\delta>0$,
+    当$0< \left\lvert x-a \right\rvert \leqslant \delta$,时,
+    有$\left\lvert f(x)-l \right\rvert \leqslant \varepsilon$.
+\end{deff}
+
+\begin{deff}
+    称$\lim\limits_{x \to +\infty} f(x)=l$,若对于任意$\varepsilon>0$,存在$M>0$,
+    当$x>M$时,有$\left\lvert f(x)-l \right\rvert \leqslant \varepsilon$.
+
+    称$\lim\limits_{x \to -\infty} f(x)=l$,若对于任意$\varepsilon>0$,存在$M<0$,
+    当$x<M$时,有$\left\lvert f(x)-l \right\rvert \leqslant \varepsilon$.
+\end{deff}
+
+\begin{deff}
+    称$\lim\limits_{x \to a} f(x)=+\infty$,若对于任意$M>0$,存在$\delta>0$,
+    当$0< \left\lvert x-a \right\rvert \leqslant \delta$,时,有$f(x) \geqslant M$.
+
+    称$\lim\limits_{x \to a} f(x)=-\infty$,若对于任意$M<0$,存在$\delta>0$,
+    当$0< \left\lvert x-a \right\rvert \leqslant \delta$,时,有$f(x) \leqslant M$.
+\end{deff}
+
+\begin{deff}
+    称$f$在$a$处连续,若$\lim\limits_{x \to a} f(x) = f(a)$.
+\end{deff}
+
+\begin{prop}
+    若$\lim\limits_{x \to a} f(x)=l$,则$f$在$a$附近有界.
+\end{prop}
+
+\begin{thm}
+    函数极限若存在则必唯一.
+\end{thm}
+
+\begin{thm}
+    设$f:I \to \mathbb{R},a \in I,l \in \mathbb{R}$.则$\lim\limits_{x \to a}=l \Leftrightarrow$
+    对于$I$上任意收敛于$a$的序列$(u_n)$,都有$\lim\limits_{n \to \infty}f(u_n)=l$.
+\end{thm}
+
+\begin{thm}[函数极限的运算]
+    设$\lim\limits_{x \to a}f(x)=l,\lim\limits_{x \to a}g(x)=r$,则有
+    \begin{enumerate}
+        \item $\lim\limits_{x \to a}f(x)+g(x)=l+r$.
+        \item $\lim\limits_{x \to a}f(x)-g(x)=l-r$.
+        \item $\lim\limits_{x \to a}f(x)g(x)=lr$.
+        \item 若$g(x)\neq0,r\neq0$,则$\lim\limits_{x \to a}\frac{f(x)}{g(x)}=\frac{l}{r}$.
+    \end{enumerate}
+\end{thm}
+
+\begin{prop}
+    若$\lim\limits_{x \to a}f(x)=0$,$g$在$a$附近有界,则$\lim\limits_{x \to a}f(x)g(x)=0$.
+\end{prop}
+
+\begin{prop}
+    若$\lim\limits_{x \to a}f(x)=+\infty$,则$\lim\limits_{x \to a}\frac{1}{f(x)}=0$.
+\end{prop}
