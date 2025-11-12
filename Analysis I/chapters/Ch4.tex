@@ -1,5 +1,7 @@
 \chapter{函数极限和函数连续性}
 
+\section{函数极限}
+
 \begin{deff}
     称$\lim\limits_{x \to a} f(x)=l$,若对于任意$\varepsilon>0$,存在$\delta>0$,
     当$0< \left\lvert x-a \right\rvert \leqslant \delta$,时,
@@ -22,10 +24,6 @@
     当$0< \left\lvert x-a \right\rvert \leqslant \delta$,时,有$f(x) \leqslant M$.
 \end{deff}
 
-\begin{deff}
-    称$f$在$a$处连续,若$\lim\limits_{x \to a} f(x) = f(a)$.
-\end{deff}
-
 \begin{prop}
     若$\lim\limits_{x \to a} f(x)=l$,则$f$在$a$附近有界.
 \end{prop}
@@ -33,6 +31,10 @@
 \begin{thm}
     函数极限若存在则必唯一.
 \end{thm}
+
+\begin{prop}[局部性]
+    设$f:I\to\mathbb{R},J \subseteq I$,$a$为$J$的内点或端点.若$\lim\limits{x\to a}f(x)=l$,则$\lim\limits_{x\to a}f(x)\vert_J=l$
+\end{prop}
 
 \begin{thm}
     设$f:I \to \mathbb{R},a \in I,l \in \mathbb{R}$.则$\lim\limits_{x \to a}=l \Leftrightarrow$
@@ -49,10 +51,32 @@
     \end{enumerate}
 \end{thm}
 
+\begin{prop}[序关系]
+    设$f:I\to\mathbb{R},a\in I,l\in\mathbb{R}$,则有:
+    \begin{enumerate}
+        \item 若$\lim\limits_{x\to a}f(x) \geqslant l$,则存在$\delta>0$,当$0<\left\lvert x-a \right\rvert \leqslant \delta$时,有$f(x) \geqslant l$.
+        \item 若存在$\delta>0$,当$0<\left\lvert x-a \right\rvert \leqslant \delta$时,有$f(x) \geqslant l$,且$\lim\limits_{x\to a}f(x)$存在,则$\lim\limits_{x\to a}f(x) \geqslant l$.
+    \end{enumerate}
+\end{prop}
+
 \begin{prop}
     若$\lim\limits_{x \to a}f(x)=0$,$g$在$a$附近有界,则$\lim\limits_{x \to a}f(x)g(x)=0$.
 \end{prop}
 
 \begin{prop}
     若$\lim\limits_{x \to a}f(x)=+\infty$,则$\lim\limits_{x \to a}\frac{1}{f(x)}=0$.
+\end{prop}
+
+\section{函数连续}
+
+\begin{deff}
+    称$f$在$a$处连续,若$\lim\limits_{x \to a} f(x) = f(a)$.
+\end{deff}
+
+\begin{prop}
+    $f$在$a$处连续的充要条件为:对任意收敛于$a$的序列$(u_n)$,都有$\lim\limits_{n \to \infty}f(u_n)=f(a)$.
+\end{prop}
+
+\begin{prop}
+    若$f$在$a$处连续,则$f$在$a$附近有界.
 \end{prop}
