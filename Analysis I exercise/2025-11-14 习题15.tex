@@ -1,0 +1,180 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{习题15}
+\author{}
+\date{2025年11月14日}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年11月14日}
+\chead{习题15}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+先定义\(\int_a^{b^-}f(x)\mathrm{d}x\)型广义积分:设函数\(f\)在\([a,b)\)上任意有界闭区间\([\alpha,\beta]\)上可积,满足\(\lim\limits_{x\to b^{-}}f(x)=\pm\infty\)(此时称\(b\)为\(f\)的\textbf{奇点}).则定义\textbf{广义积分}\(\int_a^bf(x)\mathrm{d}x=\lim\limits_{\beta\to b^-}\int_a^{\beta}f(x)\mathrm{d}x\)(倘若极限存在).
+类似地,我们可以定义\(\int_{a^+}^bf(x)\mathrm{d}x\)型广义积分:\(\int_a^bf(x)\mathrm{d}x=\lim\limits_{\alpha\to a^+}\int_{\alpha}^bf(x)\mathrm{d}x\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  利用上述定义,判断下列积分是否有限.若有限,试计算之.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \[\int_0^{+\infty}e^{-x}\mathrm{d}x\]
+  \item
+    \[\int_0^1\frac{1}{x}\mathrm{d}x\]
+  \item
+    \[\int_0^1\frac{1}{\sqrt{1-x}}\mathrm{d}x\]
+  \item
+    \[\int_0^1\ln x\mathrm{d}x\]
+  \item
+    \[\int_0^{+\infty}e^{-x}\cos x\mathrm{d}x\]
+  \end{enumerate}
+\end{enumerate}
+
+现在定义\(\int_{a^+}^{b^-}f(x)\mathrm{d}x\)型积分:设\(f\)在\((a,b)\)上任意有界闭区间\([\alpha,\beta]\)上可积,满足\(\lim\limits_{x\to a^+}f(x)=\pm\infty,\lim\limits_{a\to b^-}f(x)=\pm\infty\),且对于某个\(c\in(a,b)\),广义积分\(\int_a^cf(x)\mathrm{d}x\)与\(\int_c^bf(x)\mathrm{d}x\)都存在(要么有限要么无限,不可以振荡!).则定义\textbf{广义积分}\(\int_a^bf(x)\mathrm{d}x=\int_a^cf(x)\mathrm{d}x+\int_c^bf(x)\mathrm{d}x\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  利用上述定义,判定并计算下列积分:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \[\int_{-1}^1\frac{1}{\sqrt{1-x^2}}\mathrm{d}x\]
+  \item
+    \[\int_{-\infty}^{+\infty}\frac{1+x}{1+x^2}\mathrm{d}x\]
+  \item
+    对于上一问中的函数,若考虑\(\lim\limits_{c\to+\infty}(\int_{-c}^0\frac{1+x}{1+x^2}+\int_0^c\frac{1+x}{1+x^2})\),你会得到什么?
+  \end{enumerate}
+\end{enumerate}
+
+为了区别上题中的(2)(3),我们定义\textbf{主值积分}:\[p.v.\int_{-\infty}^{+\infty}f(x)\mathrm{d}x=\lim\limits_{c\to+\infty}\int_{-c}^cf(x)\mathrm{d}x,p.v.\int_a^bf(x)\mathrm{d}x=\lim\limits_{\varepsilon\to0^+}\int_{a+\varepsilon}^{b-\varepsilon}f(x)\mathrm{d}x\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  计算下列广义积分:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \[\int_0^{+\infty}\frac{1}{x^4+1}\mathrm{d}x\]
+  \item
+    \[\int_0^1\frac{1}{x\sqrt{1+x^2}}\mathrm{d}x\]
+  \item
+    \[p.v.\int_{-\infty}^{+\infty}\sin x\mathrm{d}x\]
+  \item
+    \[p.v.\int_0^4\frac{1}{x^2-4x+3}\mathrm{d}x\]
+  \item
+    \[\int_0^{+\infty}\frac{1}{(x^2+1)(x^{\lambda}+1)}\mathrm{d}x,(\lambda>0)\]
+  \end{enumerate}
+\item
+  证明:广义积分\({} \int_1^{+\infty}\dfrac{x\ln(1+\frac{1}{x})}{1+x^2}\mathrm{d}x {}\)收敛.
+\item
+  考虑广义积分\({} \int_0^{\frac{\pi}{2}}\cos x\ln\tan x\mathrm{d}x {}\)的敛散性.若收敛,试计算之.
+\item
+  设\(I=\int_0^{\frac{\pi}{2}}\ln\sin x\mathrm{d}x,J=\int_0^{\frac{\pi}{2}}\ln\cos x\mathrm{d}x\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:\(I,J\)都收敛.
+  \item
+    计算\(I,J\).
+  \end{enumerate}
+\item
+  设\(f\in\mathcal{C}^2([0,+\infty),\mathbb{R})\),满足\({} \int_0^{+\infty}(f(x))^2\mathrm{d}x {}\)与\(\int_0^{+\infty}(f’’(x))^2\mathrm{d}x\)收敛.证明:\(\int_0^{+\infty}(f’(x))^2\mathrm{d}x\)收敛.
+\item
+  设广义积分\(I=\int_0^{+\infty}\frac{\sin x}{x}\mathrm{d}x\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    定义\(f:[0,\pi]\to\mathbb{R}\)如下:\[f(x)=\begin{cases} \dfrac{1}{x}-\dfrac{1}{2\sin\dfrac{x}{2}}, & x\in(0,\pi] \\ 0, & x=0 \end{cases}\]证明\(f\)是\(\mathcal{C}^1\)的.
+  \item
+    计算积分\[I_n=\int_0^{\pi}\dfrac{\sin(n+\frac{1}{2})x}{2\sin\dfrac{x}{2}}\mathrm{d}x\]
+  \item
+    对于\(\varphi\in\mathcal{C}^1([0,1],\mathbb{R})\),证明:\[\lim\limits_{n\to\infty}\int_0^{\pi}\varphi(x)\sin(n+\dfrac{1}{2})x\mathrm{d}x=0\]
+  \item
+    计算\(I\).
+  \item
+    利用上一问计算\(\int_0^{+\infty}\dfrac{\sin x\cos x}{x}\mathrm{d}x\).
+  \item
+    利用上一问计算\(\int_0^{+\infty}\frac{\sin^2x}{x}\mathrm{d}x\).
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
