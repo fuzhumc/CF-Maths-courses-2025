@@ -63,6 +63,35 @@
 
 \begin{deff}[左右导数]
     设$f:I\to\mathbb{R}$,$a$为$I$内点.
+
     称$f$在$a$处右可导,若$\lim\limits_{h\to0^+}\frac{f(a+h)-f(a)}{h}$存在.极限值记为$f'_+(a)$.
+
     称$f$在$a$处左可导,若$\lim\limits_{h\to0^-}\frac{f(a+h)-f(a)}{h}$存在.极限值记为$f'_-(a)$.
 \end{deff}
+
+\section{中值定理}
+
+\begin{deff}
+    设$f:I\to\mathbb{R}$,$a$为$I$内点.
+    
+    称$f$在$a$处取到极大值,若存在$\delta>0$,当$0<\left\lvert x-a \right\rvert \leqslant \delta$时,有$f(x) \leqslant f(a)$.
+
+    称$f$在$a$处取到极小值,若存在$\delta>0$,当$0<\left\lvert x-a \right\rvert \leqslant \delta$时,有$f(x) \geqslant f(a)$.
+\end{deff}
+
+\begin{thm}[Fermat]
+    设$f:I\to\mathbb{R}$,$a$为$I$内点,$f$在$a$处可到且$f$在$a$处取到极值,则$f'(a)=0$.
+\end{thm}
+
+\begin{thm}[Rolle]
+    设$f:[a,b]\to\mathbb{R}$在$[a,b]$上连续,在$(a,b)$上可导,满足$f(a)=f(b)$,则存在$c\in(a,b)$,使得$f'(c)=0$.
+\end{thm}
+
+\begin{thm}[Lagrange]
+    设$f:[a,b]\to\mathbb{R}$在$[a,b]$上连续,在$(a,b)$上可导,则存在$c\in(a,b)$,使得$f(b)-f(a)=f'(c)(b-a)$.
+\end{thm}
+
+\begin{thm}[Cauchy]
+    设$f,g:[a,b]\to\mathbb{R}$在$[a,b]$上连续,在$(a,b)$上可导,且$g'(x) \neq 0$,则存在$c\in(a,b)$,使得
+    $$\dfrac{f'(c)}{g'(c)}=\dfrac{f(b)-f(a)}{g(b)-g(a)}$$
+\end{thm}
