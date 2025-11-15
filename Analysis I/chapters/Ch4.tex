@@ -51,6 +51,21 @@
     \end{enumerate}
 \end{thm}
 
+\begin{deff}[上下极限]
+    设$f:I\to\mathbb{R},a\in I$.
+    记$\varlimsup\limits_{x\to a}f(x)=
+    \lim\limits_{\delta\to0}\sup\limits_{0<\left\lvert x-a \right\rvert < \delta}f(x)$
+    称为$f$在$a$处的上极限.
+    记$\varliminf\limits_{x\to a}f(x)=
+    \lim\limits_{\delta\to0}\sup\limits_{0<\left\lvert x-a \right\rvert < \delta}f(x)$
+    称为$f$在$a$处的下极限.
+\end{deff}
+
+\begin{thm}
+    $$\lim\limits_{x\to a}f(x)=l \Leftrightarrow
+    \varlimsup\limits_{x\to a}f(x)=\varliminf\limits_{x\to a}f(x)=l$$
+\end{thm}
+
 \begin{prop}[序关系]
     设$f:I\to\mathbb{R},a\in I,l\in\mathbb{R}$,则有:
     \begin{enumerate}
