@@ -1,0 +1,68 @@
+\chapter{函数导数}
+
+\section{求导}
+
+\begin{deff}
+    设$f:I\to\mathbb{R},a\in I$.称映射
+    $$
+    \tau_a(f):
+    \begin{array}[t]{ccc}
+        I \setminus \{a\} & \to & \mathbb{R} \\
+        x & \mapsto & \frac{f(x)-f(a)}{x-a}
+    \end{array}
+    $$
+    为$f$在$a$处的增长率.
+\end{deff}
+
+\begin{deff}
+    称$f$在$a$处可导,若$\lim\limits_{x \to a}\tau_a(f)(x)$存在.极限值记为$f'(a)$.
+\end{deff}
+
+\begin{rqq}
+    $$f'(a)=\lim\limits_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim\limits_{h\to0}\frac{f(a+h)-f(a)}{h}$$
+\end{rqq}
+
+\begin{prop}
+    $f$在$a$处可导的充要条件为:$$\exists l \in \mathbb{R}, \exists \alpha: I \to \mathbb{R}, 
+    f(x)=f(a)+l(x-a)+\alpha(x)(x-a),\lim\limits_{x \to a} \alpha(x)=0$$
+\end{prop}
+
+\begin{prop}
+    若$f$在$a$处可导,则$f$在$a$处连续.
+\end{prop}
+
+\begin{deff}
+    称$f$在区间$I$上可导,若$f$在$I$上每一点都可导.
+
+    称映射$f':\begin{array}[t]{ccc} I & \to & \mathbb{R} \\ x & \mapsto & f'(x) \end{array}$
+    为$f$在$I$上的导函数.
+
+    记$\mathcal{D}(I,\mathbb{R})$为$I$上可导函数的全体.
+\end{deff}
+
+\begin{prop}
+    设$f,g$在$a$处可导,则有:
+    \begin{enumerate}
+        \item $(f \pm g)'(a)=f'(a) \pm g'(a)$.
+        \item $(fg)'(a)=f'(a)g(a)+f(a)g'(a)$.
+        \item 若$g(a) \neq 0$,则$\left(\dfrac{f}{g}\right)'(a)=\dfrac{f'(a)g(a)-f(a)g'(a)}{(g(a))^2}$.
+    \end{enumerate}
+\end{prop}
+
+\begin{thm}[链式法则]
+    设$f:I\to\mathbb{R},g:J\to\mathbb{R},f(I)\subseteq I$.
+
+    若$f$在$a$处可导,$g$在$f(a)$处可导,则$g \circ f$在$a$处可导,且
+    $$(g \circ f)'(a)=g'(f(a))f'(a)$$
+\end{thm}
+
+\begin{thm}[反函数导数]
+    设$f:I\to\mathbb{R}$为连续双射,$a\in I,b=f(a)\neq0$.则$f^{-1}在$b$处$可导,且
+    $$(f^{-1})'(b)=\dfrac{1}{f'(a)}=\dfrac{1}{f'(f^{-1}(b))}$$
+\end{thm}
+
+\begin{deff}[左右导数]
+    设$f:I\to\mathbb{R}$,$a$为$I$内点.
+    称$f$在$a$处右可导,若$\lim\limits_{h\to0^+}\frac{f(a+h)-f(a)}{h}$存在.极限值记为$f'_+(a)$.
+    称$f$在$a$处左可导,若$\lim\limits_{h\to0^-}\frac{f(a+h)-f(a)}{h}$存在.极限值记为$f'_-(a)$.
+\end{deff}
