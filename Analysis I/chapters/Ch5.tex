@@ -35,7 +35,7 @@
     称$f$在区间$I$上可导,若$f$在$I$上每一点都可导.
 
     称映射$f':\begin{array}[t]{ccc} I & \to & \mathbb{R} \\ x & \mapsto & f'(x) \end{array}$
-    为$f$在$I$上的导函数.
+    为$f$的导函数.
 
     记$\mathcal{D}(I,\mathbb{R})$为$I$上可导函数的全体.
 \end{deff}
@@ -95,3 +95,94 @@
     设$f,g:[a,b]\to\mathbb{R}$在$[a,b]$上连续,在$(a,b)$上可导,且$g'(x) \neq 0$,则存在$c\in(a,b)$,使得
     $$\dfrac{f'(c)}{g'(c)}=\dfrac{f(b)-f(a)}{g(b)-g(a)}$$
 \end{thm}
+
+\begin{thm}[Darboux]
+    设$f\in\mathcal{D}([a,b],\mathbb{R}),c\in\mathbb{R}$.若$f'(a)<c<f'(b)$,
+    则存在$\xi\in[a,b]$,使得$f'(\xi)=c$.
+\end{thm}
+
+\section{$a_{n+1}=f(a_n)$}
+
+\begin{deff}
+    设$f:I\to\mathbb{R}$.称$f$是压缩的,若存在$k\in(0,1)$,使得$f$是$k$-Lipschitz的.
+\end{deff}
+
+\begin{prop}
+    若$f:I\to I$是压缩的,则$f$在$I$上有唯一不动点.
+\end{prop}
+
+\begin{prop}
+    设$f:I\to I$是压缩的,序列$(u_n)$满足$u_0\in I,u_{n+1}=f(u_n)$,
+    $c$为$f$的不动点,则$\lim\limits_{n\to\infty}u_n=c$.
+\end{prop}
+
+\section{$\mathcal{C}^n$函数类}
+
+\begin{prop}
+    设$f:I\to\mathbb{R},a\in I$.若$f$在$I$上连续,在$I\setminus\{a\}$上可导,
+    $\lim\limits_{x\to a}f'(x)=l$,则$f$在$a$处可导且$f'(a)=l$.
+\end{prop}
+
+\begin{deff}
+    设$f:I\to\mathbb{R}$.称$f$为$\mathcal{C}^1$的,若$f$在$I$上可导且$f'$连续.
+    $I$上$\mathcal{C}^1$函数的全体记为$\mathcal{C}^1(I,\mathcal{R})$.
+\end{deff}
+
+\begin{thm}
+    设$f\in\mathcal{C}^1(I,\mathbb{R})$,则$f$是$M$-Lipschitz的,
+    其中$M=\max\limits_{x\in I}\left\lvert f'(x) \right\rvert$
+\end{thm}
+
+\begin{deff}
+    设$f:I\to\mathbb{R}$,称$f$在$I$上二阶可导,若$f$在$I$上可导且$f'$在$I$上可导.
+    称$(f')'$为$f$的二阶导函数,记为$f''$或$f^{(2)}$.
+\end{deff}
+
+\begin{prop}
+    若$f$二阶可导,则$f$是$\mathcal{C}^1$的.
+\end{prop}
+
+\begin{deff}
+    设$f:I\to\mathbb{R}$,称$f$在$I$上$n$阶可导,若$f$在$I$上$n-1$阶可导且$f^{(n-1)}$在$I$上可导.
+    称$(f^{(n-1)})'$为$f$的$n$阶导函数,记为$f^{(n)}$.
+\end{deff}
+
+\begin{deff}
+    设$f:I\to\mathbb{R},n\in\mathbb{N}^*$.称$f$为$\mathcal{C}^n$的,若$f$在$I$上$n$阶可导且$f^{(n)}$连续.
+    $I$上$\mathcal{C}^n$函数的全体记为$\mathcal{C}^n(I,\mathcal{R})$.
+\end{deff}
+
+\begin{deff}
+    设$f:I\to\mathbb{R}$.称$f$为$\mathcal{C}^{\infty}$的,若对于任意$n\in\mathbb{N}$,
+    均有$f$是$\mathcal{C}^n$的.此时也称$f$是光滑的.
+\end{deff}
+
+\begin{rqq}
+    $\mathcal{C}^0$函数是指连续函数.
+\end{rqq}
+
+\begin{prop}
+    设$p,q\in\mathbb{N},f\in\mathcal{C}^{p+q}(I,\mathbb{R})$,
+    则$f\in\mathcal{C}^p(I,\mathbb{R})$,且$f^{(p)}\in\mathcal{C}^q(I,\mathbb{R})$.
+\end{prop}
+
+\begin{thm}
+    设$f,g\in\mathcal{C}^n(I,\mathbb{R}),\lambda,\mu\in\mathbb{R}$,
+    则$\lambda f+\mu g\in\mathcal{C}^n(I,\mathbb{R})$,
+    且$$(\lambda f+\mu g)^{(n)}=\lambda f^{(n)}+\mu g^{(n)}$$
+\end{thm}
+
+\begin{thm}[Leibniz]
+    设$f,g\in\mathcal{C}^n(I,\mathbb{R})$,则$fg\in\mathcal{C}(I,\mathbb{R})$,
+    且$$(fg)^{(n)}=\sum\limits_{k=0}^n\binom{n}{k}f^{(k)}g^{(n-k)}$$
+\end{thm}
+
+\begin{thm}
+    设$f\in\mathcal{C}^n(I,\mathbb{R}),g\in\mathcal{C}^n(J,\mathbb{R}),f(I)\subseteq J$,
+    则$g \circ f\in\mathcal{C}^n(I,\mathbb{R})$.
+\end{thm}
+
+\begin{thm}
+    设$f\in\mathcal{C}^n(I,J)$为双射,则$f^{-1}\in\mathcal{C}^n(J,I)$.
+\end{thm}
+
