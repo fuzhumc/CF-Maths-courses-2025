@@ -196,6 +196,11 @@
     满足$\tilde{f}\vert_{I\setminus\{a\}}=f,f^{(k)}(a)=l_k$.
 \end{thm}
 
+\begin{thm}[高阶Lagrange中值定理]
+    设$f\in\mathcal{C}^n(I,\mathbb{R}),x_0\in I$,则
+    $f(x)=\sum\limits_{k=0}^n\dfrac{f^{(k)}(x_0)}{k!}(x-x_0)^k+o\left((x-x_0)^{n+1}\right)$.
+\end{thm}
+
 \section{复值函数的情形}
 
 \begin{thm}
@@ -216,7 +221,7 @@
 \end{rqq}
 
 \begin{prop}
-    设$f:I\to\mathbb{C}$.则$f$为常值函数的充要条件是$f'=0$.
+    设$f:I\to\mathbb{C}$.则$f$为常值函数$\Leftrightarrow$$f'=0$.
 \end{prop}
 
 \begin{rqq}
@@ -227,4 +232,115 @@
     设$f:I\to\mathbb{R}$.若存在$M>0$,满足$\left\lvert f'(z) \right\rvert \leqslant M$,
     则对任意$x,y\in I$,有$\left\lvert f(x)-f(y) \right\rvert \leqslant 
     M \left\lvert x-y \right\rvert$.
+\end{thm}
+
+\section{凸函数}
+
+\begin{thm}
+    设$f:I\to\mathbb{R}$,$a$为$I$内点,$f$在$a$处二阶可导且$f'(a)=0$.
+    若$f''(a)>(<)0$,则$a$为$f$的极大(小)值点.
+\end{thm}
+
+\begin{rqq}
+    $f''(a)=0$时不一定.
+\end{rqq}
+
+\begin{lem}[John]
+    设$K$为闭凸体,$E$为包含$K$的最小椭球,则$\frac{1}{2} E \subseteq K \subseteq E$.
+\end{lem}
+
+\begin{deff}
+    设$x_i\in\mathbb{R}^n,\lambda_i\in\mathbb{R},i=1,2,\cdots,p$满足$\sum\limits_{i=1}^p\lambda_i\neq0$.
+    加权点$(x_i,\lambda_i)$的\textbf{质心}定义为$\dfrac{\sum\limits_{i=1}^p\lambda_ix_i}{\sum\limits_{i=1}^p\lambda_i}$.
+\end{deff}
+
+\begin{deff}
+    满足$\lambda_i \geqslant 0$且$\sum\limits_{i=1}^p$的质心称为\textbf{凸组合}.
+\end{deff}
+
+\begin{deff}
+    设$C\in\mathbb{R}^n$.称$C$为\textbf{凸集},
+    若对于任意$\lambda\in[0,1],c_1,c_2\in C$,均有$\lambda c_1+(1-\lambda)c_2 \in C$.
+\end{deff}
+
+\begin{prop}
+    凸集的交集是凸集.
+\end{prop}
+
+\begin{rqq}
+    凸集的并集不一定是凸集.
+\end{rqq}
+
+\begin{prop}
+    设$C$为凸集,$x_i\in C$,$\lambda_i\geqslant0$且不全为$0$,则$(x_i,\lambda_i)$的质心也在$C$中.
+\end{prop}
+
+\begin{prop}
+    设$C$为凸集,$x_1,x_2,\cdots,x_p\in C$,则$c_1,c_2,\cdots,c_p$的任意凸组合都在$C$中.
+\end{prop}
+
+\begin{deff}
+    设$f:I\to\mathbb{R}$.称$f$为$I$上的一个\textbf{凸函数},若对于任意$x_1,x_2\in I,\lambda\in\mathbb{R}$,
+    均有$\lambda f(x_1)+(1-\lambda)f(x_2)\geqslant f(\lambda x_1+(1-\lambda)x_2)$.
+\end{deff}
+
+\begin{thm}
+    若$f$为$I$上凸函数,则$f$在$I$上连续.
+\end{thm}
+
+\begin{thm}[Alexandroov]
+    若$f$为凸函数,则$f$几乎处处可导,且几乎处处二阶可导.
+\end{thm}
+
+\begin{prop}
+    若$f$在$[a,b]$上凸,$f(a)=f(b)$,则$f(x)\geqslant f(a)$.
+\end{prop}
+
+\begin{prop}
+    设$f,g$为凸函数,$g$单调增,则$g\circ f$为凸函数.
+\end{prop}
+
+\begin{deff}
+    设$f:I\to\mathbb{R}$,称$\varepsilon_f=\{(x,y)\in I\times\mathbb{R}\mid f(x)\leqslant y\}$
+    为$f$的\textbf{上方集}.
+\end{deff}
+
+\begin{prop}
+    $f$为凸函数$\Leftrightarrow$$\varepsilon_f$为凸集.
+\end{prop}
+
+\begin{prop}
+    设$f$为$I$上凸函数,$x,y,z\in I$满足$x<y<z$,则
+    $$\dfrac{f(y)-f(x)}{y-x}\leqslant\dfrac{f(z)-f(x)}{z-x}\leqslant\frac{f(z)-f(y)}{z-y}$$
+\end{prop}
+
+\begin{prop}
+    设$f$在$I$上可导,则$f$在$I$上凸的充要条件是$f'$在$I$上单调增.
+\end{prop}
+
+\begin{prop}
+    设$f$凸,则$f(x)\geqslant f'(x_0)(x-x_0)+f(x_)0$.
+\end{prop}
+
+\begin{thm}[Jensen不等式]
+    设$f$在$I$上凸,$x_i\in I,\lambda_i\in\mathbb{R}_+$满足$\sum\limits_{i=0}^p\lambda_i=1$,
+    则$\sum\limits_{i=0}^p\lambda_if(x_i)\geqslant f\left(\sum\limits_{i=0}^p\lambda_ix_i\right)$.
+\end{thm}
+
+\begin{thm}[Young不等式]
+    设$a,b>0,p,q>1,\frac{1}{p}+\frac{1}{q}=1$,则$a^{\frac{1}{p}}+b^{\frac{1}{q}}\geqslant ab$.
+\end{thm}
+
+\begin{thm}[Hölder不等式]
+    设$a_i,b_i>0,p,q>1,\frac{1}{p}+\frac{1}{q}=1$,则
+    $$\left(\sum\limits_{i=0}^na_i^p\right)^{\frac{1}{p}}+
+    \left(\sum\limits_{i=0}^nb_i^q\right)^{\frac{1}{q}}
+    \geqslant\sum\limits_{i=0}^na_ib_i$$
+\end{thm}
+
+\begin{thm}[Minkowski不等式]
+    设$a_i,b_i>0,p>1$,则
+    $$\left(\sum\limits_{i=0}^na_i^p\right)^\frac{1}{p}
+    \left(\sum\limits_{i=0}^nb_i^p\right)^\frac{1}{p}\geqslant
+    \left(\sum\limits_{i=0}^n\left(a_i+b_i\right)^p\right)^\frac{1}{p}$$
 \end{thm}
