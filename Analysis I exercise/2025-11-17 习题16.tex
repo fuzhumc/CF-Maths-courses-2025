@@ -1,0 +1,129 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{习题16}
+\author{}
+\date{2025年11月17日}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年11月17日}
+\chead{习题16}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  定义Gamma函数\(\Gamma(z)=\int_0^{+\infty}t^{z-1}e^t\mathrm{d}t\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:对于\(z>0\),上述定义是良定的.
+  \item
+    证明:Gamma函数有等价形式\(\Gamma(z)=2\int_0^{+\infty}e^{-t^2}t^{2z-1}\mathrm{d}t\)和\(\Gamma(z)=\int_0^1\left( \ln \left( \frac{1}{t} \right) \right)^{z-1}\mathrm{d}t\).
+  \item
+    通过证明\(\Gamma(z+1)=z\Gamma(z)\)计算\(\Gamma(n),n\in\mathbb{N}\).
+  \item
+    \(\Gamma(\frac{1}{2})=\sqrt{\pi}\)(不会做也没关系).
+  \item
+    对于\(\alpha,x>0\),有\(\dfrac{1}{x^{\alpha}}=\dfrac{1}{\Gamma(\alpha)}\int_0^{+\infty}t^{\alpha}e^{-xt}\mathrm{d}t\).
+  \end{enumerate}
+\item
+  设\(u\in\mathcal{C}^2([a,b],\mathbb{R})\)满足\[\begin{cases} -u’’(x)-\lambda u(x)=\left\lvert u(x) \right\rvert^2 u(x) \\ u(a)=u(b)=0 \end{cases}\]证明:若\(\lambda\leqslant0\),则\(u=0\).
+\item
+  令\(f(r)=\left( \dfrac{2\varepsilon}{\varepsilon^2+r^2} \right)^{\dfrac{n-2}{2}},n\geqslant3\).验证积分\(\int_{-\infty}^{+\infty}\left\lvert f(r) \right\rvert^\frac{2n}{n-2}r^{n-1}\mathrm{d}r\)和\(\int_{-\infty}^{+\infty}\left\lvert f’(r) \right\rvert^2 r^{n-1}\mathrm{d}r\)的值与\(\varepsilon\)无关.
+\item
+  设\(f:(0,+\infty)\to\mathbb{R}\)在任一有界闭区间\([a,b]\)上可积,对于\(\alpha,\beta>0\),定义\[J(\alpha,\beta)=\int_0^{+\infty}\dfrac{f(\alpha x)-f(\beta x)}{x}\mathrm{d}x\]
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    举例说明\(J(\alpha,\beta)\)可以发散.
+  \item
+    若\(a=\lim\limits_{x\to0^+}f(x),b=\lim\limits_{x\to+\infty}f(x)\),计算\(J(\alpha,\beta)\).
+  \item
+    若存在\(m,M\in\mathbb{R}\)使得\(\int_0^1\dfrac{f(x)-m}{x}\mathrm{d}x\)与\(\int_1^{+\infty}\dfrac{f(x)-M}{x}\mathrm{d}x\)收敛,计算\(J(\alpha,\beta)\).
+  \item
+    设\(a=\lim\limits_{x\to0^+}f(x)\)且存在\(M>0\)满足对于任意\(c,d>0\),均有\(\left\lvert \int_c^df(x)\mathrm{d}x \right\rvert \leqslant M\).计算\(J(\alpha,\beta)\).
+  \item
+    计算\(\int_0^{+\infty}\dfrac{\arctan 2x-\arctan x}{x}\mathrm{d}x\)与\(\int_0^1\dfrac{x-1}{\tan x}\mathrm{d}x\).
+  \end{enumerate}
+\item
+  考虑下面的优化问题\[\inf\limits_{\substack{u\in\mathcal{C}^2([0,1],\mathbb{R}) \\ u(0)=1,u(1)=0}} \int_0^1 \left\lvert u’(x) \right\rvert^2 \mathrm{d}x\]试问:这个下确界是多少?可以被某个满足所给限制条件的\(u\)达到吗?(提示:把\(u+\varepsilon v\)带入上面积分,其中\(v\)也满足限定条件,然后对\(\varepsilon\)求导.)
+\item
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    对于一个多项式\[P(x)=a_0+a_1(x-x_0)+a_2(x-x_0)^2+\cdots+a_n(x-x_0)^n\]请用\(P(x)\)在\(x_0\)处的各阶导数来表示系数\((a_j)\).
+  \item
+    假设一个\(\mathcal{C}^{\infty}\)函数可以表示成级数\[f(x)=a_0+a_1(x-x_0)+a_2(x-x_0)^2+\cdots+a_n(x-x_0)^n+\cdots=\lim\limits_{n\to\infty}\sum\limits_{j=0}^na_j(x-x_0)^j\]用\(f\)在\(x_0\)处的各阶导数来表示系数\((a_j)\).
+  \item
+    利用(2)中的公式来估算\(\sqrt{10},\sqrt[3]{28}\)(要求精确到小数点后五位).
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
