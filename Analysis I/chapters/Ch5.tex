@@ -188,3 +188,43 @@
     设$f\in\mathcal{C}^n(I,J)$为双射,则$f^{-1}\in\mathcal{C}^n(J,I)$.
 \end{thm}
 
+\begin{thm}[$\mathcal{C}^n$函数类的延拓]
+    设$a\in I,f\in\mathcal{C}^n(I\setminus\{a\},\mathbb{R})$.若$f$在$a$处存在有限的极限$l_k$,
+    则$f$有$\mathcal{C}^n$类中的一个延拓.
+
+    即,存在$\tilde{f}\in\mathcal{C}^n(I,\mathbb{R})$,
+    满足$\tilde{f}\vert_{I\setminus\{a\}}=f,f^{(k)}(a)=l_k$.
+\end{thm}
+
+\section{复值函数的情形}
+
+\begin{thm}
+    设$f:I\to\mathbb{C},f=\mathrm{Re}f+i\mathrm{Im}f$.则$f$可导的充要条件是
+    $\mathrm{Re}f$与$\mathrm{Im}f$均可导.
+\end{thm}
+
+\begin{prop}
+    设$f:I\to\mathbb{C}$可导,则$f'=(\mathrm{Re}f)'+i(\mathrm{Im}f)'$.
+\end{prop}
+
+\begin{prop}
+    $$\bar{(f')}=(\bar{f})'$$
+\end{prop}
+
+\begin{rqq}
+    若$f:I\to\mathbb{C}$,则$g=\left\lvert f \right\rvert$不一定可导.
+\end{rqq}
+
+\begin{prop}
+    设$f:I\to\mathbb{C}$.则$f$为常值函数的充要条件是$f'=0$.
+\end{prop}
+
+\begin{rqq}
+    若$f:I\to\mathbb{C}$,则对于$f$不一定成立Lagrange中值定理.
+\end{rqq}
+
+\begin{thm}
+    设$f:I\to\mathbb{R}$.若存在$M>0$,满足$\left\lvert f'(z) \right\rvert \leqslant M$,
+    则对任意$x,y\in I$,有$\left\lvert f(x)-f(y) \right\rvert \leqslant 
+    M \left\lvert x-y \right\rvert$.
+\end{thm}
