@@ -1,20 +1,9 @@
 .history/
-Analysis I/main.aux
-Analysis I/main.toc
-Analysis I/main.synctex.gz
-Analysis I/main.out
-Analysis I/main.log
-Analysis I/main.pdf
-Algebra I/main.aux
-Algebra I/main.log
-Algebra I/main.pdf
-Algebra I/main.out
-Algebra I/main.synctex.gz
-Algebra I/main.toc
-Analysis I exercise/main.pdf
-Analysis I exercise/main.aux
-Analysis I exercise/main.log
-Analysis I exercise/main.out
-Analysis I exercise/main.synctex.gz
-Analysis I exercise/main.toc
+*.aux
+*.toc
+*.synctex.gz
+*.sync.gz(busy)
+*.out
+*.log
+*.pdf
 test.*
