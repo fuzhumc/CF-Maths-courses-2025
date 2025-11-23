@@ -2,7 +2,7 @@
 *.aux
 *.toc
 *.synctex.gz
-*.sync.gz(busy)
+*.synctex(busy)
 *.out
 *.log
 *.pdf
