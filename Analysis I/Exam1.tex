@@ -1,0 +1,124 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{期中考试}
+\author{}
+\date{2025年11月24日}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年11月24日}
+\chead{期中考试}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  (30分)计算积分:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \[\int x\arctan x\mathrm{d}x\]
+  \item
+    \[\int\frac{1}{1+x^3}\mathrm{d}x\]
+  \item
+    \[\int_1^e\left(\log x\right)^n\mathrm{d}x\]
+  \end{enumerate}
+\item
+  (30分)求极限:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    给定整数\({} k>2\),求\(\lim\limits_{n\to\infty}\dfrac{1}{n+1}+\dfrac{1}{n+2}+\cdots+\dfrac{1}{kn}\).
+  \item
+    求\(\lim\limits_{n\to\infty}\ln\left(1+\dfrac{\pi}{n}\right)\sum\limits_{k=0}^{n-1}\dfrac{1}{2+\cos \left(\frac{3k\pi}{n}\right)}\).
+  \item
+    假设\(\int_0^1f(x)\mathrm{d}x=2\),求\(\lim\limits_{n\to\infty}\dfrac{1}{n^2}\sum\limits_{1\leqslant i<j\leqslant n}f\left(\dfrac{i}{n}\right)f\left(\dfrac{j}{n}\right)\).
+  \end{enumerate}
+\item
+  (20分)设\(f:[0,1]\to[0,1]\)为连续函数,且满足\(f\circ f=f\).记\(E_f=\{x\in[0,1] \mid f(x)=x \}\).证明:\(E_f\neq\varnothing\),进而证明\(E_f\)是\(\mathbb{R}\)的一个区间.求出所有满足\(f\circ f=f\)的连续函数\(f:[0,1]\to[0,1]\).
+\item
+  (10分)设函数\(f:\mathbb{R}\to\mathbb{R}\)属于\(\mathcal{C}^{\infty}\)类,并且对任意整数\(n\in\mathbb{N}\)和任意实数\(x\in\mathbb{R}\),都有\(f^{(n)}(x)>0\).证明:对任意整数\(n\),当\(x\to+\infty\)时,\(\dfrac{f(x)}{x^n}\to+\infty\).
+\item
+  (10分)设\(f:\mathbb{R}\to\mathbb{R}\)为连续函数.假设对任意\(x\in\mathbb{R}\),极限\[D^2f(x):=\lim\limits_{h\to0}\dfrac{f(x+h)+f(x-h)-2f(x)}{h^2}\]存在.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    若\(f\)为\(\mathcal{C}^2\)类函数,计算\(D^2f(x)\).
+  \item
+    对任意函数\(f\).设\(a<b<c\)满足\(f(a)=f(b)=f(c)\).证明:存在\(x\in(a,c)\)使得\(D^2f(x)\leqslant0\).
+    自此起,假设\(\forall x\in\mathbb{R},D^2f(x)\geqslant0\).
+  \item
+    设\(a<b<c\),\(P\)是次数不大于\(2\)的多项式,且在点\(a,b,c\)处与\(f\)取值相.证明\(P’’\geqslant0\).
+  \item
+    用\(a,b,c,f(a),f(b),f(c)\)表示\(P’’\),由此推出\(f\)sh是
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
