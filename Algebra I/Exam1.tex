@@ -1,0 +1,147 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{期中考试}
+\author{}
+\date{2025年11月20日}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年11月20日}
+\chead{期中考试}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+习题之中如果某一步不会做(但若能猜到结果),可以直接利用该步结果做之后的步骤,之后步骤如果正确仍可以得分.法国式考试:满分20分,10分及格.按小问数目大概可以猜出基本是每问1分,偶尔有0.5分或两分的.总得分超过20分的按20分登记.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  填空题(2分) 考虑函数\(f:\mathbb{R}\to\mathbb{R}\),直接写出最终回答.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    请把逻辑语句\[\forall x\in\mathbb{R},\exists\alpha>0,f(x)>\alpha\]翻译成人话.
+  \item
+    请把人话``函数\(f\)有上界但没有下界''翻译成逻辑语句.
+  \end{enumerate}
+\item
+  多选题(1分)
+  求\(A^B \mod C\),其中\(B\)是考试日期的四位数年份,\(A\)是日期,\(C\)是月份.
+
+  选项:0,1,2,3,4,5,6,7,8,9,10,11.(不看过程,请直接圈出所有答案)
+\item
+  计算题(3分) 这几乎是送分题,小心计算!
+  
+  根据\(p\)所有可能的值讨论,在域\(\mathbb{F}_p=\mathbb{Z}/p\mathbb{Z}\)上求解以下线性方程组.\[\left\{ \begin{array}{rcl} y+z & = & 6 \\ 2x-3y+z & = & 10 \\ x-y+z & = & -3 \end{array} \right.\]
+\item
+  问答题(共15分)
+  ``世界上没有无缘无故的爱,也没有无缘无故的恨,更没有无缘无故的上一问.''————胡勇(南方科技大学)
+
+  当\(G\)是交换群时,令\(\hat{G}=\mathrm{Hom}(G,\mathbb{Q}/\mathbb{Z})=\{\text{群同态}f:G\to\mathbb{Q}/\mathbb{Z}\}\),这是\((\mathbb{Q}/\mathbb{Z})^G\)的一个子群,称为\(G\)的Pontryagin对偶.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    (1分)令\(n\in\mathbb{N}^*\)以及\(f:\mathbb{Z}/n\mathbb{Z}\to\mathbb{Q}/\mathbb{Z}\)为群同态.记\(\bar{1}\)为\(1\)在\(\mathbb{Z}/n\mathbb{Z}\)中所在的陪集.求出\(f(\bar{1})\in\mathbb{Q}/\mathbb{Z}\)所有可能值.
+  \item
+    (1分)记号同上题,求证:群同态\(f\)由\(f(\bar{1})\)的值唯一确定.
+  \item
+    (1分+0.5)求证:\(\widehat{\mathbb{Z}/n\mathbb{Z}}\)与\(\mathbb{Z}/n\mathbb{Z}\)之间存在一个群同构,以及\(\left\lvert \widehat{\mathbb{Z}/n\mathbb{Z}} \right\rvert=n\).这个同构是\textbf{自然}的吗?
+  \item
+    (1分)\(\mathbb{Z}/n\mathbb{Z}\)的群自同构一共有多少个?(只要求直接写答案,不要求证明)
+  \item
+    (1分)求证:以下两个集合之间存在一个双射.从而求出\(\widehat{\mathbb{Z}/n\mathbb{Z}}\)与\(\mathbb{Z}/n\mathbb{Z}\)之间一共有多少个群同构.\[E=\{\widehat{\mathbb{Z}/n\mathbb{Z}}\text{与}\mathbb{Z}/n\mathbb{Z}\text{之间的群同构}\}\text{与}\mathrm{Aut}(\mathbb{Z}/n\mathbb{Z})=\{\mathbb{Z}/n\mathbb{Z}\text{的群自同构}\}\]
+  \item
+    (1分)若\(A\)与\(B\)为有限交换群,求证:\(\widehat{A \times B}\)同构于\(\hat{A}\times\hat{B}\).
+  \item
+    (1分)承认以下有限交换群的结构定理(大二时将会证明):\[\text{任何有限交换群都是有限循环群的笛卡尔积.}\]求证:对于任何有限交换群\(G\)有\(\left\lvert\hat{G}\right\rvert=\left\lvert G \right\rvert\).
+  \item
+    (1分)令\(B\)与\(C\)为有限交换群,群同态\(\psi:B\to C\)诱导出映射\(\psi_*:\hat{C}\to\hat{B},h\mapsto h\circ \psi\)也是群同态(不要求验证这一点).求证:当\(\psi\)是满同态时,\(\psi_*\)是单同态.
+  \item
+    (1分)令\(A\)为有限交换群\(B\)的子群,且带有嵌入映射\(i:A\to B\).构造地证明存在群同构\(\mathrm{Ker}\left(i_*:\hat{B}\to\hat{A}\right)\simeq\widehat{B/A}\).
+  \item
+    (1分)上一问中把嵌入映射\(i:A\to B\)替换成任意有限交换群之间的单同态\(\varphi:A\to B\)仍然成立,即\(\mathrm{Ker}\left(\varphi_*\right)\simeq\widehat{B/\varphi(A)}\),此处无需再次证明,直接承认.求证:当\(\varphi\)是单同态时,\(\varphi_*:\hat{B}\to\hat{A}\)是满同态.
+  \item
+    (1分)考虑一列有限交换群同态\(0\rightarrow A\xrightarrow{\varphi}B\xrightarrow{\psi}C\rightarrow0\),它诱导了对偶群之间的一列群同态\(0\rightarrow\hat{C}\xrightarrow{\psi_*}\hat{B}\xrightarrow{\varphi_*}\hat{A}\rightarrow0\).假设\(\varphi\)是单同态,\(\psi\)是满同态且\(\mathrm{Ker}(\psi)=\mathrm{Im}(\varphi)\),此时我们称第一个序列\textbf{正合}.求证:对偶序列也正合,我们称\(\mathrm{Hom}(-,\mathbb{Q}/\mathbb{Z})\)是正合函子.根据第8,10问,即还要证明\(\mathrm{Ker}(\varphi_*)=\mathrm{Im}(\psi_*)\).
+  \item
+    (1分)减弱上一题的条件,只假设\(A\xrightarrow{\varphi}B\xrightarrow{\psi}C\)满足\(\mathrm{Ker}(\psi)=\mathrm{Im}(\varphi_*)\),而不假设\(\varphi\)单,\(\psi\)满.仍求证:序列\(\hat{C}\xrightarrow{\psi_*}\hat{B}\xrightarrow{\varphi_*}\hat{A}\)满足\(\mathrm{Ker}(\varphi_*)=\mathrm{Im}(\psi_*)\).
+  \item
+    (0.5+1+1分)考虑有限交换群\(B\)的子群\(A\)与\(A’\),先猜正确答案(在(ii)和(ii')中先选择一个)再证明:
+
+    \begin{enumerate}
+    \def\labelenumiii{(\roman{enumiii})}
+    \tightlist
+    \item
+      \(A\subseteq A'\)当且仅当
+    \item
+      \(\mathrm{Ker}(\hat{B}\to\widehat{A'})\subseteq\mathrm{Ker}(\hat{B}\to\hat{A})\)
+      (ii')
+      \(\mathrm{Ker}(\hat{B}\to\widehat{A'})\supseteq\mathrm{Ker}(\hat{B}\to\hat{A})\)
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
