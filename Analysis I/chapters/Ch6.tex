@@ -1,0 +1,71 @@
+\chapter{函数积分}
+
+\section{阶梯函数}
+
+\begin{deff}
+    $[a,b]$的分割是指一个有限序列$\sigma=(u_k)$,其中$a=u_0<u_1<u_2<\cdots<u_n=b$.
+\end{deff}
+
+\begin{deff}
+    分割$\sigma=(u_k)$的支集$\mathrm{supp}(\sigma)=\{u_k \mid k=0,1,2,\cdots,n\}$
+\end{deff}
+
+\begin{deff}
+    分割$\sigma=(u_k)$的宽度$\delta(\sigma)=\max\limits_{1 \leqslant k \leqslant n}(u_k-u_{k-1})$
+\end{deff}
+
+\begin{deff}
+    设$\sigma,\sigma'$为$[a,b]$的两个分割,称$\sigma'$比$\sigma$更细,若$\mathrm{supp}(\sigma)\subseteq\mathrm{supp}(\sigma')$
+\end{deff}
+
+\begin{prop}
+    设$\sigma,\sigma'$为$[a,b]$的两个分割,则存在$[a,b]$的另一个分割$\sigma''$,他比$\sigma,\sigma'$都更细.
+\end{prop}
+
+\begin{deff}
+    设$f:[a,b]\to\mathbb{R}$.称$f$为阶梯函数,若存在$[a,b]$的一个分割$\sigma=(u_k)$,满足$f\vert_{(u_k-1,u_k)}$为常值函数.
+    此时称分割$\sigma$适应于$f$.$[a,b]$上阶梯函数的全体记为$\mathcal{E}([a,b],\mathbb{R})$.
+\end{deff}
+
+\begin{prop}
+    设$f\in\mathcal{E}([a,b],\mathbb{R})$,$\sigma$适应于$f$,则存在比$\sigma$更细的分割$\sigma'$也适应于$f$.
+\end{prop}
+
+\begin{prop}
+    设$f,g\in\mathcal{E}([a,b],\mathbb{R})$,则存在$[a,b]$的一个分割$\sigma$,它同时适应于$f,g$.
+\end{prop}
+
+\begin{prop}
+    设$f\in\mathcal{E}([a,b],\mathbb{R})$,$\sigma=(u_k)$适应于$f$.
+    记$f_k$为$f$在$(u_{k-1},u_k)$上的取值,则$S_\sigma(f)=\sum\limits_{k=1}^n(u_{k}-u_{k-1})f_k$的取值与$\sigma$的选取无关.
+\end{prop}
+
+\begin{deff}
+    记$\int_{[a,b]}f=S_\sigma(f)$称为$f$的积分.
+\end{deff}
+
+\begin{prop}
+    设$f\in\mathcal{E}([a,b],\mathbb{R}),\lambda\in\mathbb{R}$,则:
+    \begin{enumerate}
+        \item $\int_{[a,b]}\lambda f=\lambda\int_{[a,b]}f$.
+        \item $\int_{[a,b]}f+g=\int_{[a,b]}f+\int_{[a,b]}g$.
+    \end{enumerate}
+\end{prop}
+
+\begin{rqq}
+    $$\int_{[a,b]}:\begin{array}[t]{ccc}\mathcal{E}([a,b],\mathbb{R}) & \to &\mathbb{R} \\ f & \mapsto & \int_{[a,b]}f \end{array}$$
+    可以看作$\mathcal{E}([a,b],\mathbb{R})$上的一个``函数''.
+\end{rqq}
+
+\begin{prop}
+    设$f,g\in\mathcal{E}([a,b],\mathbb{R})$,则有:
+    \begin{enumerate}
+        \item 若$f\geqslant0$,则$\int_{[a,b]}f\geqslant0$.
+        \item 若$f \geqslant g$,则$\int_{[a,b]}f \geqslant \int_{[a,b]}g$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    设$f\in\mathcal{E}([a,b],\mathbb{R}),c\in[a,b]$,则
+    $$\int_{[a,b]}f=\int_{[a,c]}f\vert_{[a,c]}+\int_{[c,b]}f\vert_{[c,b]}$$
+\end{prop}
