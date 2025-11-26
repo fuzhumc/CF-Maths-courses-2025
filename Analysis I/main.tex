@@ -8,6 +8,10 @@
 \usepackage{stmaryrd}
 \usepackage{enumitem}
 \usepackage{titlepic}
+\usepackage{ctex}
+\usepackage{xeCJK}
+
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
 
 \hypersetup{
 pdftitle={Analysis I}, % PDF标题
@@ -22,40 +26,21 @@ pdfproducer={XeLaTeX} % 制作工具
 \setlist[enumerate,3]{label=(\roman*)}
 \hypersetup{colorlinks=true,linkcolor=blue}
 
-\renewcommand{\proofname}{pf.}
+\renewcommand{\proofname}{pf}
 \renewcommand{\contentsname}{目录}
 \renewcommand{\chaptername}{Ch}
 
-\usepackage{ctex}
-\usepackage{xeCJK}
-\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
-
 \theoremstyle{definition}
 \newtheorem{prop}{Prop}[section]
-
-\theoremstyle{definition}
 \newtheorem{ax}{Ax}[section]
-
-\theoremstyle{definition}
 \newtheorem{thm}{Thm}[section]
-
-\theoremstyle{definition}
 \newtheorem{lem}{Lem}[section]
-
-\theoremstyle{definition}
 \newtheorem{deff}{Def}[section]
-
-\theoremstyle{definition}
 \newtheorem{exer}{Exer}[section]
-
-\theoremstyle{remark}
-\newtheorem*{pf}{pf}
+\newtheorem{coro}{Coro}[section]
 
 \theoremstyle{remark}
 \newtheorem*{rqq}{Rq}
-
-\theoremstyle{remark}
-\newtheorem{coro}{Coro}[section]
 
 \title{Analysis I}
 \author{\href{https://faculty.ustc.edu.cn/chenshibing/zh_CN/index.htm}{陈世炳}}
