@@ -23,7 +23,7 @@
 \end{prop}
 
 \begin{deff}
-    设$f:[a,b]\to\mathbb{R}$.称$f$为阶梯函数,若存在$[a,b]$的一个分割$\sigma=(u_k)$,满足$f\vert_{(u_k-1,u_k)}$为常值函数.
+    设$f:[a,b]\to\mathbb{R}$.称$f$为阶梯函数,若存在$[a,b]$的一个分割$\sigma=(u_k)$,使得$f\vert_{(u_k-1,u_k)}$为常值函数.
     此时称分割$\sigma$适应于$f$.$[a,b]$上阶梯函数的全体记为$\mathcal{E}([a,b],\mathbb{R})$.
 \end{deff}
 
@@ -47,8 +47,8 @@
 \begin{prop}
     设$f\in\mathcal{E}([a,b],\mathbb{R}),\lambda\in\mathbb{R}$,则:
     \begin{enumerate}
-        \item $\int_{[a,b]}\lambda f=\lambda\int_{[a,b]}f$.
-        \item $\int_{[a,b]}f+g=\int_{[a,b]}f+\int_{[a,b]}g$.
+        \item $$\int_{[a,b]}\lambda f=\lambda\int_{[a,b]}f$$
+        \item $$\int_{[a,b]}f+g=\int_{[a,b]}f+\int_{[a,b]}g$$
     \end{enumerate}
 \end{prop}
 
@@ -69,3 +69,111 @@
     设$f\in\mathcal{E}([a,b],\mathbb{R}),c\in[a,b]$,则
     $$\int_{[a,b]}f=\int_{[a,c]}f\vert_{[a,c]}+\int_{[c,b]}f\vert_{[c,b]}$$
 \end{prop}
+
+\section{分段连续函数}
+
+\begin{deff}
+    设$f:[a,b]\to\mathbb{R}$.称$f$为分段连续函数,若存在$[a,b]$的一个分割$\sigma=(u_k)$,使得$f\vert_{(u_k-1,u_k)}$为连续函数,且$f(u_k)$有界.
+    此时称分割$\sigma$适应于$f$.$[a,b]$上分段连续函数的全体记为$\mathcal{CM}([a,b],\mathbb{R})$.
+\end{deff}
+
+\begin{prop}
+    设$f\in\mathcal{CM}([a,b],\mathbb{R})$,则$f$有界.
+\end{prop}
+
+\begin{prop}
+    设$f,g\in\mathcal{CM}([a,b],\mathbb{R}),\lambda,\mu\in\mathbb{R}$,则$\lambda f+\mu g\in\mathcal{CM}([a,b],\mathbb{R})$.
+\end{prop}
+
+\begin{prop}
+    设$f,g\in\mathcal{CM}([a,b],\mathbb{R})$,则$fg\in\mathcal{CM}([a,b],\mathbb{R})$.
+\end{prop}
+
+\begin{prop}
+    设$f\in\mathcal{CM}([a,b],\mathbb{R}),g\in\mathcal{CM}([c,d],\mathbb{R}),f([a,b])\subseteq[c,d]$,则$g\circ f\in\mathcal{CM}([a,b],\mathbb{R})$.
+\end{prop}
+
+\begin{lem}
+    设$f\in\mathcal{CM}([a,b],\mathbb{R})$,给定$\varepsilon>0$,
+    则存在$\varphi\in\mathcal{E}([a,b],\mathbb{R})$使得$\sup\left\lvert f-\varphi \right\rvert < \varepsilon$.
+\end{lem}
+
+\begin{prop}
+    设$f\in\mathcal{CM}([a,b],\mathbb{R})$,则存在$\varphi_n\in\mathcal{E}([a,b],\mathbb{R}),n\in\mathbb{N}$,
+    使得$\lim\limits_{n\to\infty}\sup\left\lvert f-\varphi_n \right\rvert = 0$.
+\end{prop}
+
+\begin{thm}
+    设$f\in\mathcal{CM}([a,b],\mathbb{R}),\varphi_n\in\mathcal{E}([a,b],\mathbb{R})$满足$\lim\limits_{n\to\infty}\sup\left\lvert f-\varphi_n \right\rvert = 0$,
+    则$\int_{[a,b]}\varphi_n$收敛,且极限值与$(\varphi_n)$的选取无关.
+\end{thm}
+
+\begin{deff}
+    设$f\in\mathcal{CM}([a,b],\mathbb{R}),\varphi_n\in\mathcal{E}([a,b],\mathbb{R})$满足$\lim\limits_{n\to\infty}\sup\left\lvert f-\varphi_n \right\rvert = 0$,
+    称$\lim\limits_{n\to\infty}\int_{[a,b]}\varphi_n$为$f$的积分,记为$\int_{[a,b]}f$.
+\end{deff}
+
+\begin{prop}
+    设$f,g\in\mathcal{CM}([a,b],\mathbb{R}),\lambda\in\mathbb{R}$,则:
+    \begin{enumerate}
+        \item $$\int_{[a,b]}\lambda f=\lambda\int_{[a,b]}f$$
+        \item $$\int_{[a,b]}f+g=\int_{[a,b]}f+\int_{[a,b]}g$$
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    设$f,g\in\mathcal{CM}([a,b],\mathbb{R})$仅在有限个点上取不同值,则$\int_{[a,b]}f=\int_{[a,b]}g$.
+\end{prop}
+
+\begin{prop}
+    设$f\in\mathcal{CM}([a,b],\mathbb{R})$,则$\left\lvert f \right\rvert \in\mathcal{CM}([a,b],\mathbb{R})$,
+    且$\int_{[a,b]} \left\lvert f \right\rvert \geqslant \left\lvert \int_{[a,b]}f \right\rvert$.
+\end{prop}
+
+\begin{prop}
+    设$f,g\in\mathcal{CM}([a,b],\mathbb{R})$,则
+    \begin{enumerate}
+        \item 若$f\geqslant0$,则$\int_{[a,b]}f\geqslant0$.
+        \item 若$f \geqslant g$,则$\int_{[a,b]}f \geqslant \int_{[a,b]}g$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    设$f\in\mathcal{CM}([a,b],\mathbb{R}),\left\lvert f \right\rvert \leqslant k$,
+    则$$\int_{[a,b]}f\leqslant k(b-a)$$
+\end{prop}
+
+\begin{prop}
+    设$f\in\mathcal{CM}([a,b],\mathbb{R}),c\in[a,b]$,则
+    $$\int_{[a,b]}f=\int_{[a,c]}f\vert_{[a,c]}+\int_{[c,b]}f\vert_{[c,b]}$$
+\end{prop}
+
+\begin{thm}
+    设$f\in\mathcal{C}([a,b],\mathbb{R}_+)$,若$f$不恒为0,则$\int_{[a,b]}f>0$.
+\end{thm}
+
+\begin{proof}
+    由题意知,存在$x_0\in[a,b],f(x_0)>0$,因此$\lim\limits_{x\to x_0}f(x)>0$.
+
+    即,存在$\delta>0$,当$x\in[x_0-\delta,x_0+\delta]$时,有$f(x)>0$.
+
+    故$\int_{[a,b]}f\geqslant\int_{[x_0-\delta,x_0+\delta]}f>0$.
+\end{proof}
+
+\begin{cor}
+    设$f\in\mathcal{C}([a,b],\mathbb{R}_+)$,若$\int_{[a,b]}f=0$,则$f$恒为0.
+\end{cor}
+
+\begin{prop}
+    设$f\in\mathcal{C}([a,b],\mathbb{R})$,若$\int_{[a,b]}f=0$,则$f$在$[a,b]$上有零点.
+\end{prop}
+
+\begin{thm}[Cauchy不等式]
+    设$f,g\in\mathcal{CM}([a,b],\mathbb{R})$,则
+    $$\int_{[a,b]}f^2\int_{[a,b]}g^2\geqslant\left(\int_{[a,b]}fg\right)^2$$
+\end{thm}
+
+\begin{thm}[Hölder不等式]
+    设$f,g\in\mathcal{CM}{[a,b],\mathbb{R}_+},p,q>1$满足$\frac{1}{p}+\frac{1}{q}=1$,则
+    $$\left(\int_{[a,b]}f^p\right)^{\frac{1}{p}}\left(\int_{[a,b]}g^q\right)^{\frac{1}{q}}\geqslant\int_{[a,b]}fg$$
+\end{thm}
