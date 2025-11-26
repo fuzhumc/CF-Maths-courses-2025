@@ -3,19 +3,19 @@
 \section{阶梯函数}
 
 \begin{deff}
-    $[a,b]$的分割是指一个有限序列$\sigma=(u_k)$,其中$a=u_0<u_1<u_2<\cdots<u_n=b$.
+    $[a,b]$的\textbf{分割}是指一个有限序列$\sigma=(u_k)$,其中$a=u_0<u_1<u_2<\cdots<u_n=b$.
 \end{deff}
 
 \begin{deff}
-    分割$\sigma=(u_k)$的支集$\mathrm{supp}(\sigma)=\{u_k \mid k=0,1,2,\cdots,n\}$
+    分割$\sigma=(u_k)$的\textbf{支集}$\mathrm{supp}(\sigma)=\{u_k \mid k=0,1,2,\cdots,n\}$
 \end{deff}
 
 \begin{deff}
-    分割$\sigma=(u_k)$的宽度$\delta(\sigma)=\max\limits_{1 \leqslant k \leqslant n}(u_k-u_{k-1})$
+    分割$\sigma=(u_k)$的\textbf{宽度}$\delta(\sigma)=\max\limits_{1 \leqslant k \leqslant n}(u_k-u_{k-1})$
 \end{deff}
 
 \begin{deff}
-    设$\sigma,\sigma'$为$[a,b]$的两个分割,称$\sigma'$比$\sigma$更细,若$\mathrm{supp}(\sigma)\subseteq\mathrm{supp}(\sigma')$
+    设$\sigma,\sigma'$为$[a,b]$的两个分割,称$\sigma'$比$\sigma$\textbf{更细},若$\mathrm{supp}(\sigma)\subseteq\mathrm{supp}(\sigma')$
 \end{deff}
 
 \begin{prop}
@@ -23,7 +23,7 @@
 \end{prop}
 
 \begin{deff}
-    设$f:[a,b]\to\mathbb{R}$.称$f$为阶梯函数,若存在$[a,b]$的一个分割$\sigma=(u_k)$,使得$f\vert_{(u_k-1,u_k)}$为常值函数.
+    设$f:[a,b]\to\mathbb{R}$.称$f$为\textbf{阶梯函数},若存在$[a,b]$的一个分割$\sigma=(u_k)$,使得$f\vert_{(u_k-1,u_k)}$为常值函数.
     此时称分割$\sigma$适应于$f$.$[a,b]$上阶梯函数的全体记为$\mathcal{E}([a,b],\mathbb{R})$.
 \end{deff}
 
@@ -41,7 +41,7 @@
 \end{prop}
 
 \begin{deff}
-    记$\int_{[a,b]}f=S_\sigma(f)$称为$f$的积分.
+    记$\int_{[a,b]}f=S_\sigma(f)$称为$f$的\textbf{积分}.
 \end{deff}
 
 \begin{prop}
@@ -73,7 +73,7 @@
 \section{分段连续函数}
 
 \begin{deff}
-    设$f:[a,b]\to\mathbb{R}$.称$f$为分段连续函数,若存在$[a,b]$的一个分割$\sigma=(u_k)$,使得$f\vert_{(u_k-1,u_k)}$为连续函数,且$f(u_k)$有界.
+    设$f:[a,b]\to\mathbb{R}$.称$f$为\textbf{分段连续函数},若存在$[a,b]$的一个分割$\sigma=(u_k)$,使得$f\vert_{(u_k-1,u_k)}$为连续函数,且$f(u_k)$有界.
     此时称分割$\sigma$适应于$f$.$[a,b]$上分段连续函数的全体记为$\mathcal{CM}([a,b],\mathbb{R})$.
 \end{deff}
 
@@ -176,4 +176,149 @@
 \begin{thm}[Hölder不等式]
     设$f,g\in\mathcal{CM}{[a,b],\mathbb{R}_+},p,q>1$满足$\frac{1}{p}+\frac{1}{q}=1$,则
     $$\left(\int_{[a,b]}f^p\right)^{\frac{1}{p}}\left(\int_{[a,b]}g^q\right)^{\frac{1}{q}}\geqslant\int_{[a,b]}fg$$
+\end{thm}
+
+\section{Riemann可积函数}
+
+\begin{deff}
+    设$f:[a,b]\to\mathbb{R}$.称$f$在$[a,b]$上\textbf{Riemann可积},若存在$I\in\mathbb{R}$满足
+    对任意$\varepsilon>0$,存在$\delta>0$,当$\delta(\sigma)<\delta$时,有
+    $\forall \xi_k \in (u_{k-1},u_k),\left\lvert \sum\limits_{k=1}^n f(\xi_k)(u_k-u_{k-1})-I\right\rvert<\varepsilon$.
+    
+    此时记$\int_{[a,b]}f=I$.
+
+    $[a,b]$上可积函数的全体记为$\mathcal{R}([a,b],\mathbb{R})$.
+\end{deff}
+
+\begin{deff}
+    设$\sigma=(u_k)$为$[a,b]$的一个分割,$f:[a,b]\to\mathbb{R}$,
+
+    记$M_k=\sup\limits_{x\in[x_{k-1},x_k]}f(x),m_k=\inf\limits_{x\in[x_{k-1},x_k]}f(x)$.
+    
+    称$\sum\limits_{k=1}^n M_k(u_k-u_{k-1})$为\textbf{Darboux上和},记为$\bar{S}(f,\sigma)$.
+    
+    称$\sum\limits_{k=1}^n m_k(u_k-u_{k-1})$为\textbf{Darboux下和},记为$\underline{S}(f,\sigma)$.
+\end{deff}
+
+\begin{prop}
+    设$\sigma,\sigma'$为$[a,b]$的分割,$f;[a,b]\to\mathbb{R}$,若$\sigma'$比$\sigma$更细,则
+    $\bar{S}(f,\sigma')\leqslant\bar{S}(f,\sigma),\underline{S}(f,\sigma')\geqslant\underline{S}(f,\sigma)$
+\end{prop}
+
+\begin{prop}
+    设$\sigma,\sigma'$为$[a,b]$的分割,$f:[a,b]\to\mathbb{R}$,则
+    $\bar{S}(f,\sigma)\geqslant\underline{S}(f,\sigma')$.
+\end{prop}
+
+\begin{deff}
+    设$\sigma$为$[a,b]$的分割,$f:[a,b]\to\mathbb{R}$.
+    \begin{enumerate}
+        \item 称$\inf\limits_{\sigma}\bar{S}(f,\sigma)$为\textbf{上积分},记为$\bar{I}$.
+        \item 称$\sup\limits_{\sigma}\underline{S}(f,\sigma)$为\textbf{下积分},记为$\underline{I}$.
+    \end{enumerate}
+\end{deff}
+
+\begin{prop}
+    设$\sigma$为$[a,b]$的分割,$f:[a,b]\to\mathbb{R}$,则
+    $\bar{S}(f,\sigma)\geqslant\bar{I}\geqslant\underline{I}\geqslant\underline{S}(f,\sigma)$.
+\end{prop}
+
+\begin{thm}
+    设$f:[a,b]\to\mathbb{R}$,则$f$在$[a,b]$上Riemann可积$\iff\bar{I}=\underline{I}$.
+\end{thm}
+
+\begin{prop}
+    \begin{enumerate}
+        \item 单调函数Riemann可积.
+        \item 闭区间上连续函数Riemann可积.
+        \item 只有有限个间断点的函数Riemann可积.
+    \end{enumerate}
+\end{prop}
+
+\begin{deff}
+    记$$\int_a^b f(x)\mathrm{d}x=\begin{cases} \int_{[a,b]}f, & a<b \\ 0, & a=b \\ -\int_{[b,a]}f, & a>b \end{cases}$$
+\end{deff}
+
+\begin{prop}
+    $$\int_a^b f(x)\mathrm{d}x=-\int_b^a f(x)\mathrm{d}x$$
+\end{prop}
+
+\begin{prop}
+    $$\int_a^b f(x)\mathrm{d}x=\int_a^c f(x)\mathrm{d}x+\int_c^b f(x)\mathrm{d}x$$
+\end{prop}
+
+\begin{prop}
+    设$f\in\mathcal{R}(I,\mathbb{C})$,则$\int_a^b \left\lvert f \right\rvert \mathrm{d}x \geqslant \left\lvert \int_a^b f(x)\mathrm{d}x \right\rvert$.
+\end{prop}
+
+\begin{deff}
+    设$f,F:[a,b]\to\mathbb{R}$,称$F$为$f$的\textbf{原函数},若$F'=f$.
+\end{deff}
+
+\begin{prop}
+    设$F,G$分别为$f,g$的原函数,$\lambda,\mu\in\mathbb{R}$,则$\lambda F+\mu G$为$\lambda f+\mu g$的原函数.
+\end{prop}
+
+\begin{thm}
+    设$f\in\mathcal{C}([a,b],\mathbb{R})$,则
+    $F:\begin{array}[t]{ccc} [a,b] & \to & \mathbb{R} \\ x & \mapsto & \displaystyle\int_a^x f(t)\mathrm{d}t \end{array}$
+    为$f$的一个原函数.
+\end{thm}
+
+\begin{rqq}
+    上述函数是$f$的原函数中唯一一个在$a$处取0的.
+\end{rqq}
+
+\begin{thm}[Newton-Leibniz]
+    设$f\in\mathcal{C}([a,b],\mathbb{R})$,$F$为$f$的原函数,则$$\int_a^b f(x)\mathrm{d}x=F(b)-F(a)$$
+\end{thm}
+
+\begin{rqq}
+    设$f\in\mathcal{R}([a,b],\mathbb{R})$,则$f$不一定有原函数.
+\end{rqq}
+
+\begin{thm}
+    设$f\in\mathcal{R}([a,b],\mathbb{R})$,若$f$有原函数$F$,则$$\int_a^b f(x)\mathrm{d}x=F(b)-F(a)$$
+\end{thm}
+
+\begin{prop}
+    设$f\in\mathcal{C}(I,\mathbb{R}),\alpha,\beta\in\mathcal{C}^1(J,I)$.
+    令$g(x)=\int_{\alpha(x)}^{\beta(x)}f(t)\mathrm{d}t$,则$g$在$J$上可导,
+    且$g'(x)=f'(\beta(x))\beta'(x)-f'(\alpha(x))\alpha'(x)$.
+\end{prop}
+
+\begin{prop}
+    设$u,v\in\mathcal{C}^1(I,\mathbb{R})$,则$$\int u'(x)v(x)\mathrm{d}x=u(x)v(x)-\int u(x)v'(x)\mathrm{d}x$$
+\end{prop}
+
+\begin{prop}
+    设$f\in\mathcal{C}(I,\mathbb{R}),u\in\mathcal{C}^1(J,I),a,b\in J$,则
+    $$\int_{u(a)}^{u(b)}f(x)\mathrm{d}x=\int_a^b f(u(t))u'(t)$$
+\end{prop}
+
+\begin{prop}
+    设$f\in\mathcal{C}([a,b],\mathbb{R}),T\in\mathbb{R}$,
+    则$\int_{a+T}^{b+T} f(x-T)\mathrm{d}x=\int_a^b f(x)\mathrm{d}x$.
+\end{prop}
+
+\begin{prop}
+    设$f:\mathbb{R}\to\mathbb{R}$为以$T$的周期,$a\in\mathbb{R}$,则$\int_a^{a+T}f(x)\mathrm{d}x=\int_0^T f(x)\mathrm{d}x$.
+\end{prop}
+
+\begin{thm}[第一积分中值]
+    设$f\in\mathcal{C}([a,b],\mathbb{R})$,则存在$\xi\in[a,b]$使得$\int_a^b f(x)\mathrm{d}x=f(\xi)(b-a)$.
+\end{thm}
+
+\begin{proof}
+    设$m=\min\limits_{x\in[a,b]}f(x),M=\max\limits_{x\in[a,b]}f(x)$,
+    则$m(b-a)\leqslant\int_a^bf(x)\mathrm{d}x\leqslant M(b-a)$,
+    即$\dfrac{\int_a^b f(x)\mathrm{d}x}{b-a}\in[m,M]$.
+
+    由介值定理知,存在$\xi\in[a,b]$使得$\dfrac{\int_a^b f(x)\mathrm{d}x}{b-a}=f(\xi)$,
+    即$\int_a^b f(x)\mathrm{d}x=f(\xi)(b-a)$.
+\end{proof}
+
+\begin{thm}[第二积分中值]
+    设$f\in\mathcal{C}^1([a,b],\mathbb{R}),g\in\mathcal{C}([a,b],\mathbb{R}_+)$,$f$单调减
+    则存在$c\in[a,b]$使得$\int_a^b f(x)g(x)\mathrm{d}x=f(a)\int_a^c g(x)\mathrm{d}x$.
 \end{thm}
