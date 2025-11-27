@@ -18,10 +18,14 @@
 
 \begin{proof}
     设$\lim\limits_{n \to \infty} u_n = l$且$\lim\limits_{n \to \infty} u_n = \tilde{l}$.
-    令$\varepsilon=\dfrac{\left\lvert l-\tilde{l} \right\rvert}{47}$.
-    则存在$N_1$,当$n>N_1$时,$\left\lvert u_n - l \right\rvert < \varepsilon$.
+    令$\varepsilon=\frac{\left\lvert l-\tilde{l} \right\rvert}{47}$,则
+
+    存在$N_1$,当$n>N_1$时,$\left\lvert u_n - l \right\rvert < \varepsilon$.
+
     存在$N_2$,当$n>N_2$时,$\left\lvert u_n - \tilde{l} \right\rvert < \varepsilon$.
-    令$N=\max\{N_1,N_2\}$,当$n>N$时,$\left\lvert l - \tilde{l} \right\rvert \leq \left\lvert l - u_n \right\rvert + \left\lvert u_n - \tilde{l} \right\rvert < 2\varepsilon = \dfrac{2\left\lvert l-\tilde{l} \right\rvert}{47}$.
+
+    令$N=\max\{N_1,N_2\}$,则当$n>N$时,有$$\left\lvert l - \tilde{l} \right\rvert \leq \left\lvert l - u_n \right\rvert + \left\lvert u_n - \tilde{l} \right\rvert < 2\varepsilon = \frac{2\left\lvert l-\tilde{l} \right\rvert}{47}$$
+    
     因此$l=\tilde{l}$,即极限唯一.
 \end{proof}
 
@@ -51,12 +55,12 @@
 \end{prop}
 
 \begin{deff}
-    称序列$(u_n)$发散至$+\infty(-\infty)$,若对于任意$M \in \mathbb{R}$,存在$N \in \mathbb{N}$,
-    当$n>N$时,$u_n>M(u_n<M)$.
+    称序列$(u_n)$发散至$+\infty(-\infty)$,若对于任意$M \in \mathbb{R}$,存在$N \in \mathbb{N}$,当$n>N$时,$u_n>M(u_n<M)$.
+    记为$\lim\limits_{n\to\infty}u_n=+\infty(-\infty)$
 \end{deff}
 
 \begin{rqq}
-    此时也称$(u_n)$极限不存在.
+    此时不能说$(u_n)$收敛,也应当称$(u_n)$极限不存在.
 \end{rqq}
 
 \begin{prop}
@@ -68,7 +72,7 @@
 \end{prop}
 
 \begin{deff}
-    称两序列$(u_n),(v_n)$是\textbf{相邻的},若$(u_n)$单调增,$(v_n)$单调减,
+    称两序列$(u_n),(v_n)$是\textbf{相邻}的,若$(u_n)$单调增,$(v_n)$单调减,
     且$\lim\limits_{n\to\infty}(u_n-v_n)=0$.
 \end{deff}
 
@@ -132,7 +136,7 @@
     则$s=\sup A$当且仅当存在$A$中序列收敛于$s$.
 \end{prop}
 
-\section{序列之间的比较关系}
+\section{序列的比较关系}
 
 \begin{deff}
     设序列$u=(u_n),v=(v_n)$从某项开始非$0$.

@@ -8,7 +8,7 @@
     \item $+,\times$与$\leqslant$的关系:
     \begin{itemize}
         \item $\forall x,y,z \in \mathbb{R},x \leqslant y \Rightarrow x+z \leqslant y+z$.
-        \item $\forall x,y \in \mathbb{R},x,y \geqslant 0 \Rightarrow xy \geqslant 0$.
+        \item $\forall x,y \in \mathbb{R},0 \leqslant x,y \Rightarrow 0 \leqslant xy$.
     \end{itemize}
     \item \textbf{Dedekind完备} 若$\varnothing \neq A \subseteq \mathbb{R}$,且$A$有上界,则$A$有最小上界.
 \end{enumerate}
@@ -40,7 +40,9 @@
     $$
 \end{deff}
 
-称"\textbf{Cauchy完备}"为:任何Cauchy列都收敛.
+\begin{deff}[Cauchy完备]
+    任何Cauchy列都收敛.
+\end{deff}
 
 \begin{exer}
     设$R(x)=\{ \sum\limits_{k=-n}^\infty a_k^k \mid n \in \mathbb{N},a_k \in \mathbb{R} \}$,仿照多项式的加法与乘法定义$R(x)$的加法与乘法.
@@ -83,7 +85,15 @@
     记$X$为有理Cauchy列的全体.
 \end{deff}
 
-设$X$上的一个等价关系$\sim$为:$(a_n) \sim (b_n) \Leftrightarrow \forall \varepsilon \in \mathbb{Q}_+^*,\exists N \in \mathbb{N},\text{当}n>N\text{时,有}\left\lvert a_n - b_n \right\rvert < \varepsilon$.
+\begin{deff}
+    设$X$上的一个关系$\sim$为:$(a_n) \sim (b_n) \Leftrightarrow 
+    \forall \varepsilon \in \mathbb{Q}_+^*,\exists N \in \mathbb{N},
+    \text{当}n>N\text{时,有}\left\lvert a_n - b_n \right\rvert < \varepsilon$.
+\end{deff}
+
+\begin{prop}
+    $\sim$是一个等价关系,从而有等价类的集合$X/\sim$.
+\end{prop}
 
 接下来我们这样定义$\mathbb{R}$:
 \begin{itemize}

@@ -34,10 +34,12 @@
 \begin{deff}
     称$f$在区间$I$上\textbf{可导},若$f$在$I$上每一点都可导.
 
+    记$\mathcal{D}(I,\mathbb{R})$为$I$上可导函数的全体.
+\end{deff}
+
+\begin{deff}
     称映射$f':\begin{array}[t]{ccc} I & \to & \mathbb{R} \\ x & \mapsto & f'(x) \end{array}$
     为$f$的\textbf{导函数}.
-
-    记$\mathcal{D}(I,\mathbb{R})$为$I$上可导函数的全体.
 \end{deff}
 
 \begin{prop}
@@ -64,10 +66,16 @@
 \begin{deff}[左右导数]
     设$f:I\to\mathbb{R}$,$a$为$I$内点.
 
-    称$f$在$a$处\textbf{右可导},若$\lim\limits_{h\to0^+}\frac{f(a+h)-f(a)}{h}$存在.极限值记为$f'_+(a)$.
+    称$f$在$a$处\textbf{右可导},若$\lim\limits_{h\to0^+}\frac{f(a+h)-f(a)}{h}$存在.极限值记为$f'(a^+)$.
 
-    称$f$在$a$处\textbf{左可导},若$\lim\limits_{h\to0^-}\frac{f(a+h)-f(a)}{h}$存在.极限值记为$f'_-(a)$.
+    称$f$在$a$处\textbf{左可导},若$\lim\limits_{h\to0^-}\frac{f(a+h)-f(a)}{h}$存在.极限值记为$f'(a^-)$.
 \end{deff}
+
+\begin{thm}[导数极限定理]
+    设$f\in\mathcal{C}(I,\mathbb{R})$在$I\setminus\{a\}$上可导.
+    若$\lim\limits_{x\to a}f'(x)$存在,则$\lim\limits_{x\to a}\frac{f(x)-f(a)}{x-a}$存在,
+    且$\lim\limits_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim\limits_{x\to a}f'(x)$.
+\end{thm}
 
 \section{中值定理}
 
@@ -82,7 +90,7 @@
 \end{deff}
 
 \begin{thm}[Fermat]
-    设$f:I\to\mathbb{R}$,$a$为$I$内点,$f$在$a$处可到且$f$在$a$处取到极值,则$f'(a)=0$.
+    设$f:I\to\mathbb{R}$,$a$为$I$内点.若$f$在$a$处可导且$f$在$a$处取到极值,则$f'(a)=0$.
 \end{thm}
 
 \begin{thm}[Rolle]
@@ -96,6 +104,18 @@
 \begin{thm}[Cauchy]
     设$f,g:[a,b]\to\mathbb{R}$在$[a,b]$上连续,在$(a,b)$上可导,且$g'(x) \neq 0$,则存在$c\in(a,b)$,使得
     $$\dfrac{f'(c)}{g'(c)}=\dfrac{f(b)-f(a)}{g(b)-g(a)}$$
+\end{thm}
+
+\begin{thm}[L'Hôpital]
+    设$f,g:[a,b]\to\mathbb{R},c\in[a,b]$,$f,g$在$c$附近可导,且
+    $\lim\limits_{x\to c}f(x)=\lim\limits_{x\to c}g(x)=0,g(x)\neq0,\lim\limits_{x\to c}\dfrac{f'(x)}{g'(x)}$存在,
+    则$\lim\limits_{x\to c}\dfrac{f(x)}{g(x)}$存在且$\lim\limits_{x\to c}\dfrac{f(x)}{g(x)}=\lim\limits_{x\to c}\dfrac{f'(x)}{g'(x)}$
+\end{thm}
+
+\begin{thm}[L'Hôpital]
+    设$f,g:[a,b]\to\mathbb{R},c\in[a,b]$,$f,g$在$c$附近可导,且
+    $\lim\limits_{x\to c}g(x)=+\infty,\lim\limits_{x\to c}\dfrac{f'(x)}{g'(x)}$存在,
+    则$\lim\limits_{x\to c}\dfrac{f(x)}{g(x)}$存在且$\lim\limits_{x\to c}\dfrac{f(x)}{g(x)}=\lim\limits_{x\to c}\dfrac{f'(x)}{g'(x)}$
 \end{thm}
 
 \begin{thm}[Darboux]
@@ -213,7 +233,7 @@
 \end{prop}
 
 \begin{prop}
-    $$\bar{(f')}=(\bar{f})'$$
+    设$f:I\to\mathbb{C}$可导,则$\bar{f}$也可导,且$(\bar{f})'=\bar{(f')}$.
 \end{prop}
 
 \begin{rqq}
@@ -301,7 +321,7 @@
 \end{prop}
 
 \begin{deff}
-    设$f:I\to\mathbb{R}$,称$\varepsilon_f=\{(x,y)\in I\times\mathbb{R}\mid f(x)\leqslant y\}$
+    设$f:I\to\mathbb{R}$,称集合$\varepsilon_f=\{(x,y)\in I\times\mathbb{R}\mid f(x)\leqslant y\}$
     为$f$的\textbf{上方集}.
 \end{deff}
 
@@ -319,7 +339,7 @@
 \end{prop}
 
 \begin{prop}
-    设$f$凸,则$f(x)\geqslant f'(x_0)(x-x_0)+f(x_)0$.
+    设$f$凸,则$f(x)\geqslant f'(x_0)(x-x_0)+f(x_0)$.
 \end{prop}
 
 \begin{thm}[Jensen不等式]
