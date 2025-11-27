@@ -1,0 +1,47 @@
+\chapter{集合和映射}
+
+集合部分的基础定义参照高中数学(这里我们先不介绍公理化集合论).
+
+\begin{deff}
+    集合$E$与$F$的\textbf{对称差}是指$(E \setminus F) \cup (F \setminus E)$,记为$E \triangle F$.
+\end{deff}
+
+下面给出有关集合的一系列性质.
+
+\begin{prop}
+    设$A,B,C$为$E$的子集,则
+    \begin{enumerate}
+        \item $A \subseteq A \cup B$.
+        \item $A \cap B \subseteq A$.
+        \item $A \cup A = A$.
+        \item $A \cap A = A$.
+        \item $A \cup E = E$.
+        \item $A \cap \varnothing = \varnothing$.
+        \item $A \cap E = A$.
+        \item $A \cup \varnothing = A$.
+        \item $A \cup B = B \cup A$.
+        \item $A \cap B = B \cap A$.
+        \item $(A \cup B) \cup C = A \cup (B \cup C)$.
+        \item $(A \cap B) \cap C = A \cap (B \cap C)$.
+        \item $A \cap (B \cup C)=(A \cap B) \cup (A \cap C)$.
+        \item $A \cup (B \cup C)=(A \cup B) \cup (A \cup C)$.
+        \item $A \cup A^{\complement} = E$.
+        \item $A \cap A^{\complement} = \varnothing$.
+        \item $E^{\complement} = \varnothing$.
+        \item ${\varnothing}^{\complement} = E$.
+        \item $(A \cup B)^{\complement} = A^{\complement} \cap B^{\complement}$.
+        \item $(A \cap B)^{\complement} = A^{\complement} \cup B^{\complement}$.
+        \item $E \subseteq A \Leftarrow A = E$.
+        \item $A \subseteq \varnothing \leftarrow A = \varnothing$.
+        \item $A \subseteq B \Leftarrow A \cup C \subseteq B \cup C$.
+        \item $A \subseteq B \Leftarrow A \cap C \subseteq B \cap C$.
+        \item $A \subseteq B \iff B^{\complement} \subseteq A^{\complement}$.
+        \item $A \subseteq B \iff A \cup B = B$.
+        \item $A \subseteq B \iff A \cap B = A$.
+        \item $(A \triangle B) \triangle C = A \triangle (B \triangle C)$.
+        \item $A \triangle \varnothing = \varnothing \triangle A =A$.
+        \item $A \triangle A^{\complement} = A^{\complement} \triangle A = E$.
+    \end{enumerate}
+\end{prop}
+
+这里不给出证明,这些性质最好自己逐个证明一遍,毕竟一辈子只有这一次(除非你当大学教授).
