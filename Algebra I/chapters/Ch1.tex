@@ -1,6 +1,12 @@
-\chapter{集合和映射}
+\chapter{基础知识}
+
+\section{集合}
 
 集合部分的基础定义参照高中数学(这里我们先不介绍公理化集合论).
+
+\begin{deff}
+    集合$E$与$F$的\textbf{差集}是指$\{ x \mid x \in E, x \notin F \}$,记为$E \setminus F$.
+\end{deff}
 
 \begin{deff}
     集合$E$与$F$的\textbf{对称差}是指$(E \setminus F) \cup (F \setminus E)$,记为$E \triangle F$.
@@ -44,4 +50,200 @@
     \end{enumerate}
 \end{prop}
 
-这里不给出证明,这些性质最好自己逐个证明一遍,毕竟一辈子只有这一次(除非你当大学教授).
+我们在这里不给出证明,这些性质最好自己逐个证一遍,毕竟一辈子只用做一次(除非你当大学教授).
+
+\begin{deff}
+    称二元组$(x,y)$为一个\textbf{数对}.
+
+    称$(x,y) = (x',y')$,若$x = x', y = y'$.
+\end{deff}
+
+\begin{deff}
+    集合$E$与$F$的\textbf{笛卡尔积}是指$\{ (x,y) \mid x \in E, y \in F \}$,记为$X \times Y$.
+\end{deff}
+
+\section{映射}
+
+\begin{deff}
+    \textbf{映射}是指一个三元组$u = (E, F, \Gamma)$,其中$E, F$为集合,$\Gamma \subseteq E \times F$满足:对于任意$x \in E$,存在唯一$y \in F$使得$(x, y) \in \Gamma$.
+
+    此时记$u:\begin{array}[t]{ccc} E & \to & F \\ x & \mapsto & y \end{array}$,也记$u(x)=y$.
+
+    称$E$为\textbf{出发集},$F$为\textbf{到达集},$y$为$x$的\textbf{像},$x$为$y$的\textbf{原像},$u$为$E$到$F$的映射.
+
+    $E$到$F$的映射的全体记为$\mathcal{F}(E,F)$.
+\end{deff}
+
+\begin{deff}
+    称$\Gamma_u = \{ (x, y) \in E \times F \mid u(x) = y \}$为$u$的\textbf{图像}.
+\end{deff}
+
+\begin{deff}
+    设$u = (E, F, \Gamma), u' = (E', F', \Gamma')$为两映射,称$u$与$u'$\textbf{相等},若$E = E', F = F', \Gamma = \Gamma'$.
+\end{deff}
+
+\begin{deff}
+    称$\{ u(x) \mid x \in E \}$为$u$的\textbf{像集},记为$\mathrm{Im} u$或$u(E)$.
+\end{deff}
+
+\begin{deff}
+    设$E$为集合,称$E$到其自身的映射为$E$上的一个\textbf{置换}.
+
+    $E$上的置换的全体记为$\mathcal{S}(E)$.
+\end{deff}
+
+\begin{exer}
+    设$E, F, G$为集合,$u \in \mathcal{F}(E, F), v \in \mathcal{F}(F, G), w \in \mathcal{F}(E, G)$,则$w \circ (v \circ u) = (w \circ v) \circ u$.
+\end{exer}
+
+\begin{rqq}
+    设$u, v \in \mathcal{F}(E, E)$,则不一定有$u \circ v = v \circ u$.
+\end{rqq}
+
+\begin{exer}
+    设$u: E \to F, v: F \to G$,证明:
+    \begin{enumerate}
+        \item 若$v \circ u$为单射,则$u$为单射.
+        \item 若$v \circ u$为满射,则$v$为满射.
+    \end{enumerate}
+\end{exer}
+
+\begin{prop}
+    设$u: E \to F$,则$u \circ u^{-1} = \mathrm{id}_F, u^{-1} \circ u = \mathrm{id}_E$.
+\end{prop}
+
+\begin{rqq}
+    一般没有$u \circ u^{-1} = u^{-1} \circ u$.
+\end{rqq}
+
+\begin{lem}
+    设$u: E \to F, v: F \to E$,若$u \circ v = \mathrm{id}_F, v \circ u = \mathrm{id}_E$,则$u, v$均为双射且互为逆映射.
+\end{lem}
+
+\begin{proof}
+    由$u \circ v = \mathrm{id}_F$为双射知$u$为单射且$v$为满射,
+
+    由$v \circ u = \mathrm{id}_E$为双射知$v$为单射且$u$为满射.
+
+    故$u,v$为双射且互为逆映射.
+\end{proof}
+
+\begin{prop}
+    设$u$为双射,则$u^{-1}$也为双射,且$\left( u^{-1} \right)^{-1} = u$.
+\end{prop}
+
+\begin{prop}
+    设$u: E \to F, v: F \to G$为双射,则$u \circ v$为双射,且$(u \circ v)^{-1} = v^{-1} \circ u^{-1}$.
+\end{prop}
+
+\begin{deff}
+    设$u: E \to E$,称$u$为\textbf{对合},若$u \circ u = \mathrm{id}_E$.
+\end{deff}
+
+\begin{deff}
+    设$u: E \to F, A \subseteq E, B \subseteq F$.
+
+    称$\{ u(x) \mid x \in A \}$为$A$在$u$下的\textbf{像},记为$u(A)$.
+
+    称$\{ x \in E \mid u(x) \in B \}$为$B$在$u$下的\textbf{原像},记为$u^{-1}(B)$.
+\end{deff}
+
+\begin{rqq}
+    这里虽然出现了记号$u^{-1}$,但不意味着$u$可逆.
+\end{rqq}
+
+\begin{prop}
+    设$u: E \to F$,则$B, B' \subseteq F$,则有
+    \begin{enumerate}
+        \item 若$B \subseteq B'$,则$u^{-1}(B) \subseteq u^{-1}(B')$
+        \item $u^{-1}(B \cup B') = u^{-1}(B) \cup u^{-1}(B')$.
+        \item $u^{-1}(B \cap B') = u^{-1}(B) \cap u^{-1}(B')$.
+        \item $u^{-1}(B^{\complement})=\left( u^{-1}(B) \right)^{\complement}$.
+    \end{enumerate}
+\end{prop}
+
+\begin{deff}
+    设$A \subseteq E$,称$$\mathbb{I}_A(x) = \begin{cases} 1, & x \in A \\ 0, & x \notin A \end{cases}$$为$A$的\textbf{特征函数}.
+\end{deff}
+
+\begin{prop}
+    设$A, B \subseteq E$,则
+    \begin{enumerate}
+        \item $\mathbb{I}_{A \cap B} = \mathbb{I}_A \times \mathbb{I}_B$.
+        \item $\mathbb{I}_{A \cup B} = \mathbb{I}_A + \mathbb{I}_B - \mathbb{I}_{A \cap B}$.
+        \item $\mathbb{I}_{A^{\complement}} = 1 - \mathbb{I}_A$.
+    \end{enumerate}
+\end{prop}
+
+\section{族}
+
+\begin{prop}
+    设$x: I \to E$,称$x(I)$为$E$中由$I$标记的一\textbf{族}元素,$I$称为\textbf{指标集}.
+\end{prop}
+
+\begin{rqq}
+    在使用``族''时常把$x(i)$记为$x_i$.
+\end{rqq}
+
+\begin{deff}
+    设$I_1, I_2 \subseteq I, A_i \subseteq E (i \in I)$,则
+    \begin{enumerate}
+        \item $$\left( \bigcap\limits_{i \in I_1} A_i \right) \cap \left( \bigcap\limits_{i \in I_2} A_i \right) = \bigcap\limits_{i \in I_1 \cap I_2} A_i$$
+        \item $$\left( \bigcup\limits_{i \in I_1} A_i \right) \cup \left( \bigcup\limits_{i \in I_2} A_i \right) = \bigcup\limits_{i \in I_1 \cap I_2} A_i$$
+        \item $$\left( \bigcup\limits_{i \in I} A_i \right)^{\complement} = \bigcap\limits_{i \in I} A_i^{\complement}$$
+        \item $$\left( \bigcap\limits_{i \in I} A_i \right)^{\complement} = \bigcup\limits_{i \in I} A_i^{\complement}$$
+    \end{enumerate}
+\end{deff}
+
+\begin{prop}
+    设$u: E \to F$,$(B_i)_{i \in I}$为$F$的一族子集,则
+    \begin{enumerate}
+        \item $$u^{-1} \left( \bigcup\limits_{i \in I} B_i \right) = \bigcup\limits_{i \in I} u^{-1}(B_i)$$
+        \item $$u^{-1} \left( \bigcap\limits_{i \in I} B_i \right) = \bigcap\limits_{i \in I} u^{-1}(B_i)$$
+    \end{enumerate}
+\end{prop}
+
+\begin{deff}
+    设$u: E \to F, A \subseteq E$,称$u \vert_A: \begin{array}[t]{ccc} A & \to & F \\ x & \mapsto & u(x) \end{array}$为$u$在$A$上的\textbf{限制}.
+\end{deff}
+
+\section{二元关系}
+
+\begin{deff}
+    集合$E$上的一个\textbf{二元关系}是指集合$\mathcal{R} \subseteq E \times E$.
+
+    当$(x, y) \in \mathcal{R}$时,记$x \mathcal{R} y$.
+\end{deff}
+
+\begin{deff}
+    设$R$为$E$上的一个二元关系,称$R$为\textbf{等价关系},若$R$满足:
+    \begin{enumerate}
+        \item 若$x \in E$,则$x \mathcal{R} x$.
+        \item 若$xRy$,则$y \mathcal{R} x$.
+        \item 若$xRy$且$yRz$,则$x \mathcal{R} z$.
+    \end{enumerate}
+\end{deff}
+
+\begin{deff}
+    设$\mathcal{R}$为$E$上的一个等价关系,对于$x \in E$,称$\{ y \mid x \mathcal{R} y \}$为$x$的\textbf{等价类},记为$cl(x)$或$\bar{x}$.
+
+    等价类的全体记为$E / \mathcal{R}$,称为\textbf{商集}.
+
+    称$x$为等价类$\bar{x}$的一个\textbf{代表元}.
+\end{deff}
+
+\begin{rqq}
+    存在从$E$到$E / \mathcal{R}$的满射$\pi: \begin{array}[t]{ccc} E & \to & E / \mathcal{R} \\ x & \mapsto & \bar{x} \end{array}$.
+\end{rqq}
+
+\begin{rqq}
+    等价类的代表元不一定唯一.
+\end{rqq}
+
+\begin{prop}
+    设$\mathcal{R}$为$E$上的一个等价关系,$x, y \in E$,则$\bar{x}$与$\bar{y}$要么相等,要么不相交.
+\end{prop}
+
+\begin{rqq}
+    $E$上的一个等价关系$\mathcal{R}$等价于$E$的分割$E / \mathcal{R}$.
+\end{rqq}
