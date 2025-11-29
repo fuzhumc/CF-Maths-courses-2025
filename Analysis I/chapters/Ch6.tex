@@ -400,7 +400,68 @@
 
 \section{曲线(应用)}
 
-待整理.
+\subsection*{曲线长度}
+
+设 $\begin{cases}
+    x=x(t) \\
+    y=y(t)
+\end{cases}, t\in[a, b]$ 参数化了一条曲线，且 $x(t),y(t)$ 是 $C^1$ 的。
+用折线逼近曲线，折线长度
+
+\begin{align*}
+    &\sum_{k=0}^{n-1}\sqrt{\left(x(t_{k+1})-x(t_k)\right)^2+\left(y(t_{k+1})-y(t_k)\right)^2}\\
+    =&\sum_{k=0}^{n-1}\left(t_{k+1}-t_k\right)\sqrt{x'\left(\xi_k\right)^2+y'\left(\xi_k'\right)^2}\\
+    =&\sum_{k=0}^{n-1}\left(t_{k+1}-t_k\right)\sqrt{x'\left(\xi_k\right)^2+y'\left(\xi_k\right)^2}+\left(t_{k+1}-t_k\right) o(1)\\
+    \rightarrow&\int_a^b\sqrt{x'^2+y'^2}\mathrm dt
+\end{align*}
+得到曲线长度。
+
+\subsubsection*{弧长参数}
+我们希望找到一个特殊的参数 $s=s(t)$ ，使得 $$\int_0^s\sqrt{x'(\tau)^2+y'(\tau)^2}\mathrm d\tau=s$$
+求导，即需要
+\begin{align*}
+    1&=\sqrt{x'(s)^2+y'(s)^2}\\
+    &=\sqrt{\left({\mathrm dx\over\mathrm ds}\right)^2+\left({\mathrm dy\over\mathrm ds}\right)^2}\\
+    &={\mathrm dt\over \mathrm ds}\sqrt{\left({\mathrm dx\over\mathrm dt}\right)^2+\left({\mathrm dy\over\mathrm dt}\right)^2}
+\end{align*}
+
+故
+
+$$
+s(t)=\int_0^t \sqrt{x'(\tau)^2+y'(\tau)^2}\mathrm d\tau
+$$
+
+当 $\forall t\in[a, b]: x'(t)^2+y'(t)^2\ne0$ 时可以这么定义，此时称曲线为正则参数化曲线。此时 $s$ 关于 $t$ 严增，反函数存在。
+
+\subsection*{平面曲线的曲率}
+
+曲线上方向向量 $\mathbf v(s) \parallel \left(x'(s), y'(s)\right)$ ，方向角 $\theta=\arctan{{\mathrm dy\over\mathrm ds}\over{\mathrm dx\over\mathrm ds}}=\arctan{{\mathrm dy\over\mathrm dt}\over{\mathrm dx\over\mathrm dt}}$\\
+定义曲率为 $\kappa={\mathrm d\theta\over\mathrm ds}={\mathrm d\theta\over\mathrm dt}{\mathrm dt\over\mathrm ds}={y''x'-x''y'\over\left(x'+y'\right)^\frac32}$\\
+事实上它就是与曲线二阶相切的圆的半径的倒数（但带符号）\\
+\begin{thm}[四顶点定理]
+    给定 $\mathbb R^2$ 上一条光滑简单闭曲线，则它的曲率函数至少有四个极值点。
+\end{thm}
+
+\begin{proof}
+    考虑覆盖该曲线最小的圆，则每个半圆上必有一个曲线上的点，不妨设曲率函数没有局部常值（否则肯定满足要求），则每个交点上曲率大于 $\frac1R$ ，现平移这个圆到即将脱离曲线时，则此时的一个交点处曲率小于 $\frac1R$ ，故在刚才说的三点之间必有一个极小值点；同理，反向移动这个圆，也会得到一个极小值点。由于是闭曲线，两个极小值点之间有两个极大值点。
+\end{proof}
+
+\subsection{平面曲线围成的面积}
+
+用极坐标，则
+
+$$
+\begin{cases}
+    \theta=\arctan\frac yx\\
+    r=\sqrt{x^2+y^2}
+\end{cases}
+$$
+
+逆时针计算面积
+
+$$
+S=\int_a^b\frac12r(\theta)^2\mathrm d\theta=\frac12\int_{\tilde\alpha}^{\tilde\beta}\left(xy'-x'y\right)\mathrm dt
+$$
 
 \section{数值积分}
 
