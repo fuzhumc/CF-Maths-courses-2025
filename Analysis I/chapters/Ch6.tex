@@ -319,6 +319,89 @@
 \end{proof}
 
 \begin{thm}[第二积分中值]
-    设$f\in\mathcal{C}^1([a,b],\mathbb{R}),g\in\mathcal{C}([a,b],\mathbb{R}_+)$,$f$单调减
+    设$f\in\mathcal{C}^1([a,b],\mathbb{R}),g\in\mathcal{C}([a,b],\mathbb{R}_+)$,$f$单调减,
     则存在$c\in[a,b]$使得$\int_a^b f(x)g(x)\mathrm{d}x=f(a)\int_a^c g(x)\mathrm{d}x$.
 \end{thm}
+
+\section{Stieltjes积分}
+
+\begin{deff}
+    设$\mu:[a,b]\to\mathbb{R}$单调增,$[\alpha,\beta]\subseteq[a,b]$,称$\mu(\beta)-\mu(\alpha)$为$[\alpha,\beta]$的``区间长度''
+\end{deff}
+
+\begin{deff}
+    设$\sigma=(u_k)$为$[a,b]$的一个分割,记$M_k=\sup\limits_{x\in[u_{k-1},u_k]}f(x),m_k=\inf\limits_{x\in[u_{k-1},u_k]}f(x)$.
+
+    记$\overline{S}(f,\sigma)=\sum\limits_{k=1}^n M_k(\mu(u_k)-\mu(u_{k-1})),\underline{S}(f,\sigma)=\sum\limits_{k=1}^n m_k(\mu(u_k)-\mu(u_{k-1}))$.
+\end{deff}
+
+\begin{deff}
+    称$f$在$[a,b]$上Riemann-Stieltjes可积,若$\inf\limits_{\sigma}\overline{S}(f,\sigma)=\sup\limits_{\sigma}\underline{S}(f,\sigma)$.
+
+    这个值记为$\int_a^bf\mathrm{d}\mu$.
+\end{deff}
+
+\begin{prop}
+    设$f\in\mathcal{C}^1[a,b]$,则$\int_a^bf'(x)\mu(x)\mathrm{d}x=f(x)\mu(x)\vert_a^b-\int_a^bf(x)\mathrm{d}\mu$.
+\end{prop}
+
+\begin{proof}
+    由题意知
+
+    \begin{align*}
+        &\int_a^bf(x)\mathrm{d}\mu\\
+        =&\lim\limits_{\delta(\sigma)\to0}\sum_{k=1}^nf(u_k)(\mu(u_k)-\mu(u_{k-1}))\\
+        =&\lim\limits_{\delta(\sigma)\to0}\sum_{k=1}^n(f(u_{k-1})-f(u_k))\mu(u_k)+f(x)\mu(x)\vert_a^b\\
+        =&\lim\limits_{\delta(\sigma)\to0}\sum_{k=1}^nf'(\xi_k)(u_{k-1}-u_k)\mu(u_k)+f(x)\mu(x)\vert_a^b\\
+        =&\lim\limits_{\delta(\sigma)\to0}\sum_{k=1}^nf'(\xi_k)(u_{k-1}-u_k)\mu(\xi_k)+f(x)\mu(x)\vert_a^b+\lim\limits_{\delta(\sigma)\to0}\sum_{k=1}^nf'(\xi_k)(u_{k-1}-u_k)(\mu(u_k)-\mu(\xi_k))\\
+        =&-\int_a^bf'(x)\mu(x)\mathrm{d}x+(x)\mu(x)\vert_a^b+\lim\limits_{\delta(\sigma)\to0}\sum_{k=1}^nf'(\xi_k)(u_{k-1}-u_k)(\mu(u_k)-\mu(\xi_k))
+    \end{align*}
+
+    而
+
+    \begin{align*}
+        &\left\lvert\sum_{k=1}^nf'(\xi_k)(u_{k-1}-u_k)(\mu(u_k)-\mu(\xi_k))\right\rvert\\
+        \leqslant&\sup\left\lvert f'\right\rvert\delta(\sigma)\sum\limits_{k=1}^n(\mu(u_k)-\mu(u_{k-1}))\\
+        =&\sup\left\lvert f'\right\rvert\delta(\sigma)(\mu(b)-\mu(a))\to0
+    \end{align*}
+
+    因此$\lim\limits_{\delta(\sigma)\to0}\sum_{k=1}^nf'(\xi_k)(u_{k-1}-u_k)(\mu(u_k)-\mu(\xi_k))=0$.
+    
+    故$\int_a^bf'(x)\mu(x)\mathrm{d}x=f(x)\mu(x)\vert_a^b-\int_a^bf(x)\mathrm{d}\mu$.
+\end{proof}
+
+接下来老师还讲了一些关于素数的结论,但我不想整理了(其实是要累死了).
+
+\section{Taylor展开}
+
+\begin{lem}
+    设$f:I\to\mathbb{R},a\in I$.$f$在$a$点可导等价于$f(a+h)=f(a)+f'(a)h+\varepsilon_a(h)h$,其中$\lim\limits_{h\to0}\varepsilon_a(h)=0$.
+\end{lem}
+
+\begin{deff}
+    设$f:I\to\mathbb{R},a\in I$,$f$在$a$处$n$阶可导,记$T_a(f)(x)=\sum\limits_{k=0}^n\dfrac{f^{(k)}(a)}{k!}(x-a)^k$,称为\textbf{Taylor多项式}.
+\end{deff}
+
+\begin{thm}
+    设$f:I\to\mathbb{R},a\in I$,$f$在$a$处$n$阶可导,则$f(x)=T_a(f)(x)+o((x-a)^n)$.
+\end{thm}
+
+\begin{thm}
+    设$f:I\to\mathbb{R},a\in I$,$f$在$I$上$n+1$阶可导,则存在$\xi\in(x,a)$,使得$f(x)=T_a(f)(x)+\dfrac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1}$.
+\end{thm}
+
+\begin{thm}
+    设$f\in\mathcal{C}^{n+1}(I,\mathbb{R}),a\in I$,则$f(x)=T_a(f)(x)+\int_a^x\dfrac{(x-t)^n}{n!}f^{(n+1)}(t)\mathrm{d}t$.
+\end{thm}
+
+\begin{proof}
+    不断分部积分即可.
+\end{proof}
+
+\section{曲线(应用)}
+
+待整理.
+
+\section{数值积分}
+
+待整理.
