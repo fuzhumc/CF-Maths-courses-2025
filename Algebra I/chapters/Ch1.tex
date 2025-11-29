@@ -167,6 +167,10 @@
 \end{deff}
 
 \begin{prop}
+    设$E$为集合,则映射$$\begin{array}[t]{ccc} \mathcal{P}(E) & \to & \mathcal{F}(E, \{ 0, 1 \}) \\ A & \mapsto & \mathbb{I}_A \end{array}$$为双射.
+\end{prop}
+
+\begin{prop}
     设$A, B \subseteq E$,则
     \begin{enumerate}
         \item $\mathbb{I}_{A \cap B} = \mathbb{I}_A \times \mathbb{I}_B$.
@@ -183,6 +187,10 @@
 
 \begin{rqq}
     在使用``族''时常把$x(i)$记为$x_i$.
+\end{rqq}
+
+\begin{rqq}
+    $E$中由$\mathbb{N}$标记的一族元素常称为$E$中的一个序列.
 \end{rqq}
 
 \begin{deff}
@@ -207,6 +215,10 @@
     设$u: E \to F, A \subseteq E$,称$u \vert_A: \begin{array}[t]{ccc} A & \to & F \\ x & \mapsto & u(x) \end{array}$为$u$在$A$上的\textbf{限制}.
 \end{deff}
 
+\begin{deff}
+    设$x: I \to E, J \subseteq I$,称$x \vert_J: J \to E$为$x$的一个\textbf{子族}.
+\end{deff}
+
 \section{二元关系}
 
 \begin{deff}
@@ -219,8 +231,8 @@
     设$R$为$E$上的一个二元关系,称$R$为\textbf{等价关系},若$R$满足:
     \begin{enumerate}
         \item 若$x \in E$,则$x \mathcal{R} x$.
-        \item 若$xRy$,则$y \mathcal{R} x$.
-        \item 若$xRy$且$yRz$,则$x \mathcal{R} z$.
+        \item 设$x, y \in E$,若$x \mathcal{R} y$,则$y \mathcal{R} x$.
+        \item 设$x, y, z \in E$,若$x \mathcal{R} y$且$y \mathcal{R} z$,则$x \mathcal{R} z$.
     \end{enumerate}
 \end{deff}
 
@@ -247,3 +259,97 @@
 \begin{rqq}
     $E$上的一个等价关系$\mathcal{R}$等价于$E$的分割$E / \mathcal{R}$.
 \end{rqq}
+
+\begin{rqq}
+    等价关系常记为$~$.
+\end{rqq}
+
+\section{序关系}
+
+\begin{deff}
+    设$\mathcal{R}$为$E$上的一个二元关系,称$\mathcal{R}$为\textbf{序关系},若$\mathcal{R}$满足:
+    \begin{enumerate}
+        \item 若$x \in E$,则$x \mathcal{R} x$.
+        \item 设$x, y \in E$,若$x \mathcal{R} y$且$y \mathcal{R} x$,则$x = y$.
+        \item 设$x, y, z \in E$,若$x \mathcal{R} y$且$y \mathcal{R} z$,则$x \mathcal{R} z$.
+    \end{enumerate}
+    此时称$(E, \mathcal{R})$为\textbf{偏序集},序关系常记为$\leqslant$.
+\end{deff}
+
+\begin{deff}
+    设$(E, \leqslant)$为偏序集,$x, y \in E$,称$x, y$\textbf{可比较},若$x \leqslant y$或$y \leqslant x$.
+\end{deff}
+
+\begin{deff}
+    设$(E, \leqslant)$为偏序集,称$(E, \leqslant)$为\textbf{全序集},若对任意$x, y \in E$,都有$x, y$可比较.
+\end{deff}
+
+\begin{deff}
+    设$(E, \leqslant)$为偏序集,$A \subseteq E, a \in A$.
+    \begin{itemize}
+        \item 称$a$为$A$的\textbf{最大元},若$\forall x \in A, x \leqslant a$.此时记$a = \max A$.
+        \item 称$a$为$A$的\textbf{最小元},若$\forall x \in A, a \leqslant x$.此时记$a = \min A$.
+    \end{itemize}
+\end{deff}
+
+\begin{deff}
+    设$(E, \leqslant)$为偏序集,$A \subseteq E, a \in E$.
+    \begin{itemize}
+        \item 称$a$为$A$的\textbf{上界},若$\forall x \in A, x \leqslant a$.
+        \item 称$a$为$A$的\textbf{下界},若$\forall x \in A, a \leqslant x$.
+    \end{itemize}
+\end{deff}
+
+\begin{rqq}
+    上下界不一定存在,存在也不一定唯一.
+\end{rqq}
+
+\begin{deff}
+    设$(E, \leqslant)$为偏序集,$A \subseteq E, a \in A$.
+    \begin{itemize}
+        \item 称$a$为$A$的\textbf{极大元},若$\forall x \in A, (a \leqslant x \Rightarrow x = a)$.
+        \item 称$a$为$A$的\textbf{极小元},若$\forall x \in A, (x \leqslant a \Rightarrow x = a)$.
+    \end{itemize}
+\end{deff}
+
+\begin{rqq}
+    极大小元不一定存在,存在也不一定唯一.
+
+    若最大(小)元存在,则最大(小)元必为极大(小)元.
+\end{rqq}
+
+\section{自然数的集合}
+
+下面这段话来自法文书
+\begin{itemize}
+    \item 自然数,及其集合$\mathbb{N}$,是所有数学的基础,人类最早的数学活动无疑是计数.因此$\mathbb{N}$的大多数性质看起来如此自然,在相较近的时期之前,即使是在最伟大的数学家之间,也没有引起任何疑问.
+    \item 直到19世纪,人们才处理$N$的构造问题.对全体整数的严格构造超出了本课程的范围,我们将遵循数学家Kronecker所说:``上帝赐予我们整数,人类完成其余.''然而,在本书中列出详尽的公认性质必不可少的,这使得我们能构建后续内容.
+\end{itemize}
+
+自然数集$\mathbb{N}$是一个非空集合,配上一个全序关系,以及与该序关系相容的一个加法运算和一个乘法运算,即满足:$$\forall x, y ,z \in \mathbb{N}, (x \leqslant y \Rightarrow x + z \leqslant y + z \text{且} xz \leqslant yz)$$
+
+此外:
+\begin{itemize}
+    \item $\mathbb{N}$的非空子集都有最小元.
+    \item $\mathbb{N}$的非空有上界子集都有最大元.
+    \item $\mathbb{N}$没有上界.
+\end{itemize}
+
+直接结果
+\begin{itemize}
+    \item $\mathbb{N}$有最小元,记为0,记$\mathbb{N}^* = \mathbb{N} \setminus \{ 0 \}$.
+    \item 设$n \in \mathbb{N}$,则严格大于$n$的自然数构成的集合非空(否则$n$为$\mathbb{N}$的最大元);称其最小元为$n$的\textbf{后继};
+        \begin{itemize}
+            \item 记1为0的后继.
+            \item $n$的后继也为$n+1$,因此$$\forall m \in \mathbb{N}, (m > n \Rightarrow m \geqslant n + 1)$$
+        \end{itemize}
+    \item 同理,若$n \in \mathbb{N}^*$,则严格小于$n$的自然数构成的集合非空(它包含0)且以$n$为上界;称其最大元为$n$的\textbf{前驱},等于$n - 1$,且$$\forall m \in \mathbb{N}, (m < n \rightarrow m \leqslant n - 1)$$
+\end{itemize}
+作为$\mathbb{N}$的定义的应用,我们给出下面的定理.
+\begin{thm}[Eucildean除法]
+    设$a \in \mathbb{N}, b \in \mathbb{N}^*$,则存在唯一$q, r \in \mathbb{N}$使得$$a = bq + r, r < b$$
+    \begin{itemize}
+        \item $q$称为$a$对$b$的Euclidean除法商.
+        \item $r$称为$a$对$b$的Euclidean除法余数.
+    \end{itemize}
+\end{thm}
