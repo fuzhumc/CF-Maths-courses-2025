@@ -326,7 +326,7 @@
     \item 直到19世纪,人们才处理$N$的构造问题.对全体整数的严格构造超出了本课程的范围,我们将遵循数学家Kronecker所说:``上帝赐予我们整数,人类完成其余.''然而,在本书中列出详尽的公认性质必不可少的,这使得我们能构建后续内容.
 \end{itemize}
 
-自然数集$\mathbb{N}$是一个非空集合,配上一个全序关系,以及与该序关系相容的一个加法运算和一个乘法运算,即满足:$$\forall x, y ,z \in \mathbb{N}, (x \leqslant y \Rightarrow x + z \leqslant y + z \text{且} xz \leqslant yz)$$
+自然数集$\mathbb{N}$是一个非空集合,配上一个全序关系,以及与该序关系相容的一个加法运算和一个乘法运算,即:$$\forall x, y ,z \in \mathbb{N}, (x \leqslant y \Rightarrow x + z \leqslant y + z \text{且} xz \leqslant yz)$$
 
 此外:
 \begin{itemize}
@@ -352,4 +352,111 @@
         \item $q$称为$a$对$b$的Euclidean除法商.
         \item $r$称为$a$对$b$的Euclidean除法余数.
     \end{itemize}
+\end{thm}
+
+\section{归纳推理}
+
+我们上面列出的$\mathbb{N}$的性质的一个重要应用是\textbf{归纳原理},它断言:
+\begin{thm}[归纳原理]
+    若$\mathbb{N}$的子集$A$包含0,且满足$$\forall n \in \mathbb{N}, (n \in A \Rightarrow n + 1 \in A)$$则$A = \mathbb{N}$
+\end{thm}
+我们通常通过下面的定理来运用这一原理,从而进行\textbf{归纳推理}.
+\begin{thm}
+    设$P$为$\mathbb{N}$上的一个叙述,若$P(0)$为真且$$\forall n \in \mathbb{N}, (P(n) \Rightarrow P(n + 1))$$则对于每个自然数$n$,$P(n)$都为真.
+\end{thm}
+\begin{rqq}
+    我们常将$P(n)$记为$P_n$.
+\end{rqq}
+
+\section{有限集}
+
+\begin{deff}
+    称$E$为\textbf{有限集},若存在$n \in \mathbb{N}$及从$\{ 1, 2, \cdots, n \}$到$E$的双射.
+
+    整数$n$称为$E$的\textbf{势},或者$E$的元素个数.通常记为$\mathrm{card} E$,也可以是$\left\lvert E \right\rvert$或$\# E$
+\end{deff}
+
+\begin{rqq}
+    势为1的集合称为\textbf{单点集}.
+\end{rqq}
+
+\begin{rqq}
+    不是有限集的集合称为\textbf{无限集}.
+\end{rqq}
+
+\begin{prop}
+    设$E$为有限集,势为$n$,若集合$F$与$E$直接存在双射,则$\left\lvert F \right\rvert = n$.
+\end{prop}
+
+\begin{prop}
+    设$E$为有限集,$F$为$E$的子集,则
+    \begin{enumerate}
+        \item $F$为有限集且$\left\lvert F \right\rvert \leqslant \left\lvert E \right\rvert$.
+        \item $\left\lvert F \right\rvert = \left\lvert E \right\rvert$当且仅当$F = E$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    设$E, F$为非空有限集,$u: E \to F$,则
+    \begin{enumerate}
+        \item $u(E)$为有限集且$\left\lvert u(E) \right\rvert \leqslant \left\lvert E \right\rvert$.
+        \item $\left\lvert u(E) \right\rvert = \left\lvert E \right\rvert$当且仅当$u$为单射.
+    \end{enumerate}
+\end{prop}
+
+\begin{rqq}
+    从这个形式可以推出以下结果.
+    \begin{enumerate}
+        \item 若存在从有限集$E$到有限集$F$的满射,则$\left\lvert F \right\rvert \leqslant \left\lvert E \right\rvert$且$F = u(E)$.
+        因此,若$\left\lvert F \right\rvert > \left\lvert E \right\rvert$,则不存在从有限集$E$到有限集$F$的满射.
+        \item 若存在从有限集$E$到有限集$F$的单射,则$\left\lvert E \right\rvert \leqslant \left\lvert F \right\rvert$.
+        因此,若$\left\lvert E \right\rvert > \left\lvert F \right\rvert$,则不存在从有限集$E$到有限集$F$的单射.
+    \end{enumerate}
+\end{rqq}
+
+\begin{thm}
+    设$E, F$为非空有限集,且具有相同的势,$u$为$E$到$F$的映射,则下列三个等价:
+    \begin{enumerate}
+        \item $u$为单射.
+        \item $u$为满射.
+        \item $u$为双射.
+    \end{enumerate}
+\end{thm}
+
+\begin{rqq}
+    对无限集不成立.
+\end{rqq}
+
+\section{选择公理和超限归纳法}
+
+\begin{thm}[选择公理]
+    设$E$为非空集合,则存在映射$f: \mathcal{P}(E) \setminus \{ \varnothing \} \to E$使得$f(A) \in A$.这个映射称为\textbf{选择函数}.
+\end{thm}
+
+\begin{rqq}
+    选择公理意味着,可以从非空集合的每个子集中同时选出一个元素.
+\end{rqq}
+
+\begin{deff}
+    设$(A, \leqslant)$为偏序集,$B \susbeteq A$.称$B$为一个\textbf{链},若$(B, \leqslant)$为全序集.
+\end{deff}
+
+\begin{thm}[Zorn引理]
+    设$A$非空,$(A, \leqslant)$为偏序集.若$A$中所有链都有上界,则$A$有极大元.
+\end{thm}
+
+\begin{deff}
+    设$(A, \leqslant)$为偏序集,称它是\textbf{良序集},若$A$的任何非空子集都有最小元.
+\end{deff}
+
+\begin{prop}
+    良序集一定是全序集.
+\end{prop}
+
+\begin{thm}[良序原理]
+    设$A$非空,则存在$A$上的一个序关系$\leqslant$,使得$(A, \leqslant)$为良序集.
+\end{thm}
+
+\begin{thm}[超限归纳法]
+    设$(A, \leqslant)$为良序集,$A$的非空子集$B$满足$$\forall a \in A ( \{ c \in A \mid c < a \} \subseteq B \Rightarrow a \in B )$$则$A = B$.
 \end{thm}
