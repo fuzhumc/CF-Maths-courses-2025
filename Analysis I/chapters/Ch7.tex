@@ -1,0 +1,54 @@
+\chapter{渐进分析}
+
+\begin{deff}
+    设$f,\varphi:I\to\mathbb{R},a\in I$.称$f$在$a$附近被$\varphi$\textbf{控制},若存在$u:I\to\mathbb{R}$在$a$附近有且$f=u\varphi$.此时记$f=O(\varphi)$.
+\end{deff}
+
+\begin{deff}
+    设$f,\varphi:I\to\mathbb{R},a\in i$.称$f$在$a$附近相对于$\varphi$\textbf{可忽略},若存在$\varepsilon:I\to\mathbb{R},\lim\limits_{x\to a}\varepsilon(x)=0$且$f=\varepsilon\varphi$.记为$f=o(\varphi)$.
+\end{deff}
+
+\begin{prop}
+    $f$在$a$附近有界$\iff f=O(1)$;$\lim\limits_{x\to a}f(x)=0\iff f=o(1)$.
+\end{prop}
+
+\begin{prop}
+    \begin{enumerate}
+        \item 若$f=o(\varphi)$,则$f=O(\varphi)$.
+        \item 若$f_1=O(\varphi_1),f_2=O(\varphi_2)$,则$f_1f_2=O(\varphi_1\varphi_2)$.
+        \item 若$f_1=o(\varphi),f_2=o(\varphi)$,则$f_1+f_2=o(\varphi)$.
+        \item 若$f=o(\varphi_1),\varphi_1=o(\varphi_2)$,则$f=o(\varphi_2)$.
+    \end{enumerate}
+\end{prop}
+
+\begin{deff}
+    设$f,g:I\to\mathbb{R},a\in I$,称$f$在$a$附近与$g$\textbf{等价},若存在$u:I\to\mathbb{R},\lim\limits_{x\to a}u(x)=1$且$f=ug$.记为$f\sim g$.
+\end{deff}
+
+\begin{prop}
+    $f\sim g\iff f-g=o(g)$.
+\end{prop}
+
+\begin{prop}
+    设$f:I\to\mathbb{R},a\in I$,$f$在$a$处可导,则$f(x)\sim f(a)+f'(a)(x-a)$.
+\end{prop}
+
+\begin{rqq}
+    若$g$在$a$附近非0,则$f\sim g\iff\lim\limits_{x\to a}\dfrac{f(x)}{g(x)}=1$.
+\end{rqq}
+
+\begin{prop}
+    设$f\sim g$,则有
+    \begin{enumerate}
+        \item 若$g$在$a$附近非负,则$f$在$a$附近非负.
+        \item 若$g$在$a$附近非0,则$f$在$a$附近非0.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    设$f_1\sim g_1,f_2\sim g_2$,则有
+    \begin{enumerate}
+        \item $f_1f_2\sim g_1g_2$.
+        \item 若$f_2,g_2$在$a$附近非0,则$\dfrac{f_1}{f_2}\sim\dfrac{g_1}{g_2}$.
+    \end{enumerate}
+\end{prop}
