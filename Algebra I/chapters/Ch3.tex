@@ -77,3 +77,128 @@
 \begin{exer}
     设$(G, *)$为群,$A$为非空集合,定义$\mathcal{F}(A, G)$上的一个内部合成法则如下:$$\otimes: \begin{array}[t]{ccc} \mathcal{F}(A, G) \times \mathcal{F}(A, G) & \to & \mathcal{F}(A, G) \\ (f, g) & \mapsto & f \otimes g: \begin{array}[t]{ccc} A & \to & G \\ a & \mapsto & f(a) * g(a) \end{array} \end{array}$$证明:$(\mathcal{F}(A, G), \otimes)$为群.
 \end{exer}
+
+\section{子群}
+
+\begin{deff}
+    设$(G, *)$为群,$H \subseteq G$.称$(H, *)$为$(G, *)$的\textbf{子群},若$(H, *)$为群.记为$H \leqslant G$.
+\end{deff}
+
+\begin{rqq}
+    $G$与$\{ e \}$均为$G$的子群,称为\textbf{平凡子群}.
+\end{rqq}
+
+\begin{deff}
+    设$H \leqslant G$,称$H$为\textbf{真子群},若$H \neq G$.记为$H < G$.
+\end{deff}
+
+\begin{prop}
+    设$(G, *)$为群,$H \leqslant G$,$e$为$G$的中性元,则$e \in H$且$e$为$H$的中性元.
+\end{prop}
+
+\begin{prop}
+    设$(G, *)$为群,$H$为$G$的非空自己,则有$H \leqslant G \iff \forall x, y \in H, x * y^{-1} \in H$.
+\end{prop}
+
+\begin{prop}
+    设$(G, *)$为群,$H_i \leqslant G (i \in I)$,则$\bigcap\limits_{i \in I} H_i \leqslant G$.
+\end{prop}
+
+\section{群同态}
+
+\begin{deff}
+    设$(G, *), (H, \cdot)$为群,$\varphi \in \mathcal{F}(G, H)$.称$\varphi$为\textbf{群同态},若$\forall x, y \in G, \varphi(x * y) = \varphi(x) \cdot \varphi(y)$.
+\end{deff}
+
+\begin{prop}
+    设$\varphi: G \to H$为群同态,$e_G, e_H$分别为$G, H$的中性元,则$\varphi(e_G) = e_H$.
+\end{prop}
+
+\begin{prop}
+    设$\varphi: G \to H$为群同态,$g \in G$,则$\varphi(g^{-1})=\varphi(g)^{-1}$.
+\end{prop}
+
+\begin{deff}
+    设$\varphi: G \to H$为群同态,称$\varphi^{-1}(e_H) = \{ g \in G \mid \varphi(g) = e_H \}$为$\varphi$的\textbf{核},记为$\mathrm{Ker} \varphi$.
+\end{deff}
+
+\begin{deff}
+    设$(G, *)$为群,$H \leqslant G$.称$H$为$G$的\textbf{正规子群},若$\forall g \in G, gHg^{-1} = H$.记为$H \lhd G$.
+\end{deff}
+
+\begin{prop}
+    设$(G, *)$为群,则有
+    \begin{enumerate}
+        \item 若$G$交换,则其子群均为正规子群.
+        \item $\{ e \} \lhd G, G \lhd G$.
+        \item $gH = Hg \iff gHg^{-1} = H$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    设$(G, *)$为群,$H$为$G$的正规子群,$h \in H$,则不一定有$g * h = h * g$.
+\end{prop}
+
+\begin{prop}
+    设$\varphi: G \to H$为群同态,则$\mathrm{Ker} \varphi \lhd G$.
+\end{prop}
+
+\begin{prop}
+    设$\varphi: G \to H$为群同态,则$\varphi$为单射$\iff \mathrm{Ker} \varphi = \{ e \} \iff \left\lvert \mathrm{Ker} \varphi \right\rvert = 1$.
+\end{prop}
+
+\begin{deff}
+    设$\varphi: G \to H$为群同态,称$\varphi$为\textbf{群同构},若$\varphi$为双射.
+\end{deff}
+
+\begin{deff}
+    设$\varphi: G \to H$为群同态(群同构),称$\varphi$为\textbf{自同态}(\textbf{自同构}),若$(G, *) = (H, \cdot)$.
+\end{deff}
+
+\begin{deff}
+    设$(G, *)$为群
+    \begin{enumerate}
+        \item 记$G$上的自同态的全体为$\mathrm{End} G$.
+        \item 记$G$上的自同构的全体为$\mathrm{Aut} G$.
+    \end{enumerate}
+\end{deff}
+
+\begin{prop}
+    设$(G, *)$为群,$\circ$为同态的复合运算,则$(\mathrm{Aut} G, \circ)$为一个群.
+\end{prop}
+
+\begin{rqq}
+    $(\mathrm{End} G, \circ)$不一定为群.
+\end{rqq}
+
+\begin{prop}
+    设$\varphi: G \to H$为群同态,则$\varphi$为群同构$\iff$存在群同态$\psi: H \to G, \varphi \circ \psi = \mathrm{id}_H, \psi \circ \varphi = \mathrm{id}_G$.
+\end{prop}
+
+\begin{prop}
+    设$G_1, G_2$为群,$p_1: G_1 \times G_2 \to G_1, p_2: G_1 \times G_2 \to G_2$为群同态,则$\mathrm{Ker} p_1 = \{ e_1 \} \times G_2, \mathrm{Ker} p_2 = G_1 \times \{ e_2 \}$均为$G_1 \times G_2$的正规子群.
+\end{prop}
+
+\begin{deff}
+    设$(G, *)$为群,$H \leqslant G, a \in G$.
+    \begin{enumerate}
+        \item 称$\{ a * h \mid h \in H \}$为$H$在$G$中的一个\textbf{左陪集},记为$aH$.
+        \item 称$\{ h * a \mid h \in H \}$为$H$在$G$中的一个\textbf{右陪集},记为$Ha$.
+    \end{enumerate}
+\end{deff}
+
+\begin{prop}
+    设$H \leqslant G, a, b \in G$,则$aH$与$bH$要么相等,要么不交.
+\end{prop}
+
+\begin{deff}
+    记$G / H$为$H$在$G$中的左陪集的全体.
+\end{deff}
+
+\begin{prop}
+    $G$为$G / H$中元素的无交并.
+\end{prop}
+
+\begin{rqq}
+    这样给出了$G$的一个划分,即给出了$G$上的一个等价关系.
+\end{rqq}
