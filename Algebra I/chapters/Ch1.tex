@@ -31,22 +31,22 @@
         \item $(A \cap B) \cap C = A \cap (B \cap C)$.
         \item $A \cap (B \cup C)=(A \cap B) \cup (A \cap C)$.
         \item $A \cup (B \cup C)=(A \cup B) \cup (A \cup C)$.
-        \item $A \cup A^{\complement} = E$.
-        \item $A \cap A^{\complement} = \varnothing$.
-        \item $E^{\complement} = \varnothing$.
-        \item ${\varnothing}^{\complement} = E$.
-        \item $(A \cup B)^{\complement} = A^{\complement} \cap B^{\complement}$.
-        \item $(A \cap B)^{\complement} = A^{\complement} \cup B^{\complement}$.
+        \item $A \cup \complement_E A = E$.
+        \item $A \cap \complement_E A = \varnothing$.
+        \item $\complement_E A = \varnothing$.
+        \item $\complement_E \varnothing = E$.
+        \item $\complement_E (A \cup B) = \complement_E A \cap \complement_E B$.
+        \item $\complement_E (A \cap B) = \complement_E A \cup \complement_E B$.
         \item $E \subseteq A \Leftarrow A = E$.
         \item $A \subseteq \varnothing \leftarrow A = \varnothing$.
         \item $A \subseteq B \Leftarrow A \cup C \subseteq B \cup C$.
         \item $A \subseteq B \Leftarrow A \cap C \subseteq B \cap C$.
-        \item $A \subseteq B \iff B^{\complement} \subseteq A^{\complement}$.
+        \item $A \subseteq B \iff \complement_E B \subseteq \complement_E A$.
         \item $A \subseteq B \iff A \cup B = B$.
         \item $A \subseteq B \iff A \cap B = A$.
         \item $(A \triangle B) \triangle C = A \triangle (B \triangle C)$.
         \item $A \triangle \varnothing = \varnothing \triangle A =A$.
-        \item $A \triangle A^{\complement} = A^{\complement} \triangle A = E$.
+        \item $A \triangle \complement_E A = \complement_E A \triangle A = E$.
     \end{enumerate}
 \end{prop}
 
