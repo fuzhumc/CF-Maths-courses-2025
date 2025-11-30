@@ -1,0 +1,79 @@
+\chapter{群}
+
+\section{元群}
+
+\begin{deff}
+    设$E$为集合.称映射$*: \begin{array}[t]{ccc} E \times E & \to & E \\ (x,y) & \mapsto & x*y \end{array}$为$E$上的一个\textbf{内部合成法则}或\textbf{运算}.
+
+    称$(E, *)$为一个\textbf{元群}.
+\end{deff}
+
+\begin{deff}
+    设$E$为集合,$*$为$E$上的一个内部合成法则.称$*$是\textbf{结合的},若$\forall x, y, z \in E, x * (y * z) = (x * y) * z$.
+\end{deff}
+
+\begin{deff}
+    设$E$为集合,$*$为$E$上的一个内部合成法则.称$*$是\textbf{交换的},若$\forall x, y \in E, x * y = y * x$.
+\end{deff}
+
+\begin{deff}
+    设$E$为集合,$\oplus, \otimes$为$E$上的两个内部合成法则,称$\otimes$对$\oplus$是\textbf{交换的},若$\forall x, y, z \in E, x \otimes (y \oplus z) = (x \otimes y) \oplus (x \otimes z), (x \oplus y) \otimes z = (x \otimes z) \oplus (y \otimes z)$.
+\end{deff}
+
+\begin{deff}
+    设$E$为集合,$*$为$E$上的一个内部合成法则,$a \in E$.称$a$对$*$是\textbf{正则的},若$\forall x, y \in E, (a * x = a * y \Rightarrow x = y) \land (x * a = y * a \Rightarrow x = y)$.
+\end{deff}
+
+\begin{deff}
+    设$E$为集合,$*$为$E$上的一个内部合成法则,$e \in E$.称$e$对$*$是\textbf{中性的},若$\forall x, y \in E, x * e = e * x = x$.
+\end{deff}
+
+\begin{prop}
+    中性元若存在则必唯一.
+\end{prop}
+
+\begin{deff}
+    设$E$为集合,$*$为$E$上的一个内部合成法则,$e$为其中性元,$a \in E$.称$e$对$*$是\textbf{可逆的},若$\exists b \in E, a * b = b * a = e$.
+
+    此时称$b$为$a$的\textbf{逆元},记为$b = a^{-1}$.
+\end{deff}
+
+\begin{prop}
+    $(E, *)$结合时,逆元若存在则必唯一.
+\end{prop}
+
+\begin{prop}
+    设$(E, *)$结合,$a, b \in E$均可逆,则$a * b$也可逆,且$(a * b)^{-1} = b^{-1} * a^{-1}$.
+\end{prop}
+
+\begin{prop}
+    设$(E, *)$结合且有中性元,则$E$中的可逆元均正则.
+\end{prop}
+
+\begin{deff}
+    设$E$为集合,$*$为$E$上的一个内部合成法则,$F \subseteq E$.称$F$在$*$下是\textbf{稳定的},若$\forall x, y \in F, x * y \in F$.
+\end{deff}
+
+\section{群}
+
+\begin{deff}
+    设$G$为集合,$*$为$G$上的一个内部合成法则.称$(G, *)$为一个\textbf{群},若
+    \begin{enumerate}
+        \item $*$结合.\label{def_of_group_1}
+        \item $G$中有中性元.\label{def_of_group_2}
+        \item $G$中的每个元素均可逆.\label{def_of_group_3}
+    \end{enumerate}
+\end{deff}
+
+\begin{deff}
+    设$(G, *)$为一个群,称$(G, *)$为一个\textbf{交换群}或\textbf{Abel群},若$*$交换.
+\end{deff}
+
+\begin{rqq}
+    满足\ref{def_of_group_1}的元群称为\textbf{半群}.
+    满足\ref{def_of_group_1}和\ref{def_of_group_2}的元群称为\textbf{幺半群}.
+\end{rqq}
+
+\begin{exer}
+    设$(G, *)$为群,$A$为非空集合,定义$\mathcal{F}(A, G)$上的一个内部合成法则如下:$$\otimes: \begin{array}[t]{ccc} \mathcal{F}(A, G) \times \mathcal{F}(A, G) & \to & \mathcal{F}(A, G) \\ (f, g) & \mapsto & f \otimes g: \begin{array}[t]{ccc} A & \to & G \\ a & \mapsto & f(a) * g(a) \end{array} \end{array}$$证明:$(\mathcal{F}(A, G), \otimes)$为群.
+\end{exer}
