@@ -1,0 +1,126 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{习题20}
+\author{}
+\date{2025年12月1日}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年12月1日}
+\chead{习题20}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  重新做上次最后一题:对于函数\(f\in\mathcal{C}^2(\mathbb{R},\mathbb{R}_+)\),定义\({} f_{x_0,\lambda}(x)=\left(\dfrac{\lambda}{\lvert x-x_0\rvert}\right)^{\gamma}f\left(x_0+\dfrac{\lambda^2(x-x_0)}{\lvert x-x_0\rvert^2}\right) {}\).若对任意\(x_0\in\mathbb{R}\),都存在\(\lambda_0\)使得\(f(x)=f_{x_0,\lambda_0}(x)\)对任意\(x\neq x_0\)成立,依照下列步骤证明:存在\(x_1\in\mathbb{R}\)使得\(f\)有如下形式\[f(x)=\dfrac{A}{(B+\lvert x-x_1\rvert^2)^{\frac{\gamma}{2}}}\]
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    思考变换\({} x\mapsto x_0+\dfrac{\lambda^2(x-x_0)}{\lvert x-x_0\rvert^2} {}\)的几何意义.
+  \item
+    令\(x\to+\infty\)会得到\(f\)的什么性质?
+  \item
+    将\({} f\left(x_0+\dfrac{\lambda^2(x-x_0)}{\lvert x-x_0\rvert^2}\right) {}\)在\(x_0\)处展开.
+  \item
+    将\(x_0\)替换为\(0\),重复(3)中操作.
+  \item
+    将\({} \left( \dfrac{\lambda}{\lvert x-x_0\rvert} \right)^{\gamma} {}\)在\(x_0=0\)处展开.
+  \item
+    结合(3)(4)(5),得到\(f\)所满足的常微分方程,试着解出这个方程.
+  \item
+    思考题:倘若\(f\)甚至不是\(\mathcal{C}^1\)的,上述结论是否仍然成立?如果你相信它成立,给出一个不同的证明.
+  \end{enumerate}
+\end{enumerate}
+
+下面我们开始进入级数的练习.回顾以下级数的定义:设\((a_n)\)是一个序列(实序列复序列都行),定义部分和\(S_n=\sum\limits_{j=1}^na_j\).若序列\((S_n)\)收敛,则称级数\(\sum\limits_{n=1}^{\infty}a_n\)收敛.这无外乎是说:级数不过是求了一次和的序列.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  证明Cauchy收敛准则:级数\(\sum\limits_{n=1}^{\infty}\)收敛的充要条件是对任意\(\varepsilon>0\),存在\(N\in\mathbb{N}\),使得对任意\(m,k\in\mathbb{N},m\geqslant n\),有\(\left\lvert\sum\limits_{j=m}^{m+k}a_n\right\rvert\leqslant\varepsilon\).
+\item
+  判断级数\(\sum\limits_{n=1}^{\infty}\dfrac{1}{n}\)是否收敛,并说明原因.
+\item
+  对于实数级数\(\sum\limits_{n=1}^{\infty}a_n\),证明:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    若\(\lim\limits_{n\to\infty}na_n\neq0\),则级数\(\sum\limits_{n=1}^{\infty}a_n\)发散.
+  \item
+    若\((a_n)\)单调下降且级数\(\sum\limits_{n=1}^{\infty}a_n\)收敛,则\(\lim\limits_{n\to\infty}na_n=0\).
+  \end{enumerate}
+\item
+  对于收敛级数\(\sum\limits_{n=1}^{\infty}a_n\),定义\(\sigma_n=\dfrac{S_1+S_2+\cdots+S_n}{n}\),证明级数\(\sum\limits_{n=1}^{\infty}\sigma_n\)收敛且\(\sum\limits_{n=1}^{\infty}a_n=\lim\limits_{n\to\infty}\sigma_n\).
+\item
+  设\(\sum\limits_{n=1}^{\infty}a_n\)是正项级数,令\(b_n=\dfrac{a_n}{(1+a_1)(1+a_2)\cdots(1+a_n)}\),证明级数\(\sum\limits_{n=1}^{\infty}b_n\)收敛.
+\end{enumerate}
+
+\end{document}
