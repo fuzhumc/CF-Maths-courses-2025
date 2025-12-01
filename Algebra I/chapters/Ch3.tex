@@ -1,4 +1,4 @@
-\chapter{群}
+\chapter{群论}
 
 \section{元群}
 
@@ -16,6 +16,10 @@
     设$E$为集合,$*$为$E$上的一个内部合成法则.称$*$是\textbf{交换的},若$\forall x, y \in E, x * y = y * x$.
 \end{deff}
 
+\begin{rqq}
+    一般用$*$表示不交换的运算,用$+$表示交换的运算.
+\end{rqq}
+
 \begin{deff}
     设$E$为集合,$\oplus, \otimes$为$E$上的两个内部合成法则,称$\otimes$对$\oplus$是\textbf{交换的},若$\forall x, y, z \in E, x \otimes (y \oplus z) = (x \otimes y) \oplus (x \otimes z), (x \oplus y) \otimes z = (x \otimes z) \oplus (y \otimes z)$.
 \end{deff}
@@ -32,6 +36,10 @@
     中性元若存在则必唯一.
 \end{prop}
 
+\begin{proof}
+    设$e, e'$均为$E$的中性元,则$e' = e' * e = e$.
+\end{proof}
+
 \begin{deff}
     设$E$为集合,$*$为$E$上的一个内部合成法则,$e$为其中性元,$a \in E$.称$e$对$*$是\textbf{可逆的},若$\exists b \in E, a * b = b * a = e$.
 
@@ -41,6 +49,10 @@
 \begin{prop}
     $(E, *)$结合时,逆元若存在则必唯一.
 \end{prop}
+
+\begin{proof}
+    设$x \in E$,$y, z$均为$x$的逆元,则$z = z * e = z * (x * y) = (z * x) * y = e * y = y$.
+\end{proof}
 
 \begin{prop}
     设$(E, *)$结合,$a, b \in E$均可逆,则$a * b$也可逆,且$(a * b)^{-1} = b^{-1} * a^{-1}$.
@@ -75,8 +87,14 @@
 \end{rqq}
 
 \begin{exer}
-    设$(G, *)$为群,$A$为非空集合,定义$\mathcal{F}(A, G)$上的一个内部合成法则如下:$$\otimes: \begin{array}[t]{ccc} \mathcal{F}(A, G) \times \mathcal{F}(A, G) & \to & \mathcal{F}(A, G) \\ (f, g) & \mapsto & f \otimes g: \begin{array}[t]{ccc} A & \to & G \\ a & \mapsto & f(a) * g(a) \end{array} \end{array}$$证明:$(\mathcal{F}(A, G), \otimes)$为群.
+    设$(G, *)$为群,$A$为非空集合,定义$\mathcal{F}(A, G)$上的一个内部合成法则如下:$$\otimes: \begin{array}[t]{ccc} \mathcal{F}(A, G) \times \mathcal{F}(A, G) & \to & \mathcal{F}(A, G) \\ (f, g) & \mapsto & f \otimes g: \begin{array}[t]{ccc} A & \to & G \\ a & \mapsto & f(a) * g(a) \end{array} \end{array}$$
+    
+    证明:$(\mathcal{F}(A, G), \otimes)$为群.
 \end{exer}
+
+\subsection*{群的一些例子}
+
+待整理.
 
 \section{子群}
 
@@ -97,11 +115,15 @@
 \end{prop}
 
 \begin{prop}
-    设$(G, *)$为群,$H$为$G$的非空自己,则有$H \leqslant G \iff \forall x, y \in H, x * y^{-1} \in H$.
+    设$(G, *)$为群,$H$为$G$的非空子集,则有$H \leqslant G \iff \forall a, b \in H, a * b^{-1} \in H$.
 \end{prop}
 
 \begin{prop}
-    设$(G, *)$为群,$H_i \leqslant G (i \in I)$,则$\bigcap\limits_{i \in I} H_i \leqslant G$.
+    设$(G, *)$为群,$H$为$G$的非空子集,则有$H \leqslant G \iff \forall a, b \in H, a * b \in H, a^{-1} \in H$.
+\end{prop}
+
+\begin{prop}
+    设$(G, *)$为群,$(H_i)_{i \in I}$为$G$的一族子群,则$\bigcap\limits_{i \in I} H_i \leqslant G$.
 \end{prop}
 
 \section{群同态}
@@ -112,6 +134,14 @@
 
 \begin{prop}
     设$\varphi: G \to H$为群同态,$e_G, e_H$分别为$G, H$的中性元,则$\varphi(e_G) = e_H$.
+\end{prop}
+
+\begin{prop}
+    由题意知$\forall a \in G, a * e_G = a$.
+
+    则$\forall g \in G, \varphi(a) \cdot \varphi(e_G) = \varphi(a) = \varphi(a) \cdot e_H$.
+
+    故$\varphi(e_G)=  e_H$.
 \end{prop}
 
 \begin{prop}
@@ -144,11 +174,16 @@
 \end{prop}
 
 \begin{prop}
-    设$\varphi: G \to H$为群同态,则$\varphi$为单射$\iff \mathrm{Ker} \varphi = \{ e \} \iff \left\lvert \mathrm{Ker} \varphi \right\rvert = 1$.
+    设$\varphi: G \to H$为群同态,则$\varphi$为单射$\iff \mathrm{Ker} \varphi = \{ e \} \iff \lvert \mathrm{Ker} \varphi \rvert = 1$.
 \end{prop}
 
 \begin{deff}
-    设$\varphi: G \to H$为群同态,称$\varphi$为\textbf{群同构},若$\varphi$为双射.
+    设$\varphi: G \to H$为群同态,
+    \begin{enumerate}
+        \item 称$\varphi$为\textbf{单同态},若$\varphi$为单射.
+        \item 称$\varphi$为\textbf{满同态},若$\varphi$为满射.
+        \item 称$\varphi$为\textbf{群同构},若$\varphi$为双射.
+    \end{enumerate}
 \end{deff}
 
 \begin{deff}
@@ -172,12 +207,16 @@
 \end{rqq}
 
 \begin{prop}
-    设$\varphi: G \to H$为群同态,则$\varphi$为群同构$\iff$存在群同态$\psi: H \to G, \varphi \circ \psi = \mathrm{id}_H, \psi \circ \varphi = \mathrm{id}_G$.
+    设$\varphi: G \to H$为群同态,则$\varphi$为群同构$\iff$存在群同态$\psi: H \to G, \psi \circ \varphi = \mathrm{id}_G, \varphi \circ \psi = \mathrm{id}_H$.
 \end{prop}
 
 \begin{prop}
-    设$G_1, G_2$为群,$p_1: G_1 \times G_2 \to G_1, p_2: G_1 \times G_2 \to G_2$为群同态,则$\mathrm{Ker} p_1 = \{ e_1 \} \times G_2, \mathrm{Ker} p_2 = G_1 \times \{ e_2 \}$均为$G_1 \times G_2$的正规子群.
+    设$G_1, G_2$为群,$p_1: G_1 \times G_2 \to G_1, p_2: G_1 \times G_2 \to G_2$为群同态,
+    
+    则$\mathrm{Ker} p_1 = \{ e_1 \} \times G_2, \mathrm{Ker} p_2 = G_1 \times \{ e_2 \}$均为$G_1 \times G_2$的正规子群.
 \end{prop}
+
+\section{商群}
 
 \begin{deff}
     设$(G, *)$为群,$H \leqslant G, a \in G$.
@@ -202,3 +241,59 @@
 \begin{rqq}
     这样给出了$G$的一个划分,即给出了$G$上的一个等价关系.
 \end{rqq}
+
+\begin{deff}
+    设$(G, *)$为群,$H \leqslant G$,称$\lvert G / H \rvert$为$H$在$G$中的\textbf{指标}.若$G / H$有限,则记为$[G : H]$.
+\end{deff}
+
+\begin{thm}[Lagrange]
+    设$(G, *)$为有限群,$H \leqslant G$,则$\lvert G \rvert = [G : H] \cdot \lvert H \rvert$.
+\end{thm}
+
+\begin{prop}
+    设$(G, *)$为群,$H \leqslant G$,则有
+    \begin{enumerate}
+        \item 若$H \lhd G$,则$\forall a \in G, aH = Ha$.
+        \item $H \lhd G \iff H$的任何一个左陪集都是右陪集.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    设$(G, *)$为群,$H \leqslant G$,定义$G / H$上的一个内部合成法则$*'$如下:
+    $$*': \begin{array}[t]{ccc} G / H \times G / H & \to & G / H \\ (aH, bH) & \mapsto & (a * b)H \end{array}$$
+    
+    则$*'$是良定义的,进而$(G / H, *')$为群,称为\textbf{商群}.
+\end{prop}
+
+\begin{prop}
+    商群$(G / H, *')$的中性元为$eH$,元素$aH$的逆元为$a^{-1}H$.
+\end{prop}
+
+\begin{prop}
+    存在自然投影$\pi: \begin{array}[t]{ccc} G & \to & G / H \\ a & \mapsto & aH \end{array}$满足$\pi(a * b) = \pi(a) *' \pi(b)$
+\end{prop}
+
+\begin{rqq}
+    后面我们不再区分$G$上的内部合成法则$*$与$G / H$上的内部合成法则$*'$.
+\end{rqq}
+
+\begin{thm}[典范分解定理]
+    设$\varphi: G \to H$为群同态,则存在唯一群同构$\bar{\varphi}: G / \mathrm{Ker} \varphi \to \mathrm{Im} \varphi$使得$\varphi = i \circ \bar{\varphi} \circ \pi$.
+    其中$i: \mathrm{Im} \varphi \to H$为自然嵌入(单同态),$\pi: G \to G / \mathrm{Ker} \varphi$为自然投影(满同态).
+\end{thm}
+
+\begin{rqq}
+    该定理的意义为:将群同态的研究归结为对单同态(自然嵌入$i$)与满同态(自然投影$\varphi$)的研究.
+\end{rqq}
+
+\begin{cor}
+    若$G$有限,则$\lvert G \rvert = \lvert \mathrm{Ker} \varphi \rvert \lvert \mathrm{Im} \varphi \rvert$.
+\end{cor}
+
+\begin{cor}
+    设$\varphi: G \to H$为群同态,$G, H$均有限,$(\lvert G \rvert, \lvert H \rvert) = 1$,则$\varphi$为平凡同态.即$\forall g \in G, \varphi(g) = e_H$.
+\end{cor}
+
+\begin{thm}
+    设$H, N \lhd G, N \leqslant H$,则$(G / N) / (H / N) \cong G / H$.
+\end{thm}
