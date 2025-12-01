@@ -175,7 +175,7 @@
     \begin{enumerate}
         \item $\mathbb{I}_{A \cap B} = \mathbb{I}_A \times \mathbb{I}_B$.
         \item $\mathbb{I}_{A \cup B} = \mathbb{I}_A + \mathbb{I}_B - \mathbb{I}_{A \cap B}$.
-        \item $\mathbb{I}_{A^{\complement}} = 1 - \mathbb{I}_A$.
+        \item $\mathbb{I}_{\complement_E A} = 1 - \mathbb{I}_A$.
     \end{enumerate}
 \end{prop}
 
@@ -198,8 +198,8 @@
     \begin{enumerate}
         \item $$\left( \bigcap\limits_{i \in I_1} A_i \right) \cap \left( \bigcap\limits_{i \in I_2} A_i \right) = \bigcap\limits_{i \in I_1 \cap I_2} A_i$$
         \item $$\left( \bigcup\limits_{i \in I_1} A_i \right) \cup \left( \bigcup\limits_{i \in I_2} A_i \right) = \bigcup\limits_{i \in I_1 \cap I_2} A_i$$
-        \item $$\left( \bigcup\limits_{i \in I} A_i \right)^{\complement} = \bigcap\limits_{i \in I} A_i^{\complement}$$
-        \item $$\left( \bigcap\limits_{i \in I} A_i \right)^{\complement} = \bigcup\limits_{i \in I} A_i^{\complement}$$
+        \item $$\complement_E \left( \bigcup\limits_{i \in I} A_i \right) = \bigcap\limits_{i \in I} \complement_E A_i$$
+        \item $$\complement_E \left( \bigcap\limits_{i \in I} A_i \right) = \bigcup\limits_{i \in I} \complement_E A_i$$
     \end{enumerate}
 \end{deff}
 
@@ -261,7 +261,7 @@
 \end{rqq}
 
 \begin{rqq}
-    等价关系常记为$~$.
+    等价关系常记为$\sim$.
 \end{rqq}
 
 \section{射影空间(示例)}
@@ -327,10 +327,10 @@
 下面这段话来自法文书
 \begin{itemize}
     \item 自然数,及其集合$\mathbb{N}$,是所有数学的基础,人类最早的数学活动无疑是计数.因此$\mathbb{N}$的大多数性质看起来如此自然,在相较近的时期之前,即使是在最伟大的数学家之间,也没有引起任何疑问.
-    \item 直到19世纪,人们才处理$N$的构造问题.对全体整数的严格构造超出了本课程的范围,我们将遵循数学家Kronecker所说:``上帝赐予我们整数,人类完成其余.''然而,在本书中列出详尽的公认性质必不可少的,这使得我们能构建后续内容.
+    \item 直到19世纪,人们才处理$\mathbb{N}$的构造问题.对全体整数的严格构造超出了本课程的范围,我们将遵循数学家Kronecker所说:``上帝赐予我们整数,人类完成其余.''然而,在本书中列出详尽的公认性质必不可少的,这使得我们能构建后续内容.
 \end{itemize}
 
-自然数集$\mathbb{N}$是一个非空集合,配上一个全序关系,以及与该序关系相容的一个加法运算和一个乘法运算,即:$$\forall x, y ,z \in \mathbb{N}, (x \leqslant y \Rightarrow x + z \leqslant y + z \text{且} xz \leqslant yz)$$
+自然数集$\mathbb{N}$是一个非空集合,配上一个全序关系,以及与该序关系相容的一个加法运算和一个乘法运算,即:$$\forall x, y ,z \in \mathbb{N}, (x \leqslant y \Rightarrow x + z \leqslant y + z \land x \leqslant y \Rightarrow xz \leqslant yz)$$
 
 此外:
 \begin{itemize}
@@ -339,7 +339,7 @@
     \item $\mathbb{N}$没有上界.
 \end{itemize}
 
-直接结果
+直接结果:
 \begin{itemize}
     \item $\mathbb{N}$有最小元,记为0,记$\mathbb{N}^* = \mathbb{N} \setminus \{ 0 \}$.
     \item 设$n \in \mathbb{N}$,则严格大于$n$的自然数构成的集合非空(否则$n$为$\mathbb{N}$的最大元);称其最小元为$n$的\textbf{后继};
@@ -347,8 +347,9 @@
             \item 记1为0的后继.
             \item $n$的后继也为$n+1$,因此$$\forall m \in \mathbb{N}, (m > n \Rightarrow m \geqslant n + 1)$$
         \end{itemize}
-    \item 同理,若$n \in \mathbb{N}^*$,则严格小于$n$的自然数构成的集合非空(它包含0)且以$n$为上界;称其最大元为$n$的\textbf{前驱},等于$n - 1$,且$$\forall m \in \mathbb{N}, (m < n \rightarrow m \leqslant n - 1)$$
+    \item 同理,若$n \in \mathbb{N}^*$,则严格小于$n$的自然数构成的集合非空(它包含0)且以$n$为上界;称其最大元为$n$的\textbf{前驱},等于$n - 1$,且$$\forall m \in \mathbb{N}, (m < n \Rightarrow m \leqslant n - 1)$$
 \end{itemize}
+
 作为$\mathbb{N}$的定义的应用,我们给出下面的定理.
 \begin{thm}[Eucilde除法]
     设$a \in \mathbb{N}, b \in \mathbb{N}^*$,则存在唯一$q, r \in \mathbb{N}$使得$$a = bq + r, r < b$$
@@ -366,7 +367,7 @@
 \end{thm}
 我们通常通过下面的定理来运用这一原理,从而进行\textbf{归纳推理}.
 \begin{thm}
-    设$P$为$\mathbb{N}$上的一个叙述,若$P(0)$为真且$$\forall n \in \mathbb{N}, (P(n) \Rightarrow P(n + 1))$$则对于每个自然数$n$,$P(n)$都为真.
+    设$P$为$\mathbb{N}$上的一个叙述,若$P(0)$为真且$\forall n \in \mathbb{N}, (P(n) \Rightarrow P(n + 1))$则对于每个自然数$n$,$P(n)$都为真.
 \end{thm}
 \begin{rqq}
     我们常将$P(n)$记为$P_n$.
@@ -377,7 +378,7 @@
 \begin{deff}
     称$E$为\textbf{有限集},若存在$n \in \mathbb{N}$及从$\{ 1, 2, \cdots, n \}$到$E$的双射.
 
-    整数$n$称为$E$的\textbf{势},或者$E$的元素个数.通常记为$\mathrm{card} E$,也可以是$\left\lvert E \right\rvert$或$\# E$
+    整数$n$称为$E$的\textbf{势},或者$E$的元素个数.通常记为$\mathrm{card} E$,也可以是$\lvert E \rvert$或$\# E$
 \end{deff}
 
 \begin{rqq}
@@ -389,32 +390,32 @@
 \end{rqq}
 
 \begin{prop}
-    设$E$为有限集,势为$n$,若集合$F$与$E$直接存在双射,则$\left\lvert F \right\rvert = n$.
+    设$E$为有限集,势为$n$,若集合$F$与$E$直接存在双射,则$\lvert F \rvert = n$.
 \end{prop}
 
 \begin{prop}
     设$E$为有限集,$F$为$E$的子集,则
     \begin{enumerate}
-        \item $F$为有限集且$\left\lvert F \right\rvert \leqslant \left\lvert E \right\rvert$.
-        \item $\left\lvert F \right\rvert = \left\lvert E \right\rvert$当且仅当$F = E$.
+        \item $F$为有限集且$\lvert F \rvert \leqslant \lvert E \rvert$.
+        \item $\lvert F \rvert = \lvert E \rvert$当且仅当$F = E$.
     \end{enumerate}
 \end{prop}
 
 \begin{prop}
     设$E, F$为非空有限集,$u: E \to F$,则
     \begin{enumerate}
-        \item $u(E)$为有限集且$\left\lvert u(E) \right\rvert \leqslant \left\lvert E \right\rvert$.
-        \item $\left\lvert u(E) \right\rvert = \left\lvert E \right\rvert$当且仅当$u$为单射.
+        \item $u(E)$为有限集且$\lvert u(E) \rvert \leqslant \lvert E \rvert$.
+        \item $\lvert u(E) \rvert = \lvert E \rvert$当且仅当$u$为单射.
     \end{enumerate}
 \end{prop}
 
 \begin{rqq}
     从这个形式可以推出以下结果.
     \begin{enumerate}
-        \item 若存在从有限集$E$到有限集$F$的满射,则$\left\lvert F \right\rvert \leqslant \left\lvert E \right\rvert$且$F = u(E)$.
-        因此,若$\left\lvert F \right\rvert > \left\lvert E \right\rvert$,则不存在从有限集$E$到有限集$F$的满射.
-        \item 若存在从有限集$E$到有限集$F$的单射,则$\left\lvert E \right\rvert \leqslant \left\lvert F \right\rvert$.
-        因此,若$\left\lvert E \right\rvert > \left\lvert F \right\rvert$,则不存在从有限集$E$到有限集$F$的单射.
+        \item 若存在从有限集$E$到有限集$F$的满射,则$\lvert F \rvert \leqslant \lvert E \rvert$且$F = u(E)$.
+        因此,若$\lvert F \rvert > \lvert E \rvert$,则不存在从有限集$E$到有限集$F$的满射.
+        \item 若存在从有限集$E$到有限集$F$的单射,则$\lvert E \rvert \leqslant \lvert F \rvert$.
+        因此,若$\lvert E \rvert > \lvert F \rvert$,则不存在从有限集$E$到有限集$F$的单射.
     \end{enumerate}
 \end{rqq}
 
