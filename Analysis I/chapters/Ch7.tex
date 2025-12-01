@@ -52,3 +52,61 @@
         \item 若$f_2,g_2$在$a$附近非0,则$\dfrac{f_1}{f_2}\sim\dfrac{g_1}{g_2}$.
     \end{enumerate}
 \end{prop}
+
+\begin{prop}
+    设$f\sim g,\alpha\in\mathbb{R}$,则$f^{\alpha}\sim g^{\alpha}$.
+\end{prop}
+
+\begin{exer}
+    设$f,g:I\to\mathbb{R}$,则$e^f\sim e^g\iff f-g\to0$.
+\end{exer}
+
+\begin{prop}
+    设$f:I\to\mathbb{R},a\in I,f\sim g,b=f(a)=g(a)\in U,\varphi:U\to I,\lim\limits_{x\to b}\varphi(x)=a$,则$f\circ\varphi\sim g\circ\varphi$.
+\end{prop}
+
+\section{极限展开}
+
+\begin{deff}
+    设$0\in I,f:I\to\mathbb{R}$.称$f$在$0$处有$n$阶展开,若存在$a_0,a_1,a_2,\cdots,a_n\in\mathbb{R}$,使得$f(x)=\sum\limits_{k=0}^na_kx^k+o(x^n)$.
+\end{deff}
+
+\begin{deff}
+    设$x_0\in I,f:I\to\mathbb{R}$.称$f$在$x_0$处有$n$阶展开,若存在$a_0,a_1,a_2,\cdots,a_n\in\mathbb{R}$,使得$f(x)=\sum\limits_{k=0}^na_k(x-x_0)^k+o((x-x_0)^n)$.
+\end{deff}
+
+\begin{prop}
+    函数在一点处的$n$阶展开唯一.
+\end{prop}
+
+\begin{deff}
+    设$f$在$0$处的$n$阶展开为$f(x)=\sum\limits_{k=0}^na_kx^k+o(x^n)$.称多项式$P(x)=\sum\limits_{k=0}^na_kx^k$为其\textbf{正则部分}.
+\end{deff}
+
+\begin{prop}
+    设$P$为$f$在0处的$n$阶展开的正则部分.若$f$为偶函数,则$P$只有偶次项;若$f$为奇函数,则$P$只有寄次项.
+\end{prop}
+
+\begin{prop}
+    $f$在0处有0阶展开当且仅当$f(x)=l+o(1)$,其中$l\in\mathbb{R}$.
+\end{prop}
+
+\begin{prop}
+    $f$在0处可导当且仅当$f$在0处有$1$阶展开.
+\end{prop}
+
+\begin{prop}
+    设$f:I\to\mathbb{R}$,$F$为其原函数,$f$在0处有$n$阶展开$f(x)=\sum\limits_{k=0}^na_kx^k+o(x^n)$,则$F(x)-F(0)=\sum\limits_{x=0}^n\dfrac{a_k}{k+1}x^{k+1}+o(x^{n+1})$.
+\end{prop}
+
+\begin{deff}
+    设$f$在0处有$n$阶展开$f(x)=\sum\limits_{k=0}^na_kx^k+o(x^n)$,记$p=\min\{p\in[0,n]\mid a_p\neq0\}$,称$f(x)=x^p(a_p+a_{p+1}x+\cdots+a_nx^{n-p}+o(x^{n-p}))$为$f$在0处的$n$阶展开的正规形式.
+\end{deff}
+
+\begin{prop}
+    设$f,g$在0处有$n$阶展开,则$f+g,fg$在0处也有$n$阶展开.
+\end{prop}
+
+\begin{prop}
+    设$f$在0处有$n$阶展开,$\lim\limits_{x\to0}u(x)=0$,则$\dfrac{1}{1-u(x)}$在0处也有$n$阶展开,且其正则部分与$\sum\limits_{k=0}^nu(x)^k$在0处的$n$阶展开的正则部分相同.
+\end{prop}
