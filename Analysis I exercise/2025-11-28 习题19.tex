@@ -1,0 +1,146 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{习题19}
+\author{}
+\date{2025年11月28日}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年11月28日}
+\chead{习题19}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  利用展开计算下列极限:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \[\lim\limits_{x\to0}\dfrac{1-\cos x}{\tan^2 x}\]
+  \item
+    \[\lim\limits_{x\to0}\dfrac{(1-\cos x)\arctan x}{x\sin^2x}\]
+  \item
+    \[\lim\limits_{x\to0}\left(\dfrac{\tan x}{x}\right)^{\frac{1}{x^2}}\]
+  \item
+    \[\lim\limits_{x\to\frac{\pi}{2}}e^{\frac{1}{\cos x}}\ln\frac{2x}{\pi}\]
+  \item
+    \[\lim\limits_{x\to+\infty}x\left(\ln x\right)^2\left(\sin\frac{1}{\ln x}-\sin\frac{1}{\ln(x+1)}\right)\]
+  \item
+    \[\lim\limits_{x\to e}(\ln x-1)\ln\left\lvert x-e\right\rvert\]
+  \item
+    \[\lim\limits_{x\to 0}\dfrac{(1+\sin x)^{\frac{1}{x}}-e^{1-\frac{x}{2}}}{(1+\tan x)^\frac{1}{x}-e^{1-\frac{x}{2}}}\]
+  \item
+    \[\lim\limits_{x\to0^+}(\cos x)^{\frac{1}{x^a}},a\geqslant0\]
+  \end{enumerate}
+\item
+  此前我们都是对函数做多项式展开.由于\(\ln x\)比任意\(x^{\varepsilon}\)都慢,一个想法是利用\(x^p(\ln x)^q\)型函数得到更精细控制的展开.先证明:对任意\(p,p’\in\mathbb{N},q,q’\in\mathbb{Z}_+\),若\({} p>p’\)或\(p=p‘,q>q’\),则\(\lim\limits_{x\to0^+}\dfrac{x^p(\ln x)^q}{x^{p’}(\ln x)^{q’}}\).
+\item
+  对\(f(x)=\left(1+\frac{1}{x}\right)^{x\ln x}\)在\(x=0\)处按\(x^p(\ln x)^q\)展开(即你的展开式的每一项都是\(x^p(\ln x)^q\)的形式.)
+\item
+  重做上次第九题:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \[\lim\limits_{x\to0^+}\dfrac{(1+x)^{\frac{\ln x}{x}}-x}{x(x^x-1)}\]
+  \item
+    \[\lim\limits_{x\to+\infty}\dfrac{\left((1+x)^{\frac{1}{x}}-x^{\frac{1}{x}}\right)(x\ln x)^2}{x^{x^{\frac{1}{x}}}-x}\]
+  \end{enumerate}
+\item
+  利用函数的各阶导数信息,我们可以知道任意位置函数的形态.考虑函数\[f(x)=\begin{cases}\left\lvert x^2\sin\dfrac{1}{x}\right\rvert, & x\neq0 \\ 0, & x=0\end{cases}\]
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    找出其局部极大极小值点.
+  \item
+    大致画出其图像,尤其是\(x=0\)附近的渐进形态.
+  \end{enumerate}
+\item
+  求\(f(x)=\sqrt[4]{x^4+x^2}-\sqrt[8]{x^3+x^2}\)在无穷远处的渐进线方程.
+\item
+  大致描绘出下列函数的图像(包含极值点信息,无穷远处渐进信息以及奇异点的爆破信息)
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \[f(x)=e^{\frac{1}{x}}\sqrt{x(x+2)}\]
+  \item
+    \[f(x)=\dfrac{\ln \lvert x-2 \rvert}{\ln \lvert x \rvert}\]
+  \end{enumerate}
+\item
+  设\(f:[a,b]\to[a,b]\)连续且每一点都是局部极大值点.证明:\(f\)是常值函数.
+\item
+  证明:不存在函数\(f:I\to\mathbb{R}\),\(I\)是一个区间,使得\(I\)中每一点都是\(f\)的严格局部极大值.
+\item
+  对于函数\(f\in\mathcal{C}^2(\mathbb{R},\mathbb{R}_+)\),定义\(f_{x_0,\lambda}(x)=\left(\dfrac{\lambda}{\left\lvert x-x_0 \right\rvert}\right)^{\gamma}f\left(x_0+\dfrac{\lambda^2\left(x-x_0\right)}{\left\lvert x-x_0 \right\rvert^2}\right)\).若对任意\(x_0\in\mathbb{R}\),都存在\(\lambda_0\)使得\(f(x)=f_{x_0,\lambda_0}(x)\)对任意\(x\neq x_0\)成立,证明:存在\(x_1\in\mathbb{R}\)使得\(f\)有如下形式:\[f(x)=\dfrac{A}{\left(B+\left\lvert x-x_1\right\rvert^2\right)^{\frac{\gamma}{2}}}\](提示:将\(f(x)\)在\(x_0\)和0处展开.)
+\end{enumerate}
+
+\end{document}
