@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[
   a4paper,
-]{ctexart}
+]{article}
 
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
@@ -20,14 +20,8 @@
 \urlstyle{same}
 
 \usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \usepackage{lmodern}
 
 \makeatletter
@@ -51,22 +45,16 @@
 
 
 \usepackage{titling}
-% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
 \title{习题14}
 \author{}
 \date{2025年11月10日}
 
-% 先加载 enumitem 宏包
-\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
 
-% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{enumitem}
 \usepackage{etoolbox}
 \AtBeginEnvironment{enumerate}{
-  \setlist[enumerate,2]{
-    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
-    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
-    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
-  }
   \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
 }
 
@@ -74,8 +62,8 @@
 \usepackage{fancyhdr}
 
 \begin{document}
-%%\maketitle
-%
+\maketitle
+
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -97,12 +85,12 @@
   \item
     证明:\(F\)在\([a,b]\)上可导.
   \item
-    计算\(F'\).
+    计算\(F’\).
   \end{enumerate}
 \item
   设\(f\)连续且以\(T\)为周期,\(G(x)=\int_x^{x+T}f(t)\mathrm{d}t\).证明:\(G\)为常值函数.
 \item
-  证明:\[\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x=\int_0^\frac{\pi}{2}\cos^nx\mathrm{d}x,n\in\mathbb{N}\]
+  证明:\[\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x=\int_0^\frac{\pi}{2}\cos^nx\mathrm{d}x,n\in\mathbb{N}\].
 \item
   设\(f\in\mathcal{C}([0,\pi],\mathbb{R})\).证明:
 

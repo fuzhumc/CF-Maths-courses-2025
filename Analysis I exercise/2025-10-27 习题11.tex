@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[
   a4paper,
-]{ctexart}
+]{article}
 
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
@@ -20,14 +20,8 @@
 \urlstyle{same}
 
 \usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \usepackage{lmodern}
 
 \makeatletter
@@ -51,22 +45,16 @@
 
 
 \usepackage{titling}
-% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
 \title{习题11}
 \author{}
 \date{2025年10月27日}
 
-% 先加载 enumitem 宏包
-\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
 
-% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{enumitem}
 \usepackage{etoolbox}
 \AtBeginEnvironment{enumerate}{
-  \setlist[enumerate,2]{
-    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
-    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
-    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
-  }
   \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
 }
 
@@ -74,8 +62,8 @@
 \usepackage{fancyhdr}
 
 \begin{document}
-%%\maketitle
-%
+\maketitle
+
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -104,30 +92,30 @@
   \item
     Legendre变换的几何意义是什么?
   \item
-    回顾一下\textbf{Young不等式}:\(ab \leq \frac{a^p}{p}+\frac{b^q}{q},\frac{1}{p}+\frac{1}{q}=1,p,q>1\)的证明.
+    回顾一下\textbf{Young不等式}:\(ab \leqslant \frac{a^p}{p}+\frac{b^q}{q},\frac{1}{p}+\frac{1}{q}=1,p,q>1\)的证明.
   \item
-    证明:对一列函数\((f_n)\),有\(\left(\inf\limits_{n}f_n\right)^*(x)\geq\sup\limits_{n}f_n^*(x)\).
+    证明:对一列函数\((f_n)\),有\(\left(\inf\limits_{n}f_n\right)^*(x)\geqslant\sup\limits_{n}f_n^*(x)\).
   \item
-    证明:对任意\(f,g\)及\(0\leq\lambda\leq1\),有 \[
-     ((1-\lambda)f+\lambda g)^*\leq(1-\lambda)f^*+\lambda g^*
+    证明:对任意\(f,g\)及\(0\leqslant\lambda\leqslant1\),有 \[
+     ((1-\lambda)f+\lambda g)^*\leqslant(1-\lambda)f^*+\lambda g^*
      \]
   \item
     证明更一般的Young不等式: \[
-     ab \leq f(a)+f^*(b)
+     ab \leqslant f(a)+f^*(b)
      \]
   \end{enumerate}
 \item
   利用Hölder不等式证明:对任意\({} p,q,r>1,0<\lambda<1,\frac{1}{p}=\frac{\lambda}{q}+\frac{1-\lambda}{r} {}\),有:
   \[
-  \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p \right)^\frac{1}{p} \leq \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^q \right)^\frac{\lambda}{q} \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^r \right)^\frac{1-\lambda}{r}  
+  \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p \right)^\frac{1}{p} \leqslant \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^q \right)^\frac{\lambda}{q} \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^r \right)^\frac{1-\lambda}{r}  
   \]
 \item
   证明如下逆Hölder不等式: \[
-  \sum\limits_{n=1}^\infty \left\lvert a_nb_n \right\rvert \geq \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^\frac{1}{p} \right)^p \left( \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^\frac{1}{1-p} \right)^{1-p}
+  \sum\limits_{n=1}^\infty \left\lvert a_nb_n \right\rvert \geqslant \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^\frac{1}{p} \right)^p \left( \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^\frac{1}{1-p} \right)^{1-p}
   \] 其中我们假设\(p>1\)且各个求和均有意义.
 \item
   证明如下逆Minkowski不等式: \[
-  \left( \sum\limits_{n=1}^\infty \left\lvert a_n+b_n \right\rvert^p \right)^\frac{1}{p} \geq \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p \right)^\frac{1}{p}+\left( \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)^\frac{1}{p}
+  \left( \sum\limits_{n=1}^\infty \left\lvert a_n+b_n \right\rvert^p \right)^\frac{1}{p} \geqslant \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p \right)^\frac{1}{p}+\left( \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)^\frac{1}{p}
   \] 其中\(0<p<1\).
 \item
   证明下面两个不等式:
@@ -137,22 +125,23 @@
   \tightlist
   \item
     \[
-     \sum\limits_{n=1}^\infty \left\lvert \frac{a_n+b_n}{2} \right\rvert^p + \sum\limits_{n=1}^\infty \left\lvert \frac{a_n-b_n}{2} \right\rvert \leq \frac{1}{2} \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p + \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)
-     \] 其中\(p \geq 2\).
+     \sum\limits_{n=1}^\infty \left\lvert \frac{a_n+b_n}{2} \right\rvert^p + \sum\limits_{n=1}^\infty \left\lvert \frac{a_n-b_n}{2} \right\rvert \leqslant \frac{1}{2} \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p + \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)
+     \] 其中\(p \geqslant 2\).
   \item
     \[
-     \left( \sum\limits_{n=1}^\infty \left\lvert \frac{a_n+b_n}{2} \right\rvert^p \right)^\frac{q}{p} + \left( \sum\limits_{n=1}^\infty \left\lvert \frac{a_n-b_n}{2} \right\rvert^p \right)^\frac{q}{p} \leq \frac{1}{2} \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p + \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)^\frac{q}{p}
+     \left( \sum\limits_{n=1}^\infty \left\lvert \frac{a_n+b_n}{2} \right\rvert^p \right)^\frac{q}{p} + \left( \sum\limits_{n=1}^\infty \left\lvert \frac{a_n-b_n}{2} \right\rvert^p \right)^\frac{q}{p} \leqslant \frac{1}{2} \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p + \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)^\frac{q}{p}
      \] 其中\(1<p<2,\frac{1}{p}+\frac{1}{q}=1\).
   \end{enumerate}
 \item
   证明:若存在一个正常数\(C\)使得不等式 \[
-  \sum\limits_{n=1}^\infty \left\lvert a_nb_n \right\rvert \leq C \left( \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)^\frac{1}{p}
+  \sum\limits_{n=1}^\infty \left\lvert a_nb_n \right\rvert \leqslant C \left( \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)^\frac{1}{p}
   \]
-  对任意序列\((b_n)\)成立,则\(\left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^q \right)^\frac{1}{q} \leq C\),其中\(\frac{1}{p}+\frac{1}{q}=1\).
+  对任意序列\((b_n)\)成立,则\(\left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^q \right)^\frac{1}{q} \leqslant C\),其中\(\frac{1}{p}+\frac{1}{q}=1\).
 \item
   证明不等式: \[
-  \left(\sum\limits_{N=0}^{\infty}\left(\sum_{n=0}^{N}\left\lvert a_nb_{N-n} \right\rvert \right)^r\right)^\frac{1}{r}\leq\left(\sum_{n=0}^\infty\left\lvert a_n \right\rvert ^p\right)^\frac{1}{p}\left(\sum_{n=0}^\infty\left\lvert b_n \right\rvert^q\right)^\frac{1}{q}
-  \] 其中\(p,q,r \geq 1\)且\(\frac{1}{p}+\frac{1}{q}=1+\frac{1}{r}\).
+  \left(\sum\limits_{N=0}^{\infty}\left(\sum_{n=0}^{N}\left\lvert a_nb_{N-n}\right\rvert \right)^r\right)^\frac{1}{r}\leqslant\left(\sum_{n=0}^\infty\left\lvert a_n\right\rvert ^p\right)^\frac{1}{p}\left(\sum_{n=0}^\infty\left\lvert b_n\right\rvert^q\right)^\frac{1}{q}
+  \]
+  其中\(p,q,r \geqslant 1\)且\(\frac{1}{p}+\frac{1}{q}=1+\frac{1}{r}\).
 \item
   如果你学过一点积分知识,尝试吧今天所有的不等式写成积分形式,思考一下他们在说什么事情.
 \end{enumerate}

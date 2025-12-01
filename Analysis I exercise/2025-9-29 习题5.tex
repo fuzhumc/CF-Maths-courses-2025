@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[
   a4paper,
-]{ctexart}
+]{article}
 
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
@@ -20,14 +20,8 @@
 \urlstyle{same}
 
 \usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \usepackage{lmodern}
 
 \makeatletter
@@ -51,22 +45,16 @@
 
 
 \usepackage{titling}
-% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
 \title{习题5}
 \author{}
 \date{2025年9月29日}
 
-% 先加载 enumitem 宏包
-\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
 
-% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{enumitem}
 \usepackage{etoolbox}
 \AtBeginEnvironment{enumerate}{
-  \setlist[enumerate,2]{
-    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
-    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
-    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
-  }
   \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
 }
 
@@ -74,8 +62,8 @@
 \usepackage{fancyhdr}
 
 \begin{document}
-%%\maketitle
-%
+\maketitle
+
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -117,7 +105,7 @@
   \[
   c_n=\frac{1}{n} \left( a_1b_n+a_2b_{n-1}+\cdots+a_nb_1 \right)
   \] 证明:存在常数\(M>0\)使得 \[
-  \left\lvert c_n-ab \right\rvert \leq \frac{M}{n} \sum_{j=1}^n \left( \left\lvert a_j-a \right\rvert + \left\lvert b_j-b \right\rvert \right)
+  \left\lvert c_n-ab \right\rvert \leqslant \frac{M}{n} \sum_{j=1}^n \left( \left\lvert a_j-a \right\rvert + \left\lvert b_j-b \right\rvert \right)
   \] 进一步地,证明:\(\lim\limits_{n \to \infty}c_n=ab\).
 \item
   假设序列\((x_n),(y_n)\)满足:

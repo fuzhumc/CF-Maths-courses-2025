@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[
   a4paper,
-]{ctexart}
+]{article}
 
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
@@ -20,14 +20,8 @@
 \urlstyle{same}
 
 \usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \usepackage{lmodern}
 
 \makeatletter
@@ -51,22 +45,16 @@
 
 
 \usepackage{titling}
-% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
 \title{习题12}
 \author{}
 \date{2025年11月3日}
 
-% 先加载 enumitem 宏包
-\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
 
-% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{enumitem}
 \usepackage{etoolbox}
 \AtBeginEnvironment{enumerate}{
-  \setlist[enumerate,2]{
-    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
-    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
-    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
-  }
   \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
 }
 
@@ -74,8 +62,8 @@
 \usepackage{fancyhdr}
 
 \begin{document}
-%%\maketitle
-%
+\maketitle
+
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -87,7 +75,7 @@
 
 本周我们开始学习积分,在接触严格的理论证明前,我们先建立起对于积分的感性认识.
 (非常不严格的)\textbf{定义}
-对于函数\(f:[a,b] \to \mathbb{R}\),如果\({} f(x)\geq0 {}\)我们称\(f\)的图像与\(x\)轴所围成的面积为\(f\)从\(a\)到\(b\)的积分,记为\(\int_a^b f(x)\mathrm{d}x\).如果\(f\)是变号的,则记\(\int_a^b f(x)\mathrm{d}x=\int_a^b f^+(x)\mathrm{d}x-\int_a^b f^-(x)\mathrm{d}x\).
+对于函数\(f:[a,b] \to \mathbb{R}\),如果\({} f(x)\geqslant0 {}\)我们称\(f\)的图像与\(x\)轴所围成的面积为\(f\)从\(a\)到\(b\)的积分,记为\(\int_a^b f(x)\mathrm{d}x\).如果\(f\)是变号的,则记\(\int_a^b f(x)\mathrm{d}x=\int_a^b f^+(x)\mathrm{d}x-\int_a^b f^-(x)\mathrm{d}x\).
 1. 依据上面的定义,计算下面的积分: 1. \(\int_{-2}^2 2x+3\mathrm{d}x\). 2.
 \(\int_{-\frac{\sqrt{2}}{2}}^1 \sqrt{1-x^2}\mathrm{d}x\). 3.
 \(\int_0^{\pi} \cos x \mathrm{d}x\). 2.
@@ -137,7 +125,7 @@
     对这样的\(F\),计算一下\(F(1)-F(0)\).你发现了什么?这是巧合吗?
   \end{enumerate}
 \item
-  对于\(f\geq0\),验证下面三件事:
+  对于\(f\geqslant0\),验证下面三件事:
 
   \begin{enumerate}
   \def\labelenumii{\arabic{enumii}.}
@@ -145,9 +133,9 @@
   \item
     \(\int_a^a f(x)\mathrm{d}x=0\).
   \item
-    对任意区间\([a,b]\),\(\int_a^b f(x) \mathrm{d}x \geq 0\).
+    对任意区间\([a,b]\),\(\int_a^b f(x) \mathrm{d}x \geqslant 0\).
   \item
-    考虑一串区间\(a_0 \leq a_1 \leq a_2 \leq \cdots \leq a_n\),有\(\sum\limits_{j=0}^{n-1} \int_{a_j}^{a_{j+1}} f(x)\mathrm{d}x=\int_{a_0}^{a_n}f(x)\mathrm{d}x\).
+    考虑一串区间\(a_0 \leqslant a_1 \leqslant a_2 \leqslant \cdots \leqslant a_n\),有\(\sum\limits_{j=0}^{n-1} \int_{a_j}^{a_{j+1}} f(x)\mathrm{d}x=\int_{a_0}^{a_n}f(x)\mathrm{d}x\).
   \item
     令\(n \to \infty\),是否仍然成立?
   \item

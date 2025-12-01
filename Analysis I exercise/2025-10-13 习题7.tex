@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[
   a4paper,
-]{ctexart}
+]{article}
 
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
@@ -20,14 +20,8 @@
 \urlstyle{same}
 
 \usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \usepackage{lmodern}
 
 \makeatletter
@@ -51,22 +45,16 @@
 
 
 \usepackage{titling}
-% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
 \title{习题7}
 \author{}
 \date{2025年10月13日}
 
-% 先加载 enumitem 宏包
-\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
 
-% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{enumitem}
 \usepackage{etoolbox}
 \AtBeginEnvironment{enumerate}{
-  \setlist[enumerate,2]{
-    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
-    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
-    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
-  }
   \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
 }
 
@@ -74,8 +62,8 @@
 \usepackage{fancyhdr}
 
 \begin{document}
-%%\maketitle
-%
+\maketitle
+
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -93,7 +81,7 @@
 \item
   称\((a,b)\)上的实值函数\(f\)为\textbf{凸函数},若对任意\(x,y \in (a,b),\lambda \in (0,1)\),有
   \[
-   f(\lambda x+(1-\lambda)y) \leq \lambda f(x)+(1-\lambda)f(y)
+   f(\lambda x+(1-\lambda)y) \leqslant \lambda f(x)+(1-\lambda)f(y)
    \] 证明:
 
   \begin{enumerate}
@@ -105,15 +93,15 @@
     单增凸函数和凸函数的复合也是凸函数.
   \item
     对于\(a<s<t<u<b\),证明: \[
-     \frac{f(t)-f(s)}{t-s} \leq \frac{f(u)-f(s)}{u-s} \leq \frac{f(u)-f(t)}{u-t}
+     \frac{f(t)-f(s)}{t-s} \leqslant \frac{f(u)-f(s)}{u-s} \leqslant \frac{f(u)-f(t)}{u-t}
      \]
   \end{enumerate}
 \item
   设连续单增函数\(f:(a,b) \to \mathbb{R}\)满足 \[
-  f\left( \frac{x+y}{2} \right) \leq \frac{f(x)+f(y)}{2},\forall x,y \in (a,b)
+  f\left( \frac{x+y}{2} \right) \leqslant \frac{f(x)+f(y)}{2},\forall x,y \in (a,b)
   \] 证明:\(f\)为凸函数.
 \item
-  我们首先回顾聚点定义:称\(a\)是集合\(X\)的\textbf{聚点},若对任意\(\delta > 0\),存在\(x \in X\),使得\(x \in (a-\delta,a+\delta)\).证明:若对任意\(x_n \in X \setminus \{ a \},x_n \to a\),且满足\(\vert x_{n+1}-a \rvert<\vert x_n-a \rvert\),都有\(\lim\limits_{n \to \infty}f(x_n)=A\),则\(\lim\limits_{x \to a}f(x)=A\).
+  我们首先回顾聚点定义:称\(a\)是集合\(X\)的\textbf{聚点},若对任意\(\delta > 0\),存在\(x \in X\),使得\(x \in (a-\delta,a+\delta)\).证明:若对任意\(x_n \in X \setminus \{ a \},x_n \to a\),且满足\(\left\lvert x_{n+1}-a \right\rvert<\left\lvert x_n-a \right\rvert\),都有\(\lim\limits_{n \to \infty}f(x_n)=A\),则\(\lim\limits_{x \to a}f(x)=A\).
 \item
   设\(f:(a,+\infty) \to \mathbb{R}\)满足:
 
@@ -121,7 +109,7 @@
   \def\labelenumii{\arabic{enumii}.}
   \tightlist
   \item
-    对任意\(b>a\),存在\(M>0\)使得\(\left\lvert f(x) \right\rvert \leq M\)对任意\(x \in (a,b)\)成立.
+    对任意\(b>a\),存在\(M>0\)使得\(\left\lvert f(x) \right\rvert \leqslant M\)对任意\(x \in (a,b)\)成立.
   \item
     \(\lim\limits_{x \to +\infty}\left( f(x+1)-f(x) \right)=+\infty\).
   \end{enumerate}
@@ -175,7 +163,7 @@
     紧集的象是紧集.(回忆一下\textbf{紧集}的定义:任何开覆盖都有有限子覆盖)
   \end{enumerate}
 \item
-  设连续函数\(f,g:[a,b] \to \mathbb{R}\)满足\(0<g(x)<f(x),\forall x \in [a,b]\).证明:存在\(k>1\)使得\(kg(x) \leq f(x)\).
+  设连续函数\(f,g:[a,b] \to \mathbb{R}\)满足\(0<g(x)<f(x),\forall x \in [a,b]\).证明:存在\(k>1\)使得\(kg(x) \leqslant f(x)\).
 \item
   设\(f,g:[a,b] \to [a,b]\)都为连续函数.证明:
 

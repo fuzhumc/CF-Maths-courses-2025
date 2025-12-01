@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[
   a4paper,
-]{ctexart}
+]{article}
 
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
@@ -20,14 +20,8 @@
 \urlstyle{same}
 
 \usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \usepackage{lmodern}
 
 \makeatletter
@@ -51,22 +45,16 @@
 
 
 \usepackage{titling}
-% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
 \title{习题10}
 \author{}
 \date{2025年10月24日}
 
-% 先加载 enumitem 宏包
-\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
 
-% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{enumitem}
 \usepackage{etoolbox}
 \AtBeginEnvironment{enumerate}{
-  \setlist[enumerate,2]{
-    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
-    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
-    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
-  }
   \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
 }
 
@@ -74,8 +62,8 @@
 \usepackage{fancyhdr}
 
 \begin{document}
-%%\maketitle
-%
+\maketitle
+
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -121,15 +109,15 @@
   \def\labelenumii{\arabic{enumii}.}
   \tightlist
   \item
-    对任意\(x \in \mathbb{R}\),\(f'(x^+)\)与\(f'(x^-)\)存在且\(f'(x^+) \leq f'(x^-)\).
+    对任意\(x \in \mathbb{R}\),\(f’(x^+)\)与\(f’(x^-)\)存在且\(f’(x^+) \leqslant f’(x^-)\).
   \item
-    证明:\(f'(x^+)\)与\(f'(x^-)\)单调上升且对任意\(a<b\),有 \[
-     f'(x^+) \leq \frac{f(b)-f(a)}{b-a} \leq f'(b^-)
+    证明:\(f’(x^+)\)与\(f’(x^-)\)单调上升且对任意\(a<b\),有 \[
+     f’(x^+) \leqslant \frac{f(b)-f(a)}{b-a} \leqslant f’(b^-)
      \]
   \end{enumerate}
 \item
-  设\(x,y \geq 0\)且\(q \geq 1\),证明: \[
-  (x+y)^q \leq x^q+q2^{q-1}(x^{q-1}y+y^q)
+  设\(x,y \geqslant 0\)且\(q \geqslant 1\),证明: \[
+  (x+y)^q \leqslant x^q+q2^{q-1}(x^{q-1}y+y^q)
   \]
 \item
   设\(f: \mathbb{R} \to \mathbb{R}\)是任一函数,
@@ -138,9 +126,9 @@
   \def\labelenumii{\arabic{enumii}.}
   \tightlist
   \item
-    设\(f\)是凸的,证明:\(f\)的图像位于直线\(y=f(x)+m(x-a)\)的上方当且仅当\(f'(a^-) \leq m \leq f'(a^+)\).
+    设\(f\)是凸的,证明:\(f\)的图像位于直线\(y=f(x)+m(x-a)\)的上方当且仅当\(f’(a^-) \leqslant m \leqslant f’(a^+)\).
   \item
-    设\(f\)连续起右可导并满足不等式\(f(x) \leq f(a)+f'(a^+)(x-a)\).证明:\(f\)是凸函数.
+    设\(f\)连续起右可导并满足不等式\(f(x) \leqslant f(a)+f’(a^+)(x-a)\).证明:\(f\)是凸函数.
   \end{enumerate}
 \item
   设\(f:(a,b) \to \mathbb{R}\)是\(C^1\)的,且是严格凸的.证明:
@@ -151,7 +139,7 @@
   \item
     \(f\)每一点切线的斜率所组成的实数集合是一个开区间.
   \item
-    \(f'\)可逆.
+    \(f’\)可逆.
   \item
     定义函数\(h_{\lambda}(x)= \lambda x-f(x)\),则\(h_{\lambda}\)在\((a,b)\)上有唯一的极大值点,记其为\(x_{\lambda}\).
   \item
@@ -159,25 +147,25 @@
   \end{enumerate}
 \item
   令\(p>1,b_1,b_2,\ldots,b_n,\ldots>0\).我们接下来证明下列不等式: \[
-   \sum_{x=1}^\infty \left( \frac{b_1+b_2+\cdots+b_n}{n} \right)^p \leq \left( \frac{p}{p-1} \right)^p \sum_{n=1}^\infty b_n^p
+   \sum_{x=1}^\infty \left( \frac{b_1+b_2+\cdots+b_n}{n} \right)^p \leqslant \left( \frac{p}{p-1} \right)^p \sum_{n=1}^\infty b_n^p
    \]
 
   \begin{enumerate}
   \def\labelenumii{\arabic{enumii}.}
   \tightlist
   \item
-    考虑\(T_n=\frac{b_1+b_2+\cdots+b_n}{n},\Delta_n=T_n^p-\frac{p}{p-1}b_nT_n^{p-1}\).证明:\(\Delta_n \leq \frac{n-1}{p-1}T_{n-1}^p-\frac{n}{p-1}T_n^p\).
+    考虑\(T_n=\frac{b_1+b_2+\cdots+b_n}{n},\Delta_n=T_n^p-\frac{p}{p-1}b_nT_n^{p-1}\).证明:\(\Delta_n \leqslant \frac{n-1}{p-1}T_{n-1}^p-\frac{n}{p-1}T_n^p\).
   \item
-    证明:\(\sum\limits_{n=1}^N T_n^p \leq \frac{p}{p-1} \sum\limits_{n=1}^N b_n^p\).
+    证明:\(\sum\limits_{n=1}^N T_n^p \leqslant \frac{p}{p-1} \sum\limits_{n=1}^N b_n^p\).
   \item
     利用Hölder不等式证明:对任意\(N \in \mathbb{N}\),有 \[
-     \sum_{n=1}^N \left( \frac{b_1+b_2+\cdots+b_n}{n} \right)^p \leq \left( \frac{p}{p-1} \right)^p \sum_{n=1}^N b_n^p
+     \sum_{n=1}^N \left( \frac{b_1+b_2+\cdots+b_n}{n} \right)^p \leqslant \left( \frac{p}{p-1} \right)^p \sum_{n=1}^N b_n^p
      \]
   \item
     令\(N \to \infty\)得到结论.这个不等式何时取等号?
   \item
     如果你学过一点积分,那么试着证明下面的积分版本: \[
-     \int_0^\infty \left( \frac{1}{x} \int_0^x f(t) \mathrm{d} t \right)^p \mathrm{d} x \leq \left( \frac{p}{p-1} \right)^p \int_0^\infty f(x)^p \mathrm{d} x
+     \int_0^\infty \left( \frac{1}{x} \int_0^x f(t) \mathrm{d} t \right)^p \mathrm{d} x \leqslant \left( \frac{p}{p-1} \right)^p \int_0^\infty f(x)^p \mathrm{d} x
      \]
   \item
     这个不等式在说一件什么事情?

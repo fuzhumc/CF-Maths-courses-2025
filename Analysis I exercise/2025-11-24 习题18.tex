@@ -49,6 +49,9 @@
 \author{}
 \date{2025年11月24日}
 
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
+
 \usepackage{enumitem}
 \usepackage{etoolbox}
 \AtBeginEnvironment{enumerate}{
@@ -120,9 +123,9 @@
   \def\labelenumii{\arabic{enumii}.}
   \tightlist
   \item
-    \[\lim\limits_{x\to0^+}\dfrac{(1+x)^{\frac{\ln x}{x}}}{x(x^x-1)}\]
+    \[\lim\limits_{x\to0^+}\dfrac{(1+x)^{\frac{\ln x}{x}}-x}{x(x^x-1)}\]
   \item
-    \[\lim\limits_{x\to+\infty}\dfrac{\left((1+x)^{\frac{1}{x}}-x^{\frac{1}{x}}\right)(x\ln x)^2}{x^{x^{\frac{1}{x}}}}\]
+    \[\lim\limits_{x\to+\infty}\dfrac{\left((1+x)^{\frac{1}{x}}-x^{\frac{1}{x}}\right)(x\ln x)^2}{x^{x^{\frac{1}{x}}}-x}\]
   \end{enumerate}
 \end{enumerate}
 

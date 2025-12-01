@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 \documentclass[
   a4paper,
-]{ctexart}
+]{article}
 
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
@@ -20,14 +20,8 @@
 \urlstyle{same}
 
 \usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \usepackage{lmodern}
 
 \makeatletter
@@ -51,22 +45,16 @@
 
 
 \usepackage{titling}
-% 核心修改：若未手动设置 title，则自动用文件名（）作为标题
 \title{习题8}
 \author{}
 \date{2025年10月17日}
 
-% 先加载 enumitem 宏包
-\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
 
-% 重新用 enumitem 定义列表样式（此时无命令覆盖）
+\usepackage{enumitem}
 \usepackage{etoolbox}
 \AtBeginEnvironment{enumerate}{
-  \setlist[enumerate,2]{
-    before={\def\labelenumii{(\arabic{enumii})}},  % 环境开始时执行一次
-    itemjoin={\def\labelenumii{(\arabic{enumii})}},  % 每个 \item 前再执行一次（确保覆盖）
-    label=(\arabic{enumii})  % 直接指定标签格式（双重保险）
-  }
   \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
 }
 
@@ -74,8 +62,8 @@
 \usepackage{fancyhdr}
 
 \begin{document}
-%%\maketitle
-%
+\maketitle
+
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -153,7 +141,7 @@
   证明函数 \[
   f(x)=
   \begin{cases}
-  e^{\frac{1}{\left\lvert x \right\rvert^2-1}}, & \left\lvert x \right\rvert \leq 1 \\
+  e^{\frac{1}{\left\lvert x \right\rvert^2-1}}, & \left\lvert x \right\rvert \leqslant 1 \\
   0, & \left\lvert x \right\rvert > 1
   \end{cases}
   \] 是\(C^\infty\)的(任意阶可导).
@@ -161,7 +149,7 @@
   证明\textbf{Legendre多项式} \[
   P_n(x)=\frac{1}{2^n n!}\left[ \left( x^2-1 \right)^n \right]^{(n)}
   \] 满足方程 \[
-  \left( 1-x^2 \right)P''_n(x)-2xP'_n(x)+n(n+1)P_n(x)=0
+  \left( 1-x^2 \right)P’’_n(x)-2xP’_n(x)+n(n+1)P_n(x)=0
   \]
 \item
   设函数\(f,g:[a,b] \to \mathbb{R}\)满足:
@@ -172,7 +160,7 @@
   \item
     \(f,g\)在\([a,b]\)上连续.
   \item
-    \(f,g\)在\((a,b)\)上可导,且\(\left( f' \right)^2+\left( g' \right)^2 \neq 0\).
+    \(f,g\)在\((a,b)\)上可导,且\(\left( f’ \right)^2+\left( g’ \right)^2 \neq 0\).
   \item
     \(g(a) \neq g(b)\).
   \end{enumerate}
@@ -185,7 +173,7 @@
 \item
   设\(f:[a,b] \to \mathbb{R}\)是任意函数,对\(\alpha > 0\),我们称\(f\)为\textbf{\(\alpha\)次Lipschitz函数},如果存在\(k>0\)(称为\textbf{Lipschitz系数})使得
   \[
-  \left\lvert f(x)-f(y) \right\rvert \leq k \left\lvert x-y \right\rvert ^\alpha,\forall x,y \in [a,b]
+  \left\lvert f(x)-f(y) \right\rvert \leqslant k \left\lvert x-y \right\rvert ^\alpha,\forall x,y \in [a,b]
   \]
 
   \begin{enumerate}
@@ -199,11 +187,11 @@
     证明:若\(f\)是\(\alpha > 1\)次Lipschitz函数,则\(f\)在\([a,b]\)上为常值函数.
   \end{enumerate}
 \item
-  设\(f(x):\mathbb{R} \to \mathbb{R}\)为Lipschitz函数,我们称\(E=\{(x,f(x)) \in \mathbb{R}^2 \mid x \in \mathbb{R}\}\)为\textbf{Lipchitz图像}.设\(f(x)\)在\(x=x_1\)处可导,向量\((1,f’(x_1))\)称为图像在\(x=x_1\)处的\textbf{切向量},\(\nu(x_1)=\frac{1}{\sqrt{1+ \left\lvert f’(x_1) \right\rvert ^2}}\left( f’(x_1),-1 \right)\)称为此处的\textbf{单位外法向量}.现考虑两点\(X_1=\left( x_1,f\left( x_1 \right) \right),X_2=\left( x_2,y_2 \right)\),其中\(y_2 \geq f\left( x_2 \right)\).定义\(dist \left( X,E \right)=\inf_{Y \in E} \left\lvert X-Y \right\rvert\).若存在\(C>0\)使得
+  设\(f(x):\mathbb{R} \to \mathbb{R}\)为Lipschitz函数,我们称\(E=\{(x,f(x)) \in \mathbb{R}^2 \mid x \in \mathbb{R}\}\)为\textbf{Lipchitz图像}.设\(f(x)\)在\(x=x_1\)处可导,向量\((1,f’(x_1))\)称为图像在\(x=x_1\)处的\textbf{切向量},\(\nu(x_1)=\frac{1}{\sqrt{1+ \left\lvert f’(x_1) \right\rvert ^2}}\left( f’(x_1),-1 \right)\)称为此处的\textbf{单位外法向量}.现考虑两点\(X_1=\left( x_1,f\left( x_1 \right) \right),X_2=\left( x_2,y_2 \right)\),其中\(y_2 \geqslant f\left( x_2 \right)\).定义\(dist \left( X,E \right)=\inf_{Y \in E} \left\lvert X-Y \right\rvert\).若存在\(C>0\)使得
   \[
-  \frac{1}{C}dist \left( X_2,E \right) \leq \left\lvert X_1-X_2 \right\rvert \leq Cdist \left( X_2,E \right)
+  \frac{1}{C}dist \left( X_2,E \right) \leqslant |X_1-X_2| \leqslant Cdist \left( X_2,E \right)
   \]
-  证明:存在\(\varepsilon > 0\)使得当Lipschitz常数\(k < \varepsilon\)时,\(\left( X_1-X_2 \right) \cdot \nu \left( X_2 \right) \geq 0\).(思考一下这个问题在说一件什么事情?)
+  证明:存在\(\varepsilon > 0\)使得当Lipschitz常数\(k < \varepsilon\)时,\(\left( X_1-X_2 \right) \cdot \nu \left( X_2 \right) \geqslant 0\).(思考一下这个问题在说一件什么事情?)
 \end{enumerate}
 
 \end{document}
