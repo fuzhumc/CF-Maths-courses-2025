@@ -9,11 +9,11 @@
 \end{deff}
 
 \begin{deff}
-    设$E$为集合,$*$为$E$上的一个内部合成法则.称$*$是\textbf{结合的},若$\forall x, y, z \in E, x * (y * z) = (x * y) * z$.
+    设$E$为集合,$*$为$E$上的内部合成法则.称$*$是\textbf{结合的},若$\forall x, y, z \in E, x * (y * z) = (x * y) * z$.
 \end{deff}
 
 \begin{deff}
-    设$E$为集合,$*$为$E$上的一个内部合成法则.称$*$是\textbf{交换的},若$\forall x, y \in E, x * y = y * x$.
+    设$E$为集合,$*$为$E$上的内部合成法则.称$*$是\textbf{交换的},若$\forall x, y \in E, x * y = y * x$.
 \end{deff}
 
 \begin{rqq}
@@ -25,11 +25,11 @@
 \end{deff}
 
 \begin{deff}
-    设$E$为集合,$*$为$E$上的一个内部合成法则,$a \in E$.称$a$对$*$是\textbf{正则的},若$\forall x, y \in E, (a * x = a * y \Rightarrow x = y) \land (x * a = y * a \Rightarrow x = y)$.
+    设$E$为集合,$*$为$E$上的内部合成法则,$a \in E$.称$a$对$*$是\textbf{正则的},若$\forall x, y \in E, (a * x = a * y \Rightarrow x = y) \land (x * a = y * a \Rightarrow x = y)$.
 \end{deff}
 
 \begin{deff}
-    设$E$为集合,$*$为$E$上的一个内部合成法则,$e \in E$.称$e$对$*$是\textbf{中性的},若$\forall x, y \in E, x * e = e * x = x$.
+    设$E$为集合,$*$为$E$上的内部合成法则,$e \in E$.称$e$对$*$是\textbf{中性的},若$\forall x, y \in E, x * e = e * x = x$.
 \end{deff}
 
 \begin{prop}
@@ -41,7 +41,7 @@
 \end{proof}
 
 \begin{deff}
-    设$E$为集合,$*$为$E$上的一个内部合成法则,$e$为其中性元,$a \in E$.称$e$对$*$是\textbf{可逆的},若$\exists b \in E, a * b = b * a = e$.
+    设$E$为集合,$*$为$E$上的内部合成法则,$e$为其中性元,$a \in E$.称$e$对$*$是\textbf{可逆的},若$\exists b \in E, a * b = b * a = e$.
 
     此时称$b$为$a$的\textbf{逆元},记为$b = a^{-1}$.
 \end{deff}
@@ -63,13 +63,13 @@
 \end{prop}
 
 \begin{deff}
-    设$E$为集合,$*$为$E$上的一个内部合成法则,$F \subseteq E$.称$F$在$*$下是\textbf{稳定的},若$\forall x, y \in F, x * y \in F$.
+    设$E$为集合,$*$为$E$上的内部合成法则,$F \subseteq E$.称$F$在$*$下是\textbf{稳定的},若$\forall x, y \in F, x * y \in F$.
 \end{deff}
 
 \section{群}
 
 \begin{deff}
-    设$G$为集合,$*$为$G$上的一个内部合成法则.称$(G, *)$为一个\textbf{群},若
+    设$G$为集合,$*$为$G$上的内部合成法则.称$(G, *)$为一个\textbf{群},若
     \begin{enumerate}
         \item $*$结合.\label{def_of_group_1}
         \item $G$中有中性元.\label{def_of_group_2}
@@ -78,12 +78,12 @@
 \end{deff}
 
 \begin{deff}
-    设$(G, *)$为一个群,称$(G, *)$为一个\textbf{交换群}或\textbf{Abel群},若$*$交换.
+    设$(G, *)$为群,称$(G, *)$为一个\textbf{交换群}或\textbf{Abel群},若$*$交换.
 \end{deff}
 
 \begin{rqq}
-    满足\ref{def_of_group_1}的元群称为\textbf{半群}.
-    满足\ref{def_of_group_1}和\ref{def_of_group_2}的元群称为\textbf{幺半群}.
+    称满足\ref{def_of_group_1}的元群为\textbf{半群}.
+    称满足\ref{def_of_group_1}和\ref{def_of_group_2}的元群为\textbf{幺半群}.
 \end{rqq}
 
 \begin{exer}
@@ -199,7 +199,7 @@
 \end{deff}
 
 \begin{prop}
-    设$(G, *)$为群,$\circ$为同态的复合运算,则$(\mathrm{Aut} G, \circ)$为一个群.
+    设$(G, *)$为群,$\circ$为同态的复合运算,则$(\mathrm{Aut} G, \circ)$为群.
 \end{prop}
 
 \begin{rqq}
@@ -254,7 +254,7 @@
     设$(G, *)$为群,$H \leqslant G$,则有
     \begin{enumerate}
         \item 若$H \lhd G$,则$\forall a \in G, aH = Ha$.
-        \item $H \lhd G \iff H$的任何一个左陪集都是右陪集.
+        \item $H \lhd G \iff H$的任何左陪集都是右陪集.
     \end{enumerate}
 \end{prop}
 
@@ -297,3 +297,7 @@
 \begin{thm}
     设$H, N \lhd G, N \leqslant H$,则$(G / N) / (H / N) \cong G / H$.
 \end{thm}
+
+\section{泛性质}
+
+待整理.
