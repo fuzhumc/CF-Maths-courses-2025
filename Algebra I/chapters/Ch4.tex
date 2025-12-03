@@ -33,7 +33,7 @@
         \item $1 \in B$.
         \item $(B, +)$为群.
         \item $\forall x, y \in B, x * y \in B$.
-    \end{enumerate}.
+    \end{enumerate}
     
     记为$B \leqslant A$.
 \end{deff}
@@ -72,7 +72,34 @@
     零因子一定不是单位.
 \end{prop}
 
-\section{商环与理想}
+\section{环同态}
+
+\begin{deff}
+    设$(A, +_A, *_A), (B, +_B, *_B)$为环,$\varphi \in \mathcal{F}(A, B)$.称$\varphi$为\textbf{环同态},若$\varphi(1_A) = 1_B$且$\forall x, y \in A, \varphi(x +_A y) = \varphi(x) +_B \varphi(y), \varphi(x *_A y) = \varphi(x) *_B \varphi(y)$.
+\end{deff}
+
+\begin{deff}
+    设$\varphi: A \to B$为环同态,称$\varphi^{-1}(1_B) = \{ a \in A \mid \varphi(a) = 1_B \}$为$\varphi$的\textbf{核},记为$\mathrm{Ker} \varphi$.
+\end{deff}
+
+\begin{deff}
+    设$\varphi: A \to B$为环同态,
+    \begin{enumerate}
+        \item 称$\varphi$为\textbf{单同态},若$\varphi$为单射.
+        \item 称$\varphi$为\textbf{满同态},若$\varphi$为满射.
+        \item 称$\varphi$为\textbf{环同构},若$\varphi$为双射.
+    \end{enumerate}
+\end{deff}
+
+\begin{prop}
+    设$\varphi: A \to B$为环同态,则$\varphi$为环同构$\iff$存在环同态$\psi: B \to A, \psi \circ \varphi = \mathrm{id}_A, \varphi \circ \psi = \mathrm{id}_B$.
+\end{prop}
+
+\begin{prop}
+    设$\varphi: A \to B$为环同态,则$\varphi$为单同态$\iff \mathrm{Ker} \varphi = \{ e \} \iff \lvert \mathrm{Ker} \varphi \rvert = 1$.
+\end{prop}
+
+\section{理想}
 
 \begin{deff}
     设$(A, +, *)$为交换环,$I \subseteq A$.称$I$为$A$的一个\textbf{理想},若
@@ -102,21 +129,79 @@
     只有$A$本身既为理想,又为子环.
 \end{prop}
 
-\section{环同态}
+\begin{thm}
+    设$\varphi: A \to B$为环同态,则存在唯一环同构$\bar{\varphi}: A / \mathrm{Ker} \varphi \to \mathrm{Im} \varphi$使得$\varphi = i \circ \bar{\varphi} \circ \pi$.
+    其中$i: \mathrm{Im} \varphi \to B$为自然嵌入(单同态),$\pi: A \to B / \mathrm{Ker} \varphi$为自然投影(满同态).
+\end{thm}
+
+\begin{prop}
+    设$\varphi: A \to B$为满同态,则$A / \mathrm{Ker} \varphi \cong B$.
+\end{prop}
 
 \begin{deff}
-    设$(A, +_A, *_A), (B, +_B, *_B)$为环,$\varphi \in \mathcal{F}(A, B)$.称$\varphi$为\textbf{环同态},若$\varphi(1_A) = 1_B$且$\forall x, y \in A, \varphi(x +_A y) = \varphi(x) +_B \varphi(y), \varphi(x *_A y) = \varphi(x) *_B \varphi(y)$.
+    设$(A, +, *)$为交换环,$I, J$为$A$的理想.称$\left\{ \sum\limits_{\lambda \in \Lambda} i_{\lambda} * j_{\lambda} \mid i_{\lambda} \in I, j_{\lambda} \in J, \Lambda \text{为有限集} \right\}$为$I, J$\textbf{生成}的理想,记为$IJ$.
 \end{deff}
 
-\begin{deff}
-    设$\varphi: A \to B$为环同态,称$\varphi^{-1}(1_B) = \{ a \in A \mid \varphi(a) = 1_B \}$为$\varphi$的\textbf{核},记为$\mathrm{Ker} \varphi$.
-\end{deff}
+\begin{prop}
+    $IJ$为包含$\{ i * j \mid i \in I, j \in J \}$的最小理想.
+\end{prop}
 
 \begin{deff}
-    设$\varphi: A \to B$为环同态,
+    设$(A, +, *)$为交换环,$P$为$A$的理想.称$P$为$A$的一个\textbf{素理想},若$P \neq A$且$\forall x, y \in P, x * y \in P \Rightarrow x \in P \lor y \in P$
+\end{deff}
+
+\begin{prop}
+    $\{ 0 \}$为素理想当且仅当$A$为整环.
+\end{prop}
+
+\begin{thm}[Dedekind]
+    整环中非零非平凡的理想均可唯一分解成素理想的积.
+\end{thm}
+
+\begin{deff}
+    设$A$为交换环,$M$为$A$的理想.称$M$为$A$的\textbf{极大理想},若$M$为偏序集$(\{ I \mid I \text{为} A \text{的真理想} \}, \subseteq)$的极大元.
+\end{deff}
+
+\begin{thm}
+    承认选择公理时,极大理想总是存在.
+\end{thm}
+
+\begin{rqq}
+    极大理想不一定唯一.
+\end{rqq}
+
+\begin{prop}
+    设$A$为交换环,$I$为其理想.
     \begin{enumerate}
-        \item 称$\varphi$为\textbf{单同态},若$\varphi$为单射.
-        \item 称$\varphi$为\textbf{满同态},若$\varphi$为满射.
-        \item 称$\varphi$为\textbf{环同构},若$\varphi$为双射.
+        \item $I$为极大理想$\iff A / I$为域.
+        \item $I$为素理想$\iff A / I$为整环.
     \end{enumerate}
+\end{prop}
+
+\section{模与线性空间}
+
+\begin{deff}
+    设$(A, +, *)$为环,$E$为非空集合.称映射$*: \begin{array}[t]{ccc} A \times E & \to & E \\ (\lambda, x) & \mapsto & \lambda * x \end{array}$为$A$在$E$上的一个\textbf{外部合成法则}或\textbf{外部运算}.
+\end{deff}
+
+\begin{deff}
+    设$(A, +, *)$为环,$E$为非空集合.称$E$为一个(左)$A$-\textbf{模},若
+    \begin{enumerate}
+        \item $(E, +)$为交换群.
+        \item 存在外部运算$*: A \times E \to E$,满足:
+        \begin{enumerate}
+            \item $\forall x \in E, 1 * x = x$.
+            \item $\forall x \in E, \lambda, \mu \in A, (\lambda + \mu) * x = \lambda * x + \mu * x$.
+            \item $\forall x, y \in E, \lambda \in A, \lambda * (x + y) = \lambda * x + \lambda * y$.
+            \item $\forall x \in E, \lambda, \mu \in A, (\lambda * \mu) * x = \lambda * (\mu * x)$.
+        \end{enumerate}
+    \end{enumerate}
+\end{deff}
+
+\begin{rqq}
+    类似地地可定义(右)$A$-\textbf{模}.
+\end{rqq}
+
+\begin{deff}
+    设$K$为域,则称$K$-模为$K$-\textbf{向量空间}($K$-e.v.).
 \end{deff}
