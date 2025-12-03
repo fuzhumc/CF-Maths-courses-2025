@@ -5,5 +5,5 @@
 *.synctex(busy)
 *.out
 *.log
-*.pdf
+main.pdf
 test.*
