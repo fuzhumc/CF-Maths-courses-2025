@@ -1,0 +1,131 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{习题21}
+\author{}
+\date{2025年12月25日}
+
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年12月25日}
+\chead{习题21}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  设\(\sum\limits_{n=1}^{\infty}a_n\)是收敛的正项级数.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:对任意\(\alpha>1\),级数\(\sum\limits_{n=1}^{\infty}a_n^{\alpha}\)收敛.
+  \item
+    证明:若\(\alpha>\frac{1}{2}\),则级数\(\sum\limits_{n=1}^{\infty}\dfrac{\sqrt{a_n}}{n^{\alpha}}\)收敛.
+  \item
+    举例说明\(\sum\limits_{n=1}^{\infty}\dfrac{\sqrt{a_n}}{n^{\frac{1}{2}}}\)可能发散.
+  \end{enumerate}
+\item
+  对于实数级数\(\sum\limits_{n=1}^{\infty}a_n\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    若它收敛,构造一个正序列\((\lambda_n)\to+\infty\)使得\(\sum\limits_{n=1}^{\infty}\lambda_na_n\)收敛.
+  \item
+    若它发散,构造一个正序列\({} (\mu_n)\to0\)使得\(\sum\limits_{n=1}^{\infty}\mu_na_n\)发散.
+  \end{enumerate}
+\item
+  设正实序列\((a_n)\)单减收敛到0.证明\(\sum\limits_{n=1}^{\infty}a_n\)与\(\sum\limits_{n=1}^{\infty}n(a_n-a_{n+1})\)有相同的敛散性,且在收敛的情况下有\(\sum\limits_{n=1}^{\infty}a_n=\sum\limits_{n=1}^{\infty}n(a_n-a_{n-1})\).
+\item
+  设\((a_n)\)是单调下降的正序列,证明:级数\(\sum\limits_{n=1}^{\infty}a_n\)与级数\(\sum\limits_{n-1}^{\infty}2^na_{2^n}\)有相同的敛散性.
+\item
+  设\((a_n)\)是正实序列.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    假设存在\(\alpha\in(0,1)\)使得对任意\(n\in\mathbb{N}\),有\(a^{\frac{1}{n}}\leqslant1-\dfrac{1}{n^{\alpha}}\).试研究级数\(\sum\limits_{n=1}^{\infty}a_n\)的敛散性.
+  \item
+    假设存在\(\beta>0\)使得对任意\(n\in\mathbb{N}\),有\(n\left(\dfrac{a_n}{a_{n+1}}-1\right)\geqslant1+\beta\).试研究\(\sum\limits_{n=1}^{\infty}a_n\)的敛散性.
+  \end{enumerate}
+\item
+  考虑两个正序列\((a_n)\)与\((b_n)\),令\(k_n=a_n\dfrac{b_n}{b_{n+1}}-a_{n+1}\).证明:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    若\(\varliminf\limits_{n\to\infty}k_n>0\),则\(\sum\limits_{n=1}^{\infty}b_n\)收敛.
+  \item
+    若级数\(\sum\limits_{n=1}^{\infty}\dfrac{1}{a_n}\)发散,且当\(n\)充分大时,\(k_n\leqslant0\),则级数\({} \sum\limits_{n=1}^{\infty}b_n {}\)发散.
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
