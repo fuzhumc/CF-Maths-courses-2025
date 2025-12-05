@@ -1,0 +1,138 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{Ch12习题}
+\author{}
+\date{\today}
+
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{\today}
+\chead{Ch12习题}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  求下列函数的原函数.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(f(x)=2x^2+3x-5\).
+  \item
+    \(f(x)=(x-1)\sqrt{x}\).
+  \item
+    \(f(x)=\dfrac{(1-x)^2}{\sqrt{x}}\).
+  \item
+    \(f(x)=\dfrac{x+3}{x+1}\).
+  \end{enumerate}
+\item
+  求下列函数的原函数.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(f(x)=x\sqrt{1+x}\).
+  \item
+    \(f(x)=x^3e^{2x}\).
+  \item
+    \(f(x)=x^2\ln x\).
+  \end{enumerate}
+\item
+  对\(n\in\mathbb{N}\),求出\(f(x)=\ln^nx\)的原函数.
+\item
+  设\(f:\mathbb{R}\to\mathbb{R}\)可导且严格单调增,满足\(f(0)=0\).定义\[F(x)=\int_0^xf(t)\mathrm{d}t+\int_0^{f(x)}f^{-1}(t)\mathrm{d}t-xf(x)\]函数\(F\)可导吗?由此推出一个等式.给出这个结果的几何解释.
+\item
+  研究函数\[f(x)=\int_x^{2x}\dfrac{\mathrm{d}t}{\sqrt{t^4+t^2+1}}\]
+\item
+  证明\[\int_x^{x^2}\left(\dfrac{1}{\ln t}-\dfrac{1}{t\ln t}\right)\mathrm{d}t\]趋于0,当\(x\)趋于1时.进而推出当\(x\)趋于1时\[f(x)=\int_x^{x^2}\dfrac{\mathrm{d}t}{\ln t}\]的极限.
+\item
+  求出所有\(\mathbb{R}\)上的连续函数满足:\[\forall x,y\in\mathbb{R},f(x)f(y)=\int_{x-y}^{x+y}f(t)\mathrm{d}t\]
+\item
+  设\(f:\mathbb{R}_+\to\mathbb{R}_+\).假设存在正实数\(k\)满足\[\forall x\in\mathbb{R}_+^*,f(x)\leqslant k\int_0^xf(t)\mathrm{d}t\]证明:\(f\)为零函数.\emph{可以利用函数}\(F(x)=e^{-kx}\int_0^xf(t)\mathrm{d}t\).
+\item
+  设\(c\in\mathbb{R}_+,u,v:\mathbb{R}\to\mathbb{R}_+\)连续,满足\[\forall x\in\mathbb{R},u(x)\leqslant c+\int_0^xu(t)v(t)\mathrm{d}t\]证明:\[\forall x\in\mathbb{R},u(x)\leqslant c+\mathrm{exp}\left(\int_0^xv(t)\mathrm{d}t\right)\]\emph{可以记}\(\varphi(x)=c+\int_0^xu(t)v(t)\mathrm{d}t\).
+\item
+  设\(f\in\mathcal{C}^2(\mathbb{R},\mathbb{R}_+)\),假设\(f’’\)有上界且记\(M=\sup\limits_{x\in\mathbb{R}}\lvert f’’(x)\rvert\).证明:\[\forall x\in\mathbb{R},\lvert f’(x)\rvert\leqslant\sqrt{2Mf(x)}\]
+\item
+  对\(x>0\),定义\[f(x)=\int_x^{3x}\dfrac{\sin t}{t^2}\mathrm{d}t\]求\(\lim\limits_{x\to0}f(x)\).\emph{可以记}\(\dfrac{\sin t}{t^2}=\dfrac{1}{t}+\alpha(t)\).
+\item
+  设\(f\)为\(\mathbb{R}\)上的\(\mathcal{C}^2\)函数,\(x\in\mathbb{R}\)满足\(f’’(x)\neq0\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:存在\(\eta>0\),对任意\(h\in[-\eta,\eta]\setminus\{0\}\),存在唯一\(\theta\in(0,1)\)使得\[f(x+h)=f(x)+hf’(x+\theta h)\]记\(\theta_x\)为将\([-\eta,\eta]\setminus\{0\}\)中的\(h\)映射为\(\theta\)的函数.
+  \item
+    证明:\[\lim\limits_{h\to0}\theta_x(h)=\dfrac{1}{2}\]
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
