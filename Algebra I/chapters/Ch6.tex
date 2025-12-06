@@ -3,7 +3,7 @@
 \section{一元多项式环}
 
 \begin{deff}
-    设$K$为域,称$K$中几乎处处为0的序列为$K$上的\textbf{一元多项式}.
+    设$K$为域,称$K$中几乎处处为0的序列为$K$上的一个\textbf{一元多项式}.
 
     $K$上的一元多项式的全体记为$K[x]$.
 \end{deff}
@@ -21,7 +21,7 @@
 \end{prop}
 
 \begin{deff}
-    设$K$为域,$A = \sum\limits_{k = 0} ^ n a_k x ^ \in K[x]$.称$\Phi = \{ k \in [0, n] \mid a_k \neq 0\} \subseteq \mathbb{N}$的最大元为$A$的\textbf{次数},记为$\mathrm{deg} A$.记$\mathrm{deg} 0 = - \infty$.
+    设$K$为域,$A = \sum\limits_{k = 0} ^ n a_k x ^ k \in K[x]$.称$\Phi = \{ k \in [0, n] \mid a_k \neq 0\} \subseteq \mathbb{N}$的最大元为$A$的\textbf{次数},记为$\mathrm{deg} A$.记$\mathrm{deg} 0 = - \infty$.
 \end{deff}
 
 \begin{prop}
@@ -61,3 +61,201 @@
 \begin{rqq}
     设$K$为域,$\alpha \in K$,则$K \cong K[x] / (x - \alpha)$.
 \end{rqq}
+
+\section{整除}
+
+\begin{deff}
+    设$K$为域,$A, B \in K[x]$.称$B$\textbf{整除}$A$,若存在$C \in K[x]$,使得$A = BC$,记为$B \mid A$.
+\end{deff}
+
+\begin{prop}
+    设$K$为域,$A, B \in K[x]$.若$A \neq 0$且$B \mid A$,则$\mathrm{deg} B \leqslant \mathrm{deg} A$.
+\end{prop}
+
+\begin{rqq}
+    $\mathrm{deg} A$为某种``绝对值''.
+\end{rqq}
+
+\begin{prop}
+    设$K$为域,$A, B \in K[x]$.则$$A \mid B \text{且} B \mid A \iff \exists \lambda \in K^*, A = \lambda B$$
+\end{prop}
+
+\begin{thm}[Euclide除法]
+    设$K$为域,$A, B \in K[x], B \neq 0$,则存在唯一$Q, R \in K[x], A =BQ + R$,其中$\mathrm{deg} R < \mathrm{deg} B$.
+\end{thm}
+
+\begin{proof}
+    唯一性易知.存在性对$\mathrm{deg} A$作第二数归即可.
+\end{proof}
+
+\begin{rqq}
+    $K[x]$为PID.
+\end{rqq}
+
+\begin{rqq}
+    Euclide除法与域扩张无关.
+\end{rqq}
+
+\begin{rqq}
+    与域扩张无关的性质称为\textbf{代数性质}.
+
+    与域扩张有关的性质称为\textbf{算术性质}.
+\end{rqq}
+
+\begin{deff}
+    设$K$为域,$A \in K[x]$.称映射$\tilde{A}: \begin{array}[t]{ccc} K & \to & K \\ \alpha & \to & ev_{\alpha}(A) \end{array}$为与$A$\textbf{相伴的多项式函数}.
+\end{deff}
+
+\begin{deff}
+    设$K$为域,$I \subseteq K, f: I \to K$.称$f$为一个\textbf{多项式函数},若存在$A \in K[x], f = \tilde{A}|_I$.
+\end{deff}
+
+\section{根}
+
+\begin{deff}
+    设$K$为域,$A \in K[x], \alpha \in K$.称$\alpha$为$A$的一个\textbf{根},若$A(\alpha) = 0$.
+\end{deff}
+
+\begin{prop}
+    设$K$为域,$A \in K[x], \alpha \in K$,则$\alpha$为$A$的根$\iff (x - \alpha) \mid A$.
+\end{prop}
+
+\begin{prop}
+    $n$次多项式最多有$n$个根.
+\end{prop}
+
+\begin{prop}
+    设$K$为域,$A \in K[x]$.若$A$恰有$n$个不同的根$\alpha_i$,则$A = c \prod\limits_{i = 1}^n (x - \alpha_i)$,其中$c \in K$为常数.
+\end{prop}
+
+\begin{thm}[Lagrange插值公式]\label{thm:lagrange_interpolation}
+    设$K$为域,$x_i, \alpha_i \in K (i = 0, 2, \cdots, n)$.则存在唯一多项式$L \in K_n[x]$满足$L(x_i) = \alpha_i$.其中$$L(x) = \sum\limits_{i = 0}^n \prod\limits_{j \neq i} \dfrac{x - x_j}{x_i - x_j} \alpha_i$$
+\end{thm}
+
+\begin{rqq}
+    Théorème \ref{thm:lagrange_interpolation}是$K[x]$上的``CRT''.
+\end{rqq}
+
+\begin{rqq}
+    Théorème \ref{thm:lagrange_interpolation}中的$L(x)$也称为``\href{https://faculty.ustc.edu.cn/yqliang/files/teaching.htm#exam}{调分多项式}''.
+\end{rqq}
+
+\begin{prop}
+    设$K$为域,$A, B \subseteq K[x]$.若存在$K$的无限子集$I$使得$\tilde{A} \vert_I = \tilde{B} \vert_I$,则$A = B$.
+\end{prop}
+
+\begin{prop}\label{prop1}
+    设$K$为域,则$$\varPhi: \begin{array}[t]{ccc} K[x] & \to & \mathcal{F}(K, K) \\ A & \mapsto & \tilde{A} \end{array}$$为环同态.
+\end{prop}
+
+\begin{rqq}
+    若$K$为无限域,则Proposition \ref{prop1}中的$\varPhi$为环同构.
+\end{rqq}
+
+\begin{rqq}
+    此时可以等同``多项式''与``多项式函数''.
+\end{rqq}
+
+\begin{rqq}
+    在有限域$\mathbb{F}_p$中,$\varPhi(x^p - x) = \varPhi(0)$.
+\end{rqq}
+
+\begin{deff}
+    设$K$为域,$A \in K[x]^*, \alpha \in K$为$A$的根.称$m = \max \{ k \in \mathbb{N} \mid (x - \alpha)^k \mid A \}$为$\alpha$的\textbf{重数},此时称$\alpha$为$A$的$m$\textbf{重根}.
+\end{deff}
+
+\begin{rqq}
+    称$\alpha$为$A$的\textbf{重根},若$\alpha$的重数大于1.
+
+    称$\alpha$为$A$的\textbf{单根},若$\alpha$的重数等于1.
+\end{rqq}
+
+\begin{prop}
+    设$K$为域,$A \in K[x]^*, \alpha \in K, m \in \mathbb{N}^*$.则$\alpha$为$A$的$m$重根$\iff (x - \alpha)^m \mid A \text{且} (x - \alpha)^{m + 1} \nmid A$.
+\end{prop}
+
+\begin{prop}
+    设$K$为域,$A \in K[x]^*, \alpha \in K, m \in \mathbb{N}^*$.则$\alpha$为$A$的$m$重根$\iff \exists B \in K[x], A = (x - \alpha)^m B \text{且} (x - \alpha) \nmid B$.
+\end{prop}
+
+\begin{rqq}
+    根的重数类似于$V_p(n)$.
+\end{rqq}
+
+\begin{deff}\label{def:scindé}
+    设$K$为域,$A \in K[x]$.称$A$在$K$上\textbf{分裂},若存在$\alpha_1, \alpha_2, \cdots, \alpha_n \in K, \lambda \in K^*$使得$A = \lambda \prod\limits_{i = 1}^n (x - \alpha_i)$.
+\end{deff}
+
+\begin{rqq}
+    Définition \ref{def:scindé}是个算术概念.
+\end{rqq}
+
+\section{多项式的求导}
+
+\begin{deff}
+    设$K$为域,$A = \sum\limits_{k=0}^n a_k x^k \in K[x]$.称$A' = \sum\limits_{k=1}^n k a_k x^{k-1} \in K[x]$为$A$的\textbf{导数}.
+\end{deff}
+
+\begin{rqq}
+    ``求导''是一个群同态$\begin{array}[t]{ccc} K[x] & \to & K[x] \\ A & \mapsto & A' \end{array}$.
+\end{rqq}
+
+\begin{prop}
+    设$K$为无限域,$A \in K[x]$,则
+    \begin{enumerate}
+        \item 若$\mathrm{deg} A > 0$,则$\mathrm{deg} A' = \mathrm{deg} A - 1$.
+        \item $A \in K^* \iff \mathrm{deg} A' = 0$.
+    \end{enumerate}
+\end{prop}
+
+\begin{rqq}
+    $\mathbb{F}_p$中,$(x^p)' = 0$.
+\end{rqq}
+
+\begin{prop}
+    设$K$为域,$A, B \in K[x]$,则$(AB)' = A'B + AB'$.
+\end{prop}
+
+\begin{deff}
+    设$K$为域,$A \in K[x]$,记$A^{(1)} = A'$.对于$n \in \mathbb{N}^*$,称$(A^{{n-1}})'$为$A$的$n$阶导数,记为$A^{(n)}$.
+\end{deff}
+
+\begin{prop}
+    设$K$为域,则$\begin{array}[t]{ccc} K[x] & \to & K[x] \\ A & \mapsto & A^{(n)} \end{array}$为$K$上的线性映射.
+\end{prop}
+
+\begin{thm}[Leibniz]\label{thm:leibniz}
+    设$K$为域,$A, B \in K[x]$,则$$(AB)^{(n)} = \sum\limits_{k=0}^n \binom{n}{k} A^{(k)} B^{(n-k)}$$.
+\end{thm}
+
+\begin{thm}[Taylor]
+    设$K$为域,$A \in K[x], \alpha \in K$,则$$A = \sum\limits_{k = 0}^{\infty} \dfrac{A^{(k)}(\alpha)}{k!} (x - \alpha)^k$$
+\end{thm}
+
+\begin{prop}
+    设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K$,则$\alpha$为$A$的重根$\iff \alpha$为$A'$的根.
+\end{prop}
+
+\begin{prop}
+    设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K, m \in \mathbb{N}^*$.若$\alpha$为$A$的$m$重根,则$\alpha$为$A'$的$m-1$重根.
+\end{prop}
+
+\begin{prop}
+    设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K, m \in \mathbb{N}^*$.则$\alpha$为$A$的$m$重根$\iff A(\alpha) = A'(\alpha) = A''(\alpha) = \cdots = A^{(m-1)}(\alpha) = 0 \text{且} A^{(m)}(\alpha) \neq 0$.
+\end{prop}
+
+\begin{thm}
+    $\mathbb{C}[x] \setminus \mathbb{C}$中的多项式至少有一个根.
+\end{thm}
+
+\begin{rqq}
+    因此称$\mathbb{C}$为代数闭的.
+\end{rqq}
+
+\begin{prop}
+    设$A \in \mathbb{C}[x] \setminus \mathbb{C}$,则有分裂$A = \lambda \prod\limits_{k = 1}^n (x - \alpha_k)$,其中$\alpha_k, \lambda \in \mathbb{C}, n = \mathrm{deg} A$.
+\end{prop}
+
+\begin{prop}
+    设$A \in \mathbb{R}[x] \setminus \mathbb{R}$,则有分解$A = \lambda \prod\limits_{i = 1}^m (x - \alpha_i) \prod\limits_{j = 1}^n (x^2 + \beta_j x + \gamma_j)$,其中$\alpha_i, \beta_j, \gamma_j, \lambda \in \mathbb{R}, m + 2n = \mathrm{deg} A$.
+\end{prop}
