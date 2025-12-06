@@ -3,7 +3,7 @@
 \section{元群}
 
 \begin{deff}
-    设$E$为集合.称映射$*: \begin{array}[t]{ccc} E \times E & \to & E \\ (x,y) & \mapsto & x*y \end{array}$为$E$上的一个\textbf{内部合成法则}或\textbf{运算}.
+    设$E$为集合.称映射$*: \begin{array}[t]{ccc} E \times E & \to & E \\ (x,y) & \mapsto & x*y \end{array}$为$E$上的一个\textbf{内部合成法则}或\textbf{(内部)运算}.
 
     称$(E, *)$为一个\textbf{元群}.
 \end{deff}
@@ -71,9 +71,9 @@
 \begin{deff}
     设$G$为集合,$*$为$G$上的内部合成法则.称$(G, *)$为一个\textbf{群},若
     \begin{enumerate}
-        \item $*$结合.\label{def1}
-        \item $G$中有中性元.\label{def2}
-        \item $G$中的每个元素均可逆.\label{def3}
+        \item $*$结合.\label{def:group1}
+        \item $G$中有中性元.\label{def:group2}
+        \item $G$中的每个元素均可逆.\label{def:group3}
     \end{enumerate}
 \end{deff}
 
@@ -82,8 +82,8 @@
 \end{deff}
 
 \begin{rqq}
-    称满足\ref{def1}的元群为\textbf{半群}.
-    称满足\ref{def1}和\ref{def2}的元群为\textbf{幺半群}.
+    称满足\ref{def:group1}的元群为\textbf{半群}.
+    称满足\ref{def:group1}和\ref{def:group2}的元群为\textbf{幺半群}.
 \end{rqq}
 
 \begin{exer}
@@ -234,12 +234,12 @@
     记$G / H$为$H$在$G$中的左陪集的全体.
 \end{deff}
 
-\begin{prop}\label{prop2}
+\begin{prop}\label{prop3}
     $G$为$G / H$中元素的无交并.
 \end{prop}
 
 \begin{rqq}
-    Proposition \ref{prop2}给出了$G$的一个划分,即给出了$G$上的一个等价关系.
+    Proposition \ref{prop3}给出了$G$的一个划分,即给出了$G$上的一个等价关系.
 \end{rqq}
 
 \begin{deff}
@@ -277,13 +277,13 @@
     后面我们不再区分$G$上的内部合成法则$*$与$G / H$上的内部合成法则$*'$.
 \end{rqq}
 
-\begin{thm}[典范分解定理]\label{thm1}
+\begin{thm}[典范分解定理]\label{thm:canonical_decomposition_group}
     设$\varphi: G \to H$为群同态,则存在唯一群同构$\bar{\varphi}: G / \mathrm{Ker} \varphi \to \mathrm{Im} \varphi$使得$\varphi = i \circ \bar{\varphi} \circ \pi$.
     其中$i: \mathrm{Im} \varphi \to H$为自然嵌入(单同态),$\pi: G \to G / \mathrm{Ker} \varphi$为自然投影(满同态).
 \end{thm}
 
 \begin{rqq}
-    Théorème \ref{thm1}的意义为:将群同态的研究归结为对单同态(自然嵌入$i$)与满同态(自然投影$\varphi$)的研究.
+    Théorème \ref{thm:canonical_decomposition_group}的意义为:将群同态的研究归结为对单同态(自然嵌入$i$)与满同态(自然投影$\varphi$)的研究.
 \end{rqq}
 
 \begin{cor}

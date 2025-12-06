@@ -16,22 +16,38 @@
 \end{deff}
 
 \begin{rqq}
-    设$A={0}, 0 + 0 = 0, 0 * 0 = 0$,则$(A, +, *)$为环,称为平凡环.
+    设$A = \{ 0 \}, 0 + 0 = 0, 0 * 0 = 0$,则$(A, +, *)$为环,称为平凡环.
 \end{rqq}
 
 \begin{rqq}
     设$(A, +, *)$为环,则交换群$(A, +)$的中性元一般记为$0_A$,幺半群$(A, *)$中性元一般记为$1_A$.
 \end{rqq}
 
-\begin{prop}
+\begin{rqq}
+    在不混淆的情况下,可记$0 = 0_A, 1 = 1_A$.
+\end{rqq}
+
+\begin{rqq}
+    设$(A, +, *)$为环,$a \in A, n \in \mathbb{N}^*$.记$\underbrace{a + a + \cdots + a}_{n \text{个}} = na, \underbrace{a * a * \cdots * a}_{n \text{个}} = a^n$.
+
+    特别地,约定$\forall a \in A^*, 0a = 0, a^0 = 1$.
+\end{rqq}
+
+\begin{exer}
     设$(A, +, *)$为环,则有$\lvert A \rvert = 1 \iff 0_A = 1_A$.
-\end{prop}
+\end{exer}
+
+\subsection*{环的一些例子}
+
+待整理.
+
+\section{子环与环同态}
 
 \begin{deff}
     设$(A, +, *)$为环,$B \subseteq A$.称$B$为$A$的\textbf{子环},若
     \begin{enumerate}
         \item $1 \in B$.
-        \item $(B, +)$为群.
+        \item $(B, +)$为$(A, +)$的子群.
         \item $\forall x, y \in B, x * y \in B$.
     \end{enumerate}
     
@@ -59,23 +75,26 @@
 \end{deff}
 
 \begin{deff}
-    设$(A, +, *)$为环,$a \in A$.称$a$为$A$的一个\textbf{单位},若$a$可逆.
+    设$(A, +, *)$为环,$a \in A$.称$a$为$A$的一个\textbf{可逆元}或\textbf{单位},若$a$可逆.
 
     $A$中单位的全体记为$A^{\times}$.
 \end{deff}
 
-\begin{prop}
-    设$(A, +, *)$为环,则$(A^{\times}, *)$为群.
-\end{prop}
+\begin{rqq}
+    设$(A, +, *)$为环,则$(A^{\times}, *)$为群,称为$A$的\textbf{单位群}.
+\end{rqq}
 
 \begin{prop}
     零因子一定不是单位.
 \end{prop}
 
-\section{环同态}
-
 \begin{deff}
-    设$(A, +_A, *_A), (B, +_B, *_B)$为环,$\varphi \in \mathcal{F}(A, B)$.称$\varphi$为\textbf{环同态},若$\varphi(1_A) = 1_B$且$\forall x, y \in A, \varphi(x +_A y) = \varphi(x) +_B \varphi(y), \varphi(x *_A y) = \varphi(x) *_B \varphi(y)$.
+    设$(A, +_A, *_A), (B, +_B, *_B)$为环,$\varphi \in \mathcal{F}(A, B)$.称$\varphi$为\textbf{环同态},若
+    \begin{enumerate}
+        \item $\varphi(1_A) = 1_B$.
+        \item $\forall x, y \in A, \varphi(x +_A y) = \varphi(x) +_B \varphi(y)$.
+        \item $\forall x, y \in A, \varphi(x *_A y) = \varphi(x) *_B \varphi(y)$.
+    \end{enumerate}
 \end{deff}
 
 \begin{deff}
@@ -99,9 +118,13 @@
     设$\varphi: A \to B$为环同态,则$\varphi$为单同态$\iff \mathrm{Ker} \varphi = \{ e \} \iff \lvert \mathrm{Ker} \varphi \rvert = 1$.
 \end{prop}
 
+\begin{rqq}
+    与群同态不同,环同态中没有$\mathrm{coKer} \varphi$.
+\end{rqq}
+
 \section{理想}
 
-\begin{deff}
+\begin{deff}\label{def:ideal}
     设$(A, +, *)$为交换环,$I \subseteq A$.称$I$为$A$的一个\textbf{理想},若
     \begin{enumerate}
         \item $(I, +)$为$(A, +)$的子群.
@@ -122,7 +145,7 @@
 \end{deff}
 
 \begin{rqq}
-    若$A$不交换,则这样定义的$I$称为\textbf{左理想},类似地可以定义\textbf{右理想}.
+    若$A$不交换,则Définition \ref{def:ideal}中的$I$称为\textbf{左理想},类似地可以定义\textbf{右理想}.
 \end{rqq}
 
 \begin{prop}
@@ -147,7 +170,7 @@
 \end{prop}
 
 \begin{deff}
-    设$(A, +, *)$为交换环,$P$为$A$的理想.称$P$为$A$的一个\textbf{素理想},若$P \neq A$且$\forall x, y \in P, x * y \in P \Rightarrow x \in P \lor y \in P$
+    设$(A, +, *)$为交换环,$P$为$A$的理想.称$P$为$A$的一个\textbf{素理想},若$P \neq A$且$\forall x, y \in A, x * y \in P \Rightarrow x \in P \text{且} y \in P$
 \end{deff}
 
 \begin{prop}
