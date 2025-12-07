@@ -3,14 +3,32 @@
 \section{一元多项式环}
 
 \begin{deff}
-    设$K$为域,称$K$中几乎处处为0的序列为$K$上的一个\textbf{一元多项式}.
+    设$K$为域,称$K$中几乎处处为0(即从某个位置开始元素均为0)的序列为$K$上的一个\textbf{一元多项式(polynôme à une indéterminée)}.
 
     $K$上的一元多项式的全体记为$K[x]$.
 \end{deff}
 
 \begin{rqq}
-    记$x = (0, 1, 0, 0, \cdots) \in K[x]$.
+    记$x = (0, 1, 0, 0, \cdots) \in K[x]$,称为\textbf{不定元(indéterminée)}.
+
+    记$0 = (0, 0, \cdots) \in K[x]$,称为\textbf{零多项式(polynôme nul)}.
 \end{rqq}
+
+\begin{rqq}
+    设$A = (a_0, a_1, a_2, \cdots, a_n, 0, 0, \cdots) \in K[x]$,
+    称$a_0, a_1, a_2, \cdots, a_n, 0, 0, \cdots$为$A$的系数.
+
+    两个多项式相等当且仅当它们的系数全相等.
+\end{rqq}
+
+\begin{deff}\label{def:polynomial_operations}
+    设$K$为域,$A = (a_k), B = (b_k) \in K[x], \lambda \in K$.
+    \begin{enumerate}
+        \item 称$A + B = (s_k)$,其中$s_k = a_k + b_k$.
+        \item 称$\lambda A = (q_k)$,其中$q_k = \lambda a_k$.
+        \item 称$AB = (c_k)$,其中$c_k = \sum\limits_{i = 0}^k a_i b_{k - i}$.\label{def:polynomial_multiplication}
+    \end{enumerate}
+\end{deff}
 
 \begin{prop}
     设$K$为域,则$K[x]$为交换环且为$K$-e.v.
@@ -21,38 +39,99 @@
 \end{prop}
 
 \begin{deff}
-    设$K$为域,$A = \sum\limits_{k = 0} ^ n a_k x ^ k \in K[x]$.称$\Phi = \{ k \in [0, n] \mid a_k \neq 0\} \subseteq \mathbb{N}$的最大元为$A$的\textbf{次数},记为$\mathrm{deg} A$.记$\mathrm{deg} 0 = - \infty$.
+    设$K$为域,$\lambda \in K$.称$(\lambda, 0, 0, \cdots) = \lambda x^0 \in K[x]$为\textbf{常值多项式(polynôme constant)}.
+
+    今后我们不再区分$K$与$K$上的常值多项式.
 \end{deff}
+
+\begin{deff}
+    设$K$为域,$A = \sum\limits_{k = 0} ^ n a_k x ^ k \in K[x]^*$.
+    称$\max \{ k \in [0, n] \mid a_k \neq 0\} \in \mathbb{N}$的最大元为$A$的\textbf{次数(degré)},
+    记为$\deg A$.特别地,记$\deg 0 = - \infty$.
+\end{deff}
+
+\begin{rqq}
+    设$A = \sum\limits_{k=0}^n a_k x^k \in K[x]^*$,则$\deg A = n \iff a_n \neq 0$.
+    此时,称$a_n$为$A$的\textbf{首项系数(coefficient dominant)}.
+\end{rqq}
+
+\begin{rqq}
+    首项系数为1的多项式称为\textbf{首一多项式(polynôme unitaire)}.
+\end{rqq}
 
 \begin{prop}
     设$K$为域,$A, B \in K[x]$,则
     \begin{enumerate}
-        \item $\mathrm{deg} (A + B) \leq \mathrm{max} \{ \mathrm{deg} A, \mathrm{deg} B \}$.
-        \item $\mathrm{deg} (AB) \leq \mathrm{deg} A + \mathrm{deg} B$.
+        \item $\deg (A + B) \leqslant \max \{ \deg A, \deg B \}$.
+        \item $\deg (AB) = \deg A + \deg B$.
     \end{enumerate}
 \end{prop}
 
+\begin{rqq}
+    更一般地,$\deg (\lambda A + \mu B) \leqslant \max \{ \deg A, \deg B \}$.
+\end{rqq}
+
+\begin{rqq}
+    记$K_n[x] = \{ A \in K[x] \mid \deg A \leqslant n \}$为次数不大于$n$的多项式的全体.
+\end{rqq}
+
 \begin{prop}
-    设$K$为域,则$K_n[x] = \{ A \in K[x] \mid \mathrm{deg} A \leqslant n \} \subseteq K[x]$为$K$-e.v.
+    设$K$为域,则$K_n[x] \subseteq K[x]$为$K$-e.v.
 \end{prop}
+
+\begin{prop}
+    设$K$为域,$A, B \in K[x]$.若$AB = 0$,则$A = 0$或$B = 0$.
+\end{prop}
+
+\begin{cor}
+    设$K$为域,$A, B \in K[x], C \in K[x]^*$.若$AC = BC$,则$A = B$.
+\end{cor}
+
+\begin{rqq}
+    因此,非零多项式都是正则的.
+\end{rqq}
 
 \begin{prop}
     设$K$为域,则$K[x]$为整环,且$K[x]^{\times} = K^*$.
 \end{prop}
 
 \begin{deff}
-    设$K$为域,$A = \sum\limits_{k = 0} ^ n a_k x ^ k \in K[x], \alpha \in K$.称$\sum\limits_{k = 0} ^ n a_k \alpha ^ k \in K$为$A$在$\alpha$处的取值,记为$A(\alpha)$.
+    设$K$为域,$A = \sum\limits_{k = 0} ^ n a_k x ^ k \in K[x], \alpha \in K$.
+    称$\sum\limits_{k = 0} ^ n a_k \alpha ^ k \in K$为将$\alpha$\textbf{代入(substitue)}$x$,
+    或$A$在$\alpha$处的\textbf{取值(évalue)},记为$A(\alpha)$.
 
     记$ev_{\alpha}: \begin{array}[t]{ccc} K[x] & \to & K \\ A & \mapsto & A(\alpha) \end{array}$.
 \end{deff}
 
-\begin{prop}
+\begin{prop}\label{prop:ev_operation}
     设$K$为域,$A, B \in K[x], \alpha, \lambda, \mu \in K$,则
     \begin{enumerate}
         \item $(\lambda A + \mu B)(\alpha) = \lambda A(\alpha) + \mu B(\alpha)$.
-        \item $(AB)(\alpha) = A(\alpha)B(\alpha)$.
+        \item $(AB)(\alpha) = A(\alpha)B(\alpha)$.\label{prop:ev_operation_multiplication}
     \end{enumerate}
 \end{prop}
+
+\begin{rqq}
+    Définition \ref{def:polynomial_operations}的\ref{def:polynomial_multiplication}正是为了
+    得到Proposition \ref{prop:ev_operation}的\ref{prop:ev_operation_multiplication}这一结果.
+\end{rqq}
+
+\begin{deff}
+    设$K$为域,$A = \sum\limits_{k = 0}^n a_k x^k, P \in K[x]$.
+    记$A \circ P = A(P) = \sum\limits_{k=0}^n a_k P^k \in K[x]$.
+\end{deff}
+
+\begin{rqq}
+    当$P = x$时,$A(P) = A$,我们今后不再区分$A$与$A(x)$.
+\end{rqq}
+
+\begin{rqq}
+    设$K$为域,$A, B, P \in K[x], \lambda, \mu \in K$,则
+    \begin{enumerate}
+        \item $(\lambda A + \mu B)(P) = \lambda A(P) + \mu B(P)$.
+        \item $(AB)(P) = A(P)B(P)$.
+    \end{enumerate}
+\end{rqq}
 
 \begin{rqq}
     设$K$为域,则$ev_{\alpha}$为环同态和线性映射.
@@ -65,27 +144,29 @@
 \section{整除}
 
 \begin{deff}
-    设$K$为域,$A, B \in K[x]$.称$B$\textbf{整除}$A$,若存在$C \in K[x]$,使得$A = BC$,记为$B \mid A$.
+    设$K$为域,$A, B \in K[x]$.称$B$\textbf{整除(divise)}$A$,若存在$C \in K[x]$,使得$A = BC$,记为$B \mid A$.
 \end{deff}
 
 \begin{prop}
-    设$K$为域,$A, B \in K[x]$.若$A \neq 0$且$B \mid A$,则$\mathrm{deg} B \leqslant \mathrm{deg} A$.
+    设$K$为域,$A, B \in K[x]$.若$A \neq 0$且$B \mid A$,则$\deg B \leqslant \deg A$.
 \end{prop}
 
 \begin{rqq}
-    $\mathrm{deg} A$为某种``绝对值''.
+    $\deg A$为某种``绝对值''.
 \end{rqq}
 
 \begin{prop}
-    设$K$为域,$A, B \in K[x]$.则$$A \mid B \text{且} B \mid A \iff \exists \lambda \in K^*, A = \lambda B$$
+    设$K$为域,$A, B \in K[x]$.若$A \mid B, B \mid A$,则存在$\lambda \in K, A = \lambda B$.
+
+    此时,称$A$与$B$\textbf{相伴(associés)}.
 \end{prop}
 
 \begin{thm}[Euclide除法]
-    设$K$为域,$A, B \in K[x], B \neq 0$,则存在唯一$Q, R \in K[x], A =BQ + R$,其中$\mathrm{deg} R < \mathrm{deg} B$.
+    设$K$为域,$A, B \in K[x], B \neq 0$,则存在唯一$Q, R \in K[x], A = BQ + R$,其中$\deg R < \deg B$.
 \end{thm}
 
 \begin{proof}
-    唯一性易知.存在性对$\mathrm{deg} A$作第二数归即可.
+    唯一性易知.存在性对$\deg A$作第二数归即可.
 \end{proof}
 
 \begin{rqq}
@@ -102,18 +183,19 @@
     与域扩张有关的性质称为\textbf{算术性质}.
 \end{rqq}
 
+\section{多项式函数与根}
+
 \begin{deff}
-    设$K$为域,$A \in K[x]$.称映射$\tilde{A}: \begin{array}[t]{ccc} K & \to & K \\ \alpha & \to & ev_{\alpha}(A) \end{array}$为与$A$\textbf{相伴的多项式函数}.
+    设$K$为域,$A \in K[x]$.称映射$\tilde{A}: \begin{array}[t]{ccc} K & \to & K \\ \alpha & \to & ev_{\alpha}(A) \end{array}$为与$A$相伴的\textbf{多项式函数(fonction polynomiale)}.
 \end{deff}
 
 \begin{deff}
-    设$K$为域,$I \subseteq K, f: I \to K$.称$f$为一个\textbf{多项式函数},若存在$A \in K[x], f = \tilde{A}|_I$.
+    设$K$为域,$I \subseteq K, f: I \to K$.称$f$为一个\textbf{多项式函数},
+    若存在$A \in K[x], f = \tilde{A}|_I$.
 \end{deff}
 
-\section{根}
-
 \begin{deff}
-    设$K$为域,$A \in K[x], \alpha \in K$.称$\alpha$为$A$的一个\textbf{根},若$A(\alpha) = 0$.
+    设$K$为域,$A \in K[x], \alpha \in K$.称$\alpha$为$A$(在$K$中)的一个\textbf{根(racine)},若$A(\alpha) = 0$.
 \end{deff}
 
 \begin{prop}
@@ -121,15 +203,35 @@
 \end{prop}
 
 \begin{prop}
-    $n$次多项式最多有$n$个根.
+    设$K$为域,$A \in K[x], \alpha_1, \alpha_2, \cdots, \alpha_n$为$A$的$n$个不同根,
+    则$\prod\limits_{k=1}^n (x - \alpha_k) \mid A$.
 \end{prop}
 
-\begin{prop}
-    设$K$为域,$A \in K[x]$.若$A$恰有$n$个不同的根$\alpha_i$,则$A = c \prod\limits_{i = 1}^n (x - \alpha_i)$,其中$c \in K$为常数.
-\end{prop}
+\begin{proof}
+    对$n$归纳即可.
+\end{proof}
+
+\begin{cor}
+    $n$次多项式最多有$n$个根.
+\end{cor}
+
+\begin{cor}
+    $K_n[x]$中有$n+1$个根的多项式为零多项式.
+\end{cor}
+
+\begin{cor}
+    设$I$为$K$的无限子集,若$\forall x \in I, A(x) = 0$,则$A = 0$.
+\end{cor}
+
+\begin{cor}
+    设$K$为域,$A \in K[x]$.若$A$恰有$n$个不同的根$\alpha_i$,
+    则$A = c \prod\limits_{i = 1}^n (x - \alpha_i)$,其中$c \in K$为常数.
+\end{cor}
 
 \begin{thm}[Lagrange插值公式]\label{thm:lagrange_interpolation}
-    设$K$为域,$x_i, \alpha_i \in K (i = 0, 2, \cdots, n)$.则存在唯一多项式$L \in K_n[x]$满足$L(x_i) = \alpha_i$.其中$$L(x) = \sum\limits_{i = 0}^n \prod\limits_{j \neq i} \dfrac{x - x_j}{x_i - x_j} \alpha_i$$
+    设$K$为域,$x_i, \alpha_i \in K (i = 0, 1, \ldots, n)$.
+    则存在唯一多项式$L \in K_n[x]$满足$L(x_i) = \alpha_i$.
+    其中$$L(x) = \sum\limits_{i = 0}^n \prod\limits_{j \neq i} \dfrac{x - x_j}{x_i - x_j} \alpha_i$$
 \end{thm}
 
 \begin{rqq}
@@ -137,11 +239,12 @@
 \end{rqq}
 
 \begin{rqq}
-    Théorème \ref{thm:lagrange_interpolation}中的$L(x)$也称为``\href{https://faculty.ustc.edu.cn/yqliang/files/teaching.htm#exam}{调分多项式}''.
+    Théorème \ref{thm:lagrange_interpolation}中的$L(x)$也称为
+    ``\href{https://faculty.ustc.edu.cn/yqliang/files/teaching.htm#exam}{调分多项式}''.
 \end{rqq}
 
 \begin{prop}
-    设$K$为域,$A, B \subseteq K[x]$.若存在$K$的无限子集$I$使得$\tilde{A} \vert_I = \tilde{B} \vert_I$,则$A = B$.
+    设$K$为域,$A, B \in K[x]$.若存在$K$的无限子集$I$使得$\tilde{A} \vert_I = \tilde{B} \vert_I$,则$A = B$.
 \end{prop}
 
 \begin{prop}\label{prop2}
@@ -161,29 +264,49 @@
 \end{rqq}
 
 \begin{deff}
-    设$K$为域,$A \in K[x]^*, \alpha \in K$为$A$的根.称$m = \max \{ k \in \mathbb{N} \mid (x - \alpha)^k \mid A \}$为$\alpha$的\textbf{重数},此时称$\alpha$为$A$的$m$\textbf{重根}.
+    设$K$为域,$A \in K[x]^*, \alpha \in K$为$A$的根.
+    称$m = \max \{ k \in \mathbb{N} \mid (x - \alpha)^k \mid A \}$为$\alpha$的\textbf{重数(ordre de multiplicité)},
+    此时称$\alpha$为$A$的\textbf{$\boldsymbol{m}$重根(racine d’ordre $\boldsymbol{m}$)}.
 \end{deff}
 
 \begin{rqq}
-    称$\alpha$为$A$的\textbf{重根},若$\alpha$的重数大于1.
-
-    称$\alpha$为$A$的\textbf{单根},若$\alpha$的重数等于1.
+    设$K$为域,$A \in K[x]^*, \alpha \in K$为$A$的根.
+    \begin{itemize}
+        \item 称$\alpha$为$A$的\textbf{重根(racine multiple)},若$\alpha$的重数大于1.
+        \item 称$\alpha$为$A$的\textbf{单根(racine simple)},若$\alpha$的重数等于1.
+        \item 称$\alpha$为$A$的\textbf{双根(racine double)},若$\alpha$的重数等于2.
+        \item 称$\alpha$为$A$的\textbf{三重根(racine triple)},若$\alpha$的重数等于3.
+        \item 称$\alpha$为$A$的\textbf{至少$\boldsymbol{p}$重根(racine d’ordre au moins $\boldsymbol{p}$)},若$\alpha$的重数不小于$p$.
+    \end{itemize} 
 \end{rqq}
 
 \begin{prop}
-    设$K$为域,$A \in K[x]^*, \alpha \in K, m \in \mathbb{N}^*$.则$\alpha$为$A$的$m$重根$\iff (x - \alpha)^m \mid A \text{且} (x - \alpha)^{m + 1} \nmid A$.
+    设$K$为域,$A \in K[x]^*, \alpha \in K, m \in \mathbb{N}^*$.
+    则$\alpha$为$A$的$m$重根$\iff (x - \alpha)^m \mid A \text{且} (x - \alpha)^{m + 1} \nmid A$.
 \end{prop}
 
 \begin{prop}
-    设$K$为域,$A \in K[x]^*, \alpha \in K, m \in \mathbb{N}^*$.则$\alpha$为$A$的$m$重根$\iff \exists B \in K[x], A = (x - \alpha)^m B \text{且} (x - \alpha) \nmid B$.
+    设$K$为域,$A \in K[x]^*, \alpha \in K, m \in \mathbb{N}^*$.
+    则$\alpha$为$A$的$m$重根$\iff \exists B \in K[x], A = (x - \alpha)^m B \text{且} B(\alpha) \neq 0$.
 \end{prop}
+
+\begin{prop}
+    设$K$为域,$A \in K[x]^*, \alpha_1, \alpha_2, \cdots, \alpha_n \in K$两两不同,
+    满足$\alpha_k$为$A$的$r_k$重根.则$\prod\limits_{k=1}^n (x - \alpha_k)^{r_k} \mid A$.
+\end{prop}
+
+\begin{cor}
+    $n$次多项式至多有$n$个根(计重数).
+\end{cor}
 
 \begin{rqq}
     根的重数类似于$V_p(n)$.
 \end{rqq}
 
 \begin{deff}\label{def:scindé}
-    设$K$为域,$A \in K[x]$.称$A$在$K$上\textbf{分裂},若存在$\alpha_1, \alpha_2, \cdots, \alpha_n \in K, \lambda \in K^*$使得$A = \lambda \prod\limits_{i = 1}^n (x - \alpha_i)$.
+    设$K$为域,$A \in K[x]$.称$A$在$K$上\textbf{分裂(scindé)},
+    若存在$\alpha_1, \alpha_2, \cdots, \alpha_n \in K, \lambda \in K^*$,
+    使得$A = \lambda \prod\limits_{i = 1}^n (x - \alpha_i)$.
 \end{deff}
 
 \begin{rqq}
@@ -193,18 +316,15 @@
 \section{多项式的求导}
 
 \begin{deff}
-    设$K$为域,$A = \sum\limits_{k=0}^n a_k x^k \in K[x]$.称$A' = \sum\limits_{k=1}^n k a_k x^{k-1} \in K[x]$为$A$的\textbf{导数}.
+    设$K$为域,$A = \sum\limits_{k=0}^n a_k x^k \in K[x]$.
+    称$A' = \sum\limits_{k=1}^n k a_k x^{k-1} \in K[x]$为$A$的\textbf{导数(polynôme dérivé)}.
 \end{deff}
-
-\begin{rqq}
-    ``求导''是一个群同态$\begin{array}[t]{ccc} K[x] & \to & K[x] \\ A & \mapsto & A' \end{array}$.
-\end{rqq}
 
 \begin{prop}
     设$K$为无限域,$A \in K[x]$,则
     \begin{enumerate}
-        \item 若$\mathrm{deg} A > 0$,则$\mathrm{deg} A' = \mathrm{deg} A - 1$.
-        \item $A \in K^* \iff \mathrm{deg} A' = 0$.
+        \item 若$\deg A > 0$,则$\deg A' = \deg A - 1$.
+        \item $A \in K \iff A' = 0$.
     \end{enumerate}
 \end{prop}
 
@@ -213,15 +333,30 @@
 \end{rqq}
 
 \begin{prop}
+    设$K$为域,$A, B \in K[x], \lambda, \mu \in K$,则$(\lambda A + \mu B)' = \lambda A' + \mu B'$.
+\end{prop}
+
+\begin{rqq}
+    ``求导''是一个群同态$\begin{array}[t]{ccc} K[x] & \to & K[x] \\ A & \mapsto & A' \end{array}$.
+\end{rqq}
+
+\begin{prop}
     设$K$为域,$A, B \in K[x]$,则$(AB)' = A'B + AB'$.
 \end{prop}
 
 \begin{deff}
-    设$K$为域,$A \in K[x]$,记$A^{(1)} = A'$.对于$n \in \mathbb{N}^*$,称$(A^{{n-1}})'$为$A$的$n$阶导数,记为$A^{(n)}$.
+    设$K$为域,$A \in K[x]$,记$A^{(1)} = A'$.对于$n \in \mathbb{N}^*$,
+    称$(A^{(n-1)})'$为$A$的\textbf{$\boldsymbol{n}$阶导数(polynôme dérivé d’ordre $\boldsymbol{n}$)},记为$A^{(n)}$.
 \end{deff}
 
 \begin{prop}
-    设$K$为域,则$\begin{array}[t]{ccc} K[x] & \to & K[x] \\ A & \mapsto & A^{(n)} \end{array}$为$K$上的线性映射.
+    设$K$为域,$A, B \in K[x], \lambda, \mu \in K, n \in \mathbb{N}$,
+    则$$(\lambda A + \mu B)^{(n)} = \lambda A^{(n)} + \mu B^{(n)}$$.
+\end{prop}
+
+\begin{prop}
+    设$K$为域,则$\begin{array}[t]{ccc} K[x] & \to & K[x] \\ A & \mapsto & A^{(n)} \end{array}$
+    为$K$上的线性映射.
 \end{prop}
 
 \begin{thm}[Leibniz]\label{thm:leibniz}
@@ -233,29 +368,41 @@
 \end{thm}
 
 \begin{prop}
-    设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K$,则$\alpha$为$A$的重根$\iff \alpha$为$A'$的根.
+    设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K, m \in \mathbb{N}^*$.若$\alpha$为$A$的$m$重根,
+    则$\alpha$为$A'$的$m-1$重根.
 \end{prop}
+
+\begin{cor}
+    设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K$,则$\alpha$为$A$的重根当且仅当$A(\alpha) = A'(\alpha) = 0$.
+\end{cor}
 
 \begin{prop}
-    设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K, m \in \mathbb{N}^*$.若$\alpha$为$A$的$m$重根,则$\alpha$为$A'$的$m-1$重根.
+    设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K, m \in \mathbb{N}^*$,
+    则$\alpha$为$A$的$m$重根$\iff A(\alpha) = A'(\alpha) = A''(\alpha) = \cdots = A^{(m-1)}(\alpha) = 0 \text{且} A^{(m)}(\alpha) \neq 0$.
 \end{prop}
 
-\begin{prop}
-    设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K, m \in \mathbb{N}^*$.则$\alpha$为$A$的$m$重根$\iff A(\alpha) = A'(\alpha) = A''(\alpha) = \cdots = A^{(m-1)}(\alpha) = 0 \text{且} A^{(m)}(\alpha) \neq 0$.
-\end{prop}
+\section{$\mathbb{C}[x]$和$\mathbb{R}[x]$中的分解}
 
-\begin{thm}
+\begin{thm}[d'Alembert]
     $\mathbb{C}[x] \setminus \mathbb{C}$中的多项式至少有一个根.
 \end{thm}
 
 \begin{rqq}
-    因此称$\mathbb{C}$为代数闭的.
+    因此称$\mathbb{C}$为\textbf{代数闭}的.
 \end{rqq}
 
 \begin{prop}
-    设$A \in \mathbb{C}[x] \setminus \mathbb{C}$,则有分裂$A = \lambda \prod\limits_{k = 1}^n (x - \alpha_k)$,其中$\alpha_k, \lambda \in \mathbb{C}, n = \mathrm{deg} A$.
+    设$A \in \mathbb{C}[x] \setminus \mathbb{C}$,则有分裂
+    $A = \lambda \prod\limits_{k = 1}^n (x - \alpha_k)$,其中$\alpha_k, \lambda \in \mathbb{C}$.
 \end{prop}
 
 \begin{prop}
-    设$A \in \mathbb{R}[x] \setminus \mathbb{R}$,则有分解$A = \lambda \prod\limits_{i = 1}^m (x - \alpha_i) \prod\limits_{j = 1}^n (x^2 + \beta_j x + \gamma_j)$,其中$\alpha_i, \beta_j, \gamma_j, \lambda \in \mathbb{R}, m + 2n = \mathrm{deg} A$.
+    设$A, P \in \mathbb{C}[x] \setminus \mathbb{C}, \alpha_1, \alpha_2, \cdots, \alpha_n \in \mathbb{C}, r_1, r_2, \cdots, r_n \in \mathbb{N}^*$,
+    $\alpha_k \in \mathbb{C}$为$A$的$r_k$重根.则$A \mid P$当且仅当$\alpha_k$为$P$的根且重数不低于$r_k$.
+\end{prop}
+
+\begin{prop}
+    设$A \in \mathbb{R}[x] \setminus \mathbb{R}$,则有分裂
+    $A = \lambda \prod\limits_{i = 1}^m (x - \alpha_i) \prod\limits_{j = 1}^n (x^2 + \beta_j x + \gamma_j)$,
+    其中$\alpha_i, \beta_j, \gamma_j, \lambda \in \mathbb{R}, \beta_j^2 - 4 \gamma_j < 0$.
 \end{prop}
