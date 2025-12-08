@@ -1,0 +1,226 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{习题22}
+\author{}
+\date{2025年12月8日}
+
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年12月8日}
+\chead{习题22}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+我们归纳总结一些关于级数敛散性的判别法(如果下面某些判别法你还没学过,不要慌,不要慌,试图去理解一下他们在说什么,然后自己尝试证明一下,绝对不要死记硬背).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  (D'Alembert判别法) 设\(\sum a_n\)为严格正项级数,则
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    若存在\(0<\lambda<1\)及\(N\in\mathbb{N}\),当\(n\geqslant N\)时,\(\dfrac{a_{n+1}}{a_n}\leqslant\lambda\),则级数收敛.
+  \item
+    若存在\(0<\lambda<1\)及\(N\in\mathbb{N}\),当\(n\geqslant N\)时,\(\dfrac{a_{n+1}}{a_n}\geqslant1\),则级数发散.
+  \item
+    若\(\lim\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n}=\lambda\),则
+
+    \begin{enumerate}
+    \def\labelenumiii{\arabic{enumiii}.}
+    \tightlist
+    \item
+      若\(\lambda<1\),则级数收敛.
+    \item
+      若\(\lambda>1\),则级数发散.
+    \item
+      若\(\lambda=1\),无法判断.
+    \end{enumerate}
+  \end{enumerate}
+\item
+  (Cauchy判别法) 设\(\sum a_n\)为正项级数.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    若存在\(0<\lambda<1\)及\(N\in\mathbb{N}\),当\(n\geqslant N\)时,\(\sqrt[n]{a_n}\leqslant\lambda\),则级数收敛.
+  \item
+    若存在\(N\in\mathbb{N}\),当\(n\geqslant N\)时,\(\sqrt[n]{a_n}\geqslant1\),则级数发散.
+  \item
+    若\(\varlimsup\limits_{n\to\infty}\sqrt[n]{a_n}=\lambda\),则
+
+    \begin{enumerate}
+    \def\labelenumiii{\arabic{enumiii}.}
+    \tightlist
+    \item
+      若\(\lambda<1\),则级数收敛.
+    \item
+      若\(\lambda>1\),则级数发散.
+    \item
+      若\(\lambda=1\),无法判断.
+    \end{enumerate}
+  \end{enumerate}
+\item
+  (Riemann判别法)
+  设\(\sum a_n\)为正项级数且满足\(\lim\limits_{n\to\infty}n^{\alpha}a_n=\lambda\in\overline{\mathbb{R}}\),则
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    若\(\alpha>1\)且\(\lambda<+\infty\),则级数收敛.
+  \item
+    若\(\alpha\leqslant1\)且\(\lambda\neq0\),则级数发散.
+  \end{enumerate}
+\item
+  (积分判别法)
+  设\(\sum a_n\)为正项级数,\(f\in\mathcal{CM}\left([1,+\infty),\mathbb{R}_+^*\right)\)单调减且满足\(a_n=f(n)\),则级数\({} \sum\limits_{n=1}^{\infty} a_n {}\)与积分\(\int_1^{+\infty}f(x)\mathrm{d}x\)具有相同的敛散性.
+\item
+  (Rabble判别法)
+  设\(\sum a_n\)为严格正项级数满足\({} \lim\limits_{n\to\infty}n\left(1-\dfrac{a_{n+1}}{a_n}\right)=\lambda\in\overline{\mathbb{R}} {}\),则
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    若\(\lambda>1\),则级数收敛.
+  \item
+    若\(\lambda<1\),则级数发散.
+  \item
+    若\(\lambda=1\),无法判断.
+  \end{enumerate}
+\item
+  (Bertrand判别法)
+  设\(\sum a_n\)为严格正项级数满足\[\lim\limits_{n\to\infty}n\ln^{(1)}n\cdots\ln^{(k)}n\left(1-\dfrac{1}{n}-\dfrac{1}{n\ln n}-\cdots-\dfrac{1}{n\ln^{(1)}n\cdots\ln^{(k-1)}n}\right)=\lambda\]其中\(\ln^{(1)}n=\ln n,\ln^{(k)}n=\ln\ln^{(k-1)}n\),则
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    若\(\lambda<1\),则级数收敛.
+  \item
+    若\(\lambda>1\),则级数发散.
+  \item
+    若\(\lambda=1\),无法判断.
+  \end{enumerate}
+\item
+  对\(x>0\),记\(l_1=\ln(1+x),l_{p+1}(x)=l_1(l_p(x))\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:对\(p\in\mathbb{N}\),级数\(S_p=\sum\limits_{k=p}^{\infty}\dfrac{1}{kl_1(k)l_2(k)\cdots l_{p-1}(k)l_p(k)^2}\)收敛.
+  \item
+    设\[a_n=\dfrac{1}{2S_1}\dfrac{1}{nl_1(n)^2}+\dfrac{1}{2^2S_2}\dfrac{1}{nl_1(n)l_2(n)^2}+\cdots+\dfrac{1}{2^nS_n}\dfrac{1}{nl_1(n)l_2(n)\cdots l_{n-1}(n)l_n(n)^2}\]证明级数\(\sum\limits_{n=1}^{\infty}a_n\)收敛.
+  \end{enumerate}
+\item
+  对于正序列\((a_n)\),证明
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    若\({} \varlimsup\limits_{n\to\infty}\left(\dfrac{a_{n+1}}{a_n}\right)^n<\dfrac{1}{e} {}\),则级数\(\sum\limits_{n=1}^{\infty}a_n\)收敛.
+  \item
+    若\(\varliminf\limits_{n\to\infty}\left(\dfrac{a_{n+1}}{a_n}\right)^n>\dfrac{1}{e}\),则级数\(\sum\limits_{n=1}^{\infty}a_n\)发散.
+  \end{enumerate}
+\item
+  设正项级数\(\sum a_n\)收敛,记为\(A\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:若\(u_n=(a_1a_2\cdots a_n)^{\frac{1}{n}}\),则级数\(\sum u_n\)收敛,且\(\sum\limits_{n=1}^{\infty}u_n\leqslant eA\).
+  \item
+    设\(k>0\)满足:对任意收敛的正项级数\({} \sum a_n {}\),都有\(\sum\limits_{n=1}^{\infty}u_n\leqslant kA\).证明:\(k\geqslant e\).
+  \item
+    设正项级数\(\sum \dfrac{1}{a_n}\)收敛,令\(u_n=\dfrac{n^2a_n}{(a_1+a_2+\cdots+a_n)^2}\),证明级数\(\sum u_n\)收敛.
+  \end{enumerate}
+\item
+  若正序列\((u_n)\)满足\(\lim\limits_{n\to\infty}nu_n=0,\dfrac{u_{n+1}}{u_n}=\dfrac{n+a}{n+b}\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明级数\(\sum u_n\)收敛并计算之.
+  \item
+    计算\(\sum\limits_{n=1}^{\infty}u_n\),其中\(u_n=\dfrac{1\cdot2\cdots(2n-1)}{2\cdot2\cdots(2n+2)}\).
+  \end{enumerate}
+\item
+  设\(\sum a_n\)为正项级数,定义\[S_1=1,2S_{n+1}=S_n+\sqrt{S_n^2+a_n}\]证明:若\(\sum\limits_{n=1}^{\infty}a_n\)收敛,则\((S_n)\)收敛.反之是否成立?
+\item
+  设\(\sum u_n\)为交错级数(相邻项符号相反),定义\(\dfrac{u_{n+1}}{u_n}=\dfrac{-1}{1+a_n}\).证明:若从某一项开始,\(-1<a_n\leqslant0\),则级数\(\sum\limits_{n=1}^{\infty}u_n\)发散;若从某一项开始,存在\(k\)使得\(0<k<na_n\),则级数收敛.
+\item
+  上节课没做完的题目接着做.
+\end{enumerate}
+
+\end{document}
