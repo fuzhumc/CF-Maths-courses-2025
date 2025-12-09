@@ -1,0 +1,38 @@
+\chapter{级数}
+
+\section{数项级数}
+
+\begin{deff}
+    设$(u_n)$为$\mathbb{R}$中序列,称序列$S_n=\sum\limits_{k=0}^nu_k$为以$u_n$为通项的\textbf{级数},
+    记为$\sum u_n$.称$S_n$为\textbf{部分和}.
+\end{deff}
+
+\begin{deff}
+    称$\sum u_n$\textbf{收敛},若序列$(S_n)$收敛且有有限的极限,否则称其发散.
+
+    若$\sum u_n$收敛,记$\sum\limits_{n=0}^{\infty}=\lim\limits_{n\to\infty}S_n$.
+\end{deff}
+
+\begin{prop}
+    若$\sum u_n$收敛,则$\lim\limits_{n\to\infty}u_n=0$.
+\end{prop}
+
+\begin{rqq}
+    设$\sum u_n$收敛,记$R_n=\sum\limits_{k=n+1}^{\infty}u_k$为余项.
+\end{rqq}
+
+\begin{prop}
+    设$\sum u_n$收敛,则$\lim\limits_{n\to\infty}R_n=0$.
+\end{prop}
+
+\begin{prop}
+    设$(u_n),(v_n)$为$\mathbb{R}$中序列,满足$0\leqslant u_n\leqslant v_n$.
+    \begin{enumerate}
+        \item 若$\sum v_n$收敛,则$\sum u_n$收敛.
+        \item 若$\sum u_n$发散,则$\sum v_n$发散.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    设$f\in\mathcal{CM}([0,+\infty))$单调减,则$\sum f(n)$收敛$\iff \int_0^{\infty}f(t)\mathrm{d}t$收敛.
+\end{prop}
