@@ -1,112 +1,208 @@
 \chapter{渐进分析}
 
+\ref{sec:sequences_comparison}节中考虑的序列的比较关系,在函数的情形中也可以得到定义.
+它们允许研究和比较函数在一点$a\in\overline{\mathbb{R}}$附近的行为.
+在本章中,如无特殊说明:
+\begin{itemize}
+    \item $I$表示$\mathbb{R}$中一个非空区间.
+    \item $a$为$I$的一个聚点.
+    \item 函数定义在$I$上,取值为实数.
+\end{itemize}
+当$f$在$I$上定义,$a$为$I$的聚点时,我们说\textit{$f$在$a$附近有定义}.
+
+\section{大$O$记号与小$o$记号}
+
 \begin{deff}
-    设$f,\varphi:I\to\mathbb{R},a\in I$.称$f$在$a$附近被$\varphi$\textbf{控制},若存在$u:I\to\mathbb{R}$在$a$附近有且$f=u\varphi$.此时记$f=O(\varphi)$.
+    设$f, \varphi: I \to \mathbb{R}, a \in I$.称$f$在$a$附近被$\varphi$\textbf{控制(dominée)},
+    若存在$u: I \to \mathbb{R}$在$a$附近有界且$f = u\varphi$.记为$f =_a O(\varphi)$.
 \end{deff}
 
 \begin{deff}
-    设$f,\varphi:I\to\mathbb{R},a\in i$.称$f$在$a$附近相对于$\varphi$\textbf{可忽略},若存在$\varepsilon:I\to\mathbb{R},\lim\limits_{x\to a}\varepsilon(x)=0$且$f=\varepsilon\varphi$.记为$f=o(\varphi)$.
+    设$f, \varphi: I \to \mathbb{R}, a \in I$.称$f$在$a$附近相对于$\varphi$\textbf{可忽略(négligeable)},
+    若存在$\varepsilon: I \to \mathbb{R}, \lim\limits_{x \to a} \varepsilon(x) = 0$
+    且$f = \varepsilon \varphi$.记为$f =_a o(\varphi)$.
 \end{deff}
-
-\begin{prop}
-    $f$在$a$附近有界$\iff f=O(1)$;$\lim\limits_{x\to a}f(x)=0\iff f=o(1)$.
-\end{prop}
-
-\begin{prop}
-    \begin{enumerate}
-        \item 若$f=o(\varphi)$,则$f=O(\varphi)$.
-        \item 若$f_1=O(\varphi_1),f_2=O(\varphi_2)$,则$f_1f_2=O(\varphi_1\varphi_2)$.
-        \item 若$f_1=o(\varphi),f_2=o(\varphi)$,则$f_1+f_2=o(\varphi)$.
-        \item 若$f=o(\varphi_1),\varphi_1=o(\varphi_2)$,则$f=o(\varphi_2)$.
-    \end{enumerate}
-\end{prop}
-
-\begin{deff}
-    设$f,g:I\to\mathbb{R},a\in I$,称$f$在$a$附近与$g$\textbf{等价},若存在$u:I\to\mathbb{R},\lim\limits_{x\to a}u(x)=1$且$f=ug$.记为$f\sim g$.
-\end{deff}
-
-\begin{prop}
-    $f\sim g\iff f-g=o(g)$.
-\end{prop}
-
-\begin{prop}
-    设$f:I\to\mathbb{R},a\in I$,$f$在$a$处可导,则$f(x)\sim f(a)+f'(a)(x-a)$.
-\end{prop}
 
 \begin{rqq}
-    若$g$在$a$附近非0,则$f\sim g\iff\lim\limits_{x\to a}\dfrac{f(x)}{g(x)}=1$.
+    在不引起歧义的情形中,可以直接记$f = O(\varphi)$或$f = o(\varphi)$,而无需将$a$作为下标.
+\end{rqq}
+
+\begin{rqq}
+    在大多数情形中,这些记号在$0$和$+ \infty$处使用.
 \end{rqq}
 
 \begin{prop}
-    设$f\sim g$,则有
+    $f$在$a$附近有界当且仅当$f =_a O(1)$;$\lim\limits_{x \to a}f(x) = 0 \iff f =_a o(1)$.
+\end{prop}
+
+\begin{prop}
+    \begin{enumerate}
+        \item 若$f=_a o(\varphi)$,则$f=_a O(\varphi)$.
+        \item 若$f_1=_a O(\varphi_1),f_2=_a O(\varphi_2)$,则$f_1f_2=_a O(\varphi_1\varphi_2)$.
+        \item 若$f_1=_a o(\varphi),f_2=_a o(\varphi)$,则$f_1+f_2=_a o(\varphi)$.
+        \item 若$f=_a o(\varphi_1),\varphi_1=_a o(\varphi_2)$,则$f=_a o(\varphi_2)$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    \begin{enumerate}
+        \item 若$f =_a O(\varphi)$且$\varphi$在$a$附近有界,则$f$在$a$附近有界.
+        \item 若$f =_a O(\varphi)$且$\lim\limits_{x \to a} \varphi(x) = 0$,则$\lim\limits_{x \to a} f(x) = 0$.
+        \item 若$f =_a o(\varphi)$且$\varphi$在$a$附近有界,则$\lim\limits_{x \to a} f(x) = 0$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    设$\varphi$在$I \setminus \{ a \}$上非零,且$\varphi(a) = f(a) = 0$,则
+    \begin{enumerate}
+        \item $f =_a O(\varphi) \iff \dfrac{f}{\varphi}$在$a$附近有界.
+        \item $f =_a o(\varphi) \iff \lim\limits_{x \to a} \dfrac{f(x)}{\varphi(x)} = 0$.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    当$\varphi$非零时,$f = u \varphi \iff u = \dfrac{f}{\varphi}$.
+\end{proof}
+
+\section{函数等价}
+
+\begin{deff}
+    设$f, g: I \to \mathbb{R}, a \in I$,称$f$在$a$附近与$g$\textbf{等价(équivalente)},
+    若存在$u: I \to \mathbb{R}, \lim\limits_{x\to a} u(x) = 1$且$f = ug$.记为$f \mathop{\sim}\limits_a g$.
+\end{deff}
+
+\begin{prop}
+    $f \mathop{\sim}\limits_a g \iff f - g =_a o(g)$.
+\end{prop}
+
+\begin{rqq}
+    $\mathop{\sim}\limits_a$为$\mathcal{F}(I,\mathbb{R})$上的一个等价关系.
+
+    因此,我们常说``$f$与$g$在$a$附近等价''而不是``$f$在$a$附近与$g$等价''.
+\end{rqq}
+
+\begin{prop}
+    若$g =_a o(f)$,则$f + g \mathop{\sim}\limits_a f$.
+\end{prop}
+
+\begin{prop}
+    设$g$在$I \setminus \{ a \}$上非零,且$g(a) = f(a) = 0$,
+    则$f \mathop{\sim}\limits_a g \iff \lim\limits_{x \to a} \dfrac{f(x)}{g(x)} = 1$.
+\end{prop}
+
+\begin{prop}
+    若$f$在$a$处可导且$f'(a) \neq 0$,则$f(x) - f(a) \mathop{\sim}\limits_a f'(a)(x - a)$.
+\end{prop}
+
+\begin{prop}
+    设$f \mathop{\sim}\limits_a g$,则有
     \begin{enumerate}
         \item 若$g$在$a$附近非负,则$f$在$a$附近非负.
         \item 若$g$在$a$附近非0,则$f$在$a$附近非0.
-    \end{enumerate}
+        \item 若$g$在$a$附近有极限,则$f$在$a$附近有极限,且二者极限相等.
+   \end{enumerate}
 \end{prop}
 
 \begin{prop}
-    设$f_1\sim g_1,f_2\sim g_2$,则有
+    设$f_1 \mathop{\sim}\limits_a g_1, f_2 \mathop{\sim}\limits_a g_2$,则有
     \begin{enumerate}
-        \item $f_1f_2\sim g_1g_2$.
-        \item 若$f_2,g_2$在$a$附近非0,则$\dfrac{f_1}{f_2}\sim\dfrac{g_1}{g_2}$.
+        \item $f_1f_2 \mathop{\sim}\limits_a g_1g_2$.
+        \item 若$f_2, g_2$在$I \setminus \{ a \}$上非0,则$\dfrac{f_1}{f_2} \mathop{\sim}\limits_a \dfrac{g_1}{g_2}$.
     \end{enumerate}
 \end{prop}
 
 \begin{prop}
-    设$f\sim g,\alpha\in\mathbb{R}$,则$f^{\alpha}\sim g^{\alpha}$.
+    设$f \mathop{\sim}\limits_a g, \alpha \in \mathbb{R}$,且$f^{\alpha}, g^{\alpha}$在$a$附近有好的定义,
+    则$f^{\alpha} \mathop{\sim}\limits_a g^{\alpha}$.
 \end{prop}
 
 \begin{exer}
-    设$f,g:I\to\mathbb{R}$,则$e^f\sim e^g\iff f-g\to0$.
+    $e^f \mathop{\sim}\limits_a e^g \iff \lim\limits_{x \to a} (f(x) - g(x)) =0$.
 \end{exer}
 
 \begin{prop}
-    设$f:I\to\mathbb{R},a\in I,f\sim g,b=f(a)=g(a)\in U,\varphi:U\to I,\lim\limits_{x\to b}\varphi(x)=a$,则$f\circ\varphi\sim g\circ\varphi$.
+    设$f \mathop{\sim}\limits_a g, b = f(a) = g(a) \in U, \varphi: U \to I, \lim\limits_{t \to b} \varphi(t) = a$,
+    则$f \circ \varphi \mathop{\sim}\limits_b g \circ \varphi$.
 \end{prop}
 
-\section{极限展开}
+\begin{prop}
+    设$f \mathop{\sim}\limits_a g, a_n \in I, \lim\limits_{n \to \infty} a_n = a$,则$f(a_n) \sim g(a_n)$.
+\end{prop}
+
+\begin{prop}
+    这些结果也适用于大$O$记号与小$o$记号.
+    \begin{enumerate}
+        \item 设$f = O(g), b = f(a) = g(a) \in U, \varphi: U \to I, \lim\limits_{t \to b} \varphi(t) = a$,则$f \circ \varphi = O(g \circ \varphi)$.
+        \item 设$f = o(g), b = f(a) = g(a) \in U, \varphi: U \to I, \lim\limits_{t \to b} \varphi(t) = a$,则$f \circ \varphi = o(g \circ \varphi)$.
+        \item 设$f = O(g), a_n \in I, \lim\limits_{n \to \infty} a_n = a$,则$f(a_n) = O(g(a_n))$.
+        \item 设$f = o(g), a_n \in I, \lim\limits_{n \to \infty} a_n = a$,则$f(a_n) = o(g(a_n))$.
+    \end{enumerate}
+\end{prop}
+
+\section{限定展开}
 
 \begin{deff}
-    设$0\in I,f:I\to\mathbb{R}$.称$f$在$0$处有$n$阶展开,若存在$a_0,a_1,a_2,\cdots,a_n\in\mathbb{R}$,使得$f(x)=\sum\limits_{k=0}^na_kx^k+o(x^n)$.
-\end{deff}
-
-\begin{deff}
-    设$x_0\in I,f:I\to\mathbb{R}$.称$f$在$x_0$处有$n$阶展开,若存在$a_0,a_1,a_2,\cdots,a_n\in\mathbb{R}$,使得$f(x)=\sum\limits_{k=0}^na_k(x-x_0)^k+o((x-x_0)^n)$.
-\end{deff}
-
-\begin{prop}
-    函数在一点处的$n$阶展开唯一.
-\end{prop}
-
-\begin{deff}
-    设$f$在$0$处的$n$阶展开为$f(x)=\sum\limits_{k=0}^na_kx^k+o(x^n)$.称多项式$P(x)=\sum\limits_{k=0}^na_kx^k$为其\textbf{正则部分}.
-\end{deff}
-
-\begin{prop}
-    设$P$为$f$在0处的$n$阶展开的正则部分.若$f$为偶函数,则$P$只有偶次项;若$f$为奇函数,则$P$只有寄次项.
-\end{prop}
-
-\begin{prop}
-    $f$在0处有0阶展开当且仅当$f(x)=l+o(1)$,其中$l\in\mathbb{R}$.
-\end{prop}
-
-\begin{prop}
-    $f$在0处可导当且仅当$f$在0处有$1$阶展开.
-\end{prop}
-
-\begin{prop}
-    设$f:I\to\mathbb{R}$,$F$为其原函数,$f$在0处有$n$阶展开$f(x)=\sum\limits_{k=0}^na_kx^k+o(x^n)$,则$F(x)-F(0)=\sum\limits_{x=0}^n\dfrac{a_k}{k+1}x^{k+1}+o(x^{n+1})$.
-\end{prop}
-
-\begin{deff}
-    设$f$在0处有$n$阶展开$f(x)=\sum\limits_{k=0}^na_kx^k+o(x^n)$,记$p=\min\{p\in[0,n]\mid a_p\neq0\}$,称$f(x)=x^p(a_p+a_{p+1}x+\cdots+a_nx^{n-p}+o(x^{n-p}))$为$f$在0处的$n$阶展开的正规形式.
+    设$f$在0附近有定义.称$f$有\textbf{在0处的$\boldsymbol{n}$阶限定展开(développement limité à l'ordre $\boldsymbol{n}$ en 0)},
+    若存在$a_0, a_1, a_2, \cdots, a_n \in \mathbb{R}$,使得$f(x) = \sum\limits_{k=0}^n a_k x^k + o(x^n)$.
 \end{deff}
 
 \begin{prop}
-    设$f,g$在0处有$n$阶展开,则$f+g,fg$在0处也有$n$阶展开.
+    函数在一点处的$n$阶限定展开唯一.
+\end{prop}
+
+\begin{deff}
+    设$f$在0处的$n$阶限定展开为$f(x) = \sum\limits_{k=0}^n a_k x^k + o(x^n)$.
+    称多项式$P(x) = \sum\limits_{k=0}^n a_k x^k$为其\textbf{正则部分(partie régulière du développement limité)}.
+\end{deff}
+
+\begin{prop}
+    设$P$为$f$在0处的$n$阶限定展开的正则部分.若$f$为偶函数,则$P$只有偶次项;若$f$为奇函数,则$P$只有奇次项.
 \end{prop}
 
 \begin{prop}
-    设$f$在0处有$n$阶展开,$\lim\limits_{x\to0}u(x)=0$,则$\dfrac{1}{1-u(x)}$在0处也有$n$阶展开,且其正则部分与$\sum\limits_{k=0}^nu(x)^k$在0处的$n$阶展开的正则部分相同.
+    $f$在0处有0阶限定展开当且仅当$f(x) = l + o(1)$,其中$l \in \mathbb{R}$.
+\end{prop}
+
+\begin{prop}
+    $f$在0处可导当且仅当$f$在0处有1阶限定展开.
+\end{prop}
+
+\begin{prop}
+    设$f: I \to \mathbb{R}$,$F$为其原函数,$f$有在0处的$n$阶限定展开$f(x) = \sum\limits_{k=0}^n a_k x^k + o(x^n)$,
+    则$F$在0处有$n+1$阶限定展开$F(x) = F(0) + \sum\limits_{k=0}^n \dfrac{a_k}{k+1} x^{k+1} + o(x^{n+1})$.
+\end{prop}
+
+\begin{deff}
+    设$f$有在0处的$n$阶限定展开$f(x) = \sum\limits_{k=0}^n a_k x^k + o(x^n)$,记$p = \min \{ k \in [0,n] \mid a_k \neq 0 \}$,
+    称$f(x) = x^p (a_p + a_{p+1} x + \cdots + a_n x^{n-p} + o(x^{n-p}))$为其\textbf{正规形式(forme normalisée)}.
+\end{deff}
+
+\begin{prop}
+    设$f$有在0处的$n$阶限定展开$f(x) = x^p (a_p + a_{p+1} x + \cdots + a_n x^{n-p} + o(x^{n-p}))$,
+    则$f(x) \mathop{\sim}\limits_0 a_p x^p$.
+\end{prop}
+
+\begin{deff}
+    设$f$在$x_0$附近有定义.称$f$有\textbf{在$\boldsymbol{x_0}$处的$\boldsymbol{n}$阶限定展开(développement limité à l’ordre $\boldsymbol{n}$ en $\boldsymbol{x_0}$)},
+    若存在$a_0, a_1, a_2, \cdots, a_n \in \mathbb{R}$,使得$f(x) = \sum\limits_{k=0}^n a_k (x - x_0)^k + o((x-x_0)^n)$.
+\end{deff}
+
+\section{限定展开的运算}
+
+\begin{prop}
+    设$f, g$有在0处的$n$阶限定展开,则$f + g, fg$也有在0处的$n$阶限定展开.
+\end{prop}
+
+\begin{cor}
+    设$f$有在0处的$n$阶限定展开,$p \in \mathbb{N}$,则$f(x)^p$也有在0处的$n$阶限定展开.
+\end{cor}
+
+\begin{prop}
+    设$f$有在0处的$n$阶限定展开,$\lim\limits_{x \to 0} u(x) = 0$,
+    则$\dfrac{1}{1 - u(x)}$也有在0处的$n$阶限定展开,
+    且其正则部分与$\sum\limits_{k=0}^n u(x)^k$在0处的$n$阶限定展开的正则部分相同.
+\end{prop}
+
+\begin{prop}
+    设$f, g$有在0处的$n$阶限定展开,且$g(0) \neq 0$,则$\dfrac{f}{g}$也有在0处的$n$阶限定展开.
 \end{prop}
