@@ -406,3 +406,132 @@
     $A = \lambda \prod\limits_{i = 1}^m (x - \alpha_i) \prod\limits_{j = 1}^n (x^2 + \beta_j x + \gamma_j)$,
     其中$\alpha_i, \beta_j, \gamma_j, \lambda \in \mathbb{R}, \beta_j^2 - 4 \gamma_j < 0$.
 \end{prop}
+
+\section{K[x]上的算术}
+
+记多项式$A$的因式的全体为$\mathcal{D}(A)$.
+
+\begin{deff}
+    设$A, B \in K[x]^*$,称$A$与$B$的最高次数的公因式为$A, B$的\textbf{PGCD}.
+\end{deff}
+
+\begin{rqq}
+    若$D$为$A, B$的PGCD,则$D \neq 0$且对任意$\lambda \in K^*$,$\lambda D$也是$A, B$的PGCD.
+\end{rqq}
+
+\begin{lem}
+    设$A, B, Q, R \in K[x]$满足$A = BQ + R$,
+    则$\mathcal{D}(A) \cup \mathcal{D}(B) = \mathcal{D}(B) \cup \mathcal{D}(R)$.
+\end{lem}
+
+\begin{prop}
+    设$A, B \in K[x]^*$,$D$为$A, B$的PGCD,则$\mathcal{D}(A) \cap \mathcal{D}(B) = \mathcal{D}(D)$.
+\end{prop}
+
+\begin{thm}\label{thm:pgcd_existence}
+    设$A, B \in K[x]^*$,则存在唯一首一多项式$D$使得$\mathcal{D}(D) = \mathcal{D}(A) \cap \mathcal{D}(B)$.
+\end{thm}
+
+\begin{deff}
+    称Théorème \ref{thm:pgcd_existence}中的多项式$D$为$A, B$的\textbf{最大公因式(le PGCD)},记为$(A, B)$.
+\end{deff}
+
+\begin{rqq}
+    设$A, B, Q, R \in K[x], B \neq 0$,则$(A, B) = (B, R)$.
+\end{rqq}
+
+\begin{rqq}
+    设$D$为$A, B$在$\mathbb{R}[x]$中的最大公因式,则$D$也为$A, B$在$\mathbb{C}[x]$中的最大公因式.
+\end{rqq}
+
+\begin{rqq}
+    和整数中一样,$(A, B) = (B, A)$.
+\end{rqq}
+
+\begin{prop}
+    设$A, B \in K[x]^*$,则存在$U, V \in K[x]$,使得$AU + BV = (A, B)$.
+\end{prop}
+
+\begin{rqq}
+    $(U, V)$称为$(A, B)$的一对\textbf{Bézout系数(couple de coefficients de Bézout)}
+\end{rqq}
+
+\begin{rqq}
+    Bézout系数不是唯一的.若$(U_0, V_0)$为$(A, B)$的一对Bézout系数,
+    则$(U_0 + QB, V_0 - QA)$也为$(A, B)$的一对Bézout系数.
+\end{rqq}
+
+\begin{deff}
+    设$A, B \in K[x]^*$,称$A, B$\textbf{互素(premiers entre eux)},若$(A, B) = 1$.
+\end{deff}
+
+\begin{prop}
+    设$A, B \in K[x]^*$,则$A, B$互素当且仅当存在$U, V \in K[x]$,使得$AU + BV = 1$.
+\end{prop}
+
+\begin{prop}
+    设$A, B \in K[x]^*, D = (A, B)$,则存在$A_1, B_1 \in K[x], A = DA_1, B = DB_1, (A_1, B_1) = 1$.
+\end{prop}
+
+\begin{prop}
+    设$A, B, C \in K[x]^*$.若$(A, B) = 1, (A, C) = 1$,则$(A, BC) = 1$.
+\end{prop}
+
+\begin{cor}
+    设$A, B \in K[x]^*$.若$(A, B) = 1$,则$\forall m, n \in \mathbb{N}^*, (A^m, B^n) = 1$.
+\end{cor}
+
+\begin{prop}\label{prop:pgcd_n_existence}
+    设$A_1, A_2, \cdots, A_n \in K[x]^*$,
+    则存在唯一首一多项式$D$使得$\mathcal{D}(D) = \bigcap_{i=1}^n \mathcal{D}(A_i)$.
+\end{prop}
+
+\begin{deff}
+    称Proposition \ref{prop:pgcd_n_existence}中的多项式$D$为$A_1, A_2, \cdots, A_n$的\textbf{最大公因式(le PGCD)},记为$(A_1, A_2, \cdots, A_n)$.
+\end{deff}
+
+\begin{prop}
+    设$A_1, A_2, \cdots, A_n \in K[x]^*$,则存在$U_1, U_2, \cdots, U_n \in K[x]$,
+    使得$A_1U_1 + A_2U_2 + \cdots + A_nU_n = (A_1, A_2, \cdots, A_n)$.
+\end{prop}
+
+\begin{rqq}
+    当$n = 1$时,$D = \lambda^{-1} A$,其中$\lambda$为$A$的首项系数.
+\end{rqq}
+
+\begin{deff}
+    设$A_1, A_2, \cdots, A_n \in K[x]^*$,
+    称$A_1, A_2, \cdots, A_n$\textbf{互素(premiers entre eux dans leur ensemble)},
+    若$(A_1, A_2, \cdots, A_n) = 1$.
+\end{deff}
+
+\begin{deff}
+    设$A_1, A_2, \cdots, A_n \in K[x]^*$,
+    称$A_1, A_2, \cdots, A_n$\textbf{两两互素(premiers entre eux deux à deux)},
+    若$\forall i, j \in \{ 1, 2, \cdots, n \}, (A_i, A_j) = 1$.
+\end{deff}
+
+\begin{prop}
+    设$A_1, A_2, \cdots, A_n \in K[x]^*$,则$A_1, A_2, \cdots, A_n$互素当且仅当存在$U_1, U_2, \cdots, U_n \in K[x]$,
+    使得$A_1U_1 + A_2U_2 + \cdots + A_nU_n = 1$.
+\end{prop}
+
+\begin{deff}
+    设$A, B \in K[x]^*$,称$A$与$B$的最低次数的公倍式为$A, B$的\textbf{PPCM}.
+\end{deff}
+
+\begin{prop}
+    设$A, B \in K[x]^*$,$M$为$A, B$的PPCM,则$$\forall P \in K[x], (A \mid P \text{且} B \mid P) \iff  M \mid P$$.
+\end{prop}
+
+\begin{thm}\label{thm:ppcm_existence}
+    设$A, B \in K[x]^*$,则存在唯一首一多项式$M$使得$$\forall P \in K[x], (A \mid P \text{且} B \mid P) \iff  M \mid P$$.
+\end{thm}
+
+\begin{deff}
+    称Théorème \ref{thm:ppcm_existence}中的多项式$M$为$A, B$的\textbf{最小公倍式(le PPCM)},记为$[A, B]$.
+\end{deff}
+
+\begin{thm}
+    设$A, B, C \in K[x]^*$.若$A \mid BC, (A, B) = 1$,则$A \mid C$.
+\end{thm}
