@@ -535,3 +535,50 @@
 \begin{thm}
     设$A, B, C \in K[x]^*$.若$A \mid BC, (A, B) = 1$,则$A \mid C$.
 \end{thm}
+
+\begin{proof}
+    利用Bézout定理即可.
+\end{proof}
+
+\begin{prop}
+    设$A, B \in K[x]^*$.
+    \begin{enumerate}
+        \item 若$(A, B) = 1$,则$[A, B]$与$AB$相伴.
+        \item 进一步地,$AB$与$(A, B)[A, B]$相伴.
+    \end{enumerate}
+\end{prop}
+
+\begin{deff}
+    设$P \in K[x]$,称$P$为\textbf{不可约多项式(polynôme irréductible)},
+    若$\deg P > 1$且$P$的因子为$K^*$中元素以及与$P$相伴的多项式.
+\end{deff}
+
+\begin{prop}
+    一个不可约多项式与所有不被它整除的多项式互素.
+\end{prop}
+
+\begin{prop}
+    $\mathbb{C}[x]$中的不可约多项式为一次多项式.
+\end{prop}
+
+\begin{prop}
+    $\mathbb{R}[x]$中的不可约多项式为
+    \begin{itemize}
+        \item 一次多项式.
+        \item 二次多项式且判别式为负.
+    \end{itemize}
+\end{prop}
+
+\begin{thm}
+    $K[x]$中的非常数多项式都是$K^*$中元素与$K[x]$中首一不可约多项式的乘积.其写法在不考虑因式顺序时是唯一的.
+\end{thm}
+
+\begin{rqq}
+    设$A \in K[x] \setminus K$,则$A = \lambda A_1^{\alpha_1} A_2^{\alpha_2} \cdots A_n^{\alpha_n}$,
+    其中$\lambda \in K^*, A_i \in K[x] \text{首一}, \alpha \in \mathbb{N}^*$.
+\end{rqq}
+
+\begin{rqq}
+    在之前的写法中,甚至可以接受某些$P_i$不是$A$的因式,只要其对应的指数$\alpha_i = 0$.
+    因此,一个非零常数多项式也可以写成这种形式.
+\end{rqq}
