@@ -1,0 +1,203 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{Ch14习题}
+\author{}
+\date{\today}
+
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{\today}
+\chead{Ch14习题}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  研究以下列\(u_n\)为通项的级数的敛散性.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \[\sqrt{\dfrac{n+1}{n}}\]
+  \item
+    \[\dfrac{\ln n}{2^n}\]
+  \item
+    \[n^{\frac{1}{n}}-(n+1)^{\frac{1}{n}}\]
+  \item
+    \[\dfrac{n\sqrt{n}}{2^n+\sqrt{n}}\]
+  \end{enumerate}
+\item
+  研究下列级数并求其和
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \[\sum\limits_{n\geqslant2}\dfrac{1}{n^3-n}\]
+  \item
+    \[\sum\limits_{n\geqslant1}\ln\dfrac{n^2+3n+2}{n^2+3n}\]
+  \item
+    \[\sum\limits_{n\geqslant0}\left(3+(-1)^n\right)^{-n}\]
+  \end{enumerate}
+\item
+  根据参数\(p\in\mathbb{N}\)的取值,研究以\(v_n=\dfrac{1!+2!+\cdots+n!}{(n+p)!}\)为通项的级数的敛散性
+\item
+  根据参数\(p\in\mathbb{N}\)的取值,研究以\(u_n=\dfrac{1}{\binom{n+p}{n}}\)为通项的级数的敛散性.若其收敛,求其和.当\(p\geqslant2\)时,尝试用\(a_n=\left(\prod\limits_{i=1}^{p-1}(n+i)\right)^{-1}\)来表示\(u_n\).
+\item
+  设\(\lvert x\rvert<1\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    通过考虑以\(x^n\)为通项的级数的部分和,证明\(\sum\limits_{n\geqslant1}nx^{n-1}\)收敛且\(\sum\limits_{n=1}^{+\infty}nx^{n-1}=\dfrac{1}{(1-x)^2}\).
+  \item
+    用同样的方法,证明级数\(\sum\limits_{n\geqslant2}n(n-1)x^{n-2}\)收敛,并求其和.
+  \item
+    计算\(\sum\limits_{n=0}^{+\infty}nx^n\)与\(\sum\limits_{n=0}^{+\infty}n^2x^n\).
+  \end{enumerate}
+\item
+  设\(a,b\in\mathbb{R}\),研究以\(u_n=\sqrt{n}+a\sqrt{n+1}+b\sqrt{n+2}\)为通项的级数的敛散性.当收敛时,求其和.
+\item
+  设\((u_n)\)为非负序列,记\(v_n=\dfrac{u_n}{(1+u_0)(1+u_1)\cdots(1+u_n)}\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明序列\(\sum\limits_{n\geqslant0}v_n\)收敛且\(\sum\limits_{n=0}^{\infty}v_n\leqslant1\).
+  \item
+    证明\(\sum\limits_{n=0}^{\infty}v_n=1\)当且仅当\(\sum\limits_{n\geqslant0}u_n\)收敛.
+  \end{enumerate}
+\item
+  设正项级数\(\sum u_n,\sum v_n\)收敛,证明以\(\max\{u_n,v_n\},\sqrt{u_nv_n}\)为通项的级数收敛.
+\item
+  研究级数\(\sum\dfrac{(-1)^n}{(2n+1)(2n+3)}\)的敛散性.注意到对\(p\in\mathbb{N},\int_0^1x^p\mathrm{d}x=\dfrac{1}{p+1}\),求其和.
+\item
+  设\(n\in\mathbb{N}^*\),令\(u_n=\begin{cases}-\dfrac{4}{n},&5\mid n\\\dfrac{1}{n},&5\nmid n\end{cases}\)
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    求\(\sum\limits_{k=1}^{5n}u_k\).
+  \item
+    证明\(\sum u_n\)收敛并求\(\sum\limits_{n=1}^{\infty}u_n\).
+  \end{enumerate}
+\item
+  通过研究以\(\dfrac{1}{n^{\beta}}-\dfrac{1}{(n+1)^{\beta}},\beta\in\mathbb{R}\)为通项的级数,得出Riemann级数的敛散性.
+\item
+  设\(x\in\left(0,\dfrac{\pi}{2}\right)\),令\(u_n=\ln\cos\dfrac{x}{2^n}\).证明\(\sum u_n\)收敛并求\(\sum\limits_{n=1}^{\infty}u_n\).可以利用公式\(\sin2a=2\sin a\cos a\).
+\item
+  设实序列\((u_n),(v_n),(w_n)\)满足\(u_n\leqslant v_n\leqslant w_n\).设\(\sum u_n,\sum w_n\)收敛,证明\(\sum v_n\)收敛.
+\item
+  证明级数\(\sum\limits_{n\geqslant1}\dfrac{\ln n}{n}\)收敛.求部分和\(\sum\limits_{k=1}^n\dfrac{\ln n}{n}\)的简单等价式.
+\item
+  设\(n\in\mathbb{N}^*,\alpha\in(1,+\infty)\),研究以\(u_n=\sum\limits_{k=n+1}^{\infty}\dfrac{1}{k^{\alpha}}\)为通项的级数的敛散性.求\(u_n\)的等价式.
+\item
+  设\(\alpha\in\mathbb{R}\),根据\(\alpha\)的取值,研究以\(u_n=\left(\cos\dfrac{1}{n}\right)^{n^{\alpha}}\)为通项的级数.
+\item
+  设\(\alpha,\beta\in\mathbb{R}\),证明以\(u_n=\dfrac{1}{n^{\alpha}(\ln n)^{\beta}},n\geqslant2\)为通项的级数在\(\alpha>1\)时收敛,在\(\alpha<1\)时发散.当\(\alpha=1\)时会怎样?这个级数称为\textbf{Bertrand级数}.
+\item
+  设正序列\((v_n)\)单调减收敛于0,记\(u_n=(-1)^nv_n\)并关心序列\((u_n)\)的性质.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    记\(S_n=\sum\limits_{k=0}^nu_k\).证明序列\((S_{2n})\)与序列\((S_{2n+1})\)相邻.
+  \item
+    推出以\(u_n\)为通项的级数收敛,这个结果称为\textbf{交错级数的特别判别法}.
+  \item
+    应用:对于\(\alpha\in\mathbb{R}\),以\(\dfrac{(-1)^n}{n^{\alpha}}\)为通项的级数收敛吗?这个级数称为\textbf{Riemann交错级数}.
+  \end{enumerate}
+\item
+  用Taylor-Lagrange不等式,证明\(\exp(x)=\sum\limits_{n=0}^{\infty}\dfrac{x^n}{n!}\).
+\item
+  称无限小数展开\((\beta_n)\)为\emph{周期的},若存在\(p\in\mathbb{N}^*\)与\(n_0\in\mathbb{N}\)使得\[\forall n\geqslant n_0,\beta_n=\beta_{n+p}\]
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:若非负实数\(x\)的无限小数展开为周期的,则\(x\in\mathbb{Q}\).
+  \item
+    设\(\dfrac{a}{b}\)为非负有理数,\(a,b\in\mathbb{N}^*\).
+
+    \begin{enumerate}
+    \def\labelenumiii{\arabic{enumiii}.}
+    \tightlist
+    \item
+      记\(\beta_0,\alpha_0\)分别为\(a\)对\(b\)的Euclide除法商与Euclide除法余数,对\({} n\in\mathbb{N}^* {}\),记\(\beta_n,\alpha_n\)分别为\(10\alpha_{n-1}\)对\(b\)的Euclide除法商与Euclide除法余数.证明\(\dfrac{a}{b}\)的无限小数展开为\((\beta_n)\).
+    \item
+      推出\(\dfrac{a}{b}\)的无限小数展开为周期的.
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
