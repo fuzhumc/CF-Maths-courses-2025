@@ -1,0 +1,142 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{习题23}
+\author{}
+\date{2025年12月12日}
+
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年12月12日}
+\chead{习题23}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  设\((a_n)\)为正序列,\(\sum a_n^2\)收敛.令\(A=\sum a_n^2,A_n=\sum\limits_{i=1}^na_n,\alpha_n=\dfrac{A_n}{n}\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:\(\alpha_n^2-2\alpha_na_n\leqslant(n-1)\alpha_{n-1}^2-n\alpha_n^2\).
+  \item
+    证明:\(\sum\limits_{n=1}^{\infty}\alpha_n^2\leqslant4A\).
+  \end{enumerate}
+\item
+  设\(\sum u_n\)为正项级数,\(\lim\limits_{n\to\infty}\left(n\ln\dfrac{u_n}{u_{n+1}}\right)^{\ln n}=l\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:若\(l>e\),则级数收敛,若\(l<e\),则级数发散.
+  \item
+    证明:若\(l=e\),则两种情况都可能出现.
+  \end{enumerate}
+\item
+  设\(\sum u_n\)为正项级数,且\[\sqrt[n]{u_n}<1-\dfrac{\ln n}{n}-\dfrac{\ln\ln n}{\ln n}\]研究级数敛散性.
+\item
+  对于序列\((a_n)\),若\(\lim\limits_{n\to\infty}a_n=0\),且\(-1\leqslant\dfrac{a_{n+1}}{a_n}<r,r\in(0,1)\).证明:\(\sum a_n\)收敛.
+\item
+  设\(f\in\mathcal{C}^1(\mathbb{R}_+,\mathbb{R}_+),\lim\limits_{x\to+\infty}\dfrac{f’(x)}{f(x)}=\mu\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:若\(\int_0^{+\infty}f(x)\mathrm{d}x\)收敛,则\(\sum\limits_{j=n+1}^{\infty}f(j)\sim\dfrac{\mu}{1-e^{-\mu}}\int_n^{+\infty}f(x)\mathrm{d}x\).
+  \item
+    证明:若\(\int_0^{+\infty}f(x)\mathrm{d}x\)发散,则\(\sum\limits_{j=n+1}^{\infty}f(j)\sim\dfrac{\mu}{1-e^{-\mu}}\int_0^nf(x)\mathrm{d}x\).
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:\(\exists c>0,\forall x>0,\left\lvert\int_0^x\sin\left(t^{\alpha}\right)\mathrm{d}x\right\rvert\leqslant Cx^{1-\alpha},0<\alpha<1\).
+  \item
+    证明:\(\exists\tilde{C}>0,\forall K\in\mathbb{N},\left\lvert\int_0^k\sin\left(t^{\alpha}\right)\mathrm{d}x-\sum\limits_{j=1}^k\sin\left(j^{\alpha}\right)\right\rvert\leqslant\tilde{C}k^{\alpha}\).
+  \item
+    证明:若\(\delta>\max\{\alpha,1-\alpha\}\),则\(\sum\dfrac{\sin n^{\alpha}}{n^{\delta}}\)收敛.
+  \item
+    证明:\(\sum\dfrac{\left\lvert\sin n^{\alpha}\right\rvert}{n}\)发散.
+  \end{enumerate}
+\item
+  研究级数敛散性
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(\sum\dfrac{\sin\left(2\pi en!\right)}{n^{\alpha}},\alpha>0\).
+  \item
+    \(\sum\sin\left(\pi en!\right)\).
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
