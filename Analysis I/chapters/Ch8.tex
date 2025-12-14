@@ -3,22 +3,24 @@
 \section{数项级数}
 
 \begin{deff}
-    设$(u_n)$为$\mathbb{R}$中序列,称序列$S_n=\sum\limits_{k=0}^nu_k$为以$u_n$为通项的\textbf{级数},
-    记为$\sum u_n$.称$S_n$为\textbf{部分和}.
+    设$(u_n)$为实序列,称序列$S_n = \sum\limits_{k=0}^n u_k$为以$u_n$为通项的\textbf{级数(série)},
+    记为$\sum u_n$.称$S_n$为\textbf{部分和(somme partielle)}.
 \end{deff}
 
 \begin{deff}
-    称$\sum u_n$\textbf{收敛},若序列$(S_n)$收敛且有有限的极限,否则称其发散.
+    称$\sum u_n$\textbf{收敛(converge)},若序列$(S_n)$收敛且有有限的极限,否则称其\textbf{发散(diverge)}.
 
-    若$\sum u_n$收敛,记$\sum\limits_{n=0}^{\infty}=\lim\limits_{n\to\infty}S_n$.
+    若$\sum u_n$收敛,记$\sum\limits_{n=0}^{\infty} u_n = \lim\limits_{n\to\infty}S_n$,
+    称为其\textbf{和(somme)}.
 \end{deff}
 
 \begin{prop}
-    若$\sum u_n$收敛,则$\lim\limits_{n\to\infty}u_n=0$.
+    若$\sum u_n$收敛,则$\lim\limits_{n\to\infty} u_n = 0$.
 \end{prop}
 
 \begin{rqq}
-    设$\sum u_n$收敛,记$R_n=\sum\limits_{k=n+1}^{\infty}u_k$为余项.
+    设$\sum u_n$收敛,记$R_n=\sum\limits_{k=n+1}^{\infty} u_k$,
+    称为其\textbf{$\boldsymbol{n}$阶余项(reste d'ordre $\boldsymbol{n}$)}.
 \end{rqq}
 
 \begin{prop}
@@ -26,13 +28,68 @@
 \end{prop}
 
 \begin{prop}
-    设$(u_n),(v_n)$为$\mathbb{R}$中序列,满足$0\leqslant u_n\leqslant v_n$.
+    设$(v_n)$为实序列,则$(v_n)$收敛当且仅当以$v_{n + 1} - v_n$为通项的级数收敛.
+\end{prop}
+
+\begin{prop}
+    设$\sum u_n, \sum v_n$收敛,$\lambda, \mu \in \mathbb{R}$,则$\sum (\lambda u_n + \mu v_n)$收敛,
+    且$\sum\limits_{n = 0}^{\infty} (\lambda u_n + \mu v_n) = \lambda \sum\limits_{n = 0}^{\infty} u_n + \mu \sum\limits_{n = 0}^{\infty} v_n$.
+\end{prop}
+
+\begin{cor}
+    给一个级数的通项加上另一个收敛级数的通项,不会改变该级数的敛散性.
+\end{cor}
+
+\begin{prop}
+    设$\sum u_n$为复项级数,$\sum u_n$收敛当且仅当$\sum \mathrm{Re} u_n$与$\sum \mathrm{Im} u_n$均收敛.
+    且$$\sum\limits_{i = 0}^{\infty} u_i = \sum\limits_{i = 0}^{\infty} \mathrm{Re} u_i + i \sum\limits_{i = 0}^{\infty} \mathrm{Im} u_i$$
+\end{prop}
+
+\section{正项级数}
+
+在本节中,我们讨论以正实数为通项的级数.由于极限的性质,我们通常只要考虑从某项开始为正的级数.
+
+\begin{prop}
+    正项级数的部分和序列要么收敛,要么发散至$+ \infty$.
+\end{prop}
+
+\begin{prop}
+    设$(u_n), (v_n)$为实序列,满足$0\leqslant u_n \leqslant v_n$.
     \begin{enumerate}
         \item 若$\sum v_n$收敛,则$\sum u_n$收敛.
         \item 若$\sum u_n$发散,则$\sum v_n$发散.
     \end{enumerate}
 \end{prop}
 
+\begin{cor}
+    设$\sum u_n, \sum v_n$为正项级数.若$u_n = O(v_n)$,且$\sum v_n$收敛,则$\sum u_n$收敛.
+\end{cor}
+
+\begin{cor}
+    设$\sum u_n, \sum v_n$为正项级数,若$u_n \sim v_n$,则$\sum u_n$与$\sum v_n$有相同的敛散性.
+\end{cor}
+
+\begin{lem}
+    设$n_0 \in \mathbb{N}, f \in \mathcal{CM}([n_0, + \infty), \mathbb{R}_+)$单调减,
+    则$$\forall n \geqslant n_0 + 1, \int_n^{n + 1} f(t) \mathrm{d}t \leqslant f(n)
+    \leqslant \int_{n - 1}^n f(t) \mathrm{d}t$$
+\end{lem}
+
+\begin{rqq}
+    右半部分不等式对$n \geqslant n_0$成立.
+\end{rqq}
+
 \begin{prop}
-    设$f\in\mathcal{CM}([0,+\infty))$单调减,则$\sum f(n)$收敛$\iff \int_0^{\infty}f(t)\mathrm{d}t$收敛.
+    设$n_0 \in \mathbb{N}, f \in \mathcal{CM}([n_0, + \infty), \mathbb{R}_+)$单调减,
+    则$$\forall N \geqslant n_0, \int_{n_0}^{N + 1} f(t) \mathrm{d}t \leqslant 
+    \sum\limits_{n = n_0}^N f(n) \leqslant f(n_0)+\int_{n_0}^N f(t) \mathrm{d}t$$
+\end{prop}
+
+\begin{prop}
+    设$f \in \mathcal{CM}([0, + \infty))$单调减,
+    则$\sum f(n)$收敛$\iff \int_0^{n} f(t) \mathrm{d}t$收敛.
+\end{prop}
+
+\begin{prop}
+    设$\alpha \in \mathbb{R}$,则级数$\sum \dfrac{1}{n^{\alpha}}$收敛当且仅当$\alpha > 1$.
 \end{prop}
