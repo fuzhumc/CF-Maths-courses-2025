@@ -88,7 +88,7 @@
 \end{cor}
 
 \begin{rqq}
-    因此,非零多项式都是正则的.
+    因此,非零多项式都为正则的.
 \end{rqq}
 
 \begin{prop}
@@ -186,7 +186,8 @@
 \section{多项式函数与根}
 
 \begin{deff}
-    设$K$为域,$A \in K[x]$.称映射$\tilde{A}: \begin{array}[t]{ccc} K & \to & K \\ \alpha & \to & ev_{\alpha}(A) \end{array}$为与$A$相伴的\textbf{多项式函数(fonction polynomiale)}.
+    设$K$为域,$A \in K[x]$.称映射$\tilde{A}: \begin{array}[t]{ccc} K & \to & K 
+    \\ \alpha & \to & ev_{\alpha}(A) \end{array}$为与$A$相伴的\textbf{多项式函数(fonction polynomiale)}.
 \end{deff}
 
 \begin{deff}
@@ -235,7 +236,7 @@
 \end{thm}
 
 \begin{rqq}
-    Théorème \ref{thm:lagrange_interpolation}是$K[x]$上的``CRT''.
+    Théorème \ref{thm:lagrange_interpolation}为$K[x]$上的``CRT''.
 \end{rqq}
 
 \begin{rqq}
@@ -310,7 +311,7 @@
 \end{deff}
 
 \begin{rqq}
-    Définition \ref{def:scindé}是个算术概念.
+    Définition \ref{def:scindé}为算术概念.
 \end{rqq}
 
 \section{多项式的求导}
@@ -337,7 +338,7 @@
 \end{prop}
 
 \begin{rqq}
-    ``求导''是一个群同态$\begin{array}[t]{ccc} K[x] & \to & K[x] \\ A & \mapsto & A' \end{array}$.
+    ``求导''为一个群同态$\begin{array}[t]{ccc} K[x] & \to & K[x] \\ A & \mapsto & A' \end{array}$.
 \end{rqq}
 
 \begin{prop}
@@ -346,7 +347,8 @@
 
 \begin{deff}
     设$K$为域,$A \in K[x]$,记$A^{(1)} = A'$.对于$n \in \mathbb{N}^*$,
-    称$(A^{(n-1)})'$为$A$的\textbf{$\boldsymbol{n}$阶导数(polynôme dérivé d’ordre $\boldsymbol{n}$)},记为$A^{(n)}$.
+    称$(A^{(n-1)})'$为$A$的\textbf{$\boldsymbol{n}$阶导数(polynôme dérivé d’ordre $\boldsymbol{n}$)},
+    记为$A^{(n)}$.
 \end{deff}
 
 \begin{prop}
@@ -364,7 +366,8 @@
 \end{thm}
 
 \begin{thm}[Taylor]
-    设$K$为域,$A \in K[x], \alpha \in K$,则$$A = \sum\limits_{k = 0}^{\infty} \dfrac{A^{(k)}(\alpha)}{k!} (x - \alpha)^k$$
+    设$K$为域,$A \in K[x], \alpha \in K$,则$$A = \sum\limits_{k = 0}^{\infty} 
+    \dfrac{A^{(k)}(\alpha)}{k!} (x - \alpha)^k$$
 \end{thm}
 
 \begin{prop}
@@ -378,7 +381,8 @@
 
 \begin{prop}
     设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K, m \in \mathbb{N}^*$,
-    则$\alpha$为$A$的$m$重根$\iff A(\alpha) = A'(\alpha) = A''(\alpha) = \cdots = A^{(m-1)}(\alpha) = 0 \text{且} A^{(m)}(\alpha) \neq 0$.
+    则$\alpha$为$A$的$m$重根$\iff A(\alpha) = A'(\alpha) = A''(\alpha) = \cdots = A^{(m-1)}(\alpha) = 0
+    \text{且} A^{(m)}(\alpha) \neq 0$.
 \end{prop}
 
 \section{$\mathbb{C}[x]$和$\mathbb{R}[x]$中的分解}
@@ -397,13 +401,14 @@
 \end{prop}
 
 \begin{prop}
-    设$A, P \in \mathbb{C}[x] \setminus \mathbb{C}, \alpha_1, \alpha_2, \cdots, \alpha_n \in \mathbb{C}, r_1, r_2, \cdots, r_n \in \mathbb{N}^*$,
-    $\alpha_k \in \mathbb{C}$为$A$的$r_k$重根.则$A \mid P$当且仅当$\alpha_k$为$P$的根且重数不低于$r_k$.
+    设$A, P \in \mathbb{C}[x] \setminus \mathbb{C}, \alpha_1, \alpha_2, \cdots, \alpha_n \in \mathbb{C},
+    r_1, r_2, \cdots, r_n \in \mathbb{N}^*$,$\alpha_k \in \mathbb{C}$为$A$的$r_k$重根.
+    则$A \mid P$当且仅当$\alpha_k$为$P$的根且重数不低于$r_k$.
 \end{prop}
 
 \begin{prop}
-    设$A \in \mathbb{R}[x] \setminus \mathbb{R}$,则有分裂
-    $A = \lambda \prod\limits_{i = 1}^m (x - \alpha_i) \prod\limits_{j = 1}^n (x^2 + \beta_j x + \gamma_j)$,
+    设$A \in \mathbb{R}[x] \setminus \mathbb{R}$,则有分裂$A = \lambda \prod\limits_{i = 1}^m
+    (x - \alpha_i) \prod\limits_{j = 1}^n (x^2 + \beta_j x + \gamma_j)$,
     其中$\alpha_i, \beta_j, \gamma_j, \lambda \in \mathbb{R}, \beta_j^2 - 4 \gamma_j < 0$.
 \end{prop}
 
@@ -416,7 +421,7 @@
 \end{deff}
 
 \begin{rqq}
-    若$D$为$A, B$的PGCD,则$D \neq 0$且对任意$\lambda \in K^*$,$\lambda D$也是$A, B$的PGCD.
+    若$D$为$A, B$的PGCD,则$D \neq 0$且对任意$\lambda \in K^*$,$\lambda D$也为$A, B$的PGCD.
 \end{rqq}
 
 \begin{lem}
@@ -487,7 +492,8 @@
 \end{prop}
 
 \begin{deff}
-    称Proposition \ref{prop:pgcd_n_existence}中的多项式$D$为$A_1, A_2, \cdots, A_n$的\textbf{最大公因式(le PGCD)},记为$(A_1, A_2, \cdots, A_n)$.
+    称Proposition \ref{prop:pgcd_n_existence}中的多项式$D$为$A_1, A_2, \cdots, A_n$的
+    \textbf{最大公因式(le PGCD)},记为$(A_1, A_2, \cdots, A_n)$.
 \end{deff}
 
 \begin{prop}
@@ -512,7 +518,8 @@
 \end{deff}
 
 \begin{prop}
-    设$A_1, A_2, \cdots, A_n \in K[x]^*$,则$A_1, A_2, \cdots, A_n$互素当且仅当存在$U_1, U_2, \cdots, U_n \in K[x]$,
+    设$A_1, A_2, \cdots, A_n \in K[x]^*$,则$A_1, A_2, \cdots, A_n$互素
+    当且仅当存在$U_1, U_2, \cdots, U_n \in K[x]$,
     使得$A_1U_1 + A_2U_2 + \cdots + A_nU_n = 1$.
 \end{prop}
 
@@ -521,11 +528,13 @@
 \end{deff}
 
 \begin{prop}
-    设$A, B \in K[x]^*$,$M$为$A, B$的PPCM,则$$\forall P \in K[x], (A \mid P \text{且} B \mid P) \iff  M \mid P$$.
+    设$A, B \in K[x]^*$,$M$为$A, B$的PPCM,
+    则$$\forall P \in K[x], (A \mid P \text{且} B \mid P) \iff  M \mid P$$.
 \end{prop}
 
 \begin{thm}\label{thm:ppcm_existence}
-    设$A, B \in K[x]^*$,则存在唯一首一多项式$M$使得$$\forall P \in K[x], (A \mid P \text{且} B \mid P) \iff  M \mid P$$.
+    设$A, B \in K[x]^*$,则存在唯一首一多项式$M$使得
+    $$\forall P \in K[x], (A \mid P \text{且} B \mid P) \iff  M \mid P$$.
 \end{thm}
 
 \begin{deff}
@@ -570,7 +579,7 @@
 \end{prop}
 
 \begin{thm}
-    $K[x]$中的非常数多项式都是$K^*$中元素与$K[x]$中首一不可约多项式的乘积.其写法在不考虑因式顺序时是唯一的.
+    $K[x]$中的非常数多项式都为$K^*$中元素与$K[x]$中首一不可约多项式的乘积.其写法在不考虑因式顺序时是唯一的.
 \end{thm}
 
 \begin{rqq}
@@ -579,6 +588,54 @@
 \end{rqq}
 
 \begin{rqq}
-    在之前的写法中,甚至可以接受某些$P_i$不是$A$的因式,只要其对应的指数$\alpha_i = 0$.
+    在之前的写法中,甚至可以接受某些$P_i$不为$A$的因式,只要其对应的指数$\alpha_i = 0$.
     因此,一个非零常数多项式也可以写成这种形式.
 \end{rqq}
+
+\section{d'Alembert定理的一个证明}
+
+为了证明d'Alembert定理,我们需要运用分析的工具.
+
+设$A$为复系数多项式,其次数$p \geqslant 1$.为了证明$A$具有一个复数根,
+考虑$\alpha = \inf\limits_{z \in \mathbb{C}} \lvert A(z) \rvert$,
+它存在,因为$\{ \lvert A(z) \rvert \mid z \in \mathbb{C} \}$为$\mathbb{R}_+$的非空子集.
+接下来证明这个下确界可以取得且为0.
+
+设$A = \sum\limits_{k = 0}^p a_k x^k$,其中$a_p \neq 0$.对于$\lvert z \rvert  = r$,我们有
+$$\lvert A(z) \rvert \geqslant \left\lvert a_p z^p \right\rvert - \left\lvert
+\sum\limits_{k = 0}^{p - 1} a_k x^k \right\rvert \geqslant \left\lvert a_p \right\rvert r^p -
+\sum\limits_{k = 0}^{p - 1} \left\lvert a_k \right\rvert r^k$$
+
+该下界定义了一个关于$r$的实系数多项式函数,当$r$趋于$+ \infty$时,它趋于$+ \infty$,
+因为它等价于$\left\lvert a_p \right\rvert r^p$.因此它在$+ \infty$附近大于$\alpha + 1$,
+即存在一个中心为0的圆盘$D$,在它外面有$\lvert A(z) \rvert \geqslant \alpha+1$.
+
+由于$\alpha = \inf\limits_{z \in \mathbb{C}} \lvert A(z) \rvert$,
+可以找到一个复序列$(u_n)$使得$\lim\limits_{n \to \infty} \lvert A(u_n) \rvert = \alpha$.
+因此,从某一项起,该序列全在$D$中,从而它是有界的.于是存在一个子列$(u_{\varphi(n)})$收敛于复数$z_0$.
+
+由于$$A(\varphi(n)) = \sum\limits_{k = 0}^p a_k u_{\varphi(n)}^k$$
+
+得出$\lim\limits_{n \to \infty} A(u_{\varphi(n)}) = A(z_0)$,
+这给出$$\alpha = \lim\limits_{n \to \infty} \lvert A(u_n) \rvert = \lvert A(z_0) \rvert$$
+
+用反证法证明$\lvert A(z_0) \rvert = 0$,假设$\alpha > 0$.
+考虑多项式$\dfrac{A(z_0 + x)}{A(z_0)}$,不妨设$\alpha = 1, z_0 = 0$.
+
+因此多项式$A$可以写成$$A(x) = 1 - a_q x^q + \sum_{k = q + 1}^p a_k x^k,
+\text{其中} a_q \neq 0, 1 \leqslant q \leqslant p$$
+
+设$a_q = \rho e^{- i \theta}$,其中$\rho \in \mathbb{R}_+^*, \theta \in \mathbb{R}$.
+对于$z = r e^{\frac{i \theta}{q}}, r > 0$,
+我们有$$A(z) = 1 - \rho r^q + \sum\limits_{k = q + 1}^p a_k r^k e^{\frac{ik \theta}{q}}$$
+
+因此$$\lvert A(z) \rvert \leqslant \left\lvert 1 - \rho r^q \right\rvert +
+\sum\limits_{k = q + 1}^p \left\lvert a_k \right\rvert r^k$$
+
+如果我们假设$r \leqslant \sqrt[q]{\dfrac{1}{p}}$,
+则$\left\lvert 1 - \rho r^q \right\rvert = 1 - \rho r^q$,因此
+$$\lvert A(z) \rvert - 1 \leqslant - \rho r^q + \sum\limits_{k = q + 1}^p \lvert a_k \rvert r^k$$
+
+该上界定义了一个关于$r$的多项式函数,它在0处与$- \rho r^q$等价,在0附近为负.
+
+因此,存在$z \in \mathbb{C}$使得$\lvert A(z) \rvert < 1 = \alpha$,矛盾! \qed
