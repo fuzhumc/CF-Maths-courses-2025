@@ -1,0 +1,120 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{习题24}
+\author{}
+\date{2025年12月15日}
+
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2025年12月15日}
+\chead{习题24}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  研究下列级数敛散性:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \[\sum (-1)^n n^{\alpha} a^{n^{\beta}}, (\alpha, \beta, a > 0)\]
+  \item
+    \[\sum \left( 1 + \dfrac{1}{2} + \cdots + \dfrac{1}{n} \right) \dfrac{\cos n \theta}{n + (-1)^n}, \theta \in \mathbb{R}\]
+  \item
+    \[\sum \dfrac{(-1)^n}{n^{\alpha} + \sin n \theta}\]
+  \item
+    \[\sum (-1)^n \dfrac{n^{\alpha} \sin \dfrac{1}{n^{\alpha}}}{n^{\beta} + (-1)^n}, \alpha, \beta > 0\]
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    设\({} \sum u_n\)为严格正项级数且满足\[n \left( 1 - \dfrac{u_{n + 1}}{u_n} \right) = \alpha + O \left( \dfrac{1}{n} \right), n \to \infty, \alpha \in \mathbb{R}\]证明:存在常数\(A > 0\)使得\({} u_n \sim \dfrac{A}{n^{\alpha}}, (n \to \infty)\).
+  \item
+    研究级数\(\sum \dfrac{1}{n^{\alpha}} \int_0^1 (1 - t^2)^n \mathrm{d}t\)的敛散性.
+  \end{enumerate}
+\item
+  设\(0 < \alpha, \beta < 1, u_n = \dfrac{(-1)^{[n^{\alpha}]}}{n^{\beta}}\).证明:若\(\alpha + \beta \leqslant 1\),则级数发散;若\({} \alpha + \beta> 1 {}\)且\(\beta > \alpha\),则级数收敛.
+\item
+  设实序列\((u_n)\)满足\(u_n \neq 0\)且\(\lim\limits_{n \to \infty} u_n = 0\).令\[u_n^+ = \max \{ u_n, 0 \}, u_n^- = \min \{ - u_n, 0 \}\]假设级数\(\sum u_n^+\)和\(\sum u_n^-\)发散.对于给定常数\(a \leqslant b\),证明
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    存在一个双射\(\sigma: \mathbb{N} \to \mathbb{N}\)使得若令\(S_n = \sum\limits_{k = 0}^n u_{\sigma(k)}\),则有\(\varliminf\limits_{n \to \infty} S_n = a, \varlimsup\limits_{n \to \infty} S_n = b\).
+  \item
+    假如\(\sigma\)如(1)中选取,则序列\((S_n)\)在\(\mathbb{R}\)中的极限点(聚点)的集合等于\([a, b]\).
+  \end{enumerate}
+\item
+  答疑.
+\end{enumerate}
+
+\end{document}
