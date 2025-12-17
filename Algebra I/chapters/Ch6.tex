@@ -46,8 +46,8 @@
 
 \begin{deff}
     设$K$为域,$A = \sum\limits_{k = 0} ^ n a_k x ^ k \in K[x]^*$.
-    称$\max \{ k \in [0, n] \mid a_k \neq 0\} \in \mathbb{N}$的最大元为$A$的\textbf{次数(degré)},
-    记为$\deg A$.特别地,记$\deg 0 = - \infty$.
+    称$\max \{ k \in [0, n] \mid a_k \neq 0\}$为$A$的\textbf{次数(degré)},
+    记为$\deg A$。特别地,记$\deg 0 = - \infty$.
 \end{deff}
 
 \begin{rqq}
@@ -156,7 +156,7 @@
 \end{rqq}
 
 \begin{prop}
-    设$K$为域,$A, B \in K[x]$.若$A \mid B, B \mid A$,则存在$\lambda \in K, A = \lambda B$.
+    设$K$为域,$A, B \in K[x]$.若$A \mid B, B \mid A$,则存在$\lambda \in K^*, A = \lambda B$.
 
     此时,称$A$与$B$\textbf{相伴(associés)}.
 \end{prop}
@@ -267,7 +267,7 @@
 \begin{deff}
     设$K$为域,$A \in K[x]^*, \alpha \in K$为$A$的根.
     称$m = \max \{ k \in \mathbb{N} \mid (x - \alpha)^k \mid A \}$为$\alpha$的\textbf{重数(ordre de multiplicité)},
-    此时称$\alpha$为$A$的\textbf{$\boldsymbol{m}$重根(racine d’ordre $\boldsymbol{m}$)}.
+    此时称$\alpha$为$A$的\textbf{$\boldsymbol{m}$重根(racine d'ordre $\boldsymbol{m}$)}.
 \end{deff}
 
 \begin{rqq}
@@ -277,7 +277,7 @@
         \item 称$\alpha$为$A$的\textbf{单根(racine simple)},若$\alpha$的重数等于1.
         \item 称$\alpha$为$A$的\textbf{双根(racine double)},若$\alpha$的重数等于2.
         \item 称$\alpha$为$A$的\textbf{三重根(racine triple)},若$\alpha$的重数等于3.
-        \item 称$\alpha$为$A$的\textbf{至少$\boldsymbol{p}$重根(racine d’ordre au moins $\boldsymbol{p}$)},若$\alpha$的重数不小于$p$.
+        \item 称$\alpha$为$A$的\textbf{至少$\boldsymbol{p}$重根(racine d'ordre au moins $\boldsymbol{p}$)},若$\alpha$的重数不小于$p$.
     \end{itemize} 
 \end{rqq}
 
@@ -347,7 +347,7 @@
 
 \begin{deff}
     设$K$为域,$A \in K[x]$,记$A^{(1)} = A'$.对于$n \in \mathbb{N}^*$,
-    称$(A^{(n-1)})'$为$A$的\textbf{$\boldsymbol{n}$阶导数(polynôme dérivé d’ordre $\boldsymbol{n}$)},
+    称$(A^{(n-1)})'$为$A$的\textbf{$\boldsymbol{n}$阶导数(polynôme dérivé d'ordre $\boldsymbol{n}$)},
     记为$A^{(n)}$.
 \end{deff}
 
@@ -514,7 +514,7 @@
 \begin{deff}
     设$A_1, A_2, \cdots, A_n \in K[x]^*$,
     称$A_1, A_2, \cdots, A_n$\textbf{两两互素(premiers entre eux deux à deux)},
-    若$\forall i, j \in \{ 1, 2, \cdots, n \}, (A_i, A_j) = 1$.
+    若$\forall i, j \in \{ 1, 2, \cdots, n \},\, i \neq j,\ (A_i, A_j) = 1$.
 \end{deff}
 
 \begin{prop}
@@ -559,7 +559,7 @@
 
 \begin{deff}
     设$P \in K[x]$,称$P$为\textbf{不可约多项式(polynôme irréductible)},
-    若$\deg P > 1$且$P$的因子为$K^*$中元素以及与$P$相伴的多项式.
+    若$\deg P \geq 1$且$P$的因子为$K^*$中元素以及与$P$相伴的多项式.
 \end{deff}
 
 \begin{prop}
@@ -584,7 +584,7 @@
 
 \begin{rqq}
     设$A \in K[x] \setminus K$,则$A = \lambda A_1^{\alpha_1} A_2^{\alpha_2} \cdots A_n^{\alpha_n}$,
-    其中$\lambda \in K^*, A_i \in K[x] \text{首一}, \alpha \in \mathbb{N}^*$.
+    其中$\lambda \in K^*, A_i \in K[x] \text{首一}, \alpha_i \in \mathbb{N}^*$.
 \end{rqq}
 
 \begin{rqq}
@@ -614,7 +614,7 @@ $$\lvert A(z) \rvert \geqslant \left\lvert a_p z^p \right\rvert - \left\lvert
 可以找到一个复序列$(u_n)$使得$\lim\limits_{n \to \infty} \lvert A(u_n) \rvert = \alpha$.
 因此,从某一项起,该序列全在$D$中,从而它是有界的.于是存在一个子列$(u_{\varphi(n)})$收敛于复数$z_0$.
 
-由于$$A(\varphi(n)) = \sum\limits_{k = 0}^p a_k u_{\varphi(n)}^k$$
+由于$$A(u_{\varphi(n)}) = \sum\limits_{k = 0}^p a_k u_{\varphi(n)}^k$$
 
 得出$\lim\limits_{n \to \infty} A(u_{\varphi(n)}) = A(z_0)$,
 这给出$$\alpha = \lim\limits_{n \to \infty} \lvert A(u_n) \rvert = \lvert A(z_0) \rvert$$
