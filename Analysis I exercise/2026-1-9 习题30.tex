@@ -1,0 +1,129 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{习题30}
+\author{}
+\date{2026年1月9日}
+
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2026年1月9日}
+\chead{习题30}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+对于函数\(f: \mathbb{R} \to \mathbb{R}\),定义Laplace变换为\(F(x) = \mathcal{L}\{f(t)\} = \int_0^{+\infty} f(t) e^{-tx} \mathrm{d}t\),逆变换记为\(f(t) = \mathcal{L}^{-1}\{F(x)\}\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  计算\(\mathcal{L}\{1\}, \mathcal{L}\{t\}, \mathcal{L}\{e^{\alpha t}\}\).
+\item
+  验证下列性质:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(\mathcal{L}\{C_1f + C_2g\} = C_1 \mathcal{L}\{f\} + C_2 \mathcal{L}\{g\}\).
+  \item
+    \({} \mathcal{L}\{f'(t)\} = x \mathcal{L}\{f(t)\} - f(0) {}\).
+  \item
+    \(\mathcal{L}\{t^nf(t)\} = (-1)^n F^{(n)}(x)\).
+  \item
+    \(\mathcal{L}\{\int_0^n f(t) \mathrm{d} t\} = \frac{F(x)}{x}\).
+  \item
+    \(\mathcal{L}\{e^{\alpha t}f(t)\} = F(x - \alpha)\).
+  \end{enumerate}
+\item
+  定义卷积运算\(f_1(t) * f_2(t) = \int_0^t f_1(\tau)f_2(t - \tau) \mathrm{d} \tau\).验证\(\mathcal{L}\{f_1 * f_2\} = F_1(x)F_2(x)\).
+\item
+  计算\(\sin kx\)与\(\cos kx\)的Laplace变换.
+\item
+  计算\(\sinh kx\)与\(\cosh kx\)的Laplace变换.
+\item
+  计算\(\mathcal{L}^{-1} \left\{ \dfrac{2}{(x - 1)^2 + 4} \right\}\)与\(\mathcal{L}^{-1} \left\{ \dfrac{1}{x^2 + 2x + 3} \right\}\).
+\item
+  利用Laplace变换和逆变换求解积分方程\[y(t) = 1 + \int_0^t y(\tau) \sin(t - \tau) \mathrm{d} \tau\]
+\item
+  利用Laplace变换和逆变换求解ODE
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(x'' + \lambda x = 0\).
+  \item
+    \(y' + y = 2\).
+  \item
+    \(y'' + 2y' - 3y = e^{-t}\).
+  \end{enumerate}
+\item
+  求解强迫振动系统的初值问题\[\begin{cases} y'' + 4y = f(t), t > 0 \\ y(0) = 1, y'(0) = 0 \end{cases}\]其中驱动力函数\(f(t) = \chi_{[0, 1)}\).
+\item
+  求解下列ODE方程组\[\begin{cases} y'' - x'' + x' - y = e^t - 2 \\ 2y'' - x'' - 2y' + x = -t \\ x(0) = x'(0) = 0 \\ y(0) = y'(0) = 0 \end{cases}\]
+\end{enumerate}
+
+\end{document}
