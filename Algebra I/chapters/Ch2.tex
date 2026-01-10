@@ -1,15 +1,15 @@
-\chapter{$\mathbb{Z}$上的算术}
+\chapter{$\bbZ$上的算术}
 
 \section{整除}
 
 \begin{deff}
-    设$a, b \in \mathbb{Z}$,称$b$整除$a$,若存在$k \in \mathbb{Z}$,使得$a = kb$,记为$b \mid a$.
+    设$a, b \in \bbZ$,称$b$整除$a$,若存在$k \in \bbZ$,使得$a = kb$,记为$b \mid a$.
 
     此时称$b$为$a$的因数,$a$为$b$的倍数.
 
-    对于$a \in \mathbb{Z}$,$a$的因数的全体记为$\mathcal{D}(a)$.
+    对于$a \in \bbZ$,$a$的因数的全体记为$\calD(a)$.
 
-    对于$b \in \mathbb{Z}$,记$b \mathbb{Z} = \{ kb \mid k \in \mathbb{Z} \}$.
+    对于$b \in \bbZ$,记$b \bbZ = \{ kb \mid k \in \bbZ \}$.
 \end{deff}
 
 \begin{rqq}
@@ -32,50 +32,50 @@
 \end{prop}
 
 \begin{rqq}
-    $\mathbb{Z}$上的整除关系不是偏序,但$\mathbb{N}$上的整除关系是偏序,$1$是其最小元,$0$是其最大元.
+    $\bbZ$上的整除关系不是偏序,但$\bbN$上的整除关系是偏序,$1$是其最小元,$0$是其最大元.
 \end{rqq}
 
 \begin{prop}
-    设$a, b \in \mathbb{Z}$,则有
+    设$a, b \in \bbZ$,则有
     \begin{enumerate}
-        \item 设$u, v, d \in \mathbb{Z}, d \mid a,b$,则$d \mid au + bv$.
-        \item 设$n \in \mathbb{Z}^*$,则$a \mid b \iff na \mid nb$.
+        \item 设$u, v, d \in \bbZ, d \mid a,b$,则$d \mid au + bv$.
+        \item 设$n \in \bbZ^*$,则$a \mid b \iff na \mid nb$.
     \end{enumerate}
 \end{prop}
 
 \begin{thm}[Euclide除法]
-    设$a \in \mathbb{Z}, b \in \mathbb{N}^*$,则存在唯一$q, r \in \mathbb{Z}$使得$$a = bq + r, 0 \leqslant r < b$$
+    设$a \in \bbZ, b \in \bbN^*$,则存在唯一$q, r \in \bbZ$使得$$a = bq + r, 0 \leqslant r < b$$
 \end{thm}
 
 \begin{prop}
-    设$a, b \in \mathbb{Z}$,则$b \mid a$当且仅当Euclid除法余数为0.
+    设$a, b \in \bbZ$,则$b \mid a$当且仅当Euclid除法余数为0.
 \end{prop}
 
 \section{最大公因数和最小公倍数}
 
 \begin{deff}
-    设$a, b \in \mathbb{N}$,记$a$与$b$的\textbf{最大公因数}为$a \land b, \mathrm{pgcd}(a, b)$或$(a, b)$;记$a$与$b$的\textbf{最小公倍数}为$a \lor b, \mathrm{ppcm}(a, b)$或$[a, b]$.
+    设$a, b \in \bbN$,记$a$与$b$的\textbf{最大公因数}为$a \land b, \pgcd(a, b)$或$(a, b)$;记$a$与$b$的\textbf{最小公倍数}为$a \lor b, \ppcm(a, b)$或$[a, b]$.
 \end{deff}
 
 \begin{lem}
-    设$a \in \mathbb{N}, b \in \mathbb{N}^*, q, r \in \mathbb{N}, a = bq + r$,则$(a, b) = (b, r)$.
+    设$a \in \bbN, b \in \bbN^*, q, r \in \bbN, a = bq + r$,则$(a, b) = (b, r)$.
 \end{lem}
 
 \begin{thm}
-    设$a, b \in \mathbb{N}^*, d = (a, b), n \in \mathbb{N}$,则有$n \mid d \iff n \mid a \text{且} n \mid b$.
+    设$a, b \in \bbN^*, d = (a, b), n \in \bbN$,则有$n \mid d \iff n \mid a \text{且} n \mid b$.
 \end{thm}
 
-从$\mathbb{N}$扩展到$\mathbb{Z}$
+从$\bbN$扩展到$\bbZ$
 \begin{deff}
-    设$a, b \in \mathbb{Z}$,记$a$与$b$的最大公因数$(a, b) = (\left\lvert a \right\rvert, \left\lvert b \right\rvert)$;记$a$与$b$的最小公倍数$[a, b] = [\left\lvert a \right\rvert, \left\lvert b \right\rvert]$.
+    设$a, b \in \bbZ$,记$a$与$b$的最大公因数$(a, b) = (\left\lvert a \right\rvert, \left\lvert b \right\rvert)$;记$a$与$b$的最小公倍数$[a, b] = [\left\lvert a \right\rvert, \left\lvert b \right\rvert]$.
 \end{deff}
 
 \begin{deff}
-    设$a, b \in \mathbb{Z}$,称$a$与$b$\textbf{互素},若$(a, b) = 1$.
+    设$a, b \in \bbZ$,称$a$与$b$\textbf{互素},若$(a, b) = 1$.
 \end{deff}
 
 \begin{thm}[Bézout]
-    设$a, b \in \mathbb{Z}$,则存在$u, v \in \mathbb{Z}$使得$au + bv = (a, b)$.
+    设$a, b \in \bbZ$,则存在$u, v \in \bbZ$使得$au + bv = (a, b)$.
 \end{thm}
 
 \begin{rqq}
@@ -83,23 +83,23 @@
 \end{rqq}
 
 \begin{thm}
-    设$a, b \in \mathbb{Z}$,则$(a, b) = 1 \iff \exists u, v \in \mathbb{Z}, au + bv = 1$.
+    设$a, b \in \bbZ$,则$(a, b) = 1 \iff \exists u, v \in \bbZ, au + bv = 1$.
 \end{thm}
 
 \begin{prop}
-    设$a, b \in \mathbb{Z}, d = (a, b)$.则存在$a', b' \in \mathbb{Z}$使得$a = a'd, b = b'd, (a', b') = 1$.
+    设$a, b \in \bbZ, d = (a, b)$.则存在$a', b' \in \bbZ$使得$a = a'd, b = b'd, (a', b') = 1$.
 \end{prop}
 
 \begin{prop}
-    设$a, b, c \in \mathbb{Z}$满足$(a, b) = (a, c) = 1$,则$(a, bc) = 1$.
+    设$a, b, c \in \bbZ$满足$(a, b) = (a, c) = 1$,则$(a, bc) = 1$.
 \end{prop}
 
 \begin{cor}
-    设$a, b \in \mathbb{Z}$满足$(a, b) = 1$,则有$\forall m, n \in \mathbb{N}, (a^m, b^n) = 1$.
+    设$a, b \in \bbZ$满足$(a, b) = 1$,则有$\forall m, n \in \bbN, (a^m, b^n) = 1$.
 \end{cor}
 
 \begin{deff}
-    设$a_1, a_2, \cdots, a_n \in \mathbb{Z}$.
+    设$a_1, a_2, \cdots, a_n \in \bbZ$.
     \begin{enumerate}
         \item 称$a_1, a_2, \cdots, a_n$\textbf{互素},若$(a_1, a_2, \cdots, a_n) = 1$.
         \item 称$a_1, a_2, \cdots, a_n$\textbf{两两互素},若$\forall i, j \in \{ 1, 2, \cdots, n \}, (a_i, a_j) = 1$.
@@ -107,23 +107,23 @@
 \end{deff}
 
 \begin{prop}
-    设$a_1, a_2, \cdots, a_n \in \mathbb{Z}$,则$(a_1, a_2, \cdots, a_n) = 1 \iff \exists u_1, u_2, \cdots, u_n \in \mathbb{Z}, a_1u_1 + a_2u_2 + \cdots + a_nu_n = 1$.
+    设$a_1, a_2, \cdots, a_n \in \bbZ$,则$(a_1, a_2, \cdots, a_n) = 1 \iff \exists u_1, u_2, \cdots, u_n \in \bbZ, a_1u_1 + a_2u_2 + \cdots + a_nu_n = 1$.
 \end{prop}
 
 \begin{prop}
-    设$a, b \in \mathbb{Z}, m = [a, b]$,则有$a \mid n \text{且} b \mid n \iff m \mid n$.
+    设$a, b \in \bbZ, m = [a, b]$,则有$a \mid n \text{且} b \mid n \iff m \mid n$.
 \end{prop}
 
 \begin{prop}
-    设$a, b, c \in \mathbb{N}^*$,则$[ac, bc] = [a, b]c$.
+    设$a, b, c \in \bbN^*$,则$[ac, bc] = [a, b]c$.
 \end{prop}
 
 \begin{lem}[Gauss]
-    设$a, b, c \in \mathbb{N}^*, a \mid bc$,若$(a, b) = 1$,则$a \mid c$.
+    设$a, b, c \in \bbN^*, a \mid bc$,若$(a, b) = 1$,则$a \mid c$.
 \end{lem}
 
 \begin{prop}
-    设$a, b \in \mathbb{N}^*$,则有
+    设$a, b \in \bbN^*$,则有
     \begin{enumerate}
         \item 若$(a, b) = 1$,则$[a, b] = ab$.
         \item 一般地,则$(a, b)[a, b] = ab$.
@@ -133,13 +133,13 @@
 \section{素数}
 
 \begin{deff}
-    设$p \in \mathbb{N}^*, p \neq 1$.称$p$为\textbf{素数},若$p$的因数只有$1$与$p$.
+    设$p \in \bbN^*, p \neq 1$.称$p$为\textbf{素数},若$p$的因数只有$1$与$p$.
 
-    素数的全体记为$\mathcal{P}$.
+    素数的全体记为$\calP$.
 \end{deff}
 
 \begin{prop}
-    设$p \in \mathcal{P}, n \in \mathcal{N}$,则要么$p \mid n$,要么$(p, n) = 1$.
+    设$p \in \calP, n \in \calN$,则要么$p \mid n$,要么$(p, n) = 1$.
 
     特别地,对于$k = 1, 2, \cdots, p-1$,有$(p, k) = 1$.
 \end{prop}
@@ -149,11 +149,11 @@
 \end{prop}
 
 \begin{deff}
-    设$n \in \mathbb{N}^*, p \in \mathcal{P}$.称满足$p^k \mid n$的最大的$k$为$n$的$p$-\textbf{进赋值},记为$V_p(n)$.约定$V_p(0) = + \infty$.
+    设$n \in \bbN^*, p \in \calP$.称满足$p^k \mid n$的最大的$k$为$n$的$p$-\textbf{进赋值},记为$V_p(n)$.约定$V_p(0) = + \infty$.
 \end{deff}
 
 \begin{deff}
-    设$n \in \mathbb{N}, p \in \mathcal{P}$,记$V_p(n) = V_p(\left\lvert n \right\rvert)$.
+    设$n \in \bbN, p \in \calP$,记$V_p(n) = V_p(\left\lvert n \right\rvert)$.
 \end{deff}
 
 \begin{prop}
@@ -161,15 +161,15 @@
 \end{prop}
 
 \begin{prop}
-    设$n \in \mathbb{N}^*, p \in \mathcal{P}, k = V_p(n)$,则存在$q \in \mathbb{N}^*, n = p^kq, (p, q) = 1$.
+    设$n \in \bbN^*, p \in \calP, k = V_p(n)$,则存在$q \in \bbN^*, n = p^kq, (p, q) = 1$.
 \end{prop}
 
 \begin{prop}
-    设$a, b \in \mathbb{N}^*, p \in \mathcal{P}$,则$V_p(ab) = V_p(a) + V_p(b)$.
+    设$a, b \in \bbN^*, p \in \calP$,则$V_p(ab) = V_p(a) + V_p(b)$.
 \end{prop}
 
 \begin{exer}
-    设$a, b \in \mathbb{N}^*, p \in \mathcal{P}$.
+    设$a, b \in \bbN^*, p \in \calP$.
     \begin{enumerate}
         \item 证明:$V_p(a + b) \geqslant \min \{ V_p(a), V_p(b) \}$.
         \item 找一组$(a, b, p)$使上式不取等.
@@ -178,11 +178,11 @@
 \end{exer}
 
 \begin{deff}
-    设$r=\dfrac{a}{b} \in \mathbb{Q}, p \in \mathcal{P}$,记$V_p(r) = V_p(a) - V_p(b)$.
+    设$r=\dfrac{a}{b} \in \bbQ, p \in \calP$,记$V_p(r) = V_p(a) - V_p(b)$.
 \end{deff}
 
 \begin{exer}
-    设$r \in \mathbb{Q}, p \in \mathcal{P}$.记$\left\lvert r \right\rvert_p = p^{- V_p(r)}$,约定$p^{- \infty} = 0$.证明:
+    设$r \in \bbQ, p \in \calP$.记$\left\lvert r \right\rvert_p = p^{- V_p(r)}$,约定$p^{- \infty} = 0$.证明:
     \begin{enumerate}
         \item $\left\lvert r \right\rvert_p \geqslant 0$,当且仅当$r=0$时取等.
         \item $\left\lvert r_1 + r_2 \right\rvert_p \leqslant \max \{ \left\lvert r_1 \right\rvert_p, \left\lvert r_2 \right\rvert_p \}$.

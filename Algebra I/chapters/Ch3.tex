@@ -87,9 +87,9 @@
 \end{rqq}
 
 \begin{exer}
-    设$(G, *)$为群,$A$为非空集合,定义$\mathcal{F}(A, G)$上的一个内部合成法则如下:$$\otimes: \begin{array}[t]{ccc} \mathcal{F}(A, G) \times \mathcal{F}(A, G) & \to & \mathcal{F}(A, G) \\ (f, g) & \mapsto & f \otimes g: \begin{array}[t]{ccc} A & \to & G \\ a & \mapsto & f(a) * g(a) \end{array} \end{array}$$
+    设$(G, *)$为群,$A$为非空集合,定义$\calF(A, G)$上的一个内部合成法则如下:$$\otimes: \begin{array}[t]{ccc} \calF(A, G) \times \calF(A, G) & \to & \calF(A, G) \\ (f, g) & \mapsto & f \otimes g: \begin{array}[t]{ccc} A & \to & G \\ a & \mapsto & f(a) * g(a) \end{array} \end{array}$$
     
-    证明:$(\mathcal{F}(A, G), \otimes)$为群.
+    证明:$(\calF(A, G), \otimes)$为群.
 \end{exer}
 
 \subsection*{群的一些例子}
@@ -129,7 +129,7 @@
 \section{群同态}
 
 \begin{deff}
-    设$(G, *), (H, \cdot)$为群,$\varphi \in \mathcal{F}(G, H)$.称$\varphi$为\textbf{群同态},若$\forall x, y \in G, \varphi(x * y) = \varphi(x) \cdot \varphi(y)$.
+    设$(G, *), (H, \cdot)$为群,$\varphi \in \calF(G, H)$.称$\varphi$为\textbf{群同态},若$\forall x, y \in G, \varphi(x * y) = \varphi(x) \cdot \varphi(y)$.
 \end{deff}
 
 \begin{prop}
@@ -149,7 +149,7 @@
 \end{prop}
 
 \begin{deff}
-    设$\varphi: G \to H$为群同态,称$\varphi^{-1}(e_H) = \{ g \in G \mid \varphi(g) = e_H \}$为$\varphi$的\textbf{核},记为$\mathrm{Ker} \varphi$.
+    设$\varphi: G \to H$为群同态,称$\varphi^{-1}(e_H) = \{ g \in G \mid \varphi(g) = e_H \}$为$\varphi$的\textbf{核},记为$\ker \varphi$.
 \end{deff}
 
 \begin{deff}
@@ -170,11 +170,11 @@
 \end{prop}
 
 \begin{prop}
-    设$\varphi: G \to H$为群同态,则$\mathrm{Ker} \varphi \lhd G$.
+    设$\varphi: G \to H$为群同态,则$\ker \varphi \lhd G$.
 \end{prop}
 
 \begin{prop}
-    设$\varphi: G \to H$为群同态,则$\varphi$为单射$\iff \mathrm{Ker} \varphi = \{ e \} \iff \lvert \mathrm{Ker} \varphi \rvert = 1$.
+    设$\varphi: G \to H$为群同态,则$\varphi$为单射$\iff \ker \varphi = \{ e \} \iff \lvert \ker \varphi \rvert = 1$.
 \end{prop}
 
 \begin{deff}
@@ -213,7 +213,7 @@
 \begin{prop}
     设$G_1, G_2$为群,$p_1: G_1 \times G_2 \to G_1, p_2: G_1 \times G_2 \to G_2$为群同态,
     
-    则$\mathrm{Ker} p_1 = \{ e_1 \} \times G_2, \mathrm{Ker} p_2 = G_1 \times \{ e_2 \}$均为$G_1 \times G_2$的正规子群.
+    则$\ker p_1 = \{ e_1 \} \times G_2, \ker p_2 = G_1 \times \{ e_2 \}$均为$G_1 \times G_2$的正规子群.
 \end{prop}
 
 \section{商群}
@@ -278,8 +278,8 @@
 \end{rqq}
 
 \begin{thm}[典范分解定理]\label{thm:canonical_decomposition_group}
-    设$\varphi: G \to H$为群同态,则存在唯一群同构$\bar{\varphi}: G / \mathrm{Ker} \varphi \to \mathrm{Im} \varphi$使得$\varphi = i \circ \bar{\varphi} \circ \pi$.
-    其中$i: \mathrm{Im} \varphi \to H$为自然嵌入(单同态),$\pi: G \to G / \mathrm{Ker} \varphi$为自然投影(满同态).
+    设$\varphi: G \to H$为群同态,则存在唯一群同构$\bar{\varphi}: G / \ker \varphi \to \Im \varphi$使得$\varphi = i \circ \bar{\varphi} \circ \pi$.
+    其中$i: \Im \varphi \to H$为自然嵌入(单同态),$\pi: G \to G / \ker \varphi$为自然投影(满同态).
 \end{thm}
 
 \begin{rqq}
@@ -287,7 +287,7 @@
 \end{rqq}
 
 \begin{cor}
-    若$G$有限,则$\lvert G \rvert = \lvert \mathrm{Ker} \varphi \rvert \lvert \mathrm{Im} \varphi \rvert$.
+    若$G$有限,则$\lvert G \rvert = \lvert \ker \varphi \rvert \lvert \Im \varphi \rvert$.
 \end{cor}
 
 \begin{cor}
@@ -313,13 +313,13 @@
 \end{rqq}
 
 \begin{deff}
-    设$\varphi: A \to B$为群同态,称$B / \mathrm{Im} \varphi$为$\varphi$的\textbf{余核},记为$\mathrm{coKer} \varphi$.
+    设$\varphi: A \to B$为群同态,称$B / \Im \varphi$为$\varphi$的\textbf{余核},记为$\coker\varphi$.
 \end{deff}
 
 \begin{prop}
-    设$\varphi: A \to B$为群同态,则$\varphi$为满同态$\iff \lvert \mathrm{coKer} \varphi \rvert = 1$.
+    设$\varphi: A \to B$为群同态,则$\varphi$为满同态$\iff \lvert \coker \varphi \rvert = 1$.
 \end{prop}
 
 \begin{prop}
-    设群同态$\varphi: A \to B, \pi: B \to \mathrm{coKer} \varphi$满足$\varphi \circ i = 0$,则对于任意$\psi: B \to C$且$\psi \circ \varphi = 0$,存在唯一$\beta: \mathrm{coKer} \varphi \to C$,使得$\psi = \beta \circ \pi$.
+    设群同态$\varphi: A \to B, \pi: B \to \coker \varphi$满足$\varphi \circ i = 0$,则对于任意$\psi: B \to C$且$\psi \circ \varphi = 0$,存在唯一$\beta: \coker \varphi \to C$,使得$\psi = \beta \circ \pi$.
 \end{prop}

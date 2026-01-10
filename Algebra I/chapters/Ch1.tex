@@ -30,17 +30,17 @@
         \item $(A \cup B) \cup C = A \cup (B \cup C)$.
         \item $(A \cap B) \cap C = A \cap (B \cap C)$.
         \item $A \cap (B \cup C)=(A \cap B) \cup (A \cap C)$.
-        \item $A \cup (B \cup C)=(A \cup B) \cup (A \cup C)$.
+        \item $A \cup (B \cap C)=(A \cup B) \cap (A \cup C)$.
         \item $A \cup \complement_E A = E$.
         \item $A \cap \complement_E A = \varnothing$.
-        \item $\complement_E A = \varnothing$.
+        \item $\complement_E E = \varnothing$.
         \item $\complement_E \varnothing = E$.
         \item $\complement_E (A \cup B) = \complement_E A \cap \complement_E B$.
         \item $\complement_E (A \cap B) = \complement_E A \cup \complement_E B$.
-        \item $E \subseteq A \Leftarrow A = E$.
-        \item $A \subseteq \varnothing \leftarrow A = \varnothing$.
-        \item $A \subseteq B \Leftarrow A \cup C \subseteq B \cup C$.
-        \item $A \subseteq B \Leftarrow A \cap C \subseteq B \cap C$.
+        \item $E \subseteq A \Rightarrow A = E$.
+        \item $A \subseteq \varnothing \Rightarrow A = \varnothing$.
+        \item $A \cup C \subseteq B \cup C \Leftarrow A \subseteq B$.
+        \item $A \cap C \subseteq B \cap C \Leftarrow A \subseteq B$.
         \item $A \subseteq B \iff \complement_E B \subseteq \complement_E A$.
         \item $A \subseteq B \iff A \cup B = B$.
         \item $A \subseteq B \iff A \cap B = A$.
@@ -59,7 +59,7 @@
 \end{deff}
 
 \begin{deff}
-    集合$E$与$F$的\textbf{笛卡尔积}是指$\{ (x,y) \mid x \in E, y \in F \}$,记为$X \times Y$.
+    集合$E$与$F$的\textbf{笛卡尔积}是指$\{ (x,y) \mid x \in E, y \in F \}$,记为$E \times F$.
 \end{deff}
 
 \section{映射}
@@ -71,7 +71,7 @@
 
     称$E$为\textbf{出发集},$F$为\textbf{到达集},$y$为$x$的\textbf{像},$x$为$y$的\textbf{原像},$u$为$E$到$F$的映射.
 
-    $E$到$F$的映射的全体记为$\mathcal{F}(E,F)$.
+    $E$到$F$的映射的全体记为$\calF(E,F)$.
 \end{deff}
 
 \begin{deff}
@@ -83,21 +83,21 @@
 \end{deff}
 
 \begin{deff}
-    称$\{ u(x) \mid x \in E \}$为$u$的\textbf{像集},记为$\mathrm{Im} u$或$u(E)$.
+    称$\{ u(x) \mid x \in E \}$为$u$的\textbf{像集},记为$\im u$或$u(E)$.
 \end{deff}
 
 \begin{deff}
     设$E$为集合,称$E$到其自身的映射为$E$上的一个\textbf{置换}.
 
-    $E$上的置换的全体记为$\mathcal{S}(E)$.
+    $E$上的置换的全体记为$\calS(E)$.
 \end{deff}
 
 \begin{exer}
-    设$E, F, G$为集合,$u \in \mathcal{F}(E, F), v \in \mathcal{F}(F, G), w \in \mathcal{F}(E, G)$,则$w \circ (v \circ u) = (w \circ v) \circ u$.
+    设$E, F, G, H$为集合,$u \in \calF(E, F), v \in \calF(F, G), w \in \calF(G, H)$,则$w \circ (v \circ u) = (w \circ v) \circ u$.
 \end{exer}
 
 \begin{rqq}
-    设$u, v \in \mathcal{F}(E, E)$,则不一定有$u \circ v = v \circ u$.
+    设$u, v \in \calF(E, E)$,则不一定有$u \circ v = v \circ u$.
 \end{rqq}
 
 \begin{exer}
@@ -133,7 +133,7 @@
 \end{prop}
 
 \begin{prop}
-    设$u: E \to F, v: F \to G$为双射,则$u \circ v$为双射,且$(u \circ v)^{-1} = v^{-1} \circ u^{-1}$.
+    设$u: E \to F, v: F \to G$为双射,则$v \circ u$为双射,且$(v \circ u)^{-1} = u^{-1} \circ v^{-1}$.
 \end{prop}
 
 \begin{deff}
@@ -163,19 +163,19 @@
 \end{prop}
 
 \begin{deff}
-    设$A \subseteq E$,称$$\mathbb{I}_A(x) = \begin{cases} 1, & x \in A \\ 0, & x \notin A \end{cases}$$为$A$的\textbf{特征函数}.
+    设$A \subseteq E$,称$$\bbI_A(x) = \begin{cases} 1, & x \in A \\ 0, & x \notin A \end{cases}$$为$A$的\textbf{特征函数}.
 \end{deff}
 
 \begin{prop}
-    设$E$为集合,则映射$$\begin{array}[t]{ccc} \mathcal{P}(E) & \to & \mathcal{F}(E, \{ 0, 1 \}) \\ A & \mapsto & \mathbb{I}_A \end{array}$$为双射.
+    设$E$为集合,则映射$$\begin{array}[t]{ccc} \calP(E) & \to & \calF(E, \{ 0, 1 \}) \\ A & \mapsto & \bbI_A \end{array}$$为双射.
 \end{prop}
 
 \begin{prop}
     设$A, B \subseteq E$,则
     \begin{enumerate}
-        \item $\mathbb{I}_{A \cap B} = \mathbb{I}_A \times \mathbb{I}_B$.
-        \item $\mathbb{I}_{A \cup B} = \mathbb{I}_A + \mathbb{I}_B - \mathbb{I}_{A \cap B}$.
-        \item $\mathbb{I}_{\complement_E A} = 1 - \mathbb{I}_A$.
+        \item $\bbI_{A \cap B} = \bbI_A \cdot \bbI_B$.
+        \item $\bbI_{A \cup B} = \bbI_A + \bbI_B - \bbI_{A \cap B}$.
+        \item $\bbI_{\complement_E A} = 1 - \bbI_A$.
     \end{enumerate}
 \end{prop}
 
@@ -190,14 +190,14 @@
 \end{rqq}
 
 \begin{rqq}
-    $E$中由$\mathbb{N}$标记的一族元素常称为$E$中的一个序列.
+    $E$中由$\bbN$标记的一族元素常称为$E$中的一个序列.
 \end{rqq}
 
 \begin{deff}
     设$I_1, I_2 \subseteq I, A_i \subseteq E (i \in I)$,则
     \begin{enumerate}
         \item $$\left( \bigcap\limits_{i \in I_1} A_i \right) \cap \left( \bigcap\limits_{i \in I_2} A_i \right) = \bigcap\limits_{i \in I_1 \cap I_2} A_i$$
-        \item $$\left( \bigcup\limits_{i \in I_1} A_i \right) \cup \left( \bigcup\limits_{i \in I_2} A_i \right) = \bigcup\limits_{i \in I_1 \cap I_2} A_i$$
+        \item $$\left( \bigcup\limits_{i \in I_1} A_i \right) \cup \left( \bigcup\limits_{i \in I_2} A_i \right) = \bigcup\limits_{i \in I_1 \cup I_2} A_i$$
         \item $$\complement_E \left( \bigcup\limits_{i \in I} A_i \right) = \bigcap\limits_{i \in I} \complement_E A_i$$
         \item $$\complement_E \left( \bigcap\limits_{i \in I} A_i \right) = \bigcup\limits_{i \in I} \complement_E A_i$$
     \end{enumerate}
@@ -222,30 +222,30 @@
 \section{二元关系}
 
 \begin{deff}
-    集合$E$上的一个\textbf{二元关系}是指集合$\mathcal{R} \subseteq E \times E$.
+    集合$E$上的一个\textbf{二元关系}是指集合$\calR \subseteq E \times E$.
 
-    当$(x, y) \in \mathcal{R}$时,记$x \mathcal{R} y$.
+    当$(x, y) \in \calR$时,记$x \calR y$.
 \end{deff}
 
 \begin{deff}
     设$R$为$E$上的一个二元关系,称$R$为\textbf{等价关系},若$R$满足:
     \begin{enumerate}
-        \item 若$x \in E$,则$x \mathcal{R} x$.
-        \item 设$x, y \in E$,若$x \mathcal{R} y$,则$y \mathcal{R} x$.
-        \item 设$x, y, z \in E$,若$x \mathcal{R} y$且$y \mathcal{R} z$,则$x \mathcal{R} z$.
+        \item 若$x \in E$,则$x \calR x$.
+        \item 设$x, y \in E$,若$x \calR y$,则$y \calR x$.
+        \item 设$x, y, z \in E$,若$x \calR y$且$y \calR z$,则$x \calR z$.
     \end{enumerate}
 \end{deff}
 
 \begin{deff}
-    设$\mathcal{R}$为$E$上的一个等价关系,对于$x \in E$,称$\{ y \mid x \mathcal{R} y \}$为$x$的\textbf{等价类},记为$cl(x)$或$\bar{x}$.
+    设$\calR$为$E$上的一个等价关系,对于$x \in E$,称$\{ y \mid x \calR y \}$为$x$的\textbf{等价类},记为$cl(x)$或$\bar{x}$.
 
-    等价类的全体记为$E / \mathcal{R}$,称为\textbf{商集}.
+    等价类的全体记为$E / \calR$,称为\textbf{商集}.
 
     称$x$为等价类$\bar{x}$的一个\textbf{代表元}.
 \end{deff}
 
 \begin{rqq}
-    存在从$E$到$E / \mathcal{R}$的满射$\pi: \begin{array}[t]{ccc} E & \to & E / \mathcal{R} \\ x & \mapsto & \bar{x} \end{array}$.
+    存在从$E$到$E / \calR$的满射$\pi: \begin{array}[t]{ccc} E & \to & E / \calR \\ x & \mapsto & \bar{x} \end{array}$.
 \end{rqq}
 
 \begin{rqq}
@@ -253,11 +253,11 @@
 \end{rqq}
 
 \begin{prop}
-    设$\mathcal{R}$为$E$上的一个等价关系,$x, y \in E$,则$\bar{x}$与$\bar{y}$要么相等,要么不相交.
+    设$\calR$为$E$上的一个等价关系,$x, y \in E$,则$\bar{x}$与$\bar{y}$要么相等,要么不相交.
 \end{prop}
 
 \begin{rqq}
-    $E$上的一个等价关系$\mathcal{R}$等价于$E$的分割$E / \mathcal{R}$.
+    $E$上的一个等价关系$\calR$等价于$E$的分割$E / \calR$.
 \end{rqq}
 
 \begin{rqq}
@@ -271,13 +271,13 @@
 \section{序关系}
 
 \begin{deff}
-    设$\mathcal{R}$为$E$上的一个二元关系,称$\mathcal{R}$为\textbf{序关系},若$\mathcal{R}$满足:
+    设$\calR$为$E$上的一个二元关系,称$\calR$为\textbf{序关系},若$\calR$满足:
     \begin{enumerate}
-        \item 若$x \in E$,则$x \mathcal{R} x$.
-        \item 设$x, y \in E$,若$x \mathcal{R} y$且$y \mathcal{R} x$,则$x = y$.
-        \item 设$x, y, z \in E$,若$x \mathcal{R} y$且$y \mathcal{R} z$,则$x \mathcal{R} z$.
+        \item 若$x \in E$,则$x \calR x$.
+        \item 设$x, y \in E$,若$x \calR y$且$y \calR x$,则$x = y$.
+        \item 设$x, y, z \in E$,若$x \calR y$且$y \calR z$,则$x \calR z$.
     \end{enumerate}
-    此时称$(E, \mathcal{R})$为\textbf{偏序集},序关系常记为$\leqslant$.
+    此时称$(E, \calR)$为\textbf{偏序集},序关系常记为$\leqslant$.
 \end{deff}
 
 \begin{deff}
@@ -326,33 +326,33 @@
 
 下面这段话来自法文书
 \begin{itemize}
-    \item 自然数,及其集合$\mathbb{N}$,是所有数学的基础,人类最早的数学活动无疑是计数.因此$\mathbb{N}$的大多数性质看起来如此自然,在相较近的时期之前,即使是在最伟大的数学家之间,也没有引起任何疑问.
-    \item 直到19世纪,人们才处理$\mathbb{N}$的构造问题.对全体整数的严格构造超出了本课程的范围,我们将遵循数学家Kronecker所说:``上帝赐予我们整数,人类完成其余.''然而,在本书中列出详尽的公认性质必不可少的,这使得我们能构建后续内容.
+    \item 自然数,及其集合$\bbN$,是所有数学的基础,人类最早的数学活动无疑是计数.因此$\bbN$的大多数性质看起来如此自然,在相较近的时期之前,即使是在最伟大的数学家之间,也没有引起任何疑问.
+    \item 直到19世纪,人们才处理$\bbN$的构造问题.对全体整数的严格构造超出了本课程的范围,我们将遵循数学家Kronecker所说:``上帝赐予我们整数,人类完成其余.''然而,在本书中列出详尽的公认性质必不可少的,这使得我们能构建后续内容.
 \end{itemize}
 
-自然数集$\mathbb{N}$是一个非空集合,配上一个全序关系,以及与该序关系相容的一个加法运算和一个乘法运算,即:$$\forall x, y ,z \in \mathbb{N}, (x \leqslant y \Rightarrow x + z \leqslant y + z \land x \leqslant y \Rightarrow xz \leqslant yz)$$
+自然数集$\bbN$是一个非空集合,配上一个全序关系,以及与该序关系相容的一个加法运算和一个乘法运算,即:$$\forall x, y ,z \in \bbN, (x \leqslant y \Rightarrow x + z \leqslant y + z \land x \leqslant y \Rightarrow xz \leqslant yz)$$
 
 此外:
 \begin{itemize}
-    \item $\mathbb{N}$的非空子集都有最小元.
-    \item $\mathbb{N}$的非空有上界子集都有最大元.
-    \item $\mathbb{N}$没有上界.
+    \item $\bbN$的非空子集都有最小元.
+    \item $\bbN$的非空有上界子集都有最大元.
+    \item $\bbN$没有上界.
 \end{itemize}
 
 直接结果:
 \begin{itemize}
-    \item $\mathbb{N}$有最小元,记为0,记$\mathbb{N}^* = \mathbb{N} \setminus \{ 0 \}$.
-    \item 设$n \in \mathbb{N}$,则严格大于$n$的自然数构成的集合非空(否则$n$为$\mathbb{N}$的最大元);称其最小元为$n$的\textbf{后继};
+    \item $\bbN$有最小元,记为0,记$\bbN^* = \bbN \setminus \{ 0 \}$.
+    \item 设$n \in \bbN$,则严格大于$n$的自然数构成的集合非空(否则$n$为$\bbN$的最大元);称其最小元为$n$的\textbf{后继};
         \begin{itemize}
             \item 记1为0的后继.
-            \item $n$的后继也为$n+1$,因此$$\forall m \in \mathbb{N}, (m > n \Rightarrow m \geqslant n + 1)$$
+            \item $n$的后继也为$n+1$,因此$$\forall m \in \bbN, (m > n \Rightarrow m \geqslant n + 1)$$
         \end{itemize}
-    \item 同理,若$n \in \mathbb{N}^*$,则严格小于$n$的自然数构成的集合非空(它包含0)且以$n$为上界;称其最大元为$n$的\textbf{前驱},等于$n - 1$,且$$\forall m \in \mathbb{N}, (m < n \Rightarrow m \leqslant n - 1)$$
+    \item 同理,若$n \in \bbN^*$,则严格小于$n$的自然数构成的集合非空(它包含0)且以$n$为上界;称其最大元为$n$的\textbf{前驱},等于$n - 1$,且$$\forall m \in \bbN, (m < n \Rightarrow m \leqslant n - 1)$$
 \end{itemize}
 
-作为$\mathbb{N}$的定义的应用,我们给出下面的定理.
+作为$\bbN$的定义的应用,我们给出下面的定理.
 \begin{thm}[Eucilde除法]
-    设$a \in \mathbb{N}, b \in \mathbb{N}^*$,则存在唯一$q, r \in \mathbb{N}$使得$$a = bq + r, r < b$$
+    设$a \in \bbN, b \in \bbN^*$,则存在唯一$q, r \in \bbN$使得$$a = bq + r, r < b$$
     \begin{itemize}
         \item $q$称为$a$对$b$的Euclide除法商.
         \item $r$称为$a$对$b$的Euclide除法余数.
@@ -361,13 +361,13 @@
 
 \section{归纳推理}
 
-我们上面列出的$\mathbb{N}$的性质的一个重要应用是\textbf{归纳原理},它断言:
+我们上面列出的$\bbN$的性质的一个重要应用是\textbf{归纳原理},它断言:
 \begin{thm}[归纳原理]
-    若$\mathbb{N}$的子集$A$包含0,且满足$$\forall n \in \mathbb{N}, (n \in A \Rightarrow n + 1 \in A)$$则$A = \mathbb{N}$
+    若$\bbN$的子集$A$包含0,且满足$$\forall n \in \bbN, (n \in A \Rightarrow n + 1 \in A)$$则$A = \bbN$
 \end{thm}
 我们通常通过下面的定理来运用这一原理,从而进行\textbf{归纳推理}.
 \begin{thm}
-    设$P$为$\mathbb{N}$上的一个叙述,若$P(0)$为真且$\forall n \in \mathbb{N}, (P(n) \Rightarrow P(n + 1))$则对于每个自然数$n$,$P(n)$都为真.
+    设$P$为$\bbN$上的一个叙述,若$P(0)$为真且$\forall n \in \bbN, (P(n) \Rightarrow P(n + 1))$则对于每个自然数$n$,$P(n)$都为真.
 \end{thm}
 \begin{rqq}
     我们常将$P(n)$记为$P_n$.
@@ -376,7 +376,7 @@
 \section{有限集}
 
 \begin{deff}
-    称$E$为\textbf{有限集},若存在$n \in \mathbb{N}$及从$\{ 1, 2, \cdots, n \}$到$E$的双射.
+    称$E$为\textbf{有限集},若存在$n \in \bbN$及从$\{ 1, 2, \cdots, n \}$到$E$的双射.
 
     整数$n$称为$E$的\textbf{势},或者$E$的元素个数.通常记为$\mathrm{card} E$,也可以是$\lvert E \rvert$或$\# E$
 \end{deff}
@@ -435,7 +435,7 @@
 \section{选择公理和超限归纳法}
 
 \begin{thm}[选择公理]
-    设$E$为非空集合,则存在映射$f: \mathcal{P}(E) \setminus \{ \varnothing \} \to E$使得$f(A) \in A$.这个映射称为\textbf{选择函数}.
+    设$E$为非空集合,则存在映射$f: \calP(E) \setminus \{ \varnothing \} \to E$使得$f(A) \in A$.这个映射称为\textbf{选择函数}.
 \end{thm}
 
 \begin{rqq}

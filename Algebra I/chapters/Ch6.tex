@@ -35,7 +35,7 @@
 \end{prop}
 
 \begin{prop}
-    $K[x] = \left\{ \sum\limits_{k = 0} ^ n a_k x ^ k \mid n \in \mathbb{N}, a_k \in K \right\}$.
+    $K[x] = \left\{ \sum\limits_{k = 0} ^ n a_k x ^ k \mid n \in \bbN, a_k \in K \right\}$.
 \end{prop}
 
 \begin{deff}
@@ -249,7 +249,7 @@
 \end{prop}
 
 \begin{prop}\label{prop2}
-    设$K$为域,则$$\varPhi: \begin{array}[t]{ccc} K[x] & \to & \mathcal{F}(K, K) \\ A & \mapsto & \tilde{A} \end{array}$$为环同态.
+    设$K$为域,则$$\varPhi: \begin{array}[t]{ccc} K[x] & \to & \calF(K, K) \\ A & \mapsto & \tilde{A} \end{array}$$为环同态.
 \end{prop}
 
 \begin{rqq}
@@ -261,12 +261,12 @@
 \end{rqq}
 
 \begin{rqq}
-    在有限域$\mathbb{F}_p$中,$\varPhi(x^p - x) = \varPhi(0)$.
+    在有限域$\bbF_p$中,$\varPhi(x^p - x) = \varPhi(0)$.
 \end{rqq}
 
 \begin{deff}
     设$K$为域,$A \in K[x]^*, \alpha \in K$为$A$的根.
-    称$m = \max \{ k \in \mathbb{N} \mid (x - \alpha)^k \mid A \}$为$\alpha$的\textbf{重数(ordre de multiplicité)},
+    称$m = \max \{ k \in \bbN \mid (x - \alpha)^k \mid A \}$为$\alpha$的\textbf{重数(ordre de multiplicité)},
     此时称$\alpha$为$A$的\textbf{$\boldsymbol{m}$重根(racine d'ordre $\boldsymbol{m}$)}.
 \end{deff}
 
@@ -282,12 +282,12 @@
 \end{rqq}
 
 \begin{prop}
-    设$K$为域,$A \in K[x]^*, \alpha \in K, m \in \mathbb{N}^*$.
+    设$K$为域,$A \in K[x]^*, \alpha \in K, m \in \bbN^*$.
     则$\alpha$为$A$的$m$重根$\iff (x - \alpha)^m \mid A \text{且} (x - \alpha)^{m + 1} \nmid A$.
 \end{prop}
 
 \begin{prop}
-    设$K$为域,$A \in K[x]^*, \alpha \in K, m \in \mathbb{N}^*$.
+    设$K$为域,$A \in K[x]^*, \alpha \in K, m \in \bbN^*$.
     则$\alpha$为$A$的$m$重根$\iff \exists B \in K[x], A = (x - \alpha)^m B \text{且} B(\alpha) \neq 0$.
 \end{prop}
 
@@ -330,7 +330,7 @@
 \end{prop}
 
 \begin{rqq}
-    $\mathbb{F}_p$中,$(x^p)' = 0$.
+    $\bbF_p$中,$(x^p)' = 0$.
 \end{rqq}
 
 \begin{prop}
@@ -346,13 +346,13 @@
 \end{prop}
 
 \begin{deff}
-    设$K$为域,$A \in K[x]$,记$A^{(1)} = A'$.对于$n \in \mathbb{N}^*$,
+    设$K$为域,$A \in K[x]$,记$A^{(1)} = A'$.对于$n \in \bbN^*$,
     称$(A^{(n-1)})'$为$A$的\textbf{$\boldsymbol{n}$阶导数(polynôme dérivé d'ordre $\boldsymbol{n}$)},
     记为$A^{(n)}$.
 \end{deff}
 
 \begin{prop}
-    设$K$为域,$A, B \in K[x], \lambda, \mu \in K, n \in \mathbb{N}$,
+    设$K$为域,$A, B \in K[x], \lambda, \mu \in K, n \in \bbN$,
     则$$(\lambda A + \mu B)^{(n)} = \lambda A^{(n)} + \mu B^{(n)}$$.
 \end{prop}
 
@@ -371,7 +371,7 @@
 \end{thm}
 
 \begin{prop}
-    设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K, m \in \mathbb{N}^*$.若$\alpha$为$A$的$m$重根,
+    设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K, m \in \bbN^*$.若$\alpha$为$A$的$m$重根,
     则$\alpha$为$A'$的$m-1$重根.
 \end{prop}
 
@@ -380,41 +380,41 @@
 \end{cor}
 
 \begin{prop}
-    设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K, m \in \mathbb{N}^*$,
+    设$K$为无限域,$A \in K[x] \setminus K, \alpha \in K, m \in \bbN^*$,
     则$\alpha$为$A$的$m$重根$\iff A(\alpha) = A'(\alpha) = A''(\alpha) = \cdots = A^{(m-1)}(\alpha) = 0
     \text{且} A^{(m)}(\alpha) \neq 0$.
 \end{prop}
 
-\section{$\mathbb{C}[x]$和$\mathbb{R}[x]$中的分解}
+\section{$\bbC[x]$和$\bbR[x]$中的分解}
 
 \begin{thm}[d'Alembert]
-    $\mathbb{C}[x] \setminus \mathbb{C}$中的多项式至少有一个根.
+    $\bbC[x] \setminus \bbC$中的多项式至少有一个根.
 \end{thm}
 
 \begin{rqq}
-    因此称$\mathbb{C}$为\textbf{代数闭}的.
+    因此称$\bbC$为\textbf{代数闭}的.
 \end{rqq}
 
 \begin{prop}
-    设$A \in \mathbb{C}[x] \setminus \mathbb{C}$,则有分裂
-    $A = \lambda \prod\limits_{k = 1}^n (x - \alpha_k)$,其中$\alpha_k, \lambda \in \mathbb{C}$.
+    设$A \in \bbC[x] \setminus \bbC$,则有分裂
+    $A = \lambda \prod\limits_{k = 1}^n (x - \alpha_k)$,其中$\alpha_k, \lambda \in \bbC$.
 \end{prop}
 
 \begin{prop}
-    设$A, P \in \mathbb{C}[x] \setminus \mathbb{C}, \alpha_1, \alpha_2, \cdots, \alpha_n \in \mathbb{C},
-    r_1, r_2, \cdots, r_n \in \mathbb{N}^*$,$\alpha_k \in \mathbb{C}$为$A$的$r_k$重根.
+    设$A, P \in \bbC[x] \setminus \bbC, \alpha_1, \alpha_2, \cdots, \alpha_n \in \bbC,
+    r_1, r_2, \cdots, r_n \in \bbN^*$,$\alpha_k \in \bbC$为$A$的$r_k$重根.
     则$A \mid P$当且仅当$\alpha_k$为$P$的根且重数不低于$r_k$.
 \end{prop}
 
 \begin{prop}
-    设$A \in \mathbb{R}[x] \setminus \mathbb{R}$,则有分裂$A = \lambda \prod\limits_{i = 1}^m
+    设$A \in \bbR[x] \setminus \bbR$,则有分裂$A = \lambda \prod\limits_{i = 1}^m
     (x - \alpha_i) \prod\limits_{j = 1}^n (x^2 + \beta_j x + \gamma_j)$,
-    其中$\alpha_i, \beta_j, \gamma_j, \lambda \in \mathbb{R}, \beta_j^2 - 4 \gamma_j < 0$.
+    其中$\alpha_i, \beta_j, \gamma_j, \lambda \in \bbR, \beta_j^2 - 4 \gamma_j < 0$.
 \end{prop}
 
 \section{K[x]上的算术}
 
-记多项式$A$的因式的全体为$\mathcal{D}(A)$.
+记多项式$A$的因式的全体为$\calD(A)$.
 
 \begin{deff}
     设$A, B \in K[x]^*$,称$A$与$B$的最高次数的公因式为$A, B$的\textbf{PGCD}.
@@ -426,15 +426,15 @@
 
 \begin{lem}
     设$A, B, Q, R \in K[x]$满足$A = BQ + R$,
-    则$\mathcal{D}(A) \cup \mathcal{D}(B) = \mathcal{D}(B) \cup \mathcal{D}(R)$.
+    则$\calD(A) \cup \calD(B) = \calD(B) \cup \calD(R)$.
 \end{lem}
 
 \begin{prop}
-    设$A, B \in K[x]^*$,$D$为$A, B$的PGCD,则$\mathcal{D}(A) \cap \mathcal{D}(B) = \mathcal{D}(D)$.
+    设$A, B \in K[x]^*$,$D$为$A, B$的PGCD,则$\calD(A) \cap \calD(B) = \calD(D)$.
 \end{prop}
 
 \begin{thm}\label{thm:pgcd_existence}
-    设$A, B \in K[x]^*$,则存在唯一首一多项式$D$使得$\mathcal{D}(D) = \mathcal{D}(A) \cap \mathcal{D}(B)$.
+    设$A, B \in K[x]^*$,则存在唯一首一多项式$D$使得$\calD(D) = \calD(A) \cap \calD(B)$.
 \end{thm}
 
 \begin{deff}
@@ -446,7 +446,7 @@
 \end{rqq}
 
 \begin{rqq}
-    设$D$为$A, B$在$\mathbb{R}[x]$中的最大公因式,则$D$也为$A, B$在$\mathbb{C}[x]$中的最大公因式.
+    设$D$为$A, B$在$\bbR[x]$中的最大公因式,则$D$也为$A, B$在$\bbC[x]$中的最大公因式.
 \end{rqq}
 
 \begin{rqq}
@@ -483,12 +483,12 @@
 \end{prop}
 
 \begin{cor}
-    设$A, B \in K[x]^*$.若$(A, B) = 1$,则$\forall m, n \in \mathbb{N}^*, (A^m, B^n) = 1$.
+    设$A, B \in K[x]^*$.若$(A, B) = 1$,则$\forall m, n \in \bbN^*, (A^m, B^n) = 1$.
 \end{cor}
 
 \begin{prop}\label{prop:pgcd_n_existence}
     设$A_1, A_2, \cdots, A_n \in K[x]^*$,
-    则存在唯一首一多项式$D$使得$\mathcal{D}(D) = \bigcap_{i=1}^n \mathcal{D}(A_i)$.
+    则存在唯一首一多项式$D$使得$\calD(D) = \bigcap_{i=1}^n \calD(A_i)$.
 \end{prop}
 
 \begin{deff}
@@ -567,11 +567,11 @@
 \end{prop}
 
 \begin{prop}
-    $\mathbb{C}[x]$中的不可约多项式为一次多项式.
+    $\bbC[x]$中的不可约多项式为一次多项式.
 \end{prop}
 
 \begin{prop}
-    $\mathbb{R}[x]$中的不可约多项式为
+    $\bbR[x]$中的不可约多项式为
     \begin{itemize}
         \item 一次多项式.
         \item 二次多项式且判别式为负.
@@ -584,7 +584,7 @@
 
 \begin{rqq}
     设$A \in K[x] \setminus K$,则$A = \lambda A_1^{\alpha_1} A_2^{\alpha_2} \cdots A_n^{\alpha_n}$,
-    其中$\lambda \in K^*, A_i \in K[x] \text{首一}, \alpha_i \in \mathbb{N}^*$.
+    其中$\lambda \in K^*, A_i \in K[x] \text{首一}, \alpha_i \in \bbN^*$.
 \end{rqq}
 
 \begin{rqq}
@@ -597,8 +597,8 @@
 为了证明d'Alembert定理,我们需要运用分析的工具.
 
 设$A$为复系数多项式,其次数$p \geqslant 1$.为了证明$A$具有一个复数根,
-考虑$\alpha = \inf\limits_{z \in \mathbb{C}} \lvert A(z) \rvert$,
-它存在,因为$\{ \lvert A(z) \rvert \mid z \in \mathbb{C} \}$为$\mathbb{R}_+$的非空子集.
+考虑$\alpha = \inf\limits_{z \in \bbC} \lvert A(z) \rvert$,
+它存在,因为$\{ \lvert A(z) \rvert \mid z \in \bbC \}$为$\bbR_+$的非空子集.
 接下来证明这个下确界可以取得且为0.
 
 设$A = \sum\limits_{k = 0}^p a_k x^k$,其中$a_p \neq 0$.对于$\lvert z \rvert  = r$,我们有
@@ -610,7 +610,7 @@ $$\lvert A(z) \rvert \geqslant \left\lvert a_p z^p \right\rvert - \left\lvert
 因为它等价于$\left\lvert a_p \right\rvert r^p$.因此它在$+ \infty$附近大于$\alpha + 1$,
 即存在一个中心为0的圆盘$D$,在它外面有$\lvert A(z) \rvert \geqslant \alpha+1$.
 
-由于$\alpha = \inf\limits_{z \in \mathbb{C}} \lvert A(z) \rvert$,
+由于$\alpha = \inf\limits_{z \in \bbC} \lvert A(z) \rvert$,
 可以找到一个复序列$(u_n)$使得$\lim\limits_{n \to \infty} \lvert A(u_n) \rvert = \alpha$.
 因此,从某一项起,该序列全在$D$中,从而它是有界的.于是存在一个子列$(u_{\varphi(n)})$收敛于复数$z_0$.
 
@@ -625,7 +625,7 @@ $$\lvert A(z) \rvert \geqslant \left\lvert a_p z^p \right\rvert - \left\lvert
 因此多项式$A$可以写成$$A(x) = 1 - a_q x^q + \sum_{k = q + 1}^p a_k x^k,
 \text{其中} a_q \neq 0, 1 \leqslant q \leqslant p$$
 
-设$a_q = \rho e^{- i \theta}$,其中$\rho \in \mathbb{R}_+^*, \theta \in \mathbb{R}$.
+设$a_q = \rho e^{- i \theta}$,其中$\rho \in \bbR_+^*, \theta \in \bbR$.
 对于$z = r e^{\frac{i \theta}{q}}, r > 0$,
 我们有$$A(z) = 1 - \rho r^q + \sum\limits_{k = q + 1}^p a_k r^k e^{\frac{ik \theta}{q}}$$
 
@@ -638,4 +638,4 @@ $$\lvert A(z) \rvert - 1 \leqslant - \rho r^q + \sum\limits_{k = q + 1}^p \lvert
 
 该上界定义了一个关于$r$的多项式函数,它在0处与$- \rho r^q$等价,在0附近为负.
 
-因此,存在$z \in \mathbb{C}$使得$\lvert A(z) \rvert < 1 = \alpha$,矛盾! \qed
+因此,存在$z \in \bbC$使得$\lvert A(z) \rvert < 1 = \alpha$,矛盾! \qed

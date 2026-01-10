@@ -1,46 +1,46 @@
 \chapter{有理分式}
 
-在本章中,我们记$\mathbb{K}$为$\mathbb{R}$或$\mathbb{C}$.
+在本章中,我们记$\bbK$为$\bbR$或$\bbC$.
 
 \section{有理分式域}
 
-我们定义交换环$\mathbb{K}[x]$上的有理分式域$\mathbb{K}(x)$,即满足下列条件的集合.
+我们定义交换环$\bbK[x]$上的有理分式域$\bbK(x)$,即满足下列条件的集合.
 
 \begin{itemize}
-    \item 元素$F \in \mathbb{K}(x)$可写成形式$F = \dfrac{P}{Q}$,其中$P, Q \in \mathbb{K}[x]$且$Q \neq 0$.
-    \item 设$P, Q, P_1, Q_1 \in \mathbb{K}[x]$且$Q \neq 0, Q_1 \neq 0$,
+    \item 元素$F \in \bbK(x)$可写成形式$F = \dfrac{P}{Q}$,其中$P, Q \in \bbK[x]$且$Q \neq 0$.
+    \item 设$P, Q, P_1, Q_1 \in \bbK[x]$且$Q \neq 0, Q_1 \neq 0$,
         则$$\dfrac{P}{Q} = \dfrac{P_1}{Q_1} \iff PQ_1 = P_1Q$$.
-    \item $\mathbb{K}(x)$包括$\mathbb{K}[x]$,多项式$P$视为有理分式$\dfrac{P}{1}$.
+    \item $\bbK(x)$包括$\bbK[x]$,多项式$P$视为有理分式$\dfrac{P}{1}$.
     \item 具有以下运算规则:
         \begin{itemize}
             \item $\dfrac{P}{Q} +\dfrac{P_1}{Q_1} = \dfrac{PQ_1 + P_1Q}{QQ_1}$.
             \item $\dfrac{P}{Q} \cdot \dfrac{P_1}{Q_1} = \dfrac{PP_1}{QQ_1}$.
         \end{itemize}
-        其中$P, Q, P_1, Q_1 \in \mathbb{K}[x]$且$Q, Q_1 \neq 0$.
+        其中$P, Q, P_1, Q_1 \in \bbK[x]$且$Q, Q_1 \neq 0$.
 \end{itemize}
 
-这样$(\mathbb{K}(x), +, \cdot)$为域,称为\textbf{有理分式域(corps des fractions rationnelles)},
+这样$(\bbK(x), +, \cdot)$为域,称为\textbf{有理分式域(corps des fractions rationnelles)},
 其中的元素称为\textbf{有理分式(fraction rationnelle)}.
 
 \begin{rqq}
-    设$P, Q, R \in \mathbb{K}[x], Q, R \neq 0$,则$\dfrac{PR}{QR} = \dfrac{P}{Q}$.
+    设$P, Q, R \in \bbK[x], Q, R \neq 0$,则$\dfrac{PR}{QR} = \dfrac{P}{Q}$.
 
-    设$P, Q \in \mathbb{K}[x]^*$,则$\left( \dfrac{P}{Q} \right)^{- 1} = \dfrac{Q}{P}$.
+    设$P, Q \in \bbK[x]^*$,则$\left( \dfrac{P}{Q} \right)^{- 1} = \dfrac{Q}{P}$.
 \end{rqq}
 
 \begin{deff}
-    设$F = \dfrac{P}{Q} \in \mathbb{K}(x)$,称$\dfrac{P}{Q}$为$F$的
+    设$F = \dfrac{P}{Q} \in \bbK(x)$,称$\dfrac{P}{Q}$为$F$的
     \textbf{不可约形式(forme irréductible)},若$P, Q$互素.
 
-    设$F = \dfrac{P}{Q} \in \mathbb{K}(x)$,称$\dfrac{P}{Q}$为$F$的
+    设$F = \dfrac{P}{Q} \in \bbK(x)$,称$\dfrac{P}{Q}$为$F$的
     \textbf{首一不可约表示(forme irréductible unitaire)},若$P, Q$互素且$Q$为首一多项式.
 \end{deff}
 
 \begin{prop}
-    设$F = \dfrac{P}{Q}$的不可约形式为$\dfrac{P_1}{Q_1}$,则存在$R \in \mathbb{K}[x]$,
+    设$F = \dfrac{P}{Q}$的不可约形式为$\dfrac{P_1}{Q_1}$,则存在$R \in \bbK[x]$,
     使得$P = P_1R, Q = Q_1R$.
 
-    设$F$的不可约形式为$\dfrac{P}{Q}, \dfrac{P_1}{Q_1}$,则存在$\lambda \in \mathbb{K}^*$,
+    设$F$的不可约形式为$\dfrac{P}{Q}, \dfrac{P_1}{Q_1}$,则存在$\lambda \in \bbK^*$,
     使得$P_1 = \lambda P, Q_1 = \lambda Q$.
 \end{prop}
 
@@ -49,15 +49,15 @@
 \end{prop}
 
 \begin{prop}
-    设$F = \dfrac{P}{Q} \in \mathbb{K}(x)$,则$\deg P - \deg Q$的值不依赖于代表形式的选取.
+    设$F = \dfrac{P}{Q} \in \bbK(x)$,则$\deg P - \deg Q$的值不依赖于代表形式的选取.
 \end{prop}
 
 \begin{deff}
-    设$F = \dfrac{P}{Q} \in \mathbb{K}(x)$,称$\deg P - \deg Q$为$F$的\textbf{次数(degré)}.
+    设$F = \dfrac{P}{Q} \in \bbK(x)$,称$\deg P - \deg Q$为$F$的\textbf{次数(degré)}.
 \end{deff}
 
 \begin{prop}
-    设$F_1, F_2 \in \mathbb{K}(x)$,
+    设$F_1, F_2 \in \bbK(x)$,
     \begin{itemize}
         \item $\deg (F_1 + F_2) \leqslant \max \{ \deg F_1, \deg F_2 \}$.
         \item $\deg F_1F_2 = \deg F_1 + \deg F_2$.
@@ -77,8 +77,8 @@
 \end{deff}
 
 \begin{deff}
-    设$F$为有理分式,$\dfrac{P}{Q}$为其不可约形式,设$\mathcal{A}$为其极点的集合.
-    称函数$F: \begin{array}[t]{ccc} \mathbb{K} \setminus \mathcal{A} & \to & \mathbb{K} \\ \alpha & \mapsto &
+    设$F$为有理分式,$\dfrac{P}{Q}$为其不可约形式,设$\calA$为其极点的集合.
+    称函数$F: \begin{array}[t]{ccc} \bbK \setminus \calA & \to & \bbK \\ \alpha & \mapsto &
     F(\alpha) \end{array}$为与$F$相伴的\textbf{有理函数(fonction rationnelle)}.
 \end{deff}
 

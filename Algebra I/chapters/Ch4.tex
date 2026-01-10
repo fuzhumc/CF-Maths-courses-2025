@@ -28,7 +28,7 @@
 \end{rqq}
 
 \begin{rqq}
-    设$(A, +, *)$为环,$a \in A, n \in \mathbb{N}^*$.记$\underbrace{a + a + \cdots + a}_{n \text{个}} = na, \underbrace{a * a * \cdots * a}_{n \text{个}} = a^n$.
+    设$(A, +, *)$为环,$a \in A, n \in \bbN^*$.记$\underbrace{a + a + \cdots + a}_{n \text{个}} = na, \underbrace{a * a * \cdots * a}_{n \text{个}} = a^n$.
 
     特别地,约定$\forall a \in A^*, 0a = 0, a^0 = 1$.
 \end{rqq}
@@ -89,7 +89,7 @@
 \end{prop}
 
 \begin{deff}
-    设$(A, +_A, *_A), (B, +_B, *_B)$为环,$\varphi \in \mathcal{F}(A, B)$.称$\varphi$为\textbf{环同态},若
+    设$(A, +_A, *_A), (B, +_B, *_B)$为环,$\varphi \in \calF(A, B)$.称$\varphi$为\textbf{环同态},若
     \begin{enumerate}
         \item $\varphi(1_A) = 1_B$.
         \item $\forall x, y \in A, \varphi(x +_A y) = \varphi(x) +_B \varphi(y)$.
@@ -98,7 +98,7 @@
 \end{deff}
 
 \begin{deff}
-    设$\varphi: A \to B$为环同态,称$\varphi^{-1}(1_B) = \{ a \in A \mid \varphi(a) = 1_B \}$为$\varphi$的\textbf{核},记为$\mathrm{Ker} \varphi$.
+    设$\varphi: A \to B$为环同态,称$\varphi^{-1}(1_B) = \{ a \in A \mid \varphi(a) = 1_B \}$为$\varphi$的\textbf{核},记为$\ker \varphi$.
 \end{deff}
 
 \begin{deff}
@@ -115,11 +115,11 @@
 \end{prop}
 
 \begin{prop}
-    设$\varphi: A \to B$为环同态,则$\varphi$为单同态$\iff \mathrm{Ker} \varphi = \{ e \} \iff \lvert \mathrm{Ker} \varphi \rvert = 1$.
+    设$\varphi: A \to B$为环同态,则$\varphi$为单同态$\iff \ker \varphi = \{ e \} \iff \lvert \ker \varphi \rvert = 1$.
 \end{prop}
 
 \begin{rqq}
-    与群同态不同,环同态中没有$\mathrm{coKer} \varphi$.
+    与群同态不同,环同态中没有$\coker \varphi$.
 \end{rqq}
 
 \section{理想}
@@ -153,12 +153,12 @@
 \end{prop}
 
 \begin{thm}
-    设$\varphi: A \to B$为环同态,则存在唯一环同构$\bar{\varphi}: A / \mathrm{Ker} \varphi \to \mathrm{Im} \varphi$使得$\varphi = i \circ \bar{\varphi} \circ \pi$.
-    其中$i: \mathrm{Im} \varphi \to B$为自然嵌入(单同态),$\pi: A \to B / \mathrm{Ker} \varphi$为自然投影(满同态).
+    设$\varphi: A \to B$为环同态,则存在唯一环同构$\bar{\varphi}: A / \ker \varphi \to \im \varphi$使得$\varphi = i \circ \bar{\varphi} \circ \pi$.
+    其中$i: \im \varphi \to B$为自然嵌入(单同态),$\pi: A \to B / \ker \varphi$为自然投影(满同态).
 \end{thm}
 
 \begin{prop}
-    设$\varphi: A \to B$为满同态,则$A / \mathrm{Ker} \varphi \cong B$.
+    设$\varphi: A \to B$为满同态,则$A / \ker \varphi \cong B$.
 \end{prop}
 
 \begin{deff}

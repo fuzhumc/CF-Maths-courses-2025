@@ -13,14 +13,14 @@
 \usepackage{geometry}
 
 \setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
-\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
+\geometry{a4paper}
 
 \hypersetup{
-pdftitle={Algebra I}, % PDF标题
-pdfauthor={梁永祺}, % 作者
-pdfsubject={Algebra}, % 主题
-pdfcreator={LaTeX}, % 创建者
-pdfproducer={XeLaTeX} % 制作工具
+    pdftitle={Algebra I},
+    pdfauthor={梁永祺},
+    pdfsubject={Algebra},
+    pdfcreator={LaTeX},
+    pdfproducer={XeLaTeX}
 }
 
 \setlist[enumerate,1]{label=\arabic*.}
@@ -42,6 +42,36 @@ pdfproducer={XeLaTeX} % 制作工具
 \theoremstyle{remark}
 \newtheorem*{rqq}{Remarque}
 \newtheorem{cor}{Corollaire}[section]
+
+\makeatletter
+
+\def\@buildmath#1{
+    \expandafter\def\csname bb#1\endcsname{\mathbb{#1}}
+    \expandafter\def\csname bs#1\endcsname{\boldsymbol{#1}}
+    \expandafter\def\csname cal#1\endcsname{\mathcal{#1}}
+    \expandafter\def\csname frak#1\endcsname{\mathfrak{#1}}
+    \expandafter\def\csname rm#1\endcsname{\mathrm{#1}}
+    \expandafter\def\csname bf#1\endcsname{\mathbf{#1}}
+}
+
+\def\@buildmathletters#1{%
+    \ifx#1\relax
+    \else
+        \@buildmath{#1}%
+        \expandafter\@buildmathletters
+    \fi
+}
+
+\@buildmathletters ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\relax
+
+\makeatother
+
+\newcommand{\dif}{\mathrm{d}}
+\newcommand{\im}{\mathrm{Im}}
+\newcommand{\pgcd}{\mathrm{pgcd}}
+\newcommand{\ppcm}{\mathrm{ppcm}}
+\newcommand{\coker}{\mathrm{coKer}}
+\newcommand{\vect}{\mathrm{Vect}}
 
 \title{Algebra I}
 \author{\href{https://faculty.ustc.edu.cn/yqliang/index.jsp}{梁永祺}}
