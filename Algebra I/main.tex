@@ -66,12 +66,16 @@
 
 \makeatother
 
-\newcommand{\dif}{\mathrm{d}}
-\newcommand{\im}{\mathrm{Im}}
-\newcommand{\pgcd}{\mathrm{pgcd}}
-\newcommand{\ppcm}{\mathrm{ppcm}}
-\newcommand{\coker}{\mathrm{coKer}}
-\newcommand{\vect}{\mathrm{Vect}}
+\let\ker\relax
+
+\DeclareMathOperator{\dif}{d}
+\DeclareMathOperator{\id}{Id}
+\DeclareMathOperator{\ker}{Ker}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\pgcd}{pgcd}
+\DeclareMathOperator{\ppcm}{ppcm}
+\DeclareMathOperator{\coker}{coKer}
+\DeclareMathOperator{\vect}{Vect}
 
 \title{Algebra I}
 \author{\href{https://faculty.ustc.edu.cn/yqliang/index.jsp}{梁永祺}}
@@ -95,5 +99,6 @@
 \input{chapters/Ch6}
 \input{chapters/Ch7}
 \input{chapters/Ch8}
+\input{chapters/Ch9}
 
 \end{document}

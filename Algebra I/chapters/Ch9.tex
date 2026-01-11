@@ -1,0 +1,400 @@
+\chapter{向量空间的分解}
+
+在本章中,我们记
+\begin{itemize}
+    \item $\bbK$为$\bbR$或$\bbC$.
+    \item $E$为$\bbK$上的线性空间.
+    \item $I$为非空集合.
+\end{itemize}
+
+\section{生成族和生成子集}
+
+\begin{deff}
+    设$\bfg$为$E$中的族,称$\bfg$为$E$的\textbf{生成族(famille génératrice)},若$E = \vect \bfg$.
+\end{deff}
+
+\begin{deff}
+    设$\calG$为$E$的子集,称$\calG$为$E$的\textbf{生成子集(partie génératrice)},若$E = \vect \calG$.
+\end{deff}
+
+\begin{rqq}
+    根据上一章,我们有
+    \begin{itemize}
+        \item $\bfg = (g_1, g_2, \cdots, g_n)$为$E$的生成族当且仅当
+            $$\forall x \in E, \exists \lambda_i \in \bbK, x = \sum\limits_{i = 1}^n \lambda_i g_i$$
+        \item $\calG = \{ g_1, g_2, \cdots, g_n \}$为$E$的生成子集当且仅当
+            $$\forall x \in E, \exists \lambda_i \in \bbK, x = \sum\limits_{i = 1}^n \lambda_i g_i$$
+    \end{itemize}
+\end{rqq}
+
+\begin{prop} $\ $
+    \begin{itemize}
+        \item 设$\calG, \calG' \subseteq E$,若$\calG$为$E$的生成子集且$\calG \subseteq \calG'$,则$\calG'$也为$E$的生成子集.
+        \item 设$\bfg, \bfg'$为$E$中的族,若$\bfg$为$E$的生成族且$\bfg$为$\bfg'$的子族,则$\bfg'$也为$E$的生成族.
+    \end{itemize}
+\end{prop}
+
+\begin{prop}
+    设$\bfg$为$E$的生成族,$\bfg'$为$E$中的族,则$\bfg'$为$E$的生成族当且仅当$\bfg$中元素都是$\bfg'$中元素的线性组合.
+\end{prop}
+
+\section{自由族和自由子集}
+
+\begin{deff}
+    设$x_1, x_2, \cdots, x_n \in E$.
+    \begin{itemize}
+        \item 称$(x_1, x_2, \cdots, x_n)$为$E$的\textbf{自由族(famille libre)},
+            若$$\sum\limits_{i = 1}^n \lambda_i x_i = 0 \implies \lambda_1 = \lambda_2 = \cdots = \lambda_n = 0$$
+        \item 否则,称$(x_1, x_2, \cdots, x_n)$为$E$的\textbf{相关族(famille liée)},
+        即存在不全为0的标量$(\lambda_1, \lambda_2, \cdots, \lambda_n)$使得$\sum\limits_{i = 1}^n \lambda_i x_i = 0$.
+    \end{itemize}
+\end{deff}
+
+\begin{rqq} $\ $
+    \begin{itemize}
+        \item 当$(x_1, x_2, \cdots, x_n)$为自由族(或相关族)时,
+            称$x_1, x_2, \cdots, x_n$\textbf{线性无关(linéairement indépendants)}(或\textbf{线性相关(linéairement dépendants)}).
+        \item 若$(x_1, x_2, \cdots, x_n)$为$E$的自由族(或相关族),则对其元素任意排列后得到的$n$元组也为自由族(或相关族).
+    \end{itemize}
+\end{rqq}
+
+\begin{rqq}
+    一个向量的族$(x)$为自由族当且仅当$x \neq 0$.
+\end{rqq}
+
+\begin{deff}
+    设$x, y \in E$,称$x$与$y$\textbf{成比例(proportionnels)}或\textbf{共线(colinéaires)},若
+    $$\exists \lambda \in \bbK, y = \lambda x \text{或} x = \lambda y$$
+\end{deff}
+
+\begin{prop}
+    设$x, y \in E$,则$x$与$y$共线当且仅当$(x, y)$为相关族.
+\end{prop}
+
+\begin{prop} $\ $
+    \begin{itemize}
+        \item 自由族的子族为自由族.
+        \item 相关族的扩张族为相关族.
+    \end{itemize}
+\end{prop}
+
+\begin{rqq}
+    若$(x_1, x_2, \cdots, x_n)$为自由族,则其中没有两个相同的向量,即映射$i \mapsto x_i$为单射.
+\end{rqq}
+
+\begin{prop}
+    设$(x_1, x_2, \cdots, x_n)$为$E$的自由族,$x \in E$,则$(x_1, x_2, \cdots, x_n, x)$为相关族当且仅当
+    $$x \in \vect(x_1, x_2, \cdots, x_n)$$即$x$为$x_1, x_2, \cdots, x_n$的线性组合.
+\end{prop}
+
+\begin{rqq}
+    设$(x_1, x_2, \cdots, x_n)$为$E$中一族元素,若$x_1 \neq 0$且
+    $$\forall k \in \{ 2, \cdots, n \}, x_k \notin \vect(x_1, x_2, \cdots, x_{k-1})$$
+    则$(x_1, x_2, \cdots, x_n)$为自由族.
+\end{rqq}
+
+\begin{thm}
+    设$(x_1, x_2, \cdots, x_n)$为$E$的自由族,$\lambda_i, \mu_i \in \bbK$满足
+    $\sum\limits_{i = 1}^n \lambda_i x_i = \sum\limits_{i = 1}^n \mu_i x_i$,
+    则$\lambda_i = \mu_i$.
+\end{thm}
+
+\begin{prop}
+    设$n \in \bbN, \calG = (g_1, g_2, \cdots, g_n)$为$E$的自由族,则$\vect(\calG)$中的$n + 1$元族均为相关族.
+\end{prop}
+
+\begin{cor}
+    设$E$为$n$元族生成的向量空间,则$E$的自由族至多有$n$个元素.
+\end{cor}
+
+\begin{deff}
+    设$A \subseteq E$,称$A$为$E$的\textbf{自由子集(partie libre)},若$(a)_{a \in A}$为自由族,
+    否则称$A$为$E$的\textbf{相关子集(partie liée)}.
+\end{deff}
+
+\begin{rqq}
+    约定$\varnothing$为$E$的自由子集.
+\end{rqq}
+
+\begin{rqq}
+    为了证明$A$是自由的,对于任意$n \in \bbN$及$n$元子集$\{ a_1, a_2, \cdots, a_n \}$,族$(a_1, a_2, \cdots, a_n)$为自由族.
+\end{rqq}
+
+\begin{rqq} $\ $
+    \begin{itemize}
+        \item 当$A$为$E$的有限子集时,可以记其元素为$a_1, a_2, \cdots, a_n$(假定两两不同),
+            则$A$为自由子集当且仅当$(a_1, a_2, \cdots, a_n)$为自由族.
+        \item 反过来,设$a_1, a_2, \cdots, a_n$为$E$中元素,则$(a_1, a_2, \cdots, a_n)$可能为相关族,
+            即使$\{ a_1, a_2, \cdots, a_n \}$为自由子集.
+    \end{itemize}
+\end{rqq}
+
+\begin{prop} $\ $
+    \begin{itemize}
+        \item 自由子集的子集仍为自由子集.
+        \item 包含相关子集的集合也为相关子集.
+    \end{itemize}
+\end{prop}
+
+\section{向量空间的基}
+
+\begin{deff}
+    设$\bfe = (e_1, e_2, \cdots, e_n)$为$E$中一族元素,称$\bfe$为$E$的\textbf{基(base)},若$\bfe$既为$E$的生成族,又为$E$的自由族.
+\end{deff}
+
+\begin{thm}
+    设$E$具有基$(e_1, e_2, \cdots, e_n)$,则对任意$x \in E$,存在唯一$\lambda_1, \lambda_2, \cdots, \lambda_n \in \bbK$,
+    使得$x = \sum\limits_{i = 1}^n \lambda_i e_i$.
+\end{thm}
+
+\begin{deff} $\ $
+    \begin{itemize}
+        \item 族$(\lambda_1, \lambda_2, \cdots, \lambda_n)$称为$x$在基$(e_1, e_2, \cdots, e_n)$下的
+            \textbf{分量族(famille des composantes)}或\textbf{坐标族(famille des coordonnées)}.
+        \item 标量$\lambda_i$称为$x$在基$(e_1, e_2, \cdots, e_n)$下的
+            第$i$个\textbf{分量(composante)}或\textbf{坐标(coordonnée)}.
+    \end{itemize}
+\end{deff}
+
+\begin{rqq}
+    $\{ 0 \}$的基为空族,因为其为自由族且生成向量空间$\{ 0 \}$.
+\end{rqq}
+
+\begin{prop}
+    设$(e_i)_{i \in I}$为$E$中一族元素,$u \in \calL(E, F)$,则$\vect(e_i)_{i \in I}$
+    在$u$下的像为$(u(e_i))_{i \in I}$生成的$F$的向量子空间.
+\end{prop}
+
+\begin{cor}
+    设$(e_i)_{i \in I}$为$E$的生成族,$u \in \calL(E, F)$,则
+    \begin{itemize}
+        \item $(u(e_i))_{i \in I}$为$\im u$的生成族.
+        \item $u$为满同态当且仅当$(u(e_i))_{i \in I}$生成$F$.
+    \end{itemize}
+\end{cor}
+
+\begin{prop} $\ $
+    \begin{itemize}
+        \item 设$(e_i)_{i \in I}$为$E$的自由族,$u \in \calL(E, F)$为单同态,则$(u(e_i))_{i \in I}$为$F$的自由族.
+        \item 设$(e_i)_{i \in I}$为$E$的基,$u \in \calL(E, F)$,则$u$为单同态当且仅当$(u(e_i))_{i \in I}$为$F$的自由族.
+    \end{itemize}
+\end{prop}
+
+\begin{cor}
+    设$(e_i)_{i \in I}$为$E$的基,$u \in \calL(E, F)$,则$u$为同构当且仅当$(u(e_i))_{i \in I}$为$F$的基.
+\end{cor}
+
+\begin{thm}
+    设$\bfe = (e_i)_{i \in I}$为$E$的基,$(f_i)_{i \in I}$为$F$中的族,
+    则存在唯一$u \in \calL(E, F)$使得$\forall i \in I, u(e_i) = f_i$.
+\end{thm}
+
+\begin{rqq}
+    这就是说,线性映射由基的项决定.
+\end{rqq}
+
+\begin{rqq}
+    只要$\bfe$为生成族,这样的线性映射就唯一.
+\end{rqq}
+
+\section{向量子空间的和}
+
+\begin{deff}
+    设$F, G$为$E$的向量子空间,称$H = \{ y + z \mid y \in F, z \in G \}$为$F$与$G$的\textbf{和(somme)},记为$F + G$.
+\end{deff}
+
+\begin{prop}
+    设$F, G$为$E$的向量子空间,则$F + G$为$E$的包含$F$与$G$的最小向量子空间.
+\end{prop}
+
+\begin{deff}
+    设$F, G$为$E$的向量子空间,称$F$与$G$\textbf{成直和(en somme directe)},若对任意$x \in F + G$,
+    存在唯一$y \in F, z \in G$使得$x = y + z$.
+\end{deff}
+
+\begin{rqq}
+    称$F + G$为$F$与$G$的\textbf{直和(somme directe)},若$F$与$G$成直和,记为$F \oplus G$.
+\end{rqq}
+
+\begin{prop}
+    $F$与$G$成直和当且仅当$F \cap G = \{ 0 \}$.
+\end{prop}
+
+\begin{deff}
+    设$F, G$为$E$的向量子空间,称$F$与$G$为$E$的互补向量子空间,若$E = F \oplus G$.
+\end{deff}
+
+\begin{prop}
+    下面三个命题均与$E = F \oplus G$等价.
+    \begin{enumerate}
+        \item 对任意$x \in E$,存在唯一$y \in F, z \in G$,使得$x = y + z$.
+        \item $F$与$G$成直和且$F + G = E$.
+        \item $F \cap G = \{ 0 \}$且$F + G = E$.
+    \end{enumerate}
+\end{prop}
+
+\begin{thm}
+    设$F, G$为$E$的互补向量子空间,$E'$为$\bbK$-向量空间.则对于任意$v \in \calL(F, E'), w \in \calL(G, E')$,
+    存在唯一$u \in \calL(E, E')$使得$u \vert_F = v, u \vert_G = w$.
+\end{thm}
+
+\begin{deff}
+    设$F,G$为$E$的互补向量子空间,称自同态$p \in \calL(E, E)$为
+    \textbf{平行于$\boldsymbol{G}$向$\boldsymbol{F}$的投影(projection sur $\boldsymbol{F}$ parallèlement à $\boldsymbol{G}$)},
+    若$$\forall x \in F, p(x) = x, \forall x \in G, p(x) = 0$$
+\end{deff}
+
+\begin{prop}
+    设$p$为平行于$G$向$F$的投影,则$p^2 = p \circ p = p$,且$$G = \ker p, F = \im p = \{ x \in E \mid p(x) = x \}$$
+\end{prop}
+
+\begin{proof}
+    对于$x \in G$,有$x = 0 + x$,其中$(0, x) \in F \times G$,因此$p(x) = 0$.
+
+    反过来,设$x \in E$满足$p(x) = 0$.由$x = p(x) + z$知$x = z$,其中$z \in G$.故$\ker p = G$.
+
+    对于$x \in F$,有$x = x + 0$,其中$(x, 0) \in F \times G$,因此$x = p(x)$,那么$F \subseteq \{ x \in E \mid p(x) = x \}$.
+
+    易知$\{ x \in E \mid p(x) = x \} \subseteq \im p$,因此$F \subseteq \{ x \in E \mid p(x) = x \} \subseteq \im p$.
+
+    而由定义知$\im p \subseteq F$,故$F = \im p = \{ x \in E \mid p(x) = x \}$.
+
+    对于$x \in E$,有$p(x) \in F$,故$p(p(x)) = p(x)$,即$p \circ p = p$.
+\end{proof}
+
+\begin{deff}
+    设$p \in \calL(E, E)$,称$p$为\textbf{投影(projection)}或\textbf{投影映射(projecteur)},
+    若存在$E$的互补向量子空间$F, G$,使得$p$为平行于$G$向$F$的投影.
+\end{deff}
+
+\begin{rqq}
+    投影映射的像空间为其不变向量的全体,即$\{ x \mid p(x) = x \}$.
+\end{rqq}
+
+\begin{prop}
+    设$p \in \calL(E, E)$,则$p$为投影当且仅当$p \circ p = p$.
+
+    更精确地,$p$为平行于$\ker p$向$\im p$的投影,因此$\ker p \oplus \im p = E$.
+\end{prop}
+
+\begin{proof}
+    已经证明若$p$为投影,则$p \circ p = p$且$E = \ker p \oplus \im p$.接下来证明逆命题.
+
+    $F = \im p, G = \ker p$分别为自同态$p$的核与像,因此其为$E$的向量子空间.
+
+    设$y \in F \cap G$,则
+    
+    \begin{itemize}
+        \item 由$y \in F = \im p$知存在$x \in E$使得$y = p(x)$.
+        \item 由$p \circ p = p$及$y \in G = \ker p$知$0 = p(y) = p(p(x)) = p(x) = y$.
+    \end{itemize}
+
+    因此$F \cap G = \{ 0 \}$.
+
+    设$x \in E$,则$x = p(x) + (x - p(x))$.由$p(x - p(x)) = p(x) - p(p(x)) = 0$知$x - p(x) \in \ker p$.
+    又$p(x) \in \im p$,那么$x \in F + G$,因此$E = F + G$.
+
+    故$E = F \oplus G$,且$p$为平行于$\ker p$向$\im p$的投影.
+\end{proof}
+
+\begin{deff}
+    设$F,G$为$E$的互补向量子空间,称自同态$s \in \calL(E, E)$为
+    \textbf{平行于$\boldsymbol{G}$关于$\boldsymbol{F}$的对称(symétrie par rapport à $\boldsymbol{F}$ parallèlement à $\boldsymbol{G}$)},
+    若$$\forall x \in F, s(x) = x, \forall x \in G, s(x) = -x$$
+\end{deff}
+
+\begin{rqq}
+    存在唯一$y \in F, z \in G$使得$x = y + z$,此时$s(x) = y - z$.
+\end{rqq}
+
+\begin{rqq}
+    设$p$为平行于$G$向$F$的投影,则$s(x) = 2p(x) - x$,即$s = 2p - \id_E$.
+\end{rqq}
+
+\begin{prop}
+    设$s$为平行于$G$关于$F$的对称,则$s \circ s = \id_E$.
+\end{prop}
+
+\begin{proof}
+    自同态$s$满足$$\forall x \in F, s(s(x)) = s(x) = x, \forall x \in G, s(s(x)) = -s(x) = x$$
+    又$F, G$为$E$的互补向量子空间,故$s \circ s = \id_E$.
+\end{proof}
+
+\begin{deff}
+    设$s \in \calL(E, E)$,称$s$为\textbf{对称(symétrie)},
+    若存在$E$的互补向量子空间$F, G$,使得$s$为平行于$G$关于$F$的对称.
+\end{deff}
+
+\begin{rqq}
+    $s$为对合,因此双射且$s^{-1} = s$.
+\end{rqq}
+
+\begin{prop}
+    设$s \in \calL(E, E)$,则$s$为对称当且仅当$s \circ s = \id_E$.
+
+    更精确地,$s$为平行于$\ker(s + \id_E)$关于$\ker(s - \id_E)$的对称,因此$\ker(s - \id_E) \oplus \ker(s + \id_E) = E$.
+\end{prop}
+
+\begin{proof}
+    已经证明若$s$为对称,则$s \circ s = \id_E$且$E = \ker(s - \id_E) \oplus \ker(s + \id_E)$.接下来证明逆命题.
+
+    设$F = \ker(s - \id_E), G = \ker(s + \id_E)$分别为自同态$s - \id_E, s + \id_E$的核,因此其为$E$的向量子空间.
+
+    我们有$$F = \{ x \mid s(x) = x \}, G = \{ x \mid s(x) = -x \}$$
+
+    为了证明$s$为对称,只要证明$E = F \oplus G$.
+
+    \begin{itemize}
+        \item 设$x \in F \cap G$,则$x = s(x) = -x$,因此$x = 0$.
+        \item 设$x \in E$,记$y = \dfrac{1}{2} (x + s(x)), z = \dfrac{1}{2} (x - s(x))$,则$x = y + z$,
+            且$s(y) = y, s(z) = -z$,因此$y \in F, z \in G$.
+    \end{itemize}
+
+    因此$E = F \oplus G$,故$s$为平行于$G$关于$F$的对称.
+\end{proof}
+
+\section{线性型与超平面}
+
+\begin{deff}
+    称$E$到$\bbK$的线性映射为\textbf{$\boldsymbol{E}$上的线性型(forme linéaire sur $\boldsymbol{E}$)}.
+\end{deff}
+
+\begin{deff}
+    设$\bfe = (e_i)_{i \in I}$,对$i \in I$,称$e_i^*$为基$\bfe$下的第$i$个\textbf{坐标线性型(forme linéaire coordonnée)},
+    若$$e_i^*(e_i) = 1, \forall j \in I \setminus \{ i \}, e_i^*(e_j) = 0$$
+\end{deff}
+
+\begin{rqq}
+    对每个$i \in I$,线性映射$e_i^*$存在且唯一.
+\end{rqq}
+
+\begin{deff}
+    设$H$为$E$的向量子空间,称$H$为$E$的\textbf{向量超平面(hyperplan vectoriel)}(或\textbf{超平面(hyperplan)}),
+    若存在非0线性型$\varphi$使得$H = \ker \varphi$.
+\end{deff}
+
+\begin{prop}
+    设$H$为$E$的向量子空间,则$H$为$E$的向量超平面当且仅当存在向量直线$D$使得$H \oplus D = E$.
+\end{prop}
+
+\begin{cor}
+    设$H$为$E$的向量超平面,$D$为$E$的向量子空间,满足$D$不包含于$H$,则$H \oplus D = E$.
+\end{cor}
+
+\begin{prop}
+    设$\varphi, \psi$为非0线性型,若$\ker \varphi = \ker \psi$,则存在$\lambda \in \bbK^*$使得$\varphi = \lambda \psi$.
+\end{prop}
+
+\begin{proof}
+    由$\varphi \neq 0$知$H = \ker \varphi$为$E$的向量超平面.若$x_0 \in E \setminus H$,则$D = \vect(x_0)$为$H$的补向量子空间.
+
+    由于$x_0 \notin \ker \varphi$,而$\ker \varphi = \ker \psi$,所以$\psi(x_0) \neq 0$.
+    因此设$\lambda = \dfrac{\varphi(x_0)}{\psi(x_0)} \neq 0$,那么两个线性映射$\varphi, \lambda \psi$满足
+
+    \begin{itemize}
+        \item 在$H$上一致,因为它们在$H$上的限制均为0.
+        \item 在$D$上一致,由$\lambda$的定义容易验证.
+    \end{itemize}
+
+    故$\varphi$与$\lambda \psi$在$E$上一致,即$\varphi = \lambda \psi$.
+\end{proof}
