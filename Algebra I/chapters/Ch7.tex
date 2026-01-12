@@ -33,7 +33,7 @@
     \textbf{不可约形式(forme irréductible)},若$P, Q$互素.
 
     设$F = \dfrac{P}{Q} \in \bbK(x)$,称$\dfrac{P}{Q}$为$F$的
-    \textbf{首一不可约表示(forme irréductible unitaire)},若$P, Q$互素且$Q$为首一多项式.
+    \textbf{首一不可约形示(forme irréductible unitaire)},若$P, Q$互素且$Q$为首一多项式.
 \end{deff}
 
 \begin{prop}
@@ -81,4 +81,111 @@
     称函数$F: \begin{array}[t]{ccc} \bbK \setminus \calA & \to & \bbK \\ \alpha & \mapsto &
     F(\alpha) \end{array}$为与$F$相伴的\textbf{有理函数(fonction rationnelle)}.
 \end{deff}
+
+\begin{rqq}
+    设$F \in \bbK(x)$可以写成形式$F = \dfrac{P_1}{Q_1}$,若$Q_1(\alpha) \neq 0$,
+    则$\alpha$不为$F$的极点且$F(\alpha) = \dfrac{P_1(\alpha)}{Q_1(\alpha)}$.
+\end{rqq}
+
+\begin{rqq}
+    设$F, G \in \bbK(x)$,$\lambda, \mu, \alpha \in \bbK$.若$\alpha$不为$F, G$的极点,
+    则$\alpha$不为$\lambda F + \mu G, FG$的极点,
+    且$(\lambda F + \mu G)(\alpha) = \lambda F(\alpha) + \mu G(\alpha), (FG)(\alpha) = F(\alpha) G(\alpha)$.
+\end{rqq}
+
+\begin{deff}
+    设$F$为有理分式,称$F$是\textbf{偶的(paire)}(或\textbf{奇的(impair)}),若$F(x) = F(-x)$(或$F(-x) = -F(x)$).
+\end{deff}
+
+\section{部分分式分解}
+
+\begin{prop}
+    任意有理分式$F$,都可以唯一写成一个多项式与一个次数严格负的有理分式之和.
+\end{prop}
+
+\begin{rqq}
+    上面的多项式称为$F$的\textbf{整部(partie entière)}.
+\end{rqq}
+
+\begin{thm}
+    设$F \in \bbK(x)$,其首一不可约形式为$\dfrac{A}{B}$,$B$分解为$\bbK[x]$中不可约因式的积$B = \prod\limits_{i = 1}^n Q_i^{r_i}$.
+    其中$Q_1, Q_2, \cdots, Q_n$为首一,不可约,两两不同的多项式,$r_1, r_2, \cdots, r_n$为正整数.
+    则存在唯一$E \in \bbK[x]$与多项式族$(P_{ij})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant r_i}}$
+    使得$$F = E + \sum\limits_{i = 1}^n \sum\limits_{j = 1}^{r_i} \dfrac{P_{ij}}{Q_i^j}$$
+    其中$\deg \dfrac{P_{ij}}{Q_i} < 0$.
+\end{thm}
+
+\begin{rqq}
+    这种表示称为$F$在$\bbK$上的\textbf{部分分式分解(décomposition en éléments simples)}.
+\end{rqq}
+
+\begin{rqq}
+    若$Q_i = x - a_i$,其中$a_i \in \bbK$,则$(P_{ij})_{1 \leqslant j \leqslant r_i}$均为常数,
+    称$\sum\limits_{j = 1}^{r_i} \dfrac{P_{ij}}{(x - a_i)^j}$为$F$关于极点$a_i$的\textbf{级部(partie polaire)}.
+\end{rqq}
+
+\begin{prop}
+    设$F$为有理分式,有单极点$a$,把$F$写成如下形式$$F = \dfrac{P}{Q} = \dfrac{P}{(x - a)Q_1}$$其中$Q_1$不以$a$为根.
+    则$F$关于极点$a$的级部为$\dfrac{\lambda_1}{X - a}$其中$\lambda_1 = \dfrac{P(a)}{Q_1(a)} = \dfrac{P(a)}{Q'(a)}$.
+\end{prop}
+
+\begin{prop}
+    设$F$为有理分式,有双极点$a$,把$F$写成如下形式$$F = \dfrac{P}{Q} = \dfrac{P}{(x - a)^2 Q_2}$$其中$Q_2$不以$a$为根.
+    则$F$关于极点$a$的级部为$\dfrac{\lambda_1}{x - a} + \dfrac{\lambda_2}{(x - a)^2}$其中$\lambda_2 = \dfrac{P(a)}{Q_2(a)}, \lambda_1 \in \bbK$.
+\end{prop}
+
+\begin{rqq}
+    这个方法容易推广.设$a$为$n$重极点,把$F$写成$F = \dfrac{P}{(x - a)^n Q_n}$其中$Q_n(a) \neq 0$.
+    则$F$关于极点$a$的级部为$\sum\limits_{p = 1}^n \dfrac{\lambda_p}{(x - a)^p}$其中$\lambda_n = \dfrac{P(a)}{Q_n(a)}$.
+\end{rqq}
+
+\begin{thm}
+    设$F \in \bbC(x)$,其极点为两两不同的复数$a_1, a_2, \cdots, a_n$,其重数分别为$r_1, r_2, \cdots, r_n$.
+    则存在唯一$E \in \bbC[x]$与复数族$(P_{kl})_{\substack{1 \leqslant k \leqslant n \\ 1 \leqslant l \leqslant r_i}}$
+    使得$$F = E + \sum\limits_{k = 1}^n \sum\limits_{l = 1}^{r_k} \dfrac{P_{kl}}{(x - a_k)^l}$$
+\end{thm}
+
+\begin{thm}
+    设$F \in \bbR(x)$,其首一不可约形式为$\dfrac{A}{B}$,$B$分解为$\bbR[x]$中不可约因式的积
+    $$B = \prod\limits_{k = 1}^n (x - a_k)^{r_k} \prod\limits_{l = 1}^m (x^2 + p_l x + q_l)^{t_l}$$
+    其中$a_1, a_2, \cdots, a_n$为$B$的两两不同的根,重数分别为$r_1, r_2, \cdots, r_n$;
+    $x^2 + p_1 x + q_1, \cdots, x^2 + p_m x + q_m$为两两不同,无实根的二次多项式,$t_1, t_2, \cdots, t_m$为正整数.
+    则存在唯一$E \in \bbR[x]$与实数族$(\lambda_{ku})_{\substack{1 \leqslant k \leqslant n \\ 1 \leqslant u \leqslant r_k}}$,
+    实数对族$(\alpha_{lv}, \beta_{lv})_{\substack{1 \leqslant l \leqslant m \\ 1 \leqslant v \leqslant t_l}}$
+    使得$$F = E + \sum\limits_{k = 1}^n \sum\limits_{u = 1}^{r_k} \dfrac{\lambda_{ku}}{(x - a_k)^u} +
+    \sum\limits_{l = 1}^m \sum\limits_{v = 1}^{t_l} \dfrac{\alpha_{lv} x + \beta_{lv}}{(x^2 + p_l x + q_l)^v}$$
+\end{thm}
+
+\subsection*{部分分式分解的求法}
+
+待整理.
+
+\section{有理分式的原函数}
+
+有理函数在$\bbR$中不包含极点的区间上连续,因此在这些区间上有原函数.
+为了求其原函数,我们可以将其分解为部分分式并求出每个部分分式的原函数.
+
+\begin{prop}
+    设$a \in \bbR, n \in \bbZ \setminus \{ -1 \}$,则在$\bbR$中不包含$a$的区间上,
+    函数$(x - a)^n$的一个原函数为$\dfrac{1}{n + 1} (x - a)^{n + 1}$.
+\end{prop}
+
+\begin{prop}
+    设$a \in \bbR$,则在$\bbR$中不包含$a$的区间上,函数$\dfrac{1}{x - a}$的一个原函数为$\ln \lvert x - a \rvert$.
+\end{prop}
+
+\begin{prop}
+    设$a = \alpha + i \beta \in \bbC$,其中$\alpha \in \bbR, \beta \in \bbR^*$,则在$\bbR$上,
+    函数$\dfrac{1}{x - a} = \dfrac{1}{x - \alpha - i \beta}$的一个原函数为
+    $\dfrac{1}{2} \ln \left( (x - \alpha)^2 + \beta^2 \right) + i \arctan \dfrac{x - \alpha}{\beta}$.
+\end{prop}
+
+\begin{prop}
+    设$b, c \in \bbR$满足$b^2 - 4c < 0$,则函数$\dfrac{2x + b}{x^2 + bx + c}$的一个原函数为$\ln (x^2 + bx +c)$.
+\end{prop}
+
+\begin{prop}
+    设$b, c \in \bbR$满足$b^2 - 4c < 0$,则函数$\dfrac{1}{x^2 + bx + c}$的一个原函数为
+    $\dfrac{1}{\omega} \arctan \dfrac{x + \dfrac{b}{2}}{\omega}$,其中$\omega = \sqrt{c - \dfrac{b^2}{4}}$.
+\end{prop}
 
