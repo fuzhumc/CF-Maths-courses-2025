@@ -1,0 +1,360 @@
+\chapter{有限维}
+
+在本章中,$\bbK$表示$\bbR$或$\bbC$,$n$为自然数,$E$为$\bbK$-向量空间.
+
+\section{向量空间的维数}
+
+\begin{deff}
+    称$E$是\textbf{有限维的(dimension finie)},若$E$有有限的生成族.
+    否则,称$E$是\textbf{无限维的(dimension infinie)}.
+\end{deff}
+
+\begin{rqq}
+    $E$的自由族也是有限的,且元素个数不多于生成族.
+\end{rqq}
+
+\begin{prop}
+    设$\bfg$为$E$的有限生成族,$\bfl$为$\bfg$的自由子族,则$\bfl$可以通过$\bfg$中的元素扩充成$E$的基.
+\end{prop}
+
+\begin{thm}
+    设$E$是有限维的,则可以从$E$的任意有限生成族中提取出$E$的基.
+\end{thm}
+
+\begin{cor}
+    有限维的$\bbK$-向量空间有有限基.
+\end{cor}
+
+\begin{thm}
+    设$E$是有限维的,则$E$的自由族可以扩充为$E$的基.
+\end{thm}
+
+\begin{thm}
+    设$E$是有限维的,则$E$的基元素个数相同.
+\end{thm}
+
+\begin{deff}
+    设$E$是有限维的$\bbK$-向量空间,称$E$的基的元素个数为\textbf{$\bsE$在$\boldsymbol{\bbK}$
+    上的维数(dimension de $\bsE$ sur $\boldsymbol{\bbK}$)},
+    或\textbf{维数(dimension)},记为$\dim_{\bbK} E$或$\dim E$.
+\end{deff}
+
+\begin{prop}
+    设$E$为$n$维向量空间,则
+
+    \begin{itemize}
+        \item 生成族至少有$n$个元素.
+        \item 自由族至多有$n$个元素.
+    \end{itemize}
+\end{prop}
+
+\begin{prop}
+    设$E$为$\bbK$-向量空间,则下列命题等价.
+
+    \begin{enumerate}
+        \item $E$是无限维的.
+        \item 存在序列$(x_n)_{n \in \bbN}$为$E$中自由族.
+        \item 对任意$n \in \bbN^*$,存在$E$中自由族,恰有$n$个元素.
+    \end{enumerate}
+\end{prop}
+
+\begin{thm}
+    设$E$为$n$维向量空间,$\bfe$为$E$中一族元素,则下列命题等价.
+
+    \begin{enumerate}
+        \item $\bfe$为$E$的基.
+        \item $\bfe$为$E$的自由族,且恰有$n$个元素.
+        \item $\bfe$为$E$的生成族,且恰有$n$个元素.
+    \end{enumerate}
+\end{thm}
+
+\begin{thm}
+    设$E$为有限维向量空间,$F$为$E$的向量子空间,则$\dim F \leqslant \dim E$.
+    且$F = E$当且仅当$\dim F = \dim E$.
+\end{thm}
+
+\begin{deff}
+    设$\bfx$为$E$的有限族,称$\dim \vect \bfx$为$\bfx$的\textbf{秩(rang)},记为$\rang \bfx$.
+\end{deff}
+
+\begin{prop}
+    设$\bfx = (x_1, x_2, \cdots, x_n)$为$E$中一族元素,则$\rang \bfx \leqslant n$.
+\end{prop}
+
+\begin{prop}
+    若$E$是有限维的,则$\rang \bfx \leqslant \dim E$.
+\end{prop}
+
+\section{维数之间的关系}
+
+\begin{prop}
+    设$E, F$为有限维向量空间,则$E \times F$是有限维的,且$\dim E \times F = \dim E + \dim F$.
+\end{prop}
+
+\begin{prop}
+    设$E_1, E_2, \cdots, E_p$为有限维向量空间,则$E_1 \times E_2 \times \cdots \times E_p$是有限维的,
+    且$\dim E_1 \times E_2 \times \cdots \times E_p = \dim E_1 + \dim E_2 + \cdots + \dim E_p$.
+\end{prop}
+
+\begin{cor}
+    设$E$为有限维向量空间,$p \in \bbN^*$,则$\dim E^p = p \dim E$.
+\end{cor}
+
+\begin{prop}
+    设$E$为$n$维向量空间.
+
+    \begin{enumerate}
+        \item 设$(e_1, \cdots, e_p, e_{p + 1}, \cdots, e_n)$为$E$的基,
+            则$E_1 = \vect(e_1, \cdots, e_p), E_2 = \vect(e_{p + 1}, \cdots, e_n)$为$E$的互补向量子空间,
+            且$(e_1, \cdots, e_p)$为$E_1$的基,$(e_{p + 1}, \cdots, e_n)$为$E_2$的基.
+        \item 设$F, G$为$E$的互补向量子空间,$(f_1, \cdots, f_p)$为$F$的基,$(g_1, \cdots, g_q)$为$G$的基,
+            则$(f_1, \cdots, f_p, g_1, \cdots, g_q)$为$E$的基.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    有限维向量空间的向量子空间总有补向量子空间.
+\end{prop}
+
+\begin{deff}
+    设$E$为有限维向量空间,$\bfe$为$E$的基,$F$为$E$的向量子空间.
+    称$\bfe$为\textbf{$\bsE$的适应于$\bsF$的基(base de $\bsE$ adaptée à $\bsF$)},
+    若存在$\bfe$的子族为$F$的基.
+\end{deff}
+
+\begin{prop}
+    设$E$为有限维向量空间,$F, G$为$E$的互补向量子空间,则$\dim E = \dim F + \dim G$.
+\end{prop}
+
+\begin{rqq}
+    若$E = \oplus F + G$,且$F, G$是有限维的,则$E$是有限维的,且$\dim E = \dim F + \dim G$.
+\end{rqq}
+
+\begin{prop}
+    设$E$为有限维$\bbK$-向量空间,$F, G$为$E$的向量子空间,则$\dim (F + G) + \dim (F \cap G) = \dim F + \dim G$.
+\end{prop}
+
+\begin{proof}
+    设$(e_1, e_2, \cdots, e_p)$为$F \cap G$的基.
+
+    \begin{itemize}
+        \item 其为$F$的自由族,将其扩充为$F$的基$(e_1, e_2, \cdots, e_p, u_1, u_2, \cdots, u_r)$.
+        \item 其为$G$的自由族,将其扩充为$G$的基$(e_1, e_2, \cdots, e_p, v_1, v_2, \cdots, v_s)$.
+    \end{itemize}
+
+    下证$(e_1, e_2, \cdots, e_p, u_1, u_2, \cdots, u_r, v_1, v_2, \cdots, v_s)$为$F + G$的基.
+
+    一方面,设$x = y + z \in F + G$,其中$y \in F, z \in G$.由$y$为$(e_1, e_2, \cdots, e_p, u_1, u_2, \cdots, u_r)$的线性组合,
+    $z$为$(e_1, e_2, \cdots, e_p, v_1, v_2, \cdots, v_s)$的线性组合,\\
+    知$x$为$(e_1, e_2, \cdots, e_p, u_1, u_2, \cdots, u_r, v_1, v_2, \cdots, v_s)$的线性组合.
+    故该族为$F + G$的生成族.
+
+    另一方面,设$\lambda_1, \lambda_2, \cdots, \lambda_p, \mu_1, \mu_2, \cdots, \mu_r, \nu_1, \nu_2, \cdots, \nu_s \in \bbK$使得
+    $$\sum\limits_{k = 1}^p \lambda_k e_k + \sum\limits_{k = 1}^r \mu_k u_k + \sum\limits_{k = 1}^s \nu_k v_k = 0$$即
+    $$\sum_{k = 1}^p \lambda_k e_k + \underbrace{\sum_{k = 1}^r \mu_k u_k}_{\text{属于} F} = 
+    -\underbrace{\sum_{k = 1}^s \nu_k v_k}_{\text{属于} G}$$
+    因此,上式两边均在$F \cap G$中.那么存在$\alpha_1, \alpha_2, \cdots, \alpha_p \in \bbK$使得
+    $$\sum\limits_{k = 1}^s \nu_k v_k = \sum\limits_{k = 1}^p \alpha_k e_k$$
+    由$(e_1, e_2, \cdots, e_p, v_1, v_2, \cdots, v_s)$为自由族,知$\nu_1 = \nu_2 = \cdots = \nu_s = 0$.\\
+    因此$(e_1, e_2, \cdots, e_p, u_1, u_2, \cdots, u_r, v_1, v_2, \cdots, v_s)$为自由族.
+
+    故$(e_1, e_2, \cdots, e_p, u_1, u_2, \cdots, u_r, v_1, v_2, \cdots, v_s)$为$F + G$的基.
+    因此$\dim (F + G) = p + r + s$.
+    而$\dim F \cap G = p, \dim F = p + r, \dim G = p + s$,
+    故$\dim (F + G) + \dim (F \cap G) = \dim F + \dim G$.
+\end{proof}
+
+\begin{cor}
+    设$E$为有限维向量空间,$E_1, E_2$为$E$的向量子空间,则
+
+    \begin{enumerate}
+        \item $\dim (E_1 + E_2) \leqslant \dim E_1 + \dim E_2$.
+        \item $\dim (E_1 + E_2) = \dim E_1 + \dim E_2$当且仅当$E_1$与$E_2$成直和.
+    \end{enumerate}
+\end{cor}
+
+\begin{prop}
+    设$E$为有限维向量空间,$F, G$为$E$的向量子空间,则下列命题等价.
+
+    \begin{enumerate}
+        \item $E = F \oplus G$.
+        \item $F \cap G = \{0\}$且$\dim E = \dim F + \dim G$.
+        \item $E = F + G$且$\dim E = \dim F + \dim G$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    设$E$为有限维向量空间,满足$\dim E = p > 1$.
+
+    \begin{enumerate}
+        \item 设$\bfe = (e_1, e_2, \cdots, e_p)$为$E$的基,$0 = n_0 < n_1 < n_2 < \cdots < n_p = n$,
+            对$1 \leqslant i \leqslant p$,记$E_i = \vect \{ e_{n_{i - 1} + 1}, \cdots, e_{n_i} \}$,
+            则向量子空间$E_1, E_2, \cdots, E_p$满足$\bigoplus\limits_{i = 1}^p E_i = E$.
+        \item 设向量子空间$E_1, E_2, \cdots, E_p$满足$\bigoplus\limits_{i = 1}^p E_i = E$.
+            对$1 \leqslant i \leqslant p$,$\bfe^i = (e_1^i, e_2^i, \cdots, e_{d_i}^i)$为$E_i$的基,其中$d_i = \dim E_i$.
+            则$$\bfe = (e_1^1, \cdots, e_{d_1}^1, e_1^2, \cdots, e_{d_2}^2, \cdots, e_1^p, \cdots, e_{d_p}^p)$$
+            为$E$的基
+    \end{enumerate}
+\end{prop}
+
+\begin{rqq}
+    特别地,$\dim \bigoplus\limits_{i = 1}^p E_i = \sum\limits_{i = 1}^p \dim E_i$.
+\end{rqq}
+
+\begin{prop}
+    设$E$为向量空间,$E_1, E_2, \cdots, E_p$为$E$的有限维向量子空间,则其和是有限维的,且
+    $$\dim (E_1 + E_2 + \cdots + E_p) \leqslant \sum\limits_{i = 1}^p \dim E_i$$
+    取等当且仅当$E_1, E_2, \cdots, E_p$成直和.
+\end{prop}
+
+\section{线性映射与有限维}
+
+\begin{prop}
+    设$E, F$为向量空间,若$E$是有限维的,则$F$与$E$同构当且仅当$F$是有限维的且$\dim E = \dim F$.
+\end{prop}
+
+\begin{cor}
+    $n$维向量空间同构于$\bbK^n$.
+\end{cor}
+
+\begin{deff}
+    设$E, F$为向量空间,$u \in \calL(E, F)$.称$u$是\textbf{有限秩的(rang fini)},若$\im u$是有限维的.
+\end{deff}
+
+\begin{deff}
+    设$E, F$为向量空间,$u \in \calL(E, F)$.称$\im u$的维数为$u$的\textbf{秩(rang)},记为$\rang u$.
+\end{deff}
+
+\begin{rqq}
+    设$E, F$为向量空间,$u \in \calL(E, F)$.
+
+    \begin{enumerate}
+        \item 若$E$是有限维的,则$u$是有限秩的,且$\rang u \leqslant \dim E$,取等当且仅当$u$为单射.
+        \item 若$F$是有限维的,则$u$是有限秩的,且$\rang u \leqslant \dim F$,取等当且仅当$u$为满射.
+    \end{enumerate}
+\end{rqq}
+
+\begin{prop}
+    设$E, F, G$为向量空间,$u \in \calL(E, F), v \in \calL(F, G)$.
+
+    \begin{enumerate}
+        \item 若$u$为同构,$v$是有限秩的,则$v \circ u$是有限秩的,且$\rang (v \circ u) = \rang v$.
+        \item 若$v$为同构,$u$是有限秩的,则$v \circ u$是有限秩的,且$\rang (v \circ u) = \rang u$.
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+    我们有$\im v \circ u = \{ v(u(x)) \mid x \in E \} = \{ v(y) \mid y \in \im u \} = v(\im u)$.
+
+    \begin{itemize}
+        \item 若$u$为双射,则$\im u = F$且$\im v \circ u = \im v$,因此其秩相等.
+        \item 若$v$为双射,则$v$诱导出从$\im u$到$v(\im u)$的同构.这两个向量空间具有相同的维数,故结论成立.
+    \end{itemize}
+\end{proof}
+
+\begin{prop}
+    设$E, F$为向量空间,$u \in \calL(E, F)$.若$E_0$为$\ker u$的补向量子空间,则$u$诱导出从$E_0$到$\im u$的同构.
+\end{prop}
+
+\begin{proof}
+    考虑映射$v: \begin{array}[t]{ccc} E_0 & \to & \im u \\ x & \mapsto & u(x) \end{array}$.
+    显然$v$为线性映射,我们证明$v$为双射.
+
+    \begin{itemize}
+        \item $\ker v = \{ x \in E_0 \mid u(x) = 0 \} = E_0 \cap \ker u$.
+            由$E = E_0 \oplus \ker u$知$E_0 \cap \ker u = \{ 0 \}$,因此$v$为单射.
+        \item 设$y \in \im u$,则存在$x \in E$使得$y = u(x)$.
+            由于$E = E_0 \oplus \ker u$,存在$x_1 \in E_0, x_2 \in \ker u$使得$x = x_1 + x_2$.
+            那么$y = u(x) = u(x_1) + u(x_2) = u(x_1) = v(x_1)$,因此$v$为满射.
+    \end{itemize}
+
+    故$v$为从$E_0$到$\im u$的同构.
+\end{proof}
+
+\begin{thm}
+    设$E$为有限维向量空间,$F$为向量空间,$u \in \calL(E, F)$.则$u$是有限秩的,且$$\dim E = \rang u + \dim \ker u$$
+\end{thm}
+
+\begin{proof} $\ $
+    \begin{itemize}
+        \item 由$E$是有限维的知$u$是有限秩的.
+        \item 设$E_0$为$\ker u$的补向量子空间,由前面的性质知$E_0$与$\im u$同构.
+        因此$E_0$是有限维的,且$$\dim E = \dim E_0 + \dim \ker u = \dim \im u + \dim \ker u = \rang u + \dim \ker u$$
+    \end{itemize}
+\end{proof}
+
+\begin{thm}
+    设$E, F$为有限维向量空间,\textit{维数相同},$u \in \calL(E, F)$,则下列命题等价.
+
+    \begin{enumerate}
+        \item $u$为单射(或$\ker u = \{ 0 \}$).
+        \item $u$为满射(或$\im u = F$).
+        \item $u$为双射(或$u$为同构).
+    \end{enumerate}
+\end{thm}
+
+\begin{cor}
+    设$u$为\textit{有限维}向量空间的\textit{自同态},那么$u$为单射,满射,双射(或者说同构)三者等价.
+\end{cor}
+
+\begin{cor}
+    设$E$为有限维向量空间,$u$为$E$的自同态,则下列命题等价
+    
+    \begin{enumerate}
+        \item $u$可逆(或$u$为$E$的自同构).
+        \item $u$左可逆(即存在$v \in \calL(E, E)$使得$v \circ u = \id_E$).
+        \item $u$右可逆(即存在$v \in \calL(E, E)$使得$u \circ v = \id_E$).
+    \end{enumerate}
+\end{cor}
+
+\begin{thm}
+    设$E, F$为有限维$\bbK$-向量空间,则$\calL(E, F)$为有限维$\bbK$-向量空间,且
+    $$\dim \calL(E, F) = \dim E \times \dim F$$
+\end{thm}
+
+\section{线性型和超平面}
+
+\begin{prop}
+    设$(e_1, e_2, \cdots, e_n)$为$E$的基,$\varphi: E \to \bbK$.
+    则$\varphi$为线性型当且仅当存在$a_1, a_2, \cdots, a_n \in \bbK$使得$\varphi = \sum\limits_{i = 1}^n a_i e_i^*$.
+\end{prop}
+
+\begin{prop}
+    设$E$为向量空间,$H$为其子空间,则$H$为$E$的(向量)超平面当且仅当$\dim H = \dim E - 1$.
+\end{prop}
+
+\begin{cor}
+    子集$H$为$E$的超平面当且仅当存在$a_1, a_2, \cdots, a_n \in \bbK$使得$$x \in H \iff \sum\limits_{i = 1}^n a_i x_i = 0$$
+\end{cor}
+
+\begin{cor}
+    设$a_1, a_2, \cdots, a_n, b_1, b_2, \cdots, b_n \in \bbK^*$,则方程分别为
+    $$\sum\limits_{i = 1}^n a_i x_i = 0, \sum\limits_{i = 1}^n b_i x_i = 0$$
+    的两个超平面相等当且仅当存在$\lambda \in \bbK^*$使得$(b_1, b_2, \cdots, b_n) = \lambda (a_1, a_2, \cdots, a_n)$.
+\end{cor}
+
+\begin{prop}
+    设$H_1, H_2, \cdots, H_m$为$E$的超平面,则$$\dim \bigcap\limits_{i = 1}^m H_i \geqslant \dim E - m$$
+\end{prop}
+
+\begin{proof}
+    设$\varphi_i \in E^*$使得$H_i = \ker \varphi_i$.考虑映射$$u:\begin{array}[t]{ccc}
+    E \to \bbK^m \\ x \mapsto \left( \varphi_1(x), \varphi_2(x), \cdots, \varphi_m(x) \right) \end{array}$$
+    易知$u$是线性的且$\ker u = \bigcap\limits_{i = 1}^m H_i$.
+
+    由$\im u \subseteq \bbK^m$知$\rang u \leqslant m$.
+    因此$$\dim \bigcap\limits_{i = 1}^m H_i = \dim \ker u = \dim E - \rang u \geqslant \dim E - m$$
+\end{proof}
+
+\begin{prop}
+    设$F$为$E$的$m$维向量子空间,则存在超平面$H_1, H_2, \cdots, H_{n - m}$使得$F = \bigcap\limits_{i = 1}^{n - m} H_i$.
+\end{prop}
+
+\begin{proof}
+    设$(e_1, e_2, \cdots, e_m)$为$F$的基,将其扩充为$E$的基$(e_1, e_2, \cdots, e_n)$.
+    于是我们可以构造出坐标线性型族$(e_1^*, e_2^*, \cdots, e_n^*)$.
+
+    对于$x = \sum\limits_{i = 1}^n x_i e_i \in E$,有$x \in F$当且仅当
+    $$\forall i \in \{ m + 1, \cdots, n \}, x_i = 0$$即$$\forall i \in \{ m + 1, \cdots, n \}, e_i^*(x) = 0$$
+    因此$F = \bigcap\limits_{i = m + 1}^n \ker e_i^*$.
+\end{proof}

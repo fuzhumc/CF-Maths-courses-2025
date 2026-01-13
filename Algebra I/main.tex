@@ -34,14 +34,14 @@
 
 \theoremstyle{definition}
 \newtheorem{prop}{Proposition}[section]
-\newtheorem{thm}{Théorème}[section]
-\newtheorem{lem}{Lemme}[section]
+\newtheorem{thm}[prop]{Théorème}
+\newtheorem{lem}[prop]{Lemme}
 \newtheorem{deff}{Définition}[section]
 \newtheorem{exer}{Exercise}[section]
 
 \theoremstyle{remark}
 \newtheorem*{rqq}{Remarque}
-\newtheorem{cor}{Corollaire}[section]
+\newtheorem{cor}[prop]{Corollaire}
 
 \makeatletter
 
@@ -49,15 +49,16 @@
     \expandafter\def\csname bb#1\endcsname{\mathbb{#1}}
     \expandafter\def\csname bs#1\endcsname{\boldsymbol{#1}}
     \expandafter\def\csname cal#1\endcsname{\mathcal{#1}}
+    \expandafter\def\csname scr#1\endcsname{\mathscr{#1}}
     \expandafter\def\csname frak#1\endcsname{\mathfrak{#1}}
     \expandafter\def\csname rm#1\endcsname{\mathrm{#1}}
     \expandafter\def\csname bf#1\endcsname{\mathbf{#1}}
 }
 
-\def\@buildmathletters#1{%
+\def\@buildmathletters#1{
     \ifx#1\relax
     \else
-        \@buildmath{#1}%
+        \@buildmath{#1}
         \expandafter\@buildmathletters
     \fi
 }
@@ -76,6 +77,7 @@
 \DeclareMathOperator{\ppcm}{ppcm}
 \DeclareMathOperator{\coker}{coKer}
 \DeclareMathOperator{\vect}{Vect}
+\DeclareMathOperator{\rang}{rang}
 
 \title{Algebra I}
 \author{\href{https://faculty.ustc.edu.cn/yqliang/index.jsp}{梁永祺}}
@@ -100,5 +102,6 @@
 \input{chapters/Ch7}
 \input{chapters/Ch8}
 \input{chapters/Ch9}
+\input{chapters/Ch10}
 
 \end{document}
