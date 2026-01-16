@@ -1,0 +1,162 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks}
+
+\usepackage{titling}
+\title{Exam2}
+\author{梁永琪}
+\date{2026年1月15日}
+
+\usepackage{enumitem}
+
+\usepackage{fancyhdr}
+
+\usepackage{tikz}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2026年1月15日}
+\chead{Exam2}
+\rhead{梁永琪}
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+习题之中如果某一步不会做(但若能猜到结果),可以直接利用该步结果做之后的步骤,之后步骤如果正确仍可以得分.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\arabic{enumii})}
+  \tightlist
+  \item
+    分别判断以下每一族向量是否是\(\mathbb{R}\)-向量空间\(\mathbb{R}^3\)的基?并对每一族分别解释原因?
+
+    \begin{enumerate}
+    \def\labelenumiii{(\alph{enumiii})}
+    \tightlist
+    \item
+      \(s_1 = (2, 2, 1), s_2 = (2, 2, 11), s_3 = (2, 2, 111), s_4 = (2, 2, 1111)\)
+    \item
+      \(t_1 = (1, -1, 5), t_2 = (9, 10, -4)\)
+    \item
+      \(u_1 = (1, 2, 3), u_2 = (4, 5, 6), u_3 = (5, 4, 3)\)
+    \item
+      \(v_1 = (4, 1, 1), v_2 = (0, 1, 2), v_3 = (1, 1, 3)\)
+    \item
+      \({} w_1 = (0, 1, 2), w_2 = (12, -2, -7), w_3 = (4, 1, 1) {}\)
+    \end{enumerate}
+  \item
+    把向量\({} (1, 1, 1) {}\)写成上一问出现过的\textbf{基}的线性组合.(本题评分不看过程,请直接写出对应的系数.)
+  \end{enumerate}
+\item
+  考虑\(2 \times 2\)矩阵构成的\(\mathbb{R}\)-向量空间(加法:对应位置分别相加,乘法:每个位置乘以同一实数)\[E = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \mid a,b,c,d \in \mathbb{R} \right\}\]定义矩阵\(M = \begin{pmatrix} a & b \\ c & d \end{pmatrix}\)的转置\(M^t = \begin{pmatrix} a & c \\ b & d \end{pmatrix}\).考虑\(E\)的以下两个向量子空间\[F = \{ M \in E \mid M = M^t \}\]\[G = \{ M \in E \mid M  = -M^t \}\]
+
+  \begin{enumerate}
+  \def\labelenumii{(\arabic{enumii})}
+  \tightlist
+  \item
+    求证:\(E = F \oplus G\).
+  \item
+    分别给出\(F\)与\(G\)的一组基.
+  \end{enumerate}
+\item
+  令\(n > 1\)为自然数.求证:多项式\(P_n = x^{n - 1} + x^{n - 2} + \cdots + x^2 + x + 1 \in \mathbb{Q}[x]\)是不可约多项式当且仅当参数\(n\)是素数.
+\item
+  (Poor man's Adèle ring, 我这学期听了 Don Zagier
+  在科大的报告,里头提到这个并不难的概念,于是出成期末题给各位)
+  令\(\mathcal{P}\)为素数的集合.考虑笛卡尔积与直和\[\pi = \prod\limits_{p \in \mathcal{P}} \mathbb{Z} / p \mathbb{Z}\]\[\sigma = \bigoplus\limits_{p \in \mathcal{P}} \mathbb{Z} / p \mathbb{Z} = \{ (t_p \mod p)_p \in \pi \mid t_p \in \mathbb{Z} \text{且除有限个} p \text{之外} t_p \equiv 0 \mod p \} \subseteq \pi\]注意,此处及下文都采用简化记号\((t_p \mod p)_p\)表示\((t_p \mod p)_{p \in \mathcal{P}}\),代表第\(p\)个分量处的值为\(t_p + p \mathbb{Z} \in \mathbb{Z} / p \mathbb{Z}\).
+
+  \begin{enumerate}
+  \def\labelenumii{(\arabic{enumii})}
+  \item
+    求证:\(\sigma \subsetneq \pi\).
+  \item
+    集合\(\pi\)带上按照逐个分量相加和相乘是什么代数结构(无需验证,选择以下\textbf{最}准确的一个答案,\textbf{不许}多选)?单选:幺半群,群,交换群,环,交换幺环,域(除环),交换域,\(\mathbb{Z}\)-域,向量空间.
+  \item
+    若除去有限个\(p\)之外\(t_p \equiv t_p' \mod p\),则定义关系\((t_p \mod p)_p \sim (t_p' \mod p)\),求证:\(\sim\)是\(\pi\)上的等价关系.(仔细写清楚每一步证明,逻辑不清的,推理跳步的严格从重扣分)
+  \item
+    商集合\(\mathcal{A} = \pi / \sim\)自然地成为环吗?为什么?(不要求严格证明,只需用人话解释为什么.)
+  \item
+    承认自然投影\(pr: \pi \to \mathcal{A}\)是代数结构之间的同态,求\(\ker (pr)\).(``求''是指先猜这个核是什么,然后证明(或说服读者)你猜的是对的.)
+  \item
+    求证:子集合\(\sigma\)是\(\pi\)的理想而且具有环同构\(\pi / \sigma \cong \mathcal{A}\).(仔细写证明,推理要写出推理的依据,否则严格从重扣分.)
+  \item
+    \(\mathcal{A}\)是域吗?\(\sigma\)是\(\pi\)的极大理想吗?为什么?(是,则给出证明;否,则说明原因.)
+  \item
+    显然有一个自然的环同态\(\varphi: \mathbb{Z} \to \pi\)把\(t \in \mathbb{Z}\)映成\((t \mod p)_p \in \pi\),它是单同态吗?为什么?
+  \item
+    求证:不存在环同态\(\mathbb{Q} \to \pi\).
+  \item
+    求证:存在唯一的环同态\(\psi: \mathbb{Q} \to \mathbb{A}\)使下图交换,其中\(i: \mathbb{Z} \to \mathbb{Q}\)为自然嵌入.
+    \[
+		\begin{tikzpicture}[>=stealth]
+		  \node (Z) at (0,2) {$\mathbb{Z}$};
+		  \node (pi) at (2.5,2) {$\pi$};
+		  \node (Q) at (0,0) {$\mathbb{Q}$};
+		  \node (A) at (2.5,0) {$\mathcal{A}$};
+		  \node at (3.4,0) {$= \pi / \sim$};
+		  \draw[->] (Z) -- node[above] {$\varphi$} (pi);
+		  \draw[->] (Z) -- node[left] {$i$} (Q);
+		  \draw[->] (pi) -- node[right] {$pr$} (A);
+		  \draw[->] (Q) -- node[below] {$\psi$} (A);
+		\end{tikzpicture}
+    \]
+  \item
+    \(\psi\)是单同态吗?为什么?
+  \item
+    具体构造\(\mathcal{A}\)中的一个元素,使得它不在\(\psi(\mathbb{Q})\)中.从而说明了\(\psi(\mathbb{Q}) \subsetneq \mathcal{A}\).(注记:为了证明\(\psi(\mathbb{Q}) \subsetneq \mathcal{A}\)也可以考虑集合的势,但这里要求的是题干中的构造性证明.)
+  \item
+    在交换群\(\mathcal{A}\)上给一个自然的\(\mathbb{Q}\)-数乘,使得\(\mathcal{A}\)成为向量空间.(只需正确地给出这个数乘,无需验证它满足向量空间的那些公理.)
+  \end{enumerate}
+\item
+  命题作文:回忆并总结一下这学期代数课学过哪些内容.
+\end{enumerate}
+
+\end{document}
