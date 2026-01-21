@@ -74,30 +74,43 @@
 \rfoot{\thepage}
 
 本周我们开始学习积分,在接触严格的理论证明前,我们先建立起对于积分的感性认识.
+
 (非常不严格的)\textbf{定义}
 对于函数\(f:[a,b] \to \mathbb{R}\),如果\({} f(x)\geqslant0 {}\)我们称\(f\)的图像与\(x\)轴所围成的面积为\(f\)从\(a\)到\(b\)的积分,记为\(\int_a^b f(x)\mathrm{d}x\).如果\(f\)是变号的,则记\(\int_a^b f(x)\mathrm{d}x=\int_a^b f^+(x)\mathrm{d}x-\int_a^b f^-(x)\mathrm{d}x\).
-1. 依据上面的定义,计算下面的积分: 1. \(\int_{-2}^2 2x+3\mathrm{d}x\). 2.
-\(\int_{-\frac{\sqrt{2}}{2}}^1 \sqrt{1-x^2}\mathrm{d}x\). 3.
-\(\int_0^{\pi} \cos x \mathrm{d}x\). 2.
-对于不规则的区域我们显然不能用上面的方法计算``积分''.事实上,我们从未严格定义过``面积''这一概念.但目前不妨仍秉持着对``面积''朴素的认知,来计算一下\(\int_0^1 x^2\mathrm{d}x\).
-先把\([0,1]\)区间平均分成\(n\)等份,记分割点为\(0=x_0<x_1<x_2<\cdots<x_{n-1}<x_n=1\).
-1.
-对于区间\([x_j,x_{j+1}]\),作一个矩形,宽为区间长度\(\frac{1}{n}\),高为函数在\(x_j\)处的取值,即\(x_j^2\).试计算这\(n\)个矩形的面积之和(记为\(L_n\)).
-2.
-在上一问中稍作改变,把每一个矩形的高度改为函数在\(x_{j+1}\)处的取值,即\(x_{j+1}^2\).试再计算这\(n\)个矩形的面积之和(记为\(R_n\)).
-3.
-计算\(\lim\limits_{n \to \infty}L_n\)与\(\lim\limits_{n \to \infty}R_n\),你发现了什么?这是巧合吗?
-
-\begin{verbatim}
-我们把这个极限称为$f(x)=x^2$再$[0,1]$上的积分.
-我们把这个积分定义为$f(x)=x^2$与$x$轴所围成的面积!
-试想一下,这个定义有没有什么问题?
-\end{verbatim}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
+\item
+  依据上面的定义,计算下面的积分:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    \(\int_{-2}^2 2x+3\mathrm{d}x\).
+  \item
+    \(\int_{-\frac{\sqrt{2}}{2}}^1 \sqrt{1-x^2}\mathrm{d}x\).
+  \item
+    \(\int_0^{\pi} \cos x \mathrm{d}x\).
+  \end{enumerate}
+\item
+  对于不规则的区域我们显然不能用上面的方法计算``积分''.事实上,我们从未严格定义过``面积''这一概念.但目前不妨仍秉持着对``面积''朴素的认知,来计算一下\(\int_0^1 x^2\mathrm{d}x\).
+  先把\([0,1]\)区间平均分成\(n\)等份,记分割点为\(0=x_0<x_1<x_2<\cdots<x_{n-1}<x_n=1\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    对于区间\([x_j,x_{j+1}]\),作一个矩形,宽为区间长度\(\frac{1}{n}\),高为函数在\(x_j\)处的取值,即\(x_j^2\).试计算这\(n\)个矩形的面积之和(记为\(L_n\)).
+  \item
+    在上一问中稍作改变,把每一个矩形的高度改为函数在\(x_{j+1}\)处的取值,即\(x_{j+1}^2\).试再计算这\(n\)个矩形的面积之和(记为\(R_n\)).
+  \item
+    计算\(\lim\limits_{n \to \infty}L_n\)与\(\lim\limits_{n \to \infty}R_n\),你发现了什么?这是巧合吗?
+  \end{enumerate}
+
+  我们把这个极限称为\(f(x)=x^2\)再\([0,1]\)上的积分.
+  我们把这个积分定义为\(f(x)=x^2\)与\(x\)轴所围成的面积!
+  试想一下,这个定义有没有什么问题?
 \item
   利用上面的办法,试着计算一下下列函数的积分:
 

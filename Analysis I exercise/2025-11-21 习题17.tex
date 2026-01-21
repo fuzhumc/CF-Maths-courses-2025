@@ -75,30 +75,61 @@
 
 \textbf{定义}
 称\(f \sim g(x \to a)\),若存在函数\(h:X\to\mathbb{R}\)以及\(a\)的一个邻域\(U\),使得\(f(x)=g(x)h(x),x\in X \cap U\)且\(\lim\limits_{x\to a}h(x)=1\).
-1. 证明:\(e^f \sim e^g\)当且仅当\(\lim\limits_{x\to a}(f(x)-g(x))=0\).
-2. 设\(f_1 \sim g_1,f_2 \sim g_2(x\to a)\).证明: 1.
-若\(g_2=o(g_1)\),则\(f_1+f_2 \sim g_1(x\to a)\). 2.
-若存在\(\alpha \neq -1\)满足\(g_2 \sim \alpha g_1\),则\(f_1+f_2 \sim (1+\alpha)g_1\).
-3. 若\(g_2 \sim -g_1\),则\(f_1+f_2=o(g_1)\). 4.
-\(\cosh x \sim \frac{e^x}{2},\cosh^{-1} x \sim \ln x\). 3.
-设函数\[f(x)=\begin{cases} 1+x+\frac{x^2}{3}+x^3\sim\frac{1}{2}, & x\neq0 \\ 1, & x=0 \end{cases}\]证明:\(f\)在\(x=0\)处有二阶限定展开,但\(f\)在\(x=0\)处二阶不可导.
-4.
-设函数\(f\in\mathcal{C}^{\infty}\)且对任意\(n\),\(f(x)=o(x^n)\).问:\(f\)在\(0\)附近是否恒为\(0\)?
-5.
-设\(f\)满足\(f(x)=o(x^n),\forall n\),\(f\)一定是\(\mathcal{C}^{\infty}\)吗?
-6. 我们称\(f,g\)在\(x=a\)处\(n\)阶相等,若\(f-g=o((x-a)^n)\). 1.
-证明:若\(P,Q\)是关于\((x-a)\)的次数不大于\(n\)的多项式,且\(P,Q\)在\(a\)处\(n\)阶相等,则\(P=Q\).
-2.
-若\(f\)在\(a\)处\(n\)次可导,且\(P\)是次数不大于\(n\)的关于\((x-a)\)的多项式,且与\(f\)在\(a\)处\(n\)阶相等,则\[P(x)=f(a)+f’(a)(x-a)+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n\]
-7.
-设\(f\in\mathcal{C}^2([a,b],\mathbb{R})\)且\(f’(a)=f’(b)=0\).证明:存在\(\xi\in(a,b)\)使得\[\left\lvert f’’(\xi) \right\rvert \geqslant \frac{4}{(b-a)^2} \left\lvert f(b)-f(a) \right\rvert\]
-8.
-设\(f\in\mathcal{C}^2([0,2],\mathbb{R})\)且\(\left\lvert f(x) \right\rvert \leqslant 1,\left\lvert f’’(x) \right\rvert \leqslant 1\).证明\(\left\lvert f’(x) \right\rvert \leqslant 2\).
-9. 1.
-证明:若\(f’(x_0)\)存在,则\[f’’(x_0)=\lim\limits_{h\to0}\frac{f(x_0+h)+f(x_0-h)-2f(x_0)}{h^2}\]
-2.
-设函数\[f(x)=\begin{cases} x^2, & x\geqslant 0 \\ -x^2, & x\leqslant 0 \end{cases}\]证明:\(f’’(x_0)=\lim\limits_{h\to0}\dfrac{f(x_0+h)+f(x_0-h)-2f(x_0)}{h^2}\)存在但\(f’’(0)\)不存在.
-10. 设\(f\in\mathcal{C}^2\)有上界,证明:\(f’\)是常值函数. 11.
-设\(f\in\mathcal{C}^2\)且\(f,f’’\)有上界,证明:\(f’\)有界且满足\(\max \left\lvert f’(x) \right\rvert \leqslant \max \left\lvert f(x) \right\rvert \max \left\lvert f’’(x) \right\rvert\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  证明:\(e^f \sim e^g\)当且仅当\(\lim\limits_{x\to a}(f(x)-g(x))=0\).
+\item
+  设\(f_1 \sim g_1,f_2 \sim g_2(x\to a)\).证明:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    若\(g_2=o(g_1)\),则\(f_1+f_2 \sim g_1(x\to a)\).
+  \item
+    若存在\(\alpha \neq -1\)满足\(g_2 \sim \alpha g_1\),则\(f_1+f_2 \sim (1+\alpha)g_1\).
+  \item
+    若\(g_2 \sim -g_1\),则\(f_1+f_2=o(g_1)\).
+  \item
+    \(\cosh x \sim \frac{e^x}{2},\cosh^{-1} x \sim \ln x\).
+  \end{enumerate}
+\item
+  设函数\[f(x)=\begin{cases} 1+x+\frac{x^2}{3}+x^3\sim\frac{1}{2}, & x\neq0 \\ 1, & x=0 \end{cases}\]证明:\(f\)在\(x=0\)处有二阶限定展开,但\(f\)在\(x=0\)处二阶不可导.
+\item
+  设函数\(f\in\mathcal{C}^{\infty}\)且对任意\(n\),\(f(x)=o(x^n)\).问:\(f\)在\(0\)附近是否恒为\(0\)?
+\item
+  设\(f\)满足\(f(x)=o(x^n),\forall n\),\(f\)一定是\(\mathcal{C}^{\infty}\)吗?
+\item
+  我们称\(f,g\)在\(x=a\)处\(n\)阶相等,若\(f-g=o((x-a)^n)\).
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:若\(P,Q\)是关于\((x-a)\)的次数不大于\(n\)的多项式,且\(P,Q\)在\(a\)处\(n\)阶相等,则\(P=Q\).
+  \item
+    若\(f\)在\(a\)处\(n\)次可导,且\(P\)是次数不大于\(n\)的关于\((x-a)\)的多项式,且与\(f\)在\(a\)处\(n\)阶相等,则\[P(x)=f(a)+f’(a)(x-a)+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n\]
+  \end{enumerate}
+\item
+  设\(f\in\mathcal{C}^2([a,b],\mathbb{R})\)且\(f’(a)=f’(b)=0\).证明:存在\(\xi\in(a,b)\)使得\[\left\lvert f’’(\xi) \right\rvert \geqslant \frac{4}{(b-a)^2} \left\lvert f(b)-f(a) \right\rvert\]
+\item
+  设\(f\in\mathcal{C}^2([0,2],\mathbb{R})\)且\(\left\lvert f(x) \right\rvert \leqslant 1,\left\lvert f’’(x) \right\rvert \leqslant 1\).证明\(\left\lvert f’(x) \right\rvert \leqslant 2\).
+\item
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    证明:若\(f’(x_0)\)存在,则\[f’’(x_0)=\lim\limits_{h\to0}\frac{f(x_0+h)+f(x_0-h)-2f(x_0)}{h^2}\]
+  \item
+    设函数\[f(x)=\begin{cases} x^2, & x\geqslant 0 \\ -x^2, & x\leqslant 0 \end{cases}\]证明:\(f’’(x_0)=\lim\limits_{h\to0}\dfrac{f(x_0+h)+f(x_0-h)-2f(x_0)}{h^2}\)存在但\(f’’(0)\)不存在.
+  \end{enumerate}
+\item
+  设\(f\in\mathcal{C}^2\)有上界,证明:\(f’\)是常值函数.
+\item
+  设\(f\in\mathcal{C}^2\)且\(f,f’’\)有上界,证明:\(f’\)有界且满足\(\max \left\lvert f’(x) \right\rvert \leqslant \max \left\lvert f(x) \right\rvert \max \left\lvert f’’(x) \right\rvert\).
+\end{enumerate}
 
 \end{document}
