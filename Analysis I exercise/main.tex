@@ -14,13 +14,16 @@ pdfproducer={XeLaTeX}
 \date{2025秋}
 \titlepic{\includegraphics[width=0.5\textwidth]{../ustc_logo.pdf}}
 
+\renewcommand{\chaptername}{Exercice}
+
 \begin{document}
 \frontmatter
 \maketitle
+\tableofcontents
 
 \mainmatter
 
-\chapter*{习题1}
+\chapter{2025年9月15日}
 第一节习题课放在第一节正课之前是具有启发性的:数学不是学出来的,数学是做出来的;遇到问题先做再说,边做边学，做就是学!
 
 \textbf{定义}
@@ -101,7 +104,7 @@ pdfproducer={XeLaTeX}
   证明:\(\left\lvert A \right\rvert < \left\lvert 2^A \right\rvert\).
 \end{enumerate}
 
-\chapter*{习题2}
+\chapter{2025年9月19日}
 课上我们已经看到了如何通过Cauchy列的方式定义实数.我们下面从另一种角度来看这件事.这里我们假设我们已经有了整数,有理数,加减乘除,有理数的序关系.
 
 \subsection*{第一步}
@@ -228,7 +231,7 @@ pdfproducer={XeLaTeX}
   \end{enumerate}
 \end{enumerate}
 
-\chapter*{习题3}
+\chapter{2025年9月22日}
 目前我们实数有两种构造(Cauchy列和Dedekind分割),无论你用哪一种,最关键的是得到实数集的确界原理:
 
 \textbf{定理1} 非空有上界集合必有上确界.
@@ -270,7 +273,7 @@ pdfproducer={XeLaTeX}
   定理3-定理4-定理3.
 \end{enumerate}
 
-\chapter*{习题4}
+\chapter{2025年9月26日}
 \begin{enumerate}
 \item
   写下数列\((a_n)\)收敛的定义和发散的定义.发散一定意味着\(a_n\)跑到无穷吗?
@@ -320,7 +323,7 @@ pdfproducer={XeLaTeX}
   \end{enumerate}
 \end{enumerate}
 
-\chapter*{习题5}
+\chapter{2025年9月29日}
 \begin{enumerate}
 \item
   证明:若\(\lim\limits_{x \to \infty}a_n=a\),则\(\lim\limits_{n \to \infty}\frac{a_1+\cdots+a_n}{n}=a\).
@@ -391,7 +394,7 @@ pdfproducer={XeLaTeX}
    \]
 \end{enumerate}
 
-\chapter*{习题6}
+\chapter{2025年10月9日}
 \begin{enumerate}
 \item
   利用极限定义证明:
@@ -523,7 +526,7 @@ pdfproducer={XeLaTeX}
   \end{enumerate}
 \end{enumerate}
 
-\chapter*{习题7}
+\chapter{2025年10月13日}
 \begin{enumerate}
 \item
   设\(f:\mathbb{R} \to \mathbb{R}\)满足\textbf{介值性质}:即若\(f(a)<c<f(b)\),则存在\(x\)在\(a,b\)之间,使得\(f(x)=c\).进一步假设对于任意有理数\(r\),集合\(\{ x \mid f(x)=r \}\)是闭集,证明:\(f\)连续.
@@ -634,7 +637,7 @@ pdfproducer={XeLaTeX}
   \end{enumerate}
 \end{enumerate}
 
-\chapter*{习题8}
+\chapter{2025年10月17日}
 \begin{enumerate}
 
 \item
@@ -746,7 +749,7 @@ pdfproducer={XeLaTeX}
   证明:存在\(\varepsilon > 0\)使得当Lipschitz常数\(k < \varepsilon\)时,\(\left( X_1-X_2 \right) \cdot \nu \left( X_2 \right) \geqslant 0\).(思考一下这个问题在说一件什么事情?)
 \end{enumerate}
 
-\chapter*{习题9}
+\chapter{2025年10月20日}
 \begin{enumerate}
 
 \item
@@ -825,7 +828,7 @@ pdfproducer={XeLaTeX}
   设\(-\infty \leqslant a_1 \leqslant a_2 \leqslant \cdots \leqslant a_n \leqslant +\infty\),\(f\)在\([a_1,a_n]\)上是\(C^{n-1}\)的,且\(f\)在\((a_1,a_n)\)上有\(n\)阶导数,且\(f(a_i)=0,i=1,2,\cdots,n\).证明:对任意\(x \in [a_1,a_n]\),存在\(\xi \in (a_1,a_n)\)使得\(f(x)=\frac{(x-a_1)(x-a_2)\cdots(x-a_n)}{n!}f^{(n)}(\xi)\).
 \end{enumerate}
 
-\chapter*{习题10}
+\chapter{2025年10月24日}
 \section*{不等式主题日}
 
 分析学的底层是证明各式各样的不等式,而不等式的核心是把握凸性.
@@ -913,7 +916,7 @@ pdfproducer={XeLaTeX}
   \end{enumerate}
 \end{enumerate}
 
-\chapter*{习题11}
+\chapter{2025年10月27日}
 \section*{不等式主题日-续}
 \begin{enumerate}
 \item
@@ -980,7 +983,7 @@ pdfproducer={XeLaTeX}
   如果你学过一点积分知识,尝试吧今天所有的不等式写成积分形式,思考一下他们在说什么事情.
 \end{enumerate}
 
-\chapter*{习题12}
+\chapter{2025年11月3日}
 本周我们开始学习积分,在接触严格的理论证明前,我们先建立起对于积分的感性认识.
 
 (非常不严格的)\textbf{定义}
@@ -1055,10 +1058,8 @@ pdfproducer={XeLaTeX}
   若\(f:\mathbb{R}\to\mathbb{R}\)连续,利用微分和积分的定义(目前还不太严格)证明:\(\frac{\mathrm{d}}{\mathrm{d}x}\int_0^xf(t)\mathrm{d}t=f(x)\).
 \end{enumerate}
 
-\chapter*{习题13}
+\chapter{2025年11月7日}
 \begin{enumerate}
-
-
 \item
   证明下面两个命题等价:
 
@@ -1126,7 +1127,7 @@ pdfproducer={XeLaTeX}
   第9题和第10题说明了什么?我们对于零测集的定义出了什么问题?
 \end{enumerate}
 
-\chapter*{习题14}
+\chapter{2025年11月10日}
 \begin{enumerate}
 \item
   设函数\(f \in \mathcal{C}(\mathbb{R},\mathbb{R})\).定义函数\(F\):\[F(x)=\int_a^b f(x+t) \cos t \mathrm{d}t\]
@@ -1205,7 +1206,7 @@ pdfproducer={XeLaTeX}
   \end{enumerate}
 \end{enumerate}
 
-\chapter*{习题15}
+\chapter{2025年11月14日}
 先定义\(\int_a^{b^-}f(x)\mathrm{d}x\)型广义积分:设函数\(f\)在\([a,b)\)上任意有界闭区间\([\alpha,\beta]\)上可积,满足\(\lim\limits_{x\to b^{-}}f(x)=\pm\infty\)(此时称\(b\)为\(f\)的\textbf{奇点}).则定义\textbf{广义积分}\(\int_a^bf(x)\mathrm{d}x=\lim\limits_{\beta\to b^-}\int_a^{\beta}f(x)\mathrm{d}x\)(倘若极限存在).
 类似地,我们可以定义\(\int_{a^+}^bf(x)\mathrm{d}x\)型广义积分:\(\int_a^bf(x)\mathrm{d}x=\lim\limits_{\alpha\to a^+}\int_{\alpha}^bf(x)\mathrm{d}x\).
 
@@ -1301,7 +1302,7 @@ pdfproducer={XeLaTeX}
   \end{enumerate}
 \end{enumerate}
 
-\chapter*{习题16}
+\chapter{2025年11月17日}
 \begin{enumerate}
 \item
   定义Gamma函数\(\Gamma(z)=\int_0^{+\infty}t^{z-1}e^t\mathrm{d}t\).
@@ -1350,7 +1351,7 @@ pdfproducer={XeLaTeX}
   \end{enumerate}
 \end{enumerate}
 
-\chapter*{习题17}
+\chapter{2025年11月21日}
 \textbf{定义}
 称\(f \sim g(x \to a)\),若存在函数\(h:X\to\mathbb{R}\)以及\(a\)的一个邻域\(U\),使得\(f(x)=g(x)h(x),x\in X \cap U\)且\(\lim\limits_{x\to a}h(x)=1\).
 
@@ -1402,7 +1403,7 @@ pdfproducer={XeLaTeX}
   设\(f\in\mathcal{C}^2\)且\(f,f''\)有上界,证明:\(f'\)有界且满足\(\max \left\lvert f'(x) \right\rvert \leqslant \max \left\lvert f(x) \right\rvert \max \left\lvert f''(x) \right\rvert\).
 \end{enumerate}
 
-\chapter*{习题18}
+\chapter{2025年11月24日}
 \begin{enumerate}
 \item
   求下列函数的限定展开
@@ -1451,7 +1452,7 @@ pdfproducer={XeLaTeX}
   \end{enumerate}
 \end{enumerate}
 
-\chapter*{习题19}
+\chapter{2025年11月28日}
 \begin{enumerate}
 \item
   利用展开计算下列极限:
@@ -1515,7 +1516,7 @@ pdfproducer={XeLaTeX}
   对于函数\(f\in\mathcal{C}^2(\mathbb{R},\mathbb{R}_+)\),定义\(f_{x_0,\lambda}(x)=\left(\dfrac{\lambda}{\left\lvert x-x_0 \right\rvert}\right)^{\gamma}f\left(x_0+\dfrac{\lambda^2\left(x-x_0\right)}{\left\lvert x-x_0 \right\rvert^2}\right)\).若对任意\(x_0\in\mathbb{R}\),都存在\(\lambda_0\)使得\(f(x)=f_{x_0,\lambda_0}(x)\)对任意\(x\neq x_0\)成立,证明:存在\(x_1\in\mathbb{R}\)使得\(f\)有如下形式:\[f(x)=\dfrac{A}{\left(B+\left\lvert x-x_1\right\rvert^2\right)^{\frac{\gamma}{2}}}\](提示:将\(f(x)\)在\(x_0\)和0处展开.)
 \end{enumerate}
 
-\chapter*{习题20}
+\chapter{2025年12月1日}
 \begin{enumerate}
 \item
   重新做上次最后一题:对于函数\(f\in\mathcal{C}^2(\mathbb{R},\mathbb{R}_+)\),定义\({} f_{x_0,\lambda}(x)=\left(\dfrac{\lambda}{\lvert x-x_0\rvert}\right)^{\gamma}f\left(x_0+\dfrac{\lambda^2(x-x_0)}{\lvert x-x_0\rvert^2}\right) {}\).若对任意\(x_0\in\mathbb{R}\),都存在\(\lambda_0\)使得\(f(x)=f_{x_0,\lambda_0}(x)\)对任意\(x\neq x_0\)成立,依照下列步骤证明:存在\(x_1\in\mathbb{R}\)使得\(f\)有如下形式\[f(x)=\dfrac{A}{(B+\lvert x-x_1\rvert^2)^{\frac{\gamma}{2}}}\]
@@ -1563,7 +1564,7 @@ pdfproducer={XeLaTeX}
   设\(\sum\limits_{n=1}^{\infty}a_n\)是正项级数,令\(b_n=\dfrac{a_n}{(1+a_1)(1+a_2)\cdots(1+a_n)}\),证明级数\(\sum\limits_{n=1}^{\infty}b_n\)收敛.
 \end{enumerate}
 
-\chapter*{习题21}
+\chapter{2025年12月5日}
 \begin{enumerate}
 \item
   设\(\sum\limits_{n=1}^{\infty}a_n\)是收敛的正项级数.
@@ -1609,7 +1610,7 @@ pdfproducer={XeLaTeX}
   \end{enumerate}
 \end{enumerate}
 
-\chapter*{习题22}
+\chapter{2025年12月8日}
 我们归纳总结一些关于级数敛散性的判别法(如果下面某些判别法你还没学过,不要慌,不要慌,试图去理解一下他们在说什么,然后自己尝试证明一下,绝对不要死记硬背).
 
 \begin{enumerate}
@@ -1736,7 +1737,7 @@ pdfproducer={XeLaTeX}
   上节课没做完的题目接着做.
 \end{enumerate}
 
-\chapter*{习题23}
+\chapter{2025年12月12日}
 \begin{enumerate}
 \item
   设\((a_n)\)为正序列,\(\sum a_n^2\)收敛.令\(A=\sum a_n^2,A_n=\sum\limits_{i=1}^na_n,\alpha_n=\dfrac{A_n}{n}\).
@@ -1791,7 +1792,7 @@ pdfproducer={XeLaTeX}
   \end{enumerate}
 \end{enumerate}
 
-\chapter*{习题24}
+\chapter{2025年12月15日}
 \begin{enumerate}
 \item
   研究下列级数敛散性:
@@ -1828,7 +1829,7 @@ pdfproducer={XeLaTeX}
   答疑.
 \end{enumerate}
 
-\chapter*{习题27}
+\chapter{2025年12月29日}
 \begin{enumerate}
 \item
   Assume \(\lim\limits_{i \to \infty} n(i) = + \infty\) and when \(i\)
@@ -1870,7 +1871,7 @@ pdfproducer={XeLaTeX}
   \(\sum\limits_{n = 1}^{\infty} \dfrac{1}{p_n}\) diverges.
 \end{enumerate}
 
-\chapter*{习题28}
+\chapter{2025年12月30日}
 \begin{enumerate}
 \item
   Let \(f \in \mathcal{C}^1([a, b], \mathbb{R})\) and
@@ -1911,7 +1912,7 @@ pdfproducer={XeLaTeX}
   converges.
 \end{enumerate}
 
-\chapter*{习题30}
+\chapter{2026年01月9日}
 对于函数\(f: \mathbb{R} \to \mathbb{R}\),定义Laplace变换为\(F(x) = \mathcal{L}\{f(t)\} = \int_0^{+\infty} f(t) e^{-tx} \mathrm{d}t\),逆变换记为\(f(t) = \mathcal{L}^{-1}\{F(x)\}\)
 
 \begin{enumerate}
