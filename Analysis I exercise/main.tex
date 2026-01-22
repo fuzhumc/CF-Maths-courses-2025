@@ -1,39 +1,1962 @@
-\PassOptionsToPackage{unicode}{hyperref}
-\PassOptionsToPackage{hyphens}{url}
 \documentclass[a4paper,oneside]{book}
+\usepackage{../mathnotebookfr}
 
-\usepackage{xcolor}
-\usepackage{amsmath,amssymb}
-\usepackage{hyperref}
-
-\usepackage{ctex}
-\usepackage{xeCJK}
-\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
-
-\title{Analysis I exercise}
-\author{\href{https://sites.google.com/site/junganglihome/home}{李俊钢}}
-\date{2025秋}
-
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\usepackage{enumitem}
-\usepackage{etoolbox}
-\AtBeginEnvironment{enumerate}{
-  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+\hypersetup{
+pdftitle={Analysis I Exercise},
+pdfauthor={李俊钢},
+pdfsubject={Analysis},
+pdfcreator={LaTeX},
+pdfproducer={XeLaTeX}
 }
 
-\setlist[enumerate,1]{label=\arabic*.}
-\setlist[enumerate,2]{label=(\arabic*)}
-\setlist[enumerate,3]{label=(\roman*)}
-\hypersetup{colorlinks=true,linkcolor=blue}
-
-\usepackage{fancyhdr}
+\title{Analysis I Exercise}
+\author{\href{https://sites.google.com/site/junganglihome/home}{李俊钢}}
+\date{2025秋}
+\titlepic{\includegraphics[width=0.5\textwidth]{../ustc_logo.pdf}}
 
 \begin{document}
 \frontmatter
 \maketitle
 
-\tableofcontents
+\mainmatter
+
+\chapter*{习题1}
+第一节习题课放在第一节正课之前是具有启发性的:数学不是学出来的,数学是做出来的;遇到问题先做再说,边做边学，做就是学!
+
+\textbf{定义}
+称两个集合\(A\)与\(B\)\textbf{等势},若存在\(A,B\)之间的双射\(f\)此时记\(\left\lvert A \right\rvert =  \left\lvert B \right\rvert\).
+
+\textbf{定义}
+集合\(A\)称为\textbf{有限集},若\(A\)为空集或者存在\(n\)使得\(A\)与\(\{ 1,2,\cdots,n \}\)等势.此时记\(A\)的势\(\left\lvert A \right\rvert = n\).
+
+\textbf{定义} 如果\(A\)不是有限集,则称\(A\)为\textbf{无限集}.
+
+\textbf{定义}
+若\(A\)有限或者与\(\mathbb{N}\)等势,则称\(A\)是\textbf{可数集};若\(A\)是无限集但不是可数集,则称\(A\)为\textbf{不可数集}.
+
+\begin{enumerate}
+\item
+  求\(\left\lvert \{ 2,44,1944,25,\alpha,\Delta \} \right\rvert\).
+\item
+  \(\mathbb{N}\)与\(\mathbb{Z}\)等势吗?怎么证明?
+\item
+  \(\mathbb{N}\)与偶数集等势吗?怎么证明?
+\item
+  考虑集合\(A=\{ \left( x_1,x_2 \right) \in \mathbb{R}^2 \mid x_1,x_2 \in \mathbb{Z} \}\),\(A\)与\(\mathbb{N}\)等势吗?
+\item
+  \(\mathbb{N}\)与\(\mathbb{Q}\)等势吗?
+\item
+  考虑\(\mathbb{R}^n\)中的整点集\(B=\{ \left( x_1,x_2,\cdots,x_n \right) \in \mathbb{R}^n \mid x_1,x_2,\cdots,x_n \in \mathbb{Z} \}\),\(B\)与\(\mathbb{N}\)等势吗?
+\item
+  考虑由整数列构成的集合\(A=\{ \left( x_n \right) \mid x_n \in \mathbb{Z} , n \in \mathbb{N} \}\),\(A\)与\(N\)等势吗?
+\item
+  \(\mathbb{N}\)与\(\mathbb{R}\)等势吗?
+\item
+  \(\mathbb{R}\)与\((0,1)\)等势吗?
+\item
+  对于两个不可数集\(A,B\),各具一个例子使得\(A \setminus B\)是:
+
+  \begin{enumerate}
+  \item
+    有限集.
+  \item
+    无限可数集.
+  \item
+    不可数集.
+  \end{enumerate}
+\end{enumerate}
+
+\textbf{定义}
+若存在从\(A\)到\(B\)的单射,则记\({} \left\lvert A \right\rvert \leqslant \left\lvert B \right\rvert {}\),进一步地,若不存在\(B\)到\(A\)的单射,则记\(\left\lvert A \right\rvert > \left\lvert B \right\rvert\).
+
+\begin{enumerate}
+
+\setcounter{enumi}{10}
+
+\item
+  证明:若\(A \subseteq B\),则\(\left\lvert A \right\rvert \leqslant \left\lvert B \right\rvert\).
+\item
+  证明:可数集的子集也是可数集.
+\item
+  证明:若\(\left\lvert A \right\rvert \leqslant \left\lvert B \right\rvert\)且\(\left\lvert B \right\rvert \leqslant \left\lvert A \right\rvert\),则\(\left\lvert A \right\rvert = \left\lvert B \right\rvert\).
+\item
+  证明:\((0,1)\)与\([0,1]\)等势.
+\end{enumerate}
+
+\textbf{定义} 集合\(A\)的\textbf{幂集}为\(A\)的子集的全体,记为\(2^A\).
+
+\begin{enumerate}
+
+\setcounter{enumi}{14}
+
+\item
+  令\(A={x,y,z}\),写出\(2^A\).计算它们的势,从而理解记号\(2^A\)的意义.
+\item
+  设\(\left\lvert A \right\rvert = n\),那么\(\left\lvert 2^A \right\rvert\)呢?
+\item
+  若\(A\)为无限可数集,那么\(\left\lvert 2^A \right\rvert\)呢?
+\item
+  若\(A\)为不可数集,可以对\(2^A\)的势说什么?
+\item
+  证明:\(\left\lvert A \right\rvert < \left\lvert 2^A \right\rvert\).
+\end{enumerate}
+
+\chapter*{习题2}
+课上我们已经看到了如何通过Cauchy列的方式定义实数.我们下面从另一种角度来看这件事.这里我们假设我们已经有了整数,有理数,加减乘除,有理数的序关系.
+
+\subsection*{第一步}
+
+\begin{itemize}
+
+\item
+  \textbf{定义}
+  我们称一个集合\(U\subseteq\mathbb{Q}\)为一个\textbf{分割},如果他满足以下条件:
+
+  \begin{enumerate}
+  \item
+    \(U\)不为空集且\(U \neq \mathbb{Q}\).
+  \item
+    若\(p \in U\)且\(q<p\),则有\(q \in U\).
+  \item
+    若\(p \in U\),则存在\(r \in U\)使得\(p<r\).
+  \end{enumerate}
+\end{itemize}
+
+进一步我们定义全体分割构成的集合为\(\mathbb{R}\).
+
+\begin{enumerate}
+\item
+  证明:若\(p \in U,q \notin U\),则\(p<q\);若\(p \notin U,p<q\),则\(q \notin U\).
+\end{enumerate}
+
+\subsection*{第二步}
+
+\begin{itemize}
+
+\item
+  \textbf{定义} 我们称两个分割\(U<V\),若\(U\)是\(V\)的子集.
+\end{itemize}
+
+\begin{enumerate}
+
+\setcounter{enumi}{1}
+
+\item
+  证明:\(\mathbb{R}\)是一个有序集.
+\item
+  证明:基于这样一个序关系,\(\mathbb{R}\)有最小上界性质.
+\end{enumerate}
+
+\subsection*{第三步}
+
+\begin{itemize}
+
+\item
+  \textbf{定义}
+  对任意\(U,V \in \mathbb{R}\),我们令\(U+V=\{ p+q \mid p \in U,q \in V \},0=\{ x \in \mathbb{Q} \mid x<0 \}\).
+\end{itemize}
+
+\begin{enumerate}
+
+\setcounter{enumi}{3}
+
+\item
+  验证上述定义满足加法公理.
+\item
+  证明:对任意\(U,V,W \in \mathbb{R}\),若\(U<V\),则\(U+W<V+W\).
+\end{enumerate}
+
+\subsection*{第四步}
+
+\begin{itemize}
+
+\item
+  \textbf{定义} \(\mathbb{R}_+=\{ U \in \mathbb{R} \mid U > 0 \}\).
+\item
+  \textbf{定义}
+  对\(U,V \in \mathbb{R}_+,UV=\{ p \mid \exists q \in U,r \in V,q>0,r>0,p \leqslant qr \}\).特别地,我们定义\(1=\{ q\in\mathbb{Q} \mid q<1 \}\).
+\item
+  \textbf{定义}
+  \(U0=0U=0\);若\(U<0,V<0,UV=(-U)(-V)\);若\(U<0,V>0,UV=-((-U)V)\);若\(U>0,V<0,UV=-(U(-V))\).
+\end{itemize}
+
+\begin{enumerate}
+
+\setcounter{enumi}{5}
+
+\item
+  验证上述定义满足乘法和除法公理.
+\item
+  证明:若\(a\neq0\)为有理数,\(b\)为无理数,则\(a+b,ab\)都是无理数.
+\item
+  证明:\(\sqrt6\)为无理数.
+\item
+  证明:\(\mathbb{R}\)中有下界集合\(A\)满足\(\inf A=-\sup(-A)\).
+\item
+  令\(b>1,m,n,p,q \in \mathbb{Z},n,q>0,\frac{m}{n}=\frac{p}{q}\).证明:\((b^m)^\frac{1}{n}=(b^p)^\frac{1}{q}\).
+\end{enumerate}
+
+\begin{itemize}
+
+\item
+  \textbf{定义}
+  若\(x \in \mathbb{R}\),记\(B(x)=\{ b^t \mid t \in \mathbb{Q},t \leqslant x \}\).定义\(b^x=\sup B(x)\).
+\end{itemize}
+
+\begin{enumerate}
+
+\setcounter{enumi}{5}
+
+\item
+  证明:\(b^{x+y}=b^xb^y,x,y \in \mathbb{R}\).
+\item
+  对于\(b>1,y>0\),证明:存在唯一实数\(x\)使得\(b^x=y\).证明可以拆分为以下步骤:
+
+  \begin{enumerate}
+  \item
+    对任意正整数\(n\),有\(b^n-1 \geqslant n(b-1)\).
+  \item
+    若\(t>1\)且\(n>\frac{b-1}{t-1}\),则\(b^\frac{1}{n}<t\).
+  \item
+    若\(w\)使得\(b^w<y\),则当\(n\)足够大时,有\(b^{w+\frac{1}{n}}<y\).
+  \item
+    若\(w\)使得\(b^w>y\),则当\(n\)足够大时,有\(b^{w-\frac{1}{n}}<y\).
+  \item
+    令\(A=\{ w \mid b^w<y \}\),证明:\(x=\sup A\)满足\(b^x=y\).
+  \item
+    证明:上述\(x\)唯一.
+  \end{enumerate}
+\end{enumerate}
+
+\chapter*{习题3}
+目前我们实数有两种构造(Cauchy列和Dedekind分割),无论你用哪一种,最关键的是得到实数集的确界原理:
+
+\textbf{定理1} 非空有上界集合必有上确界.
+
+这个定理有多种等价表述形式:
+
+\textbf{定理2} 单调有界实数列必收敛.
+
+补充一下收敛的定义:称数列\((a_n)\)收敛到\(L\),若对任意\(\varepsilon > 0\),存在\(N \in \mathbb{N}\)(足够大),使得当\(n \geqslant N\)时,\(\left\lvert a_n - L \right\rvert \leqslant \varepsilon\).我们记为\(\lim\limits_{n \to \infty}a_n=L\).
+
+\begin{enumerate}
+\item
+  证明:收敛数列必有界.
+\item
+  证明:设\(\lim\limits_{n \to \infty}s_n=s,\lim\limits_{n \to \infty}t_n=t\),则\(\lim_{n \to \infty}s_nt_n=st\).
+\end{enumerate}
+
+\textbf{定理3} 有界实数列必有收敛子列.
+
+\textbf{定理4} Cauchy列必收敛.
+
+\textbf{定理5(闭区间套)}
+若\([a_n,b_n] \subseteq \mathbb{R},[a_{n+1},b_{n+1}] \subseteq \mathbb{R}\),则\(\bigcap\limits_{n=1}^\infty[a_n,b_n]\)非空.进一步,若\(\lim\limits_{n \to \infty}\left( a_n-b_n \right)=0\),则上面的集合是单点集.
+
+\textbf{定理6(有限覆盖定理)}
+设有一组开区间\(\left( a_\alpha,b_\alpha \right),\alpha \in I\),使得\([a,b]\subseteq\bigcup\limits_{\alpha \in I}\left( a_\alpha,b_\alpha \right)\).则存在\(\alpha_1,\alpha_2,\cdots,\alpha_n \in I,n \in \mathbb{N}\),使得\([a,b] \subseteq \bigcup\limits_{j=1}^n\left( a_\alpha,b_\alpha \right)\).
+
+我们接下来证明它们相互等价.根据定理表述的侧重,可以归类于证明下面三个循环:
+
+\begin{enumerate}
+
+\setcounter{enumi}{2}
+
+\item
+  定理1-定理6-定理3-定理2-定理1.
+\item
+  定理1-定理5-定理2-定理1.
+\item
+  定理3-定理4-定理3.
+\end{enumerate}
+
+\chapter*{习题4}
+\begin{enumerate}
+\item
+  写下数列\((a_n)\)收敛的定义和发散的定义.发散一定意味着\(a_n\)跑到无穷吗?
+\item
+  利用定义证明\(\lim\limits_{n \to \infty}\frac{1}{n^2+n}=\lim\limits_{n \to \infty}\frac{1}{n^2-n}=0\).
+\item
+  分情况讨论\((a^n)\)的敛散性,其中\(a>0\).
+\item
+  证明:若\((a_n)\)收敛,则\((\left\lvert a_n \right\rvert)\)收敛.反过来对吗?
+\item
+  计算极限:
+
+  \begin{enumerate}
+  \item
+    \[\lim\limits_{n \to \infty} \frac{n^2+2n+2}{n^\frac{5}{2}-n+1}\]
+  \item
+    \[\lim\limits_{n \to \infty} \frac{5n^{200}+3n^{100}+2}{4n^{200}-6n^{21}-7}\]
+  \item
+    \[\lim\limits_{n \to \infty} \frac{1}{\sqrt{n^2+n}-n}\]
+  \item
+    \[\lim\limits_{n \to \infty} \sin \frac{1}{n^2}\]
+  \item
+    \[\lim\limits_{n \to \infty} \frac{n^\varepsilon}{\ln n},\varepsilon > 0\]
+  \item
+    \[\lim\limits_{n \to \infty} \frac{e^x}{n!}\]
+  \end{enumerate}
+
+  在计算或者讨论上述极限的时候,反思一下你是否正在使用一些看似自然,但未经证明的结论.如果有,不妨把他们写下来,然后思考一下这些事实对不对.
+\item
+  若\(a_1=\sqrt{3}\),然后归纳地定义\(a_{n+1}=\sqrt{3+a_n}\).证明\((a_n)\)收敛并计算极限.
+\item
+  定义\textbf{上极限}\(\varlimsup\limits_{n \to \infty} a_n =\lim\limits_{n \to \infty} \sup\limits_{j \geqslant n} \{a_j\}\),\textbf{下极限}\(\varliminf\limits_{n \to \infty} a_n= \lim\limits_{n \to \infty} \inf\limits_{j \geqslant n} \{a_n\}\).计算一下\(\sin \frac{n\pi}{2}\)的上下极限.想想看我们为什么要定义上下极限?
+\item
+  设\(a_1=0,a_{2n}=\frac{a_{2n-1}}{2},a_{2n+1}=\frac{1}{2}+a_{2n}\).计算\(a_n\)的上下极限.
+\item
+  \textbf{自然对数}我们考虑数列\(a_n=\left( 1+\frac{1}{n} \right)^n\).
+
+  \begin{enumerate}
+  \item
+    通过二项式展开,证明数列单增.
+  \item
+    证明数列有上界.
+  \item
+    由单调有界定理,得到极限,设为\(e\).
+  \item
+    由上面讨论,你是否能从中发现一个快速计算\(e\)的方法?
+  \end{enumerate}
+\end{enumerate}
+
+\chapter*{习题5}
+\begin{enumerate}
+\item
+  证明:若\(\lim\limits_{x \to \infty}a_n=a\),则\(\lim\limits_{n \to \infty}\frac{a_1+\cdots+a_n}{n}=a\).
+\item
+  证明:若数列\((a_n)\)满足\(\lim\limits_{n \to \infty}(a_{n+1}-a_n)=0\)证明:\(\lim\limits_{n \to \infty}\frac{a_n}{n}=0\).
+\item
+  设\((a_n)\)满足\(\lim\limits_{n \to \infty}a_n=a\).
+
+  \begin{enumerate}
+  \item
+    证明:\(\lim\limits_{n \to \infty}\frac{a_1+2a_2+\cdots+na_n}{n^2}=\frac{a}{2}\).
+  \item
+    利用(1)结果计算下列极限(\(0 < a < 1\)) \[
+     \lim\limits_{n \to \infty} \frac{1}{n^2} \left( a+2^2a^2+\cdots+n^2a^2 \right)
+     \] \[
+     \lim\limits_{n \to \infty} \frac{1}{n^2} \left( 1+\sqrt{2^3}+\cdots+\sqrt[n]{n^{n+1}} \right)
+     \]
+  \end{enumerate}
+\item
+  设序列\((a_n)\)满足\(\lim\limits_{n \to \infty}\left( a_n-a_{n-2} \right)=0\),证明:
+  \[
+  \lim\limits_{n \to \infty} \frac{1}{n} \left( a_n-a_{n-1} \right) = 0
+  \]
+\item
+  设\((a_n),(b_n)\)满足\(\lim\limits_{n \to \infty}a_n=a,\lim\limits_{n \to \infty}b_n=b\).定义序列\((c_n)\)如下:
+  \[
+  c_n=\frac{1}{n} \left( a_1b_n+a_2b_{n-1}+\cdots+a_nb_1 \right)
+  \] 证明:存在常数\(M>0\)使得 \[
+  \left\lvert c_n-ab \right\rvert \leqslant \frac{M}{n} \sum_{j=1}^n \left( \left\lvert a_j-a \right\rvert + \left\lvert b_j-b \right\rvert \right)
+  \] 进一步地,证明:\(\lim\limits_{n \to \infty}c_n=ab\).
+\item
+  假设序列\((x_n),(y_n)\)满足:
+
+  \begin{enumerate}
+  \item
+    \(y_n<y_{n+1}\).
+  \item
+    \(\lim\limits_{n \to \infty}y_n=+\infty\).
+  \item
+    \(\lim\limits_{n \to \infty} \frac{x_{n+1}-x_n}{y_{n+1}-y_n} = a \in \mathbb{R}\)或\(\infty\).
+  \end{enumerate}
+
+  证明:\(\lim\limits_{n \to \infty} \frac{x_n}{y_n} = \lim\limits_{n \to \infty} \frac{x_{n+1}-x_n}{y_{n+1}-y_n}\).利用该结果证明下列极限:
+
+  \begin{enumerate}
+  \item
+    \[\lim\limits_{n \to \infty} \frac{1^k+2^k+\cdots+n^k}{n^{k+1}} = \frac{1}{k+1}\]
+  \item
+    \[\lim\limits_{n \to \infty} \frac{1^k+3^k+\cdots+(2n+1)^k}{n^{k+1}} = \frac{2^k}{k+1}\]
+  \end{enumerate}
+\item
+  设\(a_k>0,k \in \mathbb{N}\),定义\(A_n=a_1+\cdots+a_n\),假设\((A_n)\)发散,但\(\lim\limits_{n \to \infty} \frac{a_n}{A_n} = 0\),证明:
+  \[
+  \lim\limits_{n \to \infty} \frac{a_1A_1^{-1}+\cdots+a_nA_n^{-1}}{\ln A_n} = 1
+  \]
+\item
+  设\((a_n),(b_n)\)满足:
+
+  \begin{enumerate}
+  \item
+    \(b_n<b_{n+1},\lim\limits_{n \to \infty} b_n = +\infty\).
+  \item
+    \(\lim\limits_{n \to \infty} \left( a_1+a_2+\cdots+a_n \right) = a\).
+  \end{enumerate}
+
+  证明: \[
+   \lim\limits_{n \to \infty} \frac{a_1b_1+a_2b_2+\cdots+a_nb_n}{b_n} = 0
+   \]
+\end{enumerate}
+
+\chapter*{习题6}
+\begin{enumerate}
+\item
+  利用极限定义证明:
+
+  \begin{enumerate}
+  \item
+    \(\lim\limits_{x \to 0} x \sin \frac{1}{x} = 0\).
+  \item
+    \(\lim\limits_{x \to +\infty} \frac{[x]}{x} = 1\).
+  \item
+    \(\lim\limits_{x \to +\infty} \left( \sqrt{x^2+x}-x \right) = \frac{1}{2}\).
+  \item
+    \(\lim\limits_{x \to n} x-[x]\)不存在,其中\(n \in \mathbb{Z}\).
+  \end{enumerate}
+\item
+  设\(f:\mathbb{R} \to \mathbb{R}\)是以\(T\)为周期的周期函数,证明:若\(\lim\limits_{x \to \infty} f(x) = A\),则\(f\)恒等于\(A\).
+\item
+  对函数 \[
+  f(x)=
+  \begin{cases}
+  x, & x \in \mathbb{Q} \\
+  -x, & x \notin \mathbb{Q}
+  \end{cases}
+  \]
+  证明:\(\lim\limits_{x \to 0} f(x) = 0\);对任意\(a \neq 0\),\(\lim\limits_{x \to a} f(x)\)不存在.
+\item
+  计算下列极限(\textbf{禁用洛必达}):
+
+  \begin{enumerate}
+  \item
+    \[\lim\limits_{x \to 0} \frac{\sin x}{x}\]
+  \item
+    \[\lim\limits_{x \to 0} \frac{\sin ax}{\sin bx}\]
+  \item
+    \[\lim\limits_{x \to 0} \frac{1-\cos x}{x^2}\]
+  \item
+    \[\lim\limits_{x \to 0} \frac{\sin(\sin(\sin x))}{x}\]
+  \item
+    \[\lim\limits_{x \to 0} \frac{(1+mx)^n-(1+nx)^m}{x^2},m,n \in \mathbb{N}\]
+  \item
+    \[\lim\limits_{x \to 0} \frac{\sqrt[n]{1+x}-1}{x}\]
+  \end{enumerate}
+\item
+  默写函数在一点处左连续、右连续以及连续的定义.
+\item
+  我们总结一下间断点(不连续点)的定义:
+
+  \begin{itemize}
+  
+  \item
+    若\(\lim\limits_{x \to a^-}f(x)\)存在,但不等于\(f(a)\),则称\(a\)是\(f\)的\textbf{第一类左侧间断点}.(类似可定义\textbf{第一类右侧间断点})
+  \item
+    若\(\lim\limits_{x \to a^-}f(x)\)不存在,则称\(a\)是\(f\)的\textbf{第二类左侧间断点}.(类似可定义\textbf{第二类右侧间断点})
+  \item
+    若\(a\)同时是\(f\)的第一类左、右侧间断点,则称\(a\)是\(f\)的\textbf{第一类间断点}.
+  \item
+    若进一步有\(\lim\limits_{x \to a^-}f(x)=\lim\limits_{x \to a^+}f(x)\),则称\(a\)是\(f\)的\textbf{可去间断点}.
+  \item
+    若\(a\)是\(f\)的间断点,但不是第一类间断点,则称\(a\)是\(f\)的\textbf{第二类间断点}.
+  \end{itemize}
+\item
+  判断以下间断点类型
+
+  \begin{enumerate}
+  \item
+    \(x=0\), \[
+     g(x)=
+     \begin{cases}
+     \frac{\sin x}{x}, &x \neq 0 \\
+     2, &x=0
+     \end{cases}
+     \]
+  \item
+    \(x=0,f(x)=\mathrm{sgn}x\)
+  \item
+    \(x=0\), \[
+     f(x)=
+     \begin{cases}
+     \sin \frac{1}{x}, & x \neq 0 \\
+     0, & x=0
+     \end{cases}
+     \]
+  \item
+    对于函数 \[
+     f(x)=
+     \begin{cases}
+     0, & x \in \mathbb{Q}^C \setminus \{0\} \\
+     1, & x=0 \\
+     \frac{1}{p}, & x=\frac{q}{p},(p,q)=1
+     \end{cases}
+     \] 考虑所有点的间断性质.
+  \item
+    对于函数 \[
+     f(x)=
+     \begin{cases}
+     1, & x \in \mathbb{Q} \\
+     0, & x \notin \mathbb{Q}
+     \end{cases}
+     \] 考虑所有点的间断性质.
+  \end{enumerate}
+\item
+  设函数\(f\)满足:
+
+  \begin{enumerate}
+  \item
+    对任意\(x,y \in \mathbb{R},f(x)+f(y)=f(x+y)\).
+  \item
+    \(f\)在\(x=0\)处连续.
+  \end{enumerate}
+
+  证明:\(f\)在任意点处都连续.
+\item
+  设\(A \subseteq \mathbb{R}\)非空,定义\({} D(A)=\sup\limits_{x,y \in A} \left\lvert x-y \right\rvert {}\).设\(f\)为有界函数,定义\(\omega(f,x)=\inf\limits_{U\text{为}x\text{的开邻域}}D(f(U))\).证明:
+
+  \begin{enumerate}
+  \item
+    \(f\)在\(x\)处连续,当且仅当\(\omega(f,x)=0\).
+  \item
+    对任意\(\epsilon > 0,E=\{ x \in \mathbb{R} \mid \omega(f,x) \geqslant \varepsilon \}\)为闭集.
+  \end{enumerate}
+\item
+  设\(f:[a,b] \to \mathbb{R}\)的每一个间断点都是可去间断点.证明:
+
+  \begin{enumerate}
+  \item
+    对任意\(\varepsilon > 0,E_\varepsilon=\{ x \in [a,b] \mid \left\lvert \lim\limits_{y \to x} f(y)-f(x) \right\rvert > \varepsilon \}\)为有限集.
+  \item
+    \(f\)的间断点集是可数集.
+  \end{enumerate}
+\end{enumerate}
+
+\chapter*{习题7}
+\begin{enumerate}
+\item
+  设\(f:\mathbb{R} \to \mathbb{R}\)满足\textbf{介值性质}:即若\(f(a)<c<f(b)\),则存在\(x\)在\(a,b\)之间,使得\(f(x)=c\).进一步假设对于任意有理数\(r\),集合\(\{ x \mid f(x)=r \}\)是闭集,证明:\(f\)连续.
+\item
+  称\((a,b)\)上的实值函数\(f\)为\textbf{凸函数},若对任意\(x,y \in (a,b),\lambda \in (0,1)\),有
+  \[
+   f(\lambda x+(1-\lambda)y) \leqslant \lambda f(x)+(1-\lambda)f(y)
+   \] 证明:
+
+  \begin{enumerate}
+  \item
+    凸函数总是连续.
+  \item
+    单增凸函数和凸函数的复合也是凸函数.
+  \item
+    对于\(a<s<t<u<b\),证明: \[
+     \frac{f(t)-f(s)}{t-s} \leqslant \frac{f(u)-f(s)}{u-s} \leqslant \frac{f(u)-f(t)}{u-t}
+     \]
+  \end{enumerate}
+\item
+  设连续单增函数\(f:(a,b) \to \mathbb{R}\)满足 \[
+  f\left( \frac{x+y}{2} \right) \leqslant \frac{f(x)+f(y)}{2},\forall x,y \in (a,b)
+  \] 证明:\(f\)为凸函数.
+\item
+  我们首先回顾聚点定义:称\(a\)是集合\(X\)的\textbf{聚点},若对任意\(\delta > 0\),存在\(x \in X\),使得\(x \in (a-\delta,a+\delta)\).证明:若对任意\(x_n \in X \setminus \{ a \},x_n \to a\),且满足\(\left\lvert x_{n+1}-a \right\rvert<\left\lvert x_n-a \right\rvert\),都有\(\lim\limits_{n \to \infty}f(x_n)=A\),则\(\lim\limits_{x \to a}f(x)=A\).
+\item
+  设\(f:(a,+\infty) \to \mathbb{R}\)满足:
+
+  \begin{enumerate}
+  \item
+    对任意\(b>a\),存在\(M>0\)使得\(\left\lvert f(x) \right\rvert \leqslant M\)对任意\(x \in (a,b)\)成立.
+  \item
+    \(\lim\limits_{x \to +\infty}\left( f(x+1)-f(x) \right)=+\infty\).
+  \end{enumerate}
+
+  证明:\(\lim\limits_{x \to +\infty} \frac{f(x)}{x}=+\infty\).
+\item
+  定义:对于任意函数\(f:X \to \mathbb{R}\),称\(f\)在\(a \in X\)处\textbf{局部有界},若存在\(\delta > 0\)使得\(f\)在\(X \cap (a-\delta,a+\delta)\)上有界.称\(f\)\textbf{在\(X\)上局部有界},若\(f\)在\(X\)上每一点都局部有界.举例:
+
+  \begin{enumerate}
+  \item
+    局部有界不一定有界.
+  \item
+    存在处处局部不有界的函数.
+  \end{enumerate}
+\item
+  设\(I \subseteq \mathbb{R}\)是任一区间,\(f:I \to \mathbb{R}\)是任意函数,我们称\(f\)在\(x_0 \in I\)处是\textbf{增大的},若存在\(\delta>0\)使得
+  \[
+   f(x)-f(x_0)
+   \begin{cases}
+   >0, & \forall x \in I \cap (x_0,x_0+\delta) \\
+   <0, & \forall x \in I \cap (x_0-\delta,x_0)
+   \end{cases}
+   \] 证明:
+
+  \begin{enumerate}
+  \item
+    函数 \[
+     f(x)=
+     \begin{cases}
+     0, & x=0 \\
+     x \left( 1+x \sin \frac{1}{x} \right), & x \neq 0
+     \end{cases}
+     \]
+    在\(x=0\)处增大,但对任意\(\varepsilon > 0\),\(f\)不是在\((-\varepsilon,\varepsilon)\)的每一点处都增大.
+  \item
+    证明:\(f\)在每一点处都增大当且仅当\(f\)严格单增.
+  \end{enumerate}
+\item
+  对于\(f:\mathbb{R} \to \mathbb{R}\)连续,证明:
+
+  \begin{enumerate}
+  \item
+    开集(闭集)的原象是开集(闭集).
+  \item
+    紧集的象是紧集.(回忆一下\textbf{紧集}的定义:任何开覆盖都有有限子覆盖)
+  \end{enumerate}
+\item
+  设连续函数\(f,g:[a,b] \to \mathbb{R}\)满足\(0<g(x)<f(x),\forall x \in [a,b]\).证明:存在\(k>1\)使得\(kg(x) \leqslant f(x)\).
+\item
+  设\(f,g:[a,b] \to [a,b]\)都为连续函数.证明:
+
+  \begin{enumerate}
+  \item
+    存在\(x_0 \in [a,b]\)使得\(f(x_0)=x_0\).
+  \item
+    若\(f \circ g = g \circ f\),则存在\(x_0 \in [a,b]\)使得\(f(x_0)=g(x_0)\).
+  \end{enumerate}
+\item
+  设\(I \subseteq \mathbb{R}\)为一区间,\(f:I \to \mathbb{R}\)连续.证明:
+
+  \begin{enumerate}
+  \item
+    若\(f(I) \subseteq \mathbb{Q}\),则\(f\)为常值函数.
+  \item
+    若\(f(I) \subseteq \mathbb{Q}^C\),则\(f\)为常值函数.
+  \end{enumerate}
+\item
+  回忆一致连续定义.
+
+  \begin{enumerate}
+  \item
+    证明:\(f(x)=\sqrt x\)在\([0,1]\)上一致连续.
+  \item
+    证明:\(f(x)=\sin x^2\)在\(\mathbb{R}\)上不一致连续.
+  \item
+    设\(X \subseteq \mathbb{R}\)为闭集,\(f:X \to \mathbb{R}\)为单调的有界连续函数,证明:\(f\)在\(X\)上一致连续.
+  \end{enumerate}
+\end{enumerate}
+
+\chapter*{习题8}
+\begin{enumerate}
+
+\item
+  考虑Dirichlet函数 \[
+   D(x)=
+   \begin{cases}
+   1, & x \in \mathbb{Q} \\
+   0, & x \notin \mathbb{Q}
+   \end{cases}
+   \]
+
+  \begin{enumerate}
+  \item
+    证明:\(D\)处处不可导.
+  \item
+    证明:\(g(x)=x^2D(x)\)只在\(x=0\)处可导且\(g'(0)=0\).
+  \end{enumerate}
+\item
+  考虑函数 \[
+  f(x)=
+  \begin{cases}
+  x^2 \left\lvert \sin \frac{\pi}{x} \right\rvert, & x \neq 0 \\
+  0, & x=0
+  \end{cases}
+  \]
+  证明:\(f\)在\(x=0\)的任何邻域内都有不可导的点,但在\(x=0\)处可导,且\(f'(0)=0\).
+\item
+  设函数\(f:\mathbb{R} \to \mathbb{R}\)在\(x=0\)连续,且\(f(0)=0\).证明:若\(\lim\limits_{x \to 0} \frac{f(2x)-f(x)}{x} = A\),则\(f\)在\(x=0\)处可导且\(f'(0)=A\).
+\item
+  设\(f,g\)在\(a\)处均可导,证明:
+
+  \begin{enumerate}
+  \item
+    若\(f(a)\neq 0\),则\(\left\lvert f \right\rvert\)在\(a\)处也可导.
+  \item
+    若\(f(a) \neq g(a)\),则函数\(m(x)=\min \{f(x),g(x)\},M(x)=\max \{f(x),g(x)\}\)在\(a\)处也可导.
+  \end{enumerate}
+\item
+  计算导数:
+
+  \begin{enumerate}
+  \item
+    \[f(x)=\frac{1}{\left( 1+ \left\lvert x \right\rvert ^2 \right)^\alpha}\]
+  \item
+    \[f(x)=\arcsin \left( \cos x^2 \right)\]
+  \item
+    \[f(x)=\ln \left( \cosh x \right)+\frac{1}{2 \sinh^2 x}\]
+  \item
+    \[f(x)={\sin x}^{\cos x}+{\cos x}^{\sin x}\]
+  \item
+    \[f(x)=\left( \ln x \right)^{x^\alpha}+x^{\alpha \ln x}\]
+  \end{enumerate}
+\item
+  设函数\(f\)满足\(f(x)^x=x^{f(x)}\),试算\(f'(x)\).
+\item
+  利用函数\((x-a)^n(x-b)^m\)证明 \[
+  \binom{n}{0}^2+\binom{n}{1}^2+\cdots+\binom{n}{n}^2=\frac{2n(2n-1) \cdots (n+1)}{n!}
+  \]
+\item
+  证明函数 \[
+  f(x)=
+  \begin{cases}
+  e^{\frac{1}{\left\lvert x \right\rvert^2-1}}, & \left\lvert x \right\rvert \leqslant 1 \\
+  0, & \left\lvert x \right\rvert > 1
+  \end{cases}
+  \] 是\(C^\infty\)的(任意阶可导).
+\item
+  证明\textbf{Legendre多项式} \[
+  P_n(x)=\frac{1}{2^n n!}\left[ \left( x^2-1 \right)^n \right]^{(n)}
+  \] 满足方程 \[
+  \left( 1-x^2 \right)P''_n(x)-2xP'_n(x)+n(n+1)P_n(x)=0
+  \]
+\item
+  设函数\(f,g:[a,b] \to \mathbb{R}\)满足:
+
+  \begin{enumerate}
+  \item
+    \(f,g\)在\([a,b]\)上连续.
+  \item
+    \(f,g\)在\((a,b)\)上可导,且\(\left( f' \right)^2+\left( g' \right)^2 \neq 0\).
+  \item
+    \(g(a) \neq g(b)\).
+  \end{enumerate}
+
+  证明:存在\(\xi \in (a,b)\)使得 \[
+  \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{g'(\xi)}
+  \]
+\item
+  证明:在\(e^x \sin x = 1\)的两个实根中至少有\(e^x \cos x = -1\)的一个实根.
+\item
+  设\(f:[a,b] \to \mathbb{R}\)是任意函数,对\(\alpha > 0\),我们称\(f\)为\textbf{\(\alpha\)次Lipschitz函数},如果存在\(k>0\)(称为\textbf{Lipschitz系数})使得
+  \[
+  \left\lvert f(x)-f(y) \right\rvert \leqslant k \left\lvert x-y \right\rvert ^\alpha,\forall x,y \in [a,b]
+  \]
+
+  \begin{enumerate}
+  \item
+    证明:若\(f\)在\([a,b]\)上是连续可导的,则\(f\)是1次Lipschitz函数(简称为\textbf{Lipschitz函数}).
+  \item
+    证明:若\(f\)是可导的Lipschitz函数,则\(f'\)在\([a,b]\)上有界.
+  \item
+    证明:若\(f\)是\(\alpha > 1\)次Lipschitz函数,则\(f\)在\([a,b]\)上为常值函数.
+  \end{enumerate}
+\item
+  设\(f(x):\mathbb{R} \to \mathbb{R}\)为Lipschitz函数,我们称\(E=\{(x,f(x)) \in \mathbb{R}^2 \mid x \in \mathbb{R}\}\)为\textbf{Lipchitz图像}.设\(f(x)\)在\(x=x_1\)处可导,向量\((1,f'(x_1))\)称为图像在\(x=x_1\)处的\textbf{切向量},\(\nu(x_1)=\frac{1}{\sqrt{1+ \left\lvert f'(x_1) \right\rvert ^2}}\left( f'(x_1),-1 \right)\)称为此处的\textbf{单位外法向量}.现考虑两点\(X_1=\left( x_1,f\left( x_1 \right) \right),X_2=\left( x_2,y_2 \right)\),其中\(y_2 \geqslant f\left( x_2 \right)\).定义\(dist \left( X,E \right)=\inf_{Y \in E} \left\lvert X-Y \right\rvert\).若存在\(C>0\)使得
+  \[
+  \frac{1}{C}dist \left( X_2,E \right) \leqslant |X_1-X_2| \leqslant Cdist \left( X_2,E \right)
+  \]
+  证明:存在\(\varepsilon > 0\)使得当Lipschitz常数\(k < \varepsilon\)时,\(\left( X_1-X_2 \right) \cdot \nu \left( X_2 \right) \geqslant 0\).(思考一下这个问题在说一件什么事情?)
+\end{enumerate}
+
+\chapter*{习题9}
+\begin{enumerate}
+
+\item
+  设函数\(g\)的导数有界.对于\(\epsilon>0\),定义\(f(x)=x+\epsilon g(x)\).证明:当\(\epsilon\)足够小时,\(f\)是双射.
+\item
+  设常数\(C_0,C_1,\cdots,C_n\)满足 \[
+  C_0+\frac{C_1}{2}+\cdots+\frac{C_n}{n+1}=0
+  \] 证明:方程 \[
+  C_0+C_1x+\cdots+C_{n-1}x^{n-1}+C_nx^n=0
+  \] 在\((0,1)\)至少有一个实根.
+\item
+  设\(f\)处处可导且\(\lim\limits_{x \to \infty}f'(x)=0\).令\(g(x)=f(x+1)-f(x)\),证明:\(\lim\limits_{x \to \infty}g(x)=0\).
+\item
+  设函数\(f\)满足:
+
+  \begin{enumerate}
+  \item
+    在\([0,+\infty)\)连续.
+  \item
+    在\((0,+\infty)\)处处可导.
+  \item
+    \(f(0)=0\).
+  \item
+    \(f'\)单增.
+  \end{enumerate}
+
+  对\(x>0\),定义\(g(x)=\frac{f(x)}{x}\).证明:\(g\)单增.
+\item
+  设\(f\)在\(x\)处二阶可导.证明:\(\lim\limits_{h \to 0} \frac{f(x+h)+f(x-h)-2f(x)}{h^2}=f''(x)\).
+\item
+  设\(f\)在\((a,b)\)上可导,证明:\(f\)是凸函数当且仅当\(f'\)单增.假设\(f''(x)\)在\((a,b)\)处处存在,证明:\(f\)为凸函数当且仅当\(f''(x) \geqslant 0\).
+\item
+  设\(f:[a,+\infty) \to \mathbb{R}\)满足:
+
+  \begin{enumerate}
+  \item
+    \(f\)在\([a,+\infty)\)上连续.
+  \item
+    \(f\)在\((a,+\infty)\)上可导.
+  \item
+    \(\lim\limits_{x \to +\infty}f(x)=f(a)\).证明:存在\(\xi \in (a,+\infty)\)使得\(f'(\xi)=0\).
+  \end{enumerate}
+\item
+  设\(f:[a,b] \to \mathbb{R}\)满足:
+
+  \begin{enumerate}
+  \item
+    \(f\)在\([a,b]\)上连续.
+  \item
+    \(f\)在\((a,b)\)上可导.
+  \item
+    \(\lim\limits_{x \to a^+}f(x)=\lim\limits_{x \to b^-}f(x)=+\infty\).
+  \end{enumerate}
+
+  证明:对任意\(A \in \mathbb{R}\),存在\(\xi \in (a,b)\)使得\(f'(\xi)=A\).
+\item
+  设函数\(f:[a,b] \to \mathbb{R}\)在\([a,b]\)上可导.证明:存在一点\(\xi \in (a,b)\)使得
+  \[
+  f(\xi)-\xi f'(\xi)=\frac{1}{a-b}
+  \begin{vmatrix}
+  a & b \\ f(a) & f(b)
+  \end{vmatrix}
+  \]
+\item
+  设\(f:(a,b) \to \mathbb{R}\)处处可导且\(f\)的零点集至少有一个聚点\(a_0 \in (a,b)\).证明:
+
+  \begin{enumerate}
+  \item
+    \(f'(a_0)=0\)且\(f'\)的零点集也有聚点\(a_0\).
+  \item
+    若\(f\)在\((a,b)\)上\(p\)次可导\((p \geqslant 1)\),则\(f\)的各阶导数都以\(a_0\)为其零点.
+  \item
+    不存在任何多项式函数使得它与\(g(x)=e^x\)在\(\mathbb{R}\)都任何无限点集\(A\)上取相同的值.
+  \end{enumerate}
+\item
+  设\(-\infty \leqslant a_1 \leqslant a_2 \leqslant \cdots \leqslant a_n \leqslant +\infty\),\(f\)在\([a_1,a_n]\)上是\(C^{n-1}\)的,且\(f\)在\((a_1,a_n)\)上有\(n\)阶导数,且\(f(a_i)=0,i=1,2,\cdots,n\).证明:对任意\(x \in [a_1,a_n]\),存在\(\xi \in (a_1,a_n)\)使得\(f(x)=\frac{(x-a_1)(x-a_2)\cdots(x-a_n)}{n!}f^{(n)}(\xi)\).
+\end{enumerate}
+
+\chapter*{习题10}
+\section*{不等式主题日}
+
+分析学的底层是证明各式各样的不等式,而不等式的核心是把握凸性.
+
+\begin{enumerate}
+\item
+  证明下列不等式:
+
+  \begin{enumerate}
+  \item
+    \[ln(1+x)>\frac{\arctan x}{1+x}\]
+  \item
+    \[e^x<\frac{1}{1-x}\]
+  \item
+    \[(x^a+y^a)^\frac{1}{a}>(x^b+y^b)^\frac{1}{b},x>0,y>0,0<a<b\]
+  \end{enumerate}
+\item
+  证明函数 \[
+  f(x)=
+  \begin{cases}
+  (x-2)^2, & x \in [0,+\infty) \\
+  (x+2)^2, & x \in (-\infty,0]
+  \end{cases}
+  \]
+  在\((-\infty,0)\)与\((0,+\infty)\)上是凸函数,但在\(\mathbb{R}\)上不是凸的.
+\item
+  设\(f\)为凸函数,证明:
+
+  \begin{enumerate}
+  \item
+    对任意\(x \in \mathbb{R}\),\(f'(x^+)\)与\(f'(x^-)\)存在且\(f'(x^+) \leqslant f'(x^-)\).
+  \item
+    证明:\(f'(x^+)\)与\(f'(x^-)\)单调上升且对任意\(a<b\),有 \[
+     f'(x^+) \leqslant \frac{f(b)-f(a)}{b-a} \leqslant f'(b^-)
+     \]
+  \end{enumerate}
+\item
+  设\(x,y \geqslant 0\)且\(q \geqslant 1\),证明: \[
+  (x+y)^q \leqslant x^q+q2^{q-1}(x^{q-1}y+y^q)
+  \]
+\item
+  设\(f: \mathbb{R} \to \mathbb{R}\)是任一函数,
+
+  \begin{enumerate}
+  \item
+    设\(f\)是凸的,证明:\(f\)的图像位于直线\(y=f(x)+m(x-a)\)的上方当且仅当\(f'(a^-) \leqslant m \leqslant f'(a^+)\).
+  \item
+    设\(f\)连续起右可导并满足不等式\(f(x) \leqslant f(a)+f'(a^+)(x-a)\).证明:\(f\)是凸函数.
+  \end{enumerate}
+\item
+  设\(f:(a,b) \to \mathbb{R}\)是\(C^1\)的,且是严格凸的.证明:
+
+  \begin{enumerate}
+  \item
+    \(f\)每一点切线的斜率所组成的实数集合是一个开区间.
+  \item
+    \(f'\)可逆.
+  \item
+    定义函数\(h_{\lambda}(x)= \lambda x-f(x)\),则\(h_{\lambda}\)在\((a,b)\)上有唯一的极大值点,记其为\(x_{\lambda}\).
+  \item
+    定义\(g(\lambda)= \lambda x-f(x)\),证明\(g\)连续且凸.
+  \end{enumerate}
+\item
+  令\(p>1,b_1,b_2,\ldots,b_n,\ldots>0\).我们接下来证明下列不等式: \[
+   \sum_{x=1}^\infty \left( \frac{b_1+b_2+\cdots+b_n}{n} \right)^p \leqslant \left( \frac{p}{p-1} \right)^p \sum_{n=1}^\infty b_n^p
+   \]
+
+  \begin{enumerate}
+  \item
+    考虑\(T_n=\frac{b_1+b_2+\cdots+b_n}{n},\Delta_n=T_n^p-\frac{p}{p-1}b_nT_n^{p-1}\).证明:\(\Delta_n \leqslant \frac{n-1}{p-1}T_{n-1}^p-\frac{n}{p-1}T_n^p\).
+  \item
+    证明:\(\sum\limits_{n=1}^N T_n^p \leqslant \frac{p}{p-1} \sum\limits_{n=1}^N b_n^p\).
+  \item
+    利用Hölder不等式证明:对任意\(N \in \mathbb{N}\),有 \[
+     \sum_{n=1}^N \left( \frac{b_1+b_2+\cdots+b_n}{n} \right)^p \leqslant \left( \frac{p}{p-1} \right)^p \sum_{n=1}^N b_n^p
+     \]
+  \item
+    令\(N \to \infty\)得到结论.这个不等式何时取等号?
+  \item
+    如果你学过一点积分,那么试着证明下面的积分版本: \[
+     \int_0^\infty \left( \frac{1}{x} \int_0^x f(t) \mathrm{d} t \right)^p \mathrm{d} x \leqslant \left( \frac{p}{p-1} \right)^p \int_0^\infty f(x)^p \mathrm{d} x
+     \]
+  \item
+    这个不等式在说一件什么事情?
+  \end{enumerate}
+\end{enumerate}
+
+\chapter*{习题11}
+\section*{不等式主题日-续}
+\begin{enumerate}
+\item
+  回顾\textbf{Legendre变换}的定义:设\(f:\mathbb{R} \to \mathbb{R}\),则称
+  \[
+   f^*(x)=\sup\limits_{y \in \mathbb{R}}\{ xy-f(y) \}
+   \] 为\(f\)的Legendre变换(有时也叫\textbf{凸共轭}).
+
+  \begin{enumerate}
+  \item
+    计算下列函数各自的Legendre变换:\(f(x)=\frac{x^p}{p},p>1;g(x)=\left\lvert x \right\rvert;h(x)=e^x\).注意上述函数的定义域!
+  \item
+    Legendre变换的几何意义是什么?
+  \item
+    回顾一下\textbf{Young不等式}:\(ab \leqslant \frac{a^p}{p}+\frac{b^q}{q},\frac{1}{p}+\frac{1}{q}=1,p,q>1\)的证明.
+  \item
+    证明:对一列函数\((f_n)\),有\(\left(\inf\limits_{n}f_n\right)^*(x)\geqslant\sup\limits_{n}f_n^*(x)\).
+  \item
+    证明:对任意\(f,g\)及\(0\leqslant\lambda\leqslant1\),有 \[
+     ((1-\lambda)f+\lambda g)^*\leqslant(1-\lambda)f^*+\lambda g^*
+     \]
+  \item
+    证明更一般的Young不等式: \[
+     ab \leqslant f(a)+f^*(b)
+     \]
+  \end{enumerate}
+\item
+  利用Hölder不等式证明:对任意\({} p,q,r>1,0<\lambda<1,\frac{1}{p}=\frac{\lambda}{q}+\frac{1-\lambda}{r} {}\),有:
+  \[
+  \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p \right)^\frac{1}{p} \leqslant \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^q \right)^\frac{\lambda}{q} \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^r \right)^\frac{1-\lambda}{r}  
+  \]
+\item
+  证明如下逆Hölder不等式: \[
+  \sum\limits_{n=1}^\infty \left\lvert a_nb_n \right\rvert \geqslant \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^\frac{1}{p} \right)^p \left( \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^\frac{1}{1-p} \right)^{1-p}
+  \] 其中我们假设\(p>1\)且各个求和均有意义.
+\item
+  证明如下逆Minkowski不等式: \[
+  \left( \sum\limits_{n=1}^\infty \left\lvert a_n+b_n \right\rvert^p \right)^\frac{1}{p} \geqslant \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p \right)^\frac{1}{p}+\left( \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)^\frac{1}{p}
+  \] 其中\(0<p<1\).
+\item
+  证明下面两个不等式:
+
+  \begin{enumerate}
+  \item
+    \[
+     \sum\limits_{n=1}^\infty \left\lvert \frac{a_n+b_n}{2} \right\rvert^p + \sum\limits_{n=1}^\infty \left\lvert \frac{a_n-b_n}{2} \right\rvert \leqslant \frac{1}{2} \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p + \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)
+     \] 其中\(p \geqslant 2\).
+  \item
+    \[
+     \left( \sum\limits_{n=1}^\infty \left\lvert \frac{a_n+b_n}{2} \right\rvert^p \right)^\frac{q}{p} + \left( \sum\limits_{n=1}^\infty \left\lvert \frac{a_n-b_n}{2} \right\rvert^p \right)^\frac{q}{p} \leqslant \frac{1}{2} \left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^p + \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)^\frac{q}{p}
+     \] 其中\(1<p<2,\frac{1}{p}+\frac{1}{q}=1\).
+  \end{enumerate}
+\item
+  证明:若存在一个正常数\(C\)使得不等式 \[
+  \sum\limits_{n=1}^\infty \left\lvert a_nb_n \right\rvert \leqslant C \left( \sum\limits_{n=1}^\infty \left\lvert b_n \right\rvert^p \right)^\frac{1}{p}
+  \]
+  对任意序列\((b_n)\)成立,则\(\left( \sum\limits_{n=1}^\infty \left\lvert a_n \right\rvert^q \right)^\frac{1}{q} \leqslant C\),其中\(\frac{1}{p}+\frac{1}{q}=1\).
+\item
+  证明不等式: \[
+  \left(\sum\limits_{N=0}^{\infty}\left(\sum_{n=0}^{N}\left\lvert a_nb_{N-n}\right\rvert \right)^r\right)^\frac{1}{r}\leqslant\left(\sum_{n=0}^\infty\left\lvert a_n\right\rvert ^p\right)^\frac{1}{p}\left(\sum_{n=0}^\infty\left\lvert b_n\right\rvert^q\right)^\frac{1}{q}
+  \]
+  其中\(p,q,r \geqslant 1\)且\(\frac{1}{p}+\frac{1}{q}=1+\frac{1}{r}\).
+\item
+  如果你学过一点积分知识,尝试吧今天所有的不等式写成积分形式,思考一下他们在说什么事情.
+\end{enumerate}
+
+\chapter*{习题12}
+本周我们开始学习积分,在接触严格的理论证明前,我们先建立起对于积分的感性认识.
+
+(非常不严格的)\textbf{定义}
+对于函数\(f:[a,b] \to \mathbb{R}\),如果\({} f(x)\geqslant0 {}\)我们称\(f\)的图像与\(x\)轴所围成的面积为\(f\)从\(a\)到\(b\)的积分,记为\(\int_a^b f(x)\mathrm{d}x\).如果\(f\)是变号的,则记\(\int_a^b f(x)\mathrm{d}x=\int_a^b f^+(x)\mathrm{d}x-\int_a^b f^-(x)\mathrm{d}x\).
+
+\begin{enumerate}
+\item
+  依据上面的定义,计算下面的积分:
+
+  \begin{enumerate}
+  \item
+    \[\int_{-2}^2 2x+3\mathrm{d}x\]
+  \item
+    \[\int_{-\frac{\sqrt{2}}{2}}^1 \sqrt{1-x^2}\mathrm{d}x\]
+  \item
+    \[\int_0^{\pi} \cos x \mathrm{d}x\]
+  \end{enumerate}
+\item
+  对于不规则的区域我们显然不能用上面的方法计算``积分''.事实上,我们从未严格定义过``面积''这一概念.但目前不妨仍秉持着对``面积''朴素的认知,来计算一下\(\int_0^1 x^2\mathrm{d}x\).
+  先把\([0,1]\)区间平均分成\(n\)等份,记分割点为\(0=x_0<x_1<x_2<\cdots<x_{n-1}<x_n=1\).
+
+  \begin{enumerate}
+  \item
+    对于区间\([x_j,x_{j+1}]\),作一个矩形,宽为区间长度\(\frac{1}{n}\),高为函数在\(x_j\)处的取值,即\(x_j^2\).试计算这\(n\)个矩形的面积之和(记为\(L_n\)).
+  \item
+    在上一问中稍作改变,把每一个矩形的高度改为函数在\(x_{j+1}\)处的取值,即\(x_{j+1}^2\).试再计算这\(n\)个矩形的面积之和(记为\(R_n\)).
+  \item
+    计算\(\lim\limits_{n \to \infty}L_n\)与\(\lim\limits_{n \to \infty}R_n\),你发现了什么?这是巧合吗?
+  \end{enumerate}
+
+  我们把这个极限称为\(f(x)=x^2\)再\([0,1]\)上的积分.
+  我们把这个积分定义为\(f(x)=x^2\)与\(x\)轴所围成的面积!
+  试想一下,这个定义有没有什么问题?
+\item
+  利用上面的办法,试着计算一下下列函数的积分:
+
+  \begin{enumerate}
+  \item
+    \[\int_0^1 e^x\mathrm{d}x\]
+  \item
+    \[\int_1^2 \frac{1}{x}\mathrm{d}x\]
+  \item
+    \[{} \int_{-1}^1 x^2-x+1 \mathrm{d}x {}\]
+  \item
+    \[\int_0^{\pi} \sin x \mathrm{d}x\]
+  \end{enumerate}
+\item
+  显然我们不能每次计算积分都把上述操作做一遍,重新考虑\(\int_0^1 x^2 \mathrm{d}x\).
+
+  \begin{enumerate}
+  \item
+    问自己一个问题,什么样的函数\(F\),满足\(F'(x)=x^2\).
+  \item
+    对这样的\(F\),计算一下\(F(1)-F(0)\).你发现了什么?这是巧合吗?
+  \end{enumerate}
+\item
+  对于\(f\geqslant0\),验证下面三件事:
+
+  \begin{enumerate}
+  \item
+    \(\int_a^a f(x)\mathrm{d}x=0\).
+  \item
+    对任意区间\([a,b]\),\(\int_a^b f(x) \mathrm{d}x \geqslant 0\).
+  \item
+    考虑一串区间\(a_0 \leqslant a_1 \leqslant a_2 \leqslant \cdots \leqslant a_n\),有\(\sum\limits_{j=0}^{n-1} \int_{a_j}^{a_{j+1}} f(x)\mathrm{d}x=\int_{a_0}^{a_n}f(x)\mathrm{d}x\).
+  \item
+    令\(n \to \infty\),是否仍然成立?
+  \item
+    这是在说什么事情?
+  \end{enumerate}
+\item
+  若\(f:\mathbb{R}\to\mathbb{R}\)连续,利用微分和积分的定义(目前还不太严格)证明:\(\frac{\mathrm{d}}{\mathrm{d}x}\int_0^xf(t)\mathrm{d}t=f(x)\).
+\end{enumerate}
+
+\chapter*{习题13}
+\begin{enumerate}
+
+
+\item
+  证明下面两个命题等价:
+
+  \begin{enumerate}
+  \item
+    \(f\)在\([a,b]\)上Riemann可积.
+  \item
+    对任意\(\varepsilon>0\),存在Riemann可积函数\(\varphi,\psi\)使得\(\varphi<f<\psi\)且\(\int_a^b\psi(x)-\varphi(x)\mathrm{d}x<\varepsilon\).
+  \end{enumerate}
+\item
+  设\(f,g\)均为Riemann可积函数,求证:\(m(x)=\min\{f(x),g(x)\},M(x)=\{f(x),g(x)\}\)也Riemann可积.
+\item
+  设\(f:[a,b]\to\mathbb{R}\)Riemann可积,且存在\(m>0\)使得\(\left\lvert f(x) \right\rvert \geqslant m\).证明:\(\frac{1}{f}\)Riemann可积.
+\item
+  设\(f:[a,b]\to\mathbb{R}\)有界,称\(f\)是\textbf{正规的},若对任一点它的左右极限都存在(不一定相等;另外在端点处只要求单侧极限存在).依照上述定义,证明:
+
+  \begin{enumerate}
+  \item
+    若\(f\)单调,则\(f\)正规.
+  \item
+    Riemann函数在\([0,1]\)上正规.
+  \item
+    设\(f:[a,b]\to\mathbb{R}\)正规,证明:对于任意\(\varepsilon>0\),存在\([a,b]\)的一个分割\(a=a_0<a_1<a_2<\cdots<a_n=b\),使得对任意\(x,y\in(a_i,a_{i+1})\),有\(\left\lvert f(x)-f(y) \right\rvert < \varepsilon\).
+  \item
+    在(3)的设定中,存在阶梯函数\(h\)使得\(\left\lvert f(x)-h(x) \right\rvert < \varepsilon\).
+  \item
+    由此证明\(f\)Riemann可积.
+  \end{enumerate}
+\item
+  证明:单调函数\(f:[a,b]\to\mathbb{R}\)Riemann可积.
+\item
+  证明:若\(f:[a,b]\to\mathbb{R}\)只有有限多个第一类间断点,则\(f\)Riemann可积.
+\item
+  称\(f:[a,b]\to\mathbb{R}\)\textbf{局部Riemann可积},若对于任意\([\alpha,\beta] \subseteq I\),\(f\)在\([\alpha,\beta]\)上都Riemann可积.
+
+  \begin{enumerate}
+  \item
+    证明:若函数\(f:[a,b]\to\mathbb{R}\)有界且在\((a,b)\)上局部Riemann可积,则\(f\)在\([a,b]\)上Riemann可积.
+  \item
+    考虑函数\[f(x)=\begin{cases} \sin\frac{1}{x}, & x\in(0,1] \\ 0, & x=0 \end{cases}\]证明:\(f\)在\([0,1]\)上不正规,但在\([0,1]\)上Riemann可积.
+  \end{enumerate}
+\item
+  设\(E \subseteq \mathbb{R}\),称\(E\)是\textbf{零测集},若对任意\(\varepsilon>0\),存在有限个闭区间\([a_i,b_i],i=1,2,\cdots,m\)使得\(E \subseteq \bigcup\limits_{i=1}^m [a_i,b_i]\)且\(\sum\limits_{i=1}^m (b_i-a_i) <\varepsilon\).证明:
+
+  \begin{enumerate}
+  \item
+    有限点集是零测集.
+  \item
+    若序列\((x_n)\)收敛,则\((x_n)\)是零测集.
+  \item
+    若\(E\)是零测集,则它的任意子集以及它的闭包都是零测集.
+  \end{enumerate}
+\item
+  证明:若有界函数\(f:[a,b]\to\mathbb{R}\)的间断点集是零测集,则\(f\)Riemann可积.
+\item
+  考虑\([0,1]\)上的Riemann函数\[R(x)=\begin{cases} 0, & x \in [0,1] \setminus \mathbb{Q} \\ 1, & x=0 \\ \frac{1}{q}, & x \in (0,1] \cup \mathbb{Q},x=\frac{p}{q},(p,q)=1 \end{cases}\]
+
+  \begin{enumerate}
+  \item
+    它的间断点集是不是零测集?
+  \item
+    证明:Riemann函数Riemann可积.
+  \end{enumerate}
+\item
+  第9题和第10题说明了什么?我们对于零测集的定义出了什么问题?
+\end{enumerate}
+
+\chapter*{习题14}
+\begin{enumerate}
+\item
+  设函数\(f \in \mathcal{C}(\mathbb{R},\mathbb{R})\).定义函数\(F\):\[F(x)=\int_a^b f(x+t) \cos t \mathrm{d}t\]
+
+  \begin{enumerate}
+  \item
+    证明:\(F\)在\([a,b]\)上可导.
+  \item
+    计算\(F'\).
+  \end{enumerate}
+\item
+  设\(f\)连续且以\(T\)为周期,\(G(x)=\int_x^{x+T}f(t)\mathrm{d}t\).证明:\(G\)为常值函数.
+\item
+  证明:\[\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x=\int_0^\frac{\pi}{2}\cos^nx\mathrm{d}x,n\in\mathbb{N}\]
+\item
+  设\(f\in\mathcal{C}([0,\pi],\mathbb{R})\).证明:
+
+  \begin{enumerate}
+  \item
+    \[\int_0^{\pi}xf(\sin x)\mathrm{d}x=\frac{\pi}{2}\int_0^{\pi}f(\sin x)\mathrm{d}x\]
+  \item
+    \[\int_0^\pi\frac{x\sin x}{1+\cos^2 x}\mathrm{d}x=\frac{\pi^2}{4}\]
+  \end{enumerate}
+\item
+  证明:序列\(a_n=\int_0^n\frac{\sin x}{x}\mathrm{d}x\)收敛.
+\item
+  设\(f,g\in\mathcal{C}(\mathbb{R}_+,\mathbb{R}_+)\),满足\(f(x) \leqslant \Lambda + \int_0^x f(t)g(t) \mathrm{d}t\).证明:\[f(x) \leqslant \Lambda e^{\int_0^x g(t) \mathrm{d}t}\]
+\item
+  求下列不定积分.
+
+  \begin{enumerate}
+  \item
+    \[\int \arctan x \mathrm{d}x\]
+  \item
+    \[\int x^n \ln x \mathrm{d}x\]
+  \item
+    \[\int \sin(\ln x) \mathrm{d}x\]
+  \item
+    \[\int x^2 \arccos x \mathrm{d}x\]
+  \item
+    \[\int \sec^8 x \mathrm{d}x\]
+  \item
+    \[\int \frac{x \ln(x+\sqrt{1+x^2})}{1+x^2} \mathrm{d}x\]
+  \item
+    \[\int e^{ax} \sin bx \mathrm{d}x\]
+  \item
+    \[\int e^{ax} \cos bx \mathrm{d}x\]
+  \item
+    \[\int \frac{1}{x(x+1)(x^2+x+1)^2} \mathrm{d}x\]
+  \end{enumerate}
+\item
+  计算下列定积分:
+
+  \begin{enumerate}
+  \item
+    \[\int_1^a \frac{1}{\sqrt{e^x-1}} \mathrm{d}x\]
+  \item
+    \[\int_a^b \frac{1}{\sqrt{x(1-x)}} \mathrm{d}x\]
+  \item
+    \[\int_0^{\frac{\pi}{2}} \frac{1}{\sin x+2\cos x+3} \mathrm{d}x\]
+  \item
+    \[\int_a^b \frac{\arcsin x}{x^2} \mathrm{d}x,0<a<b<1\]
+  \end{enumerate}
+\item
+  依照下列步骤推导\textbf{Wallis公式}.
+
+  \begin{enumerate}
+  \item
+    令\(I_n=\int_0^\frac{\pi}{2} \cos^nx \mathrm{d}x\),利用分部积分证明\({} I_n=\dfrac{n-1}{n}I_{n-2} {}\).
+  \item
+    计算\(I_n\).
+  \item
+    证明:\(\lim\limits_{n\to\infty}\dfrac{I_{2n}}{I_{2n+1}}=1\).
+  \item
+    得到\({} \dfrac{\pi}{2}=\lim\limits_{n\to\infty}\left(\dfrac{2\cdot4\cdot6\cdots2n}{1\cdot3\cdot5\cdots(2n-1)}\right)^2\dfrac{1}{n} {}\).
+  \end{enumerate}
+\end{enumerate}
+
+\chapter*{习题15}
+先定义\(\int_a^{b^-}f(x)\mathrm{d}x\)型广义积分:设函数\(f\)在\([a,b)\)上任意有界闭区间\([\alpha,\beta]\)上可积,满足\(\lim\limits_{x\to b^{-}}f(x)=\pm\infty\)(此时称\(b\)为\(f\)的\textbf{奇点}).则定义\textbf{广义积分}\(\int_a^bf(x)\mathrm{d}x=\lim\limits_{\beta\to b^-}\int_a^{\beta}f(x)\mathrm{d}x\)(倘若极限存在).
+类似地,我们可以定义\(\int_{a^+}^bf(x)\mathrm{d}x\)型广义积分:\(\int_a^bf(x)\mathrm{d}x=\lim\limits_{\alpha\to a^+}\int_{\alpha}^bf(x)\mathrm{d}x\).
+
+\begin{enumerate}
+\item
+  利用上述定义,判断下列积分是否有限.若有限,试计算之.
+
+  \begin{enumerate}
+  \item
+    \[\int_0^{+\infty}e^{-x}\mathrm{d}x\]
+  \item
+    \[\int_0^1\frac{1}{x}\mathrm{d}x\]
+  \item
+    \[\int_0^1\frac{1}{\sqrt{1-x}}\mathrm{d}x\]
+  \item
+    \[\int_0^1\ln x\mathrm{d}x\]
+  \item
+    \[\int_0^{+\infty}e^{-x}\cos x\mathrm{d}x\]
+  \end{enumerate}
+\end{enumerate}
+
+现在定义\(\int_{a^+}^{b^-}f(x)\mathrm{d}x\)型积分:设\(f\)在\((a,b)\)上任意有界闭区间\([\alpha,\beta]\)上可积,满足\(\lim\limits_{x\to a^+}f(x)=\pm\infty,\lim\limits_{a\to b^-}f(x)=\pm\infty\),且对于某个\(c\in(a,b)\),广义积分\(\int_a^cf(x)\mathrm{d}x\)与\(\int_c^bf(x)\mathrm{d}x\)都存在(要么有限要么无限,不可以振荡!).则定义\textbf{广义积分}\(\int_a^bf(x)\mathrm{d}x=\int_a^cf(x)\mathrm{d}x+\int_c^bf(x)\mathrm{d}x\).
+
+\begin{enumerate}
+
+\setcounter{enumi}{1}
+
+\item
+  利用上述定义,判定并计算下列积分:
+
+  \begin{enumerate}
+  \item
+    \[\int_{-1}^1\frac{1}{\sqrt{1-x^2}}\mathrm{d}x\]
+  \item
+    \[\int_{-\infty}^{+\infty}\frac{1+x}{1+x^2}\mathrm{d}x\]
+  \item
+    对于上一问中的函数,若考虑\(\lim\limits_{c\to+\infty}(\int_{-c}^0\frac{1+x}{1+x^2}+\int_0^c\frac{1+x}{1+x^2})\),你会得到什么?
+  \end{enumerate}
+\end{enumerate}
+
+为了区别上题中的(2)(3),我们定义\textbf{主值积分}:\[p.v.\int_{-\infty}^{+\infty}f(x)\mathrm{d}x=\lim\limits_{c\to+\infty}\int_{-c}^cf(x)\mathrm{d}x,p.v.\int_a^bf(x)\mathrm{d}x=\lim\limits_{\varepsilon\to0^+}\int_{a+\varepsilon}^{b-\varepsilon}f(x)\mathrm{d}x\]
+
+\begin{enumerate}
+
+\setcounter{enumi}{2}
+
+\item
+  计算下列广义积分:
+
+  \begin{enumerate}
+  \item
+    \[\int_0^{+\infty}\frac{1}{x^4+1}\mathrm{d}x\]
+  \item
+    \[\int_0^1\frac{1}{x\sqrt{1+x^2}}\mathrm{d}x\]
+  \item
+    \[p.v.\int_{-\infty}^{+\infty}\sin x\mathrm{d}x\]
+  \item
+    \[p.v.\int_0^4\frac{1}{x^2-4x+3}\mathrm{d}x\]
+  \item
+    \[\int_0^{+\infty}\frac{1}{(x^2+1)(x^{\lambda}+1)}\mathrm{d}x,(\lambda>0)\]
+  \end{enumerate}
+\item
+  证明:广义积分\({} \int_1^{+\infty}\dfrac{x\ln(1+\frac{1}{x})}{1+x^2}\mathrm{d}x {}\)收敛.
+\item
+  考虑广义积分\({} \int_0^{\frac{\pi}{2}}\cos x\ln\tan x\mathrm{d}x {}\)的敛散性.若收敛,试计算之.
+\item
+  设\(I=\int_0^{\frac{\pi}{2}}\ln\sin x\mathrm{d}x,J=\int_0^{\frac{\pi}{2}}\ln\cos x\mathrm{d}x\).
+
+  \begin{enumerate}
+  \item
+    证明:\(I,J\)都收敛.
+  \item
+    计算\(I,J\).
+  \end{enumerate}
+\item
+  设\(f\in\mathcal{C}^2([0,+\infty),\mathbb{R})\),满足\({} \int_0^{+\infty}(f(x))^2\mathrm{d}x {}\)与\({} \int_0^{+\infty}(f''(x))^2\mathrm{d}x {}\)收敛.证明:\(\int_0^{+\infty}(f'(x))^2\mathrm{d}x\)收敛.
+\item
+  设广义积分\(I=\int_0^{+\infty}\frac{\sin x}{x}\mathrm{d}x\).
+
+  \begin{enumerate}
+  \item
+    定义\(f:[0,\pi]\to\mathbb{R}\)如下:\[f(x)=\begin{cases} \dfrac{1}{x}-\dfrac{1}{2\sin\dfrac{x}{2}}, & x\in(0,\pi] \\ 0, & x=0 \end{cases}\]证明\(f\)是\(\mathcal{C}^1\)的.
+  \item
+    计算积分\[I_n=\int_0^{\pi}\dfrac{\sin(n+\frac{1}{2})x}{2\sin\dfrac{x}{2}}\mathrm{d}x\]
+  \item
+    对于\(\varphi\in\mathcal{C}^1([0,1],\mathbb{R})\),证明:\[\lim\limits_{n\to\infty}\int_0^{\pi}\varphi(x)\sin(n+\dfrac{1}{2})x\mathrm{d}x=0\]
+  \item
+    计算\(I\).
+  \item
+    利用上一问计算\(\int_0^{+\infty}\dfrac{\sin x\cos x}{x}\mathrm{d}x\).
+  \item
+    利用上一问计算\(\int_0^{+\infty}\frac{\sin^2x}{x}\mathrm{d}x\).
+  \end{enumerate}
+\end{enumerate}
+
+\chapter*{习题16}
+\begin{enumerate}
+\item
+  定义Gamma函数\(\Gamma(z)=\int_0^{+\infty}t^{z-1}e^t\mathrm{d}t\).
+
+  \begin{enumerate}
+  \item
+    证明:对于\(z>0\),上述定义是良定的.
+  \item
+    证明:Gamma函数有等价形式\(\Gamma(z)=2\int_0^{+\infty}e^{-t^2}t^{2z-1}\mathrm{d}t\)和\(\Gamma(z)=\int_0^1\left( \ln \left( \frac{1}{t} \right) \right)^{z-1}\mathrm{d}t\).
+  \item
+    通过证明\(\Gamma(z+1)=z\Gamma(z)\)计算\(\Gamma(n),n\in\mathbb{N}\).
+  \item
+    \(\Gamma(\frac{1}{2})=\sqrt{\pi}\)(不会做也没关系).
+  \item
+    对于\(\alpha,x>0\),有\(\dfrac{1}{x^{\alpha}}=\dfrac{1}{\Gamma(\alpha)}\int_0^{+\infty}t^{\alpha}e^{-xt}\mathrm{d}t\).
+  \end{enumerate}
+\item
+  设\(u\in\mathcal{C}^2([a,b],\mathbb{R})\)满足\[\begin{cases} -u''(x)-\lambda u(x)=\left\lvert u(x) \right\rvert^2 u(x) \\ u(a)=u(b)=0 \end{cases}\]证明:若\(\lambda\leqslant0\),则\(u=0\).
+\item
+  令\(f(r)=\left( \dfrac{2\varepsilon}{\varepsilon^2+r^2} \right)^{\dfrac{n-2}{2}},n\geqslant3\).验证积分\(\int_{-\infty}^{+\infty}\left\lvert f(r) \right\rvert^\frac{2n}{n-2}r^{n-1}\mathrm{d}r\)和\(\int_{-\infty}^{+\infty}\left\lvert f'(r) \right\rvert^2 r^{n-1}\mathrm{d}r\)的值与\(\varepsilon\)无关.
+\item
+  设\(f:(0,+\infty)\to\mathbb{R}\)在任一有界闭区间\([a,b]\)上可积,对于\(\alpha,\beta>0\),定义\[J(\alpha,\beta)=\int_0^{+\infty}\dfrac{f(\alpha x)-f(\beta x)}{x}\mathrm{d}x\]
+
+  \begin{enumerate}
+  \item
+    举例说明\(J(\alpha,\beta)\)可以发散.
+  \item
+    若\(a=\lim\limits_{x\to0^+}f(x),b=\lim\limits_{x\to+\infty}f(x)\),计算\(J(\alpha,\beta)\).
+  \item
+    若存在\(m,M\in\mathbb{R}\)使得\(\int_0^1\dfrac{f(x)-m}{x}\mathrm{d}x\)与\(\int_1^{+\infty}\dfrac{f(x)-M}{x}\mathrm{d}x\)收敛,计算\(J(\alpha,\beta)\).
+  \item
+    设\(a=\lim\limits_{x\to0^+}f(x)\)且存在\(M>0\)满足对于任意\(c,d>0\),均有\(\left\lvert \int_c^df(x)\mathrm{d}x \right\rvert \leqslant M\).计算\(J(\alpha,\beta)\).
+  \item
+    计算\(\int_0^{+\infty}\dfrac{\arctan 2x-\arctan x}{x}\mathrm{d}x\)与\(\int_0^1\dfrac{x-1}{\tan x}\mathrm{d}x\).
+  \end{enumerate}
+\item
+  考虑下面的优化问题\[\inf\limits_{\substack{u\in\mathcal{C}^2([0,1],\mathbb{R}) \\ u(0)=1,u(1)=0}} \int_0^1 \left\lvert u'(x) \right\rvert^2 \mathrm{d}x\]试问:这个下确界是多少?可以被某个满足所给限制条件的\(u\)达到吗?(提示:把\(u+\varepsilon v\)带入上面积分,其中\(v\)也满足限定条件,然后对\(\varepsilon\)求导.)
+\item
+  \begin{enumerate}
+  \item
+    对于一个多项式\[P(x)=a_0+a_1(x-x_0)+a_2(x-x_0)^2+\cdots+a_n(x-x_0)^n\]请用\(P(x)\)在\(x_0\)处的各阶导数来表示系数\((a_j)\).
+  \item
+    假设一个\(\mathcal{C}^{\infty}\)函数可以表示成级数\[f(x)=a_0+a_1(x-x_0)+a_2(x-x_0)^2+\cdots+a_n(x-x_0)^n+\cdots=\lim\limits_{n\to\infty}\sum\limits_{j=0}^na_j(x-x_0)^j\]用\(f\)在\(x_0\)处的各阶导数来表示系数\((a_j)\).
+  \item
+    利用(2)中的公式来估算\(\sqrt{10},\sqrt[3]{28}\)(要求精确到小数点后五位).
+  \end{enumerate}
+\end{enumerate}
+
+\chapter*{习题17}
+\textbf{定义}
+称\(f \sim g(x \to a)\),若存在函数\(h:X\to\mathbb{R}\)以及\(a\)的一个邻域\(U\),使得\(f(x)=g(x)h(x),x\in X \cap U\)且\(\lim\limits_{x\to a}h(x)=1\).
+
+\begin{enumerate}
+\item
+  证明:\(e^f \sim e^g\)当且仅当\(\lim\limits_{x\to a}(f(x)-g(x))=0\).
+\item
+  设\(f_1 \sim g_1,f_2 \sim g_2(x\to a)\).证明:
+
+  \begin{enumerate}
+  \item
+    若\(g_2=o(g_1)\),则\(f_1+f_2 \sim g_1(x\to a)\).
+  \item
+    若存在\(\alpha \neq -1\)满足\(g_2 \sim \alpha g_1\),则\(f_1+f_2 \sim (1+\alpha)g_1\).
+  \item
+    若\(g_2 \sim -g_1\),则\(f_1+f_2=o(g_1)\).
+  \item
+    \(\cosh x \sim \frac{e^x}{2},\cosh^{-1} x \sim \ln x\).
+  \end{enumerate}
+\item
+  设函数\[f(x)=\begin{cases} 1+x+\frac{x^2}{3}+x^3\sim\frac{1}{2}, & x\neq0 \\ 1, & x=0 \end{cases}\]证明:\(f\)在\(x=0\)处有二阶限定展开,但\(f\)在\(x=0\)处二阶不可导.
+\item
+  设函数\(f\in\mathcal{C}^{\infty}\)且对任意\(n\),\(f(x)=o(x^n)\).问:\(f\)在\(0\)附近是否恒为\(0\)?
+\item
+  设\(f\)满足\(f(x)=o(x^n),\forall n\),\(f\)一定是\(\mathcal{C}^{\infty}\)吗?
+\item
+  我们称\(f,g\)在\(x=a\)处\(n\)阶相等,若\(f-g=o((x-a)^n)\).
+
+  \begin{enumerate}
+  \item
+    证明:若\(P,Q\)是关于\((x-a)\)的次数不大于\(n\)的多项式,且\(P,Q\)在\(a\)处\(n\)阶相等,则\(P=Q\).
+  \item
+    若\(f\)在\(a\)处\(n\)次可导,且\(P\)是次数不大于\(n\)的关于\((x-a)\)的多项式,且与\(f\)在\(a\)处\(n\)阶相等,则\[P(x)=f(a)+f'(a)(x-a)+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n\]
+  \end{enumerate}
+\item
+  设\(f\in\mathcal{C}^2([a,b],\mathbb{R})\)且\(f'(a)=f'(b)=0\).证明:存在\(\xi\in(a,b)\)使得\[\left\lvert f''(\xi) \right\rvert \geqslant \frac{4}{(b-a)^2} \left\lvert f(b)-f(a) \right\rvert\]
+\item
+  设\(f\in\mathcal{C}^2([0,2],\mathbb{R})\)且\(\left\lvert f(x) \right\rvert \leqslant 1,\left\lvert f''(x) \right\rvert \leqslant 1\).证明\(\left\lvert f'(x) \right\rvert \leqslant 2\).
+\item
+  \begin{enumerate}
+  \item
+    证明:若\(f'(x_0)\)存在,则\[f''(x_0)=\lim\limits_{h\to0}\frac{f(x_0+h)+f(x_0-h)-2f(x_0)}{h^2}\]
+  \item
+    设函数\[f(x)=\begin{cases} x^2, & x\geqslant 0 \\ -x^2, & x\leqslant 0 \end{cases}\]证明:\(f''(x_0)=\lim\limits_{h\to0}\dfrac{f(x_0+h)+f(x_0-h)-2f(x_0)}{h^2}\)存在但\(f''(0)\)不存在.
+  \end{enumerate}
+\item
+  设\(f\in\mathcal{C}^2\)有上界,证明:\(f'\)是常值函数.
+\item
+  设\(f\in\mathcal{C}^2\)且\(f,f''\)有上界,证明:\(f'\)有界且满足\(\max \left\lvert f'(x) \right\rvert \leqslant \max \left\lvert f(x) \right\rvert \max \left\lvert f''(x) \right\rvert\).
+\end{enumerate}
+
+\chapter*{习题18}
+\begin{enumerate}
+\item
+  求下列函数的限定展开
+
+  \begin{enumerate}
+  \item
+    \(f(x)=x^x-1.(x=1,3\text{阶})\)
+  \item
+    \(f(x)=\sin \ln(x+1).(x=0,3\text{阶})\)
+  \item
+    \(f(x)=\sqrt{1+\tan x}.(x=0,4\text{阶})\)
+  \item
+    \(f(x)=\dfrac{1}{(1+\tan x)\cos^2 x}.(x=0,4\text{阶})\)
+  \item
+    \(f(x)=\int_x^{2x}\dfrac{1}{1+t^2+t^4}\mathrm{d}t.(x=0,4\text{阶})\)
+  \end{enumerate}
+\item
+  设函数\(f,g\)在\(x=0\)处有\(4\)阶限定展开:\[f(x)=x+ax^2+bx^3+cx^4+o(x^4),g(x)=x+\alpha x^2+\beta x^3+\gamma x^4+o(x^4)\]
+
+  \begin{enumerate}
+  \item
+    计算\(F=f \circ g-g \circ f\)在\(x=0\)处的\(4\)阶限定展开.
+  \item
+    由此计算\(f(x)=\dfrac{\sin x}{1-\sin x}-\sin\dfrac{x}{1-x}\)在\(x=0\)处的\(4\)阶限定展开.
+  \end{enumerate}
+\item
+  对于函数\(f(x)=\tan x\),利用关系式\(f'=1+f^2\),计算\(f\)在\(x=0\)处的\(8\)阶限定展开.
+\item
+  计算函数\(f(x)=(x-1)e^{\frac{x}{x-1}},x>0\)在\(+\infty\)处的\(3\)阶限定展开.
+\item
+  计算函数\(f(x)=\dfrac{1}{1-\cos x}\)在\(x=0\)处的\(4\)阶限定展开.
+\item
+  计算函数\(f(x)=x-x^2\ln(1+\frac{1}{x}),x>0\)在\({} +\infty\)处的\(2\)阶限定展开.
+\item
+  计算函数\(f(x)=\sqrt{x^2+\sqrt{x^4+1}}-\sqrt{2}x\)在\(+\infty\)处的\(3\)阶限定展开.
+\item
+  计算函数\(f(x)=e^{\frac{1}{x}}\sqrt{x(x+2)},x>0\)在\(+\infty\)处的\(3\)阶限定展开.
+\item
+  利用限定展开计算:
+
+  \begin{enumerate}
+  \item
+    \[\lim\limits_{x\to0^+}\dfrac{(1+x)^{\frac{\ln x}{x}}-x}{x(x^x-1)}\]
+  \item
+    \[\lim\limits_{x\to+\infty}\dfrac{\left((1+x)^{\frac{1}{x}}-x^{\frac{1}{x}}\right)(x\ln x)^2}{x^{x^{\frac{1}{x}}}-x}\]
+  \end{enumerate}
+\end{enumerate}
+
+\chapter*{习题19}
+\begin{enumerate}
+\item
+  利用展开计算下列极限:
+
+  \begin{enumerate}
+  \item
+    \[\lim\limits_{x\to0}\dfrac{1-\cos x}{\tan^2 x}\]
+  \item
+    \[\lim\limits_{x\to0}\dfrac{(1-\cos x)\arctan x}{x\sin^2x}\]
+  \item
+    \[\lim\limits_{x\to0}\left(\dfrac{\tan x}{x}\right)^{\frac{1}{x^2}}\]
+  \item
+    \[\lim\limits_{x\to\frac{\pi}{2}}e^{\frac{1}{\cos x}}\ln\frac{2x}{\pi}\]
+  \item
+    \[\lim\limits_{x\to+\infty}x\left(\ln x\right)^2\left(\sin\frac{1}{\ln x}-\sin\frac{1}{\ln(x+1)}\right)\]
+  \item
+    \[\lim\limits_{x\to e}(\ln x-1)\ln\left\lvert x-e\right\rvert\]
+  \item
+    \[\lim\limits_{x\to 0}\dfrac{(1+\sin x)^{\frac{1}{x}}-e^{1-\frac{x}{2}}}{(1+\tan x)^\frac{1}{x}-e^{1-\frac{x}{2}}}\]
+  \item
+    \[\lim\limits_{x\to0^+}(\cos x)^{\frac{1}{x^a}},a\geqslant0\]
+  \end{enumerate}
+\item
+  此前我们都是对函数做多项式展开.由于\(\ln x\)比任意\(x^{\varepsilon}\)都慢,一个想法是利用\(x^p(\ln x)^q\)型函数得到更精细控制的展开.先证明:对任意\(p,p'\in\mathbb{N},q,q'\in\mathbb{Z}_+\),若\({} p>p'\)或\(p=p‘,q>q'\),则\(\lim\limits_{x\to0^+}\dfrac{x^p(\ln x)^q}{x^{p'}(\ln x)^{q'}}\).
+\item
+  对\(f(x)=\left(1+\frac{1}{x}\right)^{x\ln x}\)在\(x=0\)处按\(x^p(\ln x)^q\)展开(即你的展开式的每一项都是\(x^p(\ln x)^q\)的形式.)
+\item
+  重做上次第九题:
+
+  \begin{enumerate}
+  \item
+    \[\lim\limits_{x\to0^+}\dfrac{(1+x)^{\frac{\ln x}{x}}-x}{x(x^x-1)}\]
+  \item
+    \[\lim\limits_{x\to+\infty}\dfrac{\left((1+x)^{\frac{1}{x}}-x^{\frac{1}{x}}\right)(x\ln x)^2}{x^{x^{\frac{1}{x}}}-x}\]
+  \end{enumerate}
+\item
+  利用函数的各阶导数信息,我们可以知道任意位置函数的形态.考虑函数\[f(x)=\begin{cases}\left\lvert x^2\sin\dfrac{1}{x}\right\rvert, & x\neq0 \\ 0, & x=0\end{cases}\]
+
+  \begin{enumerate}
+  \item
+    找出其局部极大极小值点.
+  \item
+    大致画出其图像,尤其是\(x=0\)附近的渐进形态.
+  \end{enumerate}
+\item
+  求\(f(x)=\sqrt[4]{x^4+x^2}-\sqrt[8]{x^3+x^2}\)在无穷远处的渐进线方程.
+\item
+  大致描绘出下列函数的图像(包含极值点信息,无穷远处渐进信息以及奇异点的爆破信息)
+
+  \begin{enumerate}
+  \item
+    \[f(x)=e^{\frac{1}{x}}\sqrt{x(x+2)}\]
+  \item
+    \[f(x)=\dfrac{\ln \lvert x-2 \rvert}{\ln \lvert x \rvert}\]
+  \end{enumerate}
+\item
+  设\(f:[a,b]\to[a,b]\)连续且每一点都是局部极大值点.证明:\(f\)是常值函数.
+\item
+  证明:不存在函数\(f:I\to\mathbb{R}\),\(I\)是一个区间,使得\(I\)中每一点都是\(f\)的严格局部极大值.
+\item
+  对于函数\(f\in\mathcal{C}^2(\mathbb{R},\mathbb{R}_+)\),定义\(f_{x_0,\lambda}(x)=\left(\dfrac{\lambda}{\left\lvert x-x_0 \right\rvert}\right)^{\gamma}f\left(x_0+\dfrac{\lambda^2\left(x-x_0\right)}{\left\lvert x-x_0 \right\rvert^2}\right)\).若对任意\(x_0\in\mathbb{R}\),都存在\(\lambda_0\)使得\(f(x)=f_{x_0,\lambda_0}(x)\)对任意\(x\neq x_0\)成立,证明:存在\(x_1\in\mathbb{R}\)使得\(f\)有如下形式:\[f(x)=\dfrac{A}{\left(B+\left\lvert x-x_1\right\rvert^2\right)^{\frac{\gamma}{2}}}\](提示:将\(f(x)\)在\(x_0\)和0处展开.)
+\end{enumerate}
+
+\chapter*{习题20}
+\begin{enumerate}
+\item
+  重新做上次最后一题:对于函数\(f\in\mathcal{C}^2(\mathbb{R},\mathbb{R}_+)\),定义\({} f_{x_0,\lambda}(x)=\left(\dfrac{\lambda}{\lvert x-x_0\rvert}\right)^{\gamma}f\left(x_0+\dfrac{\lambda^2(x-x_0)}{\lvert x-x_0\rvert^2}\right) {}\).若对任意\(x_0\in\mathbb{R}\),都存在\(\lambda_0\)使得\(f(x)=f_{x_0,\lambda_0}(x)\)对任意\(x\neq x_0\)成立,依照下列步骤证明:存在\(x_1\in\mathbb{R}\)使得\(f\)有如下形式\[f(x)=\dfrac{A}{(B+\lvert x-x_1\rvert^2)^{\frac{\gamma}{2}}}\]
+
+  \begin{enumerate}
+  \item
+    思考变换\({} x\mapsto x_0+\dfrac{\lambda^2(x-x_0)}{\lvert x-x_0\rvert^2} {}\)的几何意义.
+  \item
+    令\(x\to+\infty\)会得到\(f\)的什么性质?
+  \item
+    将\({} f\left(x_0+\dfrac{\lambda^2(x-x_0)}{\lvert x-x_0\rvert^2}\right) {}\)在\(x_0\)处展开.
+  \item
+    将\(x_0\)替换为\(0\),重复(3)中操作.
+  \item
+    将\({} \left( \dfrac{\lambda}{\lvert x-x_0\rvert} \right)^{\gamma} {}\)在\(x_0=0\)处展开.
+  \item
+    结合(3)(4)(5),得到\(f\)所满足的常微分方程,试着解出这个方程.
+  \item
+    思考题:倘若\(f\)甚至不是\(\mathcal{C}^1\)的,上述结论是否仍然成立?如果你相信它成立,给出一个不同的证明.
+  \end{enumerate}
+\end{enumerate}
+
+下面我们开始进入级数的练习.回顾以下级数的定义:设\((a_n)\)是一个序列(实序列复序列都行),定义部分和\(S_n=\sum\limits_{j=1}^na_j\).若序列\((S_n)\)收敛,则称级数\(\sum\limits_{n=1}^{\infty}a_n\)收敛.这无外乎是说:级数不过是求了一次和的序列.
+
+\begin{enumerate}
+
+\setcounter{enumi}{1}
+
+\item
+  证明Cauchy收敛准则:级数\(\sum\limits_{n=1}^{\infty}\)收敛的充要条件是对任意\(\varepsilon>0\),存在\(N\in\mathbb{N}\),使得对任意\(m,k\in\mathbb{N},m\geqslant n\),有\(\left\lvert\sum\limits_{j=m}^{m+k}a_n\right\rvert\leqslant\varepsilon\).
+\item
+  判断级数\(\sum\limits_{n=1}^{\infty}\dfrac{1}{n}\)是否收敛,并说明原因.
+\item
+  对于实数级数\(\sum\limits_{n=1}^{\infty}a_n\),证明:
+
+  \begin{enumerate}
+  \item
+    若\(\lim\limits_{n\to\infty}na_n\neq0\),则级数\(\sum\limits_{n=1}^{\infty}a_n\)发散.
+  \item
+    若\((a_n)\)单调下降且级数\(\sum\limits_{n=1}^{\infty}a_n\)收敛,则\(\lim\limits_{n\to\infty}na_n=0\).
+  \end{enumerate}
+\item
+  对于收敛级数\(\sum\limits_{n=1}^{\infty}a_n\),定义\(\sigma_n=\dfrac{S_1+S_2+\cdots+S_n}{n}\),证明级数\(\sum\limits_{n=1}^{\infty}\sigma_n\)收敛且\(\sum\limits_{n=1}^{\infty}a_n=\lim\limits_{n\to\infty}\sigma_n\).
+\item
+  设\(\sum\limits_{n=1}^{\infty}a_n\)是正项级数,令\(b_n=\dfrac{a_n}{(1+a_1)(1+a_2)\cdots(1+a_n)}\),证明级数\(\sum\limits_{n=1}^{\infty}b_n\)收敛.
+\end{enumerate}
+
+\chapter*{习题21}
+\begin{enumerate}
+\item
+  设\(\sum\limits_{n=1}^{\infty}a_n\)是收敛的正项级数.
+
+  \begin{enumerate}
+  \item
+    证明:对任意\(\alpha>1\),级数\(\sum\limits_{n=1}^{\infty}a_n^{\alpha}\)收敛.
+  \item
+    证明:若\(\alpha>\frac{1}{2}\),则级数\(\sum\limits_{n=1}^{\infty}\dfrac{\sqrt{a_n}}{n^{\alpha}}\)收敛.
+  \item
+    举例说明\(\sum\limits_{n=1}^{\infty}\dfrac{\sqrt{a_n}}{n^{\frac{1}{2}}}\)可能发散.
+  \end{enumerate}
+\item
+  对于实数级数\(\sum\limits_{n=1}^{\infty}a_n\).
+
+  \begin{enumerate}
+  \item
+    若它收敛,构造一个正序列\((\lambda_n)\to+\infty\)使得\(\sum\limits_{n=1}^{\infty}\lambda_na_n\)收敛.
+  \item
+    若它发散,构造一个正序列\({} (\mu_n)\to0\)使得\(\sum\limits_{n=1}^{\infty}\mu_na_n\)发散.
+  \end{enumerate}
+\item
+  设正实序列\((a_n)\)单减收敛到0.证明\(\sum\limits_{n=1}^{\infty}a_n\)与\(\sum\limits_{n=1}^{\infty}n(a_n-a_{n+1})\)有相同的敛散性,且在收敛的情况下有\(\sum\limits_{n=1}^{\infty}a_n=\sum\limits_{n=1}^{\infty}n(a_n-a_{n-1})\).
+\item
+  设\((a_n)\)是单调下降的正序列,证明:级数\(\sum\limits_{n=1}^{\infty}a_n\)与级数\(\sum\limits_{n-1}^{\infty}2^na_{2^n}\)有相同的敛散性.
+\item
+  设\((a_n)\)是正实序列.
+
+  \begin{enumerate}
+  \item
+    假设存在\(\alpha\in(0,1)\)使得对任意\(n\in\mathbb{N}\),有\(a^{\frac{1}{n}}\leqslant1-\dfrac{1}{n^{\alpha}}\).试研究级数\(\sum\limits_{n=1}^{\infty}a_n\)的敛散性.
+  \item
+    假设存在\(\beta>0\)使得对任意\(n\in\mathbb{N}\),有\(n\left(\dfrac{a_n}{a_{n+1}}-1\right)\geqslant1+\beta\).试研究\(\sum\limits_{n=1}^{\infty}a_n\)的敛散性.
+  \end{enumerate}
+\item
+  考虑两个正序列\((a_n)\)与\((b_n)\),令\(k_n=a_n\dfrac{b_n}{b_{n+1}}-a_{n+1}\).证明:
+
+  \begin{enumerate}
+  \item
+    若\(\varliminf\limits_{n\to\infty}k_n>0\),则\(\sum\limits_{n=1}^{\infty}b_n\)收敛.
+  \item
+    若级数\(\sum\limits_{n=1}^{\infty}\dfrac{1}{a_n}\)发散,且当\(n\)充分大时,\(k_n\leqslant0\),则级数\({} \sum\limits_{n=1}^{\infty}b_n {}\)发散.
+  \end{enumerate}
+\end{enumerate}
+
+\chapter*{习题22}
+我们归纳总结一些关于级数敛散性的判别法(如果下面某些判别法你还没学过,不要慌,不要慌,试图去理解一下他们在说什么,然后自己尝试证明一下,绝对不要死记硬背).
+
+\begin{enumerate}
+\item
+  (D'Alembert判别法) 设\(\sum a_n\)为严格正项级数,则
+
+  \begin{enumerate}
+  \item
+    若存在\(0<\lambda<1\)及\(N\in\mathbb{N}\),当\(n\geqslant N\)时,\(\dfrac{a_{n+1}}{a_n}\leqslant\lambda\),则级数收敛.
+  \item
+    若存在\(0<\lambda<1\)及\(N\in\mathbb{N}\),当\(n\geqslant N\)时,\(\dfrac{a_{n+1}}{a_n}\geqslant1\),则级数发散.
+  \item
+    若\(\lim\limits_{n\to\infty}\dfrac{a_{n+1}}{a_n}=\lambda\),则
+
+    \begin{enumerate}
+    \item
+      若\(\lambda<1\),则级数收敛.
+    \item
+      若\(\lambda>1\),则级数发散.
+    \item
+      若\(\lambda=1\),无法判断.
+    \end{enumerate}
+  \end{enumerate}
+\item
+  (Cauchy判别法) 设\(\sum a_n\)为正项级数.
+
+  \begin{enumerate}
+  \item
+    若存在\(0<\lambda<1\)及\(N\in\mathbb{N}\),当\(n\geqslant N\)时,\(\sqrt[n]{a_n}\leqslant\lambda\),则级数收敛.
+  \item
+    若存在\(N\in\mathbb{N}\),当\(n\geqslant N\)时,\(\sqrt[n]{a_n}\geqslant1\),则级数发散.
+  \item
+    若\(\varlimsup\limits_{n\to\infty}\sqrt[n]{a_n}=\lambda\),则
+
+    \begin{enumerate}
+    \item
+      若\(\lambda<1\),则级数收敛.
+    \item
+      若\(\lambda>1\),则级数发散.
+    \item
+      若\(\lambda=1\),无法判断.
+    \end{enumerate}
+  \end{enumerate}
+\item
+  (Riemann判别法)
+  设\(\sum a_n\)为正项级数且满足\(\lim\limits_{n\to\infty}n^{\alpha}a_n=\lambda\in\overline{\mathbb{R}}\),则
+
+  \begin{enumerate}
+  \item
+    若\(\alpha>1\)且\(\lambda<+\infty\),则级数收敛.
+  \item
+    若\(\alpha\leqslant1\)且\(\lambda\neq0\),则级数发散.
+  \end{enumerate}
+\item
+  (积分判别法)
+  设\(\sum a_n\)为正项级数,\(f\in\mathcal{CM}\left([1,+\infty),\mathbb{R}_+^*\right)\)单调减且满足\(a_n=f(n)\),则级数\({} \sum\limits_{n=1}^{\infty} a_n {}\)与积分\(\int_1^{+\infty}f(x)\mathrm{d}x\)具有相同的敛散性.
+\item
+  (Rabble判别法)
+  设\(\sum a_n\)为严格正项级数满足\({} \lim\limits_{n\to\infty}n\left(1-\dfrac{a_{n+1}}{a_n}\right)=\lambda\in\overline{\mathbb{R}} {}\),则
+
+  \begin{enumerate}
+  \item
+    若\(\lambda>1\),则级数收敛.
+  \item
+    若\(\lambda<1\),则级数发散.
+  \item
+    若\(\lambda=1\),无法判断.
+  \end{enumerate}
+\item
+  (Bertrand判别法)
+  设\(\sum a_n\)为严格正项级数满足\[\lim\limits_{n\to\infty}n\ln^{(1)}n\cdots\ln^{(k)}n\left(1-\dfrac{1}{n}-\dfrac{1}{n\ln n}-\cdots-\dfrac{1}{n\ln^{(1)}n\cdots\ln^{(k-1)}n}\right)=\lambda\]其中\(\ln^{(1)}n=\ln n,\ln^{(k)}n=\ln\ln^{(k-1)}n\),则
+
+  \begin{enumerate}
+  \item
+    若\(\lambda<1\),则级数收敛.
+  \item
+    若\(\lambda>1\),则级数发散.
+  \item
+    若\(\lambda=1\),无法判断.
+  \end{enumerate}
+\item
+  对\(x>0\),记\(l_1=\ln(1+x),l_{p+1}(x)=l_1(l_p(x))\).
+
+  \begin{enumerate}
+  \item
+    证明:对\(p\in\mathbb{N}\),级数\(S_p=\sum\limits_{k=p}^{\infty}\dfrac{1}{kl_1(k)l_2(k)\cdots l_{p-1}(k)l_p(k)^2}\)收敛.
+  \item
+    设\[a_n=\dfrac{1}{2S_1}\dfrac{1}{nl_1(n)^2}+\dfrac{1}{2^2S_2}\dfrac{1}{nl_1(n)l_2(n)^2}+\cdots+\dfrac{1}{2^nS_n}\dfrac{1}{nl_1(n)l_2(n)\cdots l_{n-1}(n)l_n(n)^2}\]证明级数\(\sum\limits_{n=1}^{\infty}a_n\)收敛.
+  \end{enumerate}
+\item
+  对于正序列\((a_n)\),证明
+
+  \begin{enumerate}
+  \item
+    若\({} \varlimsup\limits_{n\to\infty}\left(\dfrac{a_{n+1}}{a_n}\right)^n<\dfrac{1}{e} {}\),则级数\(\sum\limits_{n=1}^{\infty}a_n\)收敛.
+  \item
+    若\(\varliminf\limits_{n\to\infty}\left(\dfrac{a_{n+1}}{a_n}\right)^n>\dfrac{1}{e}\),则级数\(\sum\limits_{n=1}^{\infty}a_n\)发散.
+  \end{enumerate}
+\item
+  设正项级数\(\sum a_n\)收敛,记为\(A\).
+
+  \begin{enumerate}
+  \item
+    证明:若\(u_n=(a_1a_2\cdots a_n)^{\frac{1}{n}}\),则级数\(\sum u_n\)收敛,且\(\sum\limits_{n=1}^{\infty}u_n\leqslant eA\).
+  \item
+    设\(k>0\)满足:对任意收敛的正项级数\({} \sum a_n {}\),都有\(\sum\limits_{n=1}^{\infty}u_n\leqslant kA\).证明:\(k\geqslant e\).
+  \item
+    设正项级数\(\sum \dfrac{1}{a_n}\)收敛,令\(u_n=\dfrac{n^2a_n}{(a_1+a_2+\cdots+a_n)^2}\),证明级数\(\sum u_n\)收敛.
+  \end{enumerate}
+\item
+  若正序列\((u_n)\)满足\(\lim\limits_{n\to\infty}nu_n=0,\dfrac{u_{n+1}}{u_n}=\dfrac{n+a}{n+b}\).
+
+  \begin{enumerate}
+  \item
+    证明级数\(\sum u_n\)收敛并计算之.
+  \item
+    计算\(\sum\limits_{n=1}^{\infty}u_n\),其中\(u_n=\dfrac{1\cdot2\cdots(2n-1)}{2\cdot2\cdots(2n+2)}\).
+  \end{enumerate}
+\item
+  设\(\sum a_n\)为正项级数,定义\[S_1=1,2S_{n+1}=S_n+\sqrt{S_n^2+a_n}\]证明:若\(\sum\limits_{n=1}^{\infty}a_n\)收敛,则\((S_n)\)收敛.反之是否成立?
+\item
+  设\(\sum u_n\)为交错级数(相邻项符号相反),定义\(\dfrac{u_{n+1}}{u_n}=\dfrac{-1}{1+a_n}\).证明:若从某一项开始,\(-1<a_n\leqslant0\),则级数\(\sum\limits_{n=1}^{\infty}u_n\)发散;若从某一项开始,存在\(k\)使得\(0<k<na_n\),则级数收敛.
+\item
+  上节课没做完的题目接着做.
+\end{enumerate}
+
+\chapter*{习题23}
+\begin{enumerate}
+\item
+  设\((a_n)\)为正序列,\(\sum a_n^2\)收敛.令\(A=\sum a_n^2,A_n=\sum\limits_{i=1}^na_n,\alpha_n=\dfrac{A_n}{n}\).
+
+  \begin{enumerate}
+  \item
+    证明:\(\alpha_n^2-2\alpha_na_n\leqslant(n-1)\alpha_{n-1}^2-n\alpha_n^2\).
+  \item
+    证明:\(\sum\limits_{n=1}^{\infty}\alpha_n^2\leqslant4A\).
+  \end{enumerate}
+\item
+  设\(\sum u_n\)为正项级数,\(\lim\limits_{n\to\infty}\left(n\ln\dfrac{u_n}{u_{n+1}}\right)^{\ln n}=l\).
+
+  \begin{enumerate}
+  \item
+    证明:若\(l>e\),则级数收敛,若\(l<e\),则级数发散.
+  \item
+    证明:若\(l=e\),则两种情况都可能出现.
+  \end{enumerate}
+\item
+  设\(\sum u_n\)为正项级数,且\[\sqrt[n]{u_n}<1-\dfrac{\ln n}{n}-\dfrac{\ln\ln n}{\ln n}\]研究级数敛散性.
+\item
+  对于序列\((a_n)\),若\(\lim\limits_{n\to\infty}a_n=0\),且\(-1\leqslant\dfrac{a_{n+1}}{a_n}<r,r\in(0,1)\).证明:\(\sum a_n\)收敛.
+\item
+  设\(f\in\mathcal{C}^1(\mathbb{R}_+,\mathbb{R}_+),\lim\limits_{x\to+\infty}\dfrac{f'(x)}{f(x)}=\mu\).
+
+  \begin{enumerate}
+  \item
+    证明:若\(\int_0^{+\infty}f(x)\mathrm{d}x\)收敛,则\(\sum\limits_{j=n+1}^{\infty}f(j)\sim\dfrac{\mu}{1-e^{-\mu}}\int_n^{+\infty}f(x)\mathrm{d}x\).
+  \item
+    证明:若\(\int_0^{+\infty}f(x)\mathrm{d}x\)发散,则\(\sum\limits_{j=n+1}^{\infty}f(j)\sim\dfrac{\mu}{1-e^{-\mu}}\int_0^nf(x)\mathrm{d}x\).
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \item
+    证明:\(\exists c>0,\forall x>0,\left\lvert\int_0^x\sin\left(t^{\alpha}\right)\mathrm{d}x\right\rvert\leqslant Cx^{1-\alpha},0<\alpha<1\).
+  \item
+    证明:\(\exists\tilde{C}>0,\forall K\in\mathbb{N},\left\lvert\int_0^k\sin\left(t^{\alpha}\right)\mathrm{d}x-\sum\limits_{j=1}^k\sin\left(j^{\alpha}\right)\right\rvert\leqslant\tilde{C}k^{\alpha}\).
+  \item
+    证明:若\(\delta>\max\{\alpha,1-\alpha\}\),则\(\sum\dfrac{\sin n^{\alpha}}{n^{\delta}}\)收敛.
+  \item
+    证明:\(\sum\dfrac{\left\lvert\sin n^{\alpha}\right\rvert}{n}\)发散.
+  \end{enumerate}
+\item
+  研究级数敛散性
+
+  \begin{enumerate}
+  \item
+    \(\sum\dfrac{\sin\left(2\pi en!\right)}{n^{\alpha}},\alpha>0\).
+  \item
+    \(\sum\sin\left(\pi en!\right)\).
+  \end{enumerate}
+\end{enumerate}
+
+\chapter*{习题24}
+\begin{enumerate}
+\item
+  研究下列级数敛散性:
+
+  \begin{enumerate}
+  \item
+    \[\sum (-1)^n n^{\alpha} a^{n^{\beta}}, (\alpha, \beta, a > 0)\]
+  \item
+    \[\sum \left( 1 + \dfrac{1}{2} + \cdots + \dfrac{1}{n} \right) \dfrac{\cos n \theta}{n + (-1)^n}, \theta \in \mathbb{R}\]
+  \item
+    \[\sum \dfrac{(-1)^n}{n^{\alpha} + \sin n \theta}\]
+  \item
+    \[\sum (-1)^n \dfrac{n^{\alpha} \sin \dfrac{1}{n^{\alpha}}}{n^{\beta} + (-1)^n}, \alpha, \beta > 0\]
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \item
+    设\({} \sum u_n\)为严格正项级数且满足\[n \left( 1 - \dfrac{u_{n + 1}}{u_n} \right) = \alpha + O \left( \dfrac{1}{n} \right), n \to \infty, \alpha \in \mathbb{R}\]证明:存在常数\(A > 0\)使得\({} u_n \sim \dfrac{A}{n^{\alpha}}, (n \to \infty)\).
+  \item
+    研究级数\(\sum \dfrac{1}{n^{\alpha}} \int_0^1 (1 - t^2)^n \mathrm{d}t\)的敛散性.
+  \end{enumerate}
+\item
+  设\(0 < \alpha, \beta < 1, u_n = \dfrac{(-1)^{[n^{\alpha}]}}{n^{\beta}}\).证明:若\(\alpha + \beta \leqslant 1\),则级数发散;若\({} \alpha + \beta> 1 {}\)且\(\beta > \alpha\),则级数收敛.
+\item
+  设实序列\((u_n)\)满足\(u_n \neq 0\)且\(\lim\limits_{n \to \infty} u_n = 0\).令\[u_n^+ = \max \{ u_n, 0 \}, u_n^- = \min \{ - u_n, 0 \}\]假设级数\(\sum u_n^+\)和\(\sum u_n^-\)发散.对于给定常数\(a \leqslant b\),证明
+
+  \begin{enumerate}
+  \item
+    存在一个双射\(\sigma: \mathbb{N} \to \mathbb{N}\)使得若令\(S_n = \sum\limits_{k = 0}^n u_{\sigma(k)}\),则有\(\varliminf\limits_{n \to \infty} S_n = a, \varlimsup\limits_{n \to \infty} S_n = b\).
+  \item
+    假如\(\sigma\)如(1)中选取,则序列\((S_n)\)在\(\mathbb{R}\)中的极限点(聚点)的集合等于\([a, b]\).
+  \end{enumerate}
+\item
+  答疑.
+\end{enumerate}
+
+\chapter*{习题27}
+\begin{enumerate}
+\item
+  Assume \(\lim\limits_{i \to \infty} n(i) = + \infty\) and when \(i\)
+  is large enough,
+  \(\lvert a_{ij} \rvert \leqslant A_j, j = 1, 2, \cdots, n(i)\). Prove:
+  if \(\sum\limits_{j = 1}^{\infty} A_j\) converges, then if
+  \(\lim\limits_{i \to \infty} a_{ij}\) exists, we have
+  \[\lim\limits_{i \to \infty} \sum\limits_{j = 1}^{n(i)} a_{ij} = \sum\limits_{j = 1}^{\infty} \lim\limits_{i \to \infty} a_{ij}\]
+\item
+  Define Riemann-Zeta function as
+  \(\zeta(s) = \sum\limits_{n = 1}^{\infty} \dfrac{1}{n^s}\). Prove the
+  following identity:
+  \[\sum\limits_{n = 2}^{\infty} (\zeta(n)-1) = \sum\limits_{n = 1}^{\infty} (\zeta(2n) - 1)\]
+\item
+  Assume \(\sum\limits_{n = 2}^{\infty} 2^{- n} \lvert a_n \rvert\)
+  converges. For \(- \dfrac{1}{2} \leqslant x \leqslant \dfrac{1}{2}\),
+  denote \(f(x) = \sum\limits_{n = 2}^{\infty} a_n x^n\), prove:
+  \[\sum\limits_{n = 2}^{\infty} f(\dfrac{1}{n}) = \sum\limits_{n = 2}^{\infty} a_n(\zeta(n) - 1)\]
+\item
+  Prove the following identities:
+
+  \begin{enumerate}
+  \item
+    \[\lim\limits_{n \to \infty} \left( \sum\limits_{k = 1}^n \dfrac{1}{n} - \ln n \right) = \sum\limits_{n = 2}^{\infty} \dfrac{(-1)^n}{n} \zeta(n)\]
+  \item
+    \[\prod\limits_{n = 1}^{\infty} \cos \dfrac{x}{2^n} = \dfrac{\sin x}{x}\]
+  \end{enumerate}
+\item
+  Prove:
+  \[\dfrac{1}{(1-x)^2} = \sum\limits_{n = 0}^{\infty} (n + 1) x^n\]
+\item
+  Prove the identity:
+  \[\left( \dfrac{\pi}{4} \right)^2 = \sum\limits_{n = 0}^{\infty} \dfrac{(-1)^n}{n + 1} \left( 1 + \dfrac{1}{3} + \cdots + \dfrac{1}{2n + 1} \right)\]
+\item
+  Prove: when \(0 < \beta < \alpha\), there holds
+  \[\lim\limits_{n \to \infty} \dfrac{\beta (\beta + 1) \cdots (\beta + n - 1)}{\alpha (\alpha + 1) \cdots (\alpha + n - 1)} = 0\]
+\item
+  Let \((p_n)\) denotes all prime numbers. Prove:
+  \(\sum\limits_{n = 1}^{\infty} \dfrac{1}{p_n}\) diverges.
+\end{enumerate}
+
+\chapter*{习题28}
+\begin{enumerate}
+\item
+  Let \(f \in \mathcal{C}^1([a, b], \mathbb{R})\) and
+  \(f(a) = f(b) = 0\). Prove the following inequality
+  \[\int_a^b f(x)^2 \mathrm{d} x \leqslant \dfrac{(b - a)^2}{\pi^2} \int_a^b \lvert f'(x) \rvert^2 \mathrm{d} x\]
+  Moreover, find the extremal function.
+\item
+  Let \(f \in \mathcal{C}^1([a, b], \mathbb{R})\) and there exists at
+  least one point \(x_0\) such that \(f(x_0) = 0\). Prove the Sobolev
+  inequality
+  \[\max\limits_{x \in [a, b]} \lvert u(x) \rvert \leqslant \sqrt{b - a} \left( \int_a^b \lvert f'(x) \rvert^2 \mathrm{d} x \right)^{\frac{1}{2}}\]
+\item
+  If we replace the endpoint condition \(f(a) = f(b) = 0\) in Problem 1
+  by \(\int_a^b f(x) \mathrm{d} x\), prove the same inequality.
+\item
+  Prove the following Hardy's inequality
+  \[\int_0^{+ \infty} \left( \dfrac{1}{x} \int_0^x f(t) \mathrm{d} t \right)^p \mathrm{d} x \leqslant \left( \dfrac{p}{p - 1} \right)^p \int_0^{+ \infty} \lvert f(x) \rvert^p \mathrm{d} x, p > 1\]
+  Moreover, the equality holds if and only if \(f(x) = 0\).
+\item
+  Use Hardy's inequality to prove the following Carleman's inequality
+  \[\int_0^{+ \infty} e^{\frac{1}{x} \int_0^x \ln f(t) \mathrm{d} t} \mathrm{d} x \leqslant e \int_0^{+ \infty} f(x) \mathrm{d} x\]
+\item
+  Assume \((a_n)\) is positive sequence and increasing with respect to
+  \(n\), prove
+  \({} \sum\limits_{n = 1}^{\infty} (1 - \dfrac{a_n}{a_{n + 1}}) {}\)
+  converges if and only if
+  \(\sum\limits_{n = 1}^{\infty} (\dfrac{a_{n + 1}}{a_n} - 1)\)
+  converges.
+\item
+  Assume \(\sum\limits_{n = 1}^{\infty} a_n\) is a positive convergent
+  series, prove
+  \(\sum\limits_{n = 1}^{\infty} \dfrac{a_n + a_{n + 1} + \cdots + a_{2n}}{n}\)
+  converges.
+\item
+  Assume \(a_n > 0\) and \(\sum\limits_{n = 1}^{\infty} \dfrac{1}{a_n}\)
+  converges. Prove
+  \(\sum\limits_{n = 1}^{\infty} \dfrac{n}{a_1 + a_2 + \cdots + a_n}\)
+  converges.
+\end{enumerate}
+
+\chapter*{习题30}
+对于函数\(f: \mathbb{R} \to \mathbb{R}\),定义Laplace变换为\(F(x) = \mathcal{L}\{f(t)\} = \int_0^{+\infty} f(t) e^{-tx} \mathrm{d}t\),逆变换记为\(f(t) = \mathcal{L}^{-1}\{F(x)\}\)
+
+\begin{enumerate}
+\item
+  计算\(\mathcal{L}\{1\}, \mathcal{L}\{t\}, \mathcal{L}\{e^{\alpha t}\}\).
+\item
+  验证下列性质:
+
+  \begin{enumerate}
+  \item
+    \(\mathcal{L}\{C_1f + C_2g\} = C_1 \mathcal{L}\{f\} + C_2 \mathcal{L}\{g\}\).
+  \item
+    \({} \mathcal{L}\{f'(t)\} = x \mathcal{L}\{f(t)\} - f(0) {}\).
+  \item
+    \(\mathcal{L}\{t^nf(t)\} = (-1)^n F^{(n)}(x)\).
+  \item
+    \(\mathcal{L}\{\int_0^n f(t) \mathrm{d} t\} = \frac{F(x)}{x}\).
+  \item
+    \(\mathcal{L}\{e^{\alpha t}f(t)\} = F(x - \alpha)\).
+  \end{enumerate}
+\item
+  定义卷积运算\(f_1(t) * f_2(t) = \int_0^t f_1(\tau)f_2(t - \tau) \mathrm{d} \tau\).验证\(\mathcal{L}\{f_1 * f_2\} = F_1(x)F_2(x)\).
+\item
+  计算\(\sin kx\)与\(\cos kx\)的Laplace变换.
+\item
+  计算\(\sinh kx\)与\(\cosh kx\)的Laplace变换.
+\item
+  计算\(\mathcal{L}^{-1} \left\{ \dfrac{2}{(x - 1)^2 + 4} \right\}\)与\(\mathcal{L}^{-1} \left\{ \dfrac{1}{x^2 + 2x + 3} \right\}\).
+\item
+  利用Laplace变换和逆变换求解积分方程\[y(t) = 1 + \int_0^t y(\tau) \sin(t - \tau) \mathrm{d} \tau\]
+\item
+  利用Laplace变换和逆变换求解ODE
+
+  \begin{enumerate}
+  \item
+    \(x'' + \lambda x = 0\).
+  \item
+    \(y' + y = 2\).
+  \item
+    \(y'' + 2y' - 3y = e^{-t}\).
+  \end{enumerate}
+\item
+  求解强迫振动系统的初值问题\[\begin{cases} y'' + 4y = f(t), t > 0 \\ y(0) = 1, y'(0) = 0 \end{cases}\]其中驱动力函数\(f(t) = \chi_{[0, 1)}\).
+\item
+  求解下列ODE方程组\[\begin{cases} y'' - x'' + x' - y = e^t - 2 \\ 2y'' - x'' - 2y' + x = -t \\ x(0) = x'(0) = 0 \\ y(0) = y'(0) = 0 \end{cases}\]
+\end{enumerate}
 
 \end{document}
