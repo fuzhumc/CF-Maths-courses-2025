@@ -1,19 +1,5 @@
 \documentclass[a4paper,oneside]{book}
-\usepackage{graphicx} % Required for inserting images
-\usepackage{booktabs}
-\usepackage{hyperref}
-\usepackage{amsmath}
-\usepackage{amsthm, amssymb} % Required for theorem formatting
-\usepackage{tikz-cd} % Commutative diagrams support
-\usepackage{stmaryrd}
-\usepackage{enumitem}
-\usepackage{titlepic}
-\usepackage{ctex}
-\usepackage{xeCJK}
-\usepackage{geometry}
-
-\setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
-\geometry{a4paper}
+\usepackage{../mathnotebookfr}
 
 \hypersetup{
     pdftitle={Algebra I},
@@ -23,76 +9,17 @@
     pdfproducer={XeLaTeX}
 }
 
-\setlist[enumerate,1]{label=\arabic*.}
-\setlist[enumerate,2]{label=(\arabic*)}
-\setlist[enumerate,3]{label=(\roman*)}
-\hypersetup{colorlinks=true,linkcolor=blue}
-
-\renewcommand{\proofname}{Démonstration}
-\renewcommand{\contentsname}{目录}
-\renewcommand{\chaptername}{Chapitre}
-
-\theoremstyle{definition}
-\newtheorem{prop}{Proposition}[section]
-\newtheorem{thm}[prop]{Théorème}
-\newtheorem{lem}[prop]{Lemme}
-\newtheorem{deff}{Définition}[section]
-\newtheorem{exer}{Exercise}[section]
-
-\theoremstyle{remark}
-\newtheorem*{rqq}{Remarque}
-\newtheorem{cor}[prop]{Corollaire}
-
-\makeatletter
-
-\def\@buildmath#1{
-    \expandafter\def\csname bb#1\endcsname{\mathbb{#1}}
-    \expandafter\def\csname bs#1\endcsname{\boldsymbol{#1}}
-    \expandafter\def\csname cal#1\endcsname{\mathcal{#1}}
-    \expandafter\def\csname scr#1\endcsname{\mathscr{#1}}
-    \expandafter\def\csname frak#1\endcsname{\mathfrak{#1}}
-    \expandafter\def\csname rm#1\endcsname{\mathrm{#1}}
-    \expandafter\def\csname bf#1\endcsname{\mathbf{#1}}
-}
-
-\def\@buildmathletters#1{
-    \ifx#1\relax
-    \else
-        \@buildmath{#1}
-        \expandafter\@buildmathletters
-    \fi
-}
-
-\@buildmathletters ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\relax
-
-\makeatother
-
-\let\ker\relax
-
-\DeclareMathOperator{\dif}{d}
-\DeclareMathOperator{\id}{Id}
-\DeclareMathOperator{\ker}{Ker}
-\DeclareMathOperator{\im}{Im}
-\DeclareMathOperator{\pgcd}{pgcd}
-\DeclareMathOperator{\ppcm}{ppcm}
-\DeclareMathOperator{\coker}{coKer}
-\DeclareMathOperator{\vect}{Vect}
-\DeclareMathOperator{\rang}{rang}
-
 \title{Algebra I}
 \author{\href{https://faculty.ustc.edu.cn/yqliang/index.jsp}{梁永祺}}
 \date{2025 秋}
-\titlepic{\includegraphics[width=0.5\textwidth]{ustc_logo.pdf}}
+\titlepic{\includegraphics[width=0.5\textwidth]{../ustc_logo.pdf}}
 
 \begin{document}
 \frontmatter
 \maketitle
 
 \tableofcontents
-%\input{chapters/annotations}
 \mainmatter
-%\input{chapters/set}
-%\input{chapters/test}
 \input{chapters/Ch1}
 \input{chapters/Ch2}
 \input{chapters/Ch3}
