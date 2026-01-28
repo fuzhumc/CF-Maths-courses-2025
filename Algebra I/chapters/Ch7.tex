@@ -9,7 +9,7 @@
 \begin{itemize}
     \item 元素$F \in \bbK(x)$可写成形式$F = \dfrac{P}{Q}$,其中$P, Q \in \bbK[x]$且$Q \neq 0$.
     \item 设$P, Q, P_1, Q_1 \in \bbK[x]$且$Q \neq 0, Q_1 \neq 0$,
-        则$$\dfrac{P}{Q} = \dfrac{P_1}{Q_1} \iff PQ_1 = P_1Q$$.
+        则$$\dfrac{P}{Q} = \dfrac{P_1}{Q_1} \iff PQ_1 = P_1Q$$
     \item $\bbK(x)$包括$\bbK[x]$,多项式$P$视为有理分式$\dfrac{P}{1}$.
     \item 具有以下运算规则:
         \begin{itemize}
@@ -28,20 +28,22 @@
     设$P, Q \in \bbK[x]^*$,则$\left( \dfrac{P}{Q} \right)^{- 1} = \dfrac{Q}{P}$.
 \end{rqq}
 
-\begin{deff}
-    设$F = \dfrac{P}{Q} \in \bbK(x)$,称$\dfrac{P}{Q}$为$F$的
-    \textbf{不可约形式(forme irréductible)},若$P, Q$互素.
-
-    设$F = \dfrac{P}{Q} \in \bbK(x)$,称$\dfrac{P}{Q}$为$F$的
-    \textbf{首一不可约形示(forme irréductible unitaire)},若$P, Q$互素且$Q$为首一多项式.
+\begin{deff} $\ $
+    \begin{itemize}
+        \item 设$F = \dfrac{P}{Q} \in \bbK(x)$,称$\dfrac{P}{Q}$为$F$的
+            \textbf{不可约形式(forme irréductible)},若$P, Q$互素.
+        \item 设$F = \dfrac{P}{Q} \in \bbK(x)$,称$\dfrac{P}{Q}$为$F$的
+            \textbf{首一不可约形示(forme irréductible unitaire)},若$P, Q$互素且$Q$为首一多项式.
+    \end{itemize}  
 \end{deff}
 
-\begin{prop}
-    设$F = \dfrac{P}{Q}$的不可约形式为$\dfrac{P_1}{Q_1}$,则存在$R \in \bbK[x]$,
-    使得$P = P_1R, Q = Q_1R$.
-
-    设$F$的不可约形式为$\dfrac{P}{Q}, \dfrac{P_1}{Q_1}$,则存在$\lambda \in \bbK^*$,
-    使得$P_1 = \lambda P, Q_1 = \lambda Q$.
+\begin{prop} $\ $
+    \begin{itemize}
+        \item 设$F = \dfrac{P}{Q}$的不可约形式为$\dfrac{P_1}{Q_1}$,则存在$R \in \bbK[x]$,
+            使得$P = P_1R, Q = Q_1R$.
+        \item 设$F$的不可约形式为$\dfrac{P}{Q}, \dfrac{P_1}{Q_1}$,则存在$\lambda \in \bbK^*$,
+            使得$P_1 = \lambda P, Q_1 = \lambda Q$.
+    \end{itemize}
 \end{prop}
 
 \begin{prop}
@@ -64,6 +66,28 @@
     \end{itemize}
 \end{prop}
 
+\begin{proof}
+    设$F_1 = \dfrac{P_1}{Q_1}, F_2 = \dfrac{P_2}{Q_2}$.
+    \begin{itemize}
+        \item 我们有$$F_1 + F_2 = \dfrac{P_1}{Q_1} + \dfrac{P_2}{Q_2} = \dfrac{P_1Q_2 + P_2Q_1}{Q_1Q_2}$$
+            因此$$\deg (F_1 + F_2) = \deg (P_1Q_2 + P_2Q_1) - \deg Q_1Q_2$$
+            不妨设$\deg F_1 > \deg F_2$,则$\deg P_1 - \deg Q_1 > \deg P_2 - \deg Q_2$.
+            因此$$\deg P_1Q_2 = \deg P_1 + \deg Q_2 > \deg P_2 + \deg Q_1 = \deg P_2Q_1$$
+            由多项式的和的次数得$$\deg (P_1Q_2 + P_2Q_1) \leqslant \max \{ \deg P_1Q_2, \deg P_2Q_1 \} \leqslant \deg P_1Q_2$$
+            故\begin{align*}
+                \deg (F_1 + F_2) & =\deg (P_1Q_2 + P_2Q_1) - \deg Q_1Q_2 \\
+                & \leqslant \deg P_1Q_2 - \deg Q_1Q_2 = \deg P_1 - \deg Q_1 \\
+                & = \deg F_1 = \max \{ \deg F_1, \deg F_2 \}
+            \end{align*}
+        \item 同样地,我们有$F_1F_2 = \dfrac{P_1P_2}{Q_1Q_2}$,故
+            \begin{align*}
+                \deg F_1F_2 & = \deg P_1P_2 - \deg Q_1Q_2 \\
+                & = \deg P_1 + \deg P_2 - \deg Q_1 - \deg Q_2 \\
+                & = \deg F_1 + \deg F_2
+            \end{align*}
+    \end{itemize}
+\end{proof}
+
 \begin{deff}
     设$F$为有理分式,$\dfrac{P}{Q}$为其不可约形式.
     \begin{itemize}
@@ -73,7 +97,8 @@
 \end{deff}
 
 \begin{deff}
-    设$F$为有理分式,$\dfrac{P}{Q}$为其不可约形式,$a$为其根(极点),称多项式$P$($Q$)的根$a$的重数为$a$的\textbf{重数(ordre de multiplicité)}.
+    设$F$为有理分式,$\dfrac{P}{Q}$为其不可约形式,$a$为其根(极点),
+    称多项式$P$($Q$)的根$a$的重数为$a$的\textbf{重数(ordre de multiplicité)}.
 \end{deff}
 
 \begin{deff}
@@ -99,15 +124,25 @@
 
 \section{部分分式分解}
 
-\begin{prop}
+\begin{prop} \label{prop:partie_entière}
     任意有理分式$F$,都可以唯一写成一个多项式与一个次数严格负的有理分式之和.
 \end{prop}
 
+\begin{proof} $\ $
+    \textbf{唯一性} \quad 设$F = E_1 + F_1 = E_2 + F_2$,其中$E_1, E_2 \in \bbK[x], F_1, F_2 \in \bbK(x), \deg F_1, \deg F_2 < 0$.
+        那么$E_1 - E_2$为多项式,由于$E_1 - E_2 = F_2 - F_1$,知其次数严格负.
+        因此$E_1 - E_2 = 0$,即$E_1 = E_2$,于是$F_1 = F_2$.
+
+    \textbf{存在性} \quad 设$F = \dfrac{P}{Q}$,其中$Q \neq 0$.取$E$为$P$除以$Q$的Euclide除法商,得
+        $$F = E + \dfrac{R}{Q}, \text{其中} \deg R < \deg Q$$
+        这就是所要的形式.
+\end{proof}
+
 \begin{rqq}
-    上面的多项式称为$F$的\textbf{整部(partie entière)}.
+    Proposition \ref{prop:partie_entière}中的多项式称为$F$的\textbf{整部(partie entière)}.
 \end{rqq}
 
-\begin{thm}
+\begin{thm} \label{thm:décomposition_en_éléments_simples}
     设$F \in \bbK(x)$,其首一不可约形式为$\dfrac{A}{B}$,$B$分解为$\bbK[x]$中不可约因式的积$B = \prod\limits_{i = 1}^n Q_i^{r_i}$.
     其中$Q_1, Q_2, \cdots, Q_n$为首一,不可约,两两不同的多项式,$r_1, r_2, \cdots, r_n$为正整数.
     则存在唯一$E \in \bbK[x]$与多项式族$(P_{ij})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant r_i}}$
@@ -116,7 +151,8 @@
 \end{thm}
 
 \begin{rqq}
-    这种表示称为$F$在$\bbK$上的\textbf{部分分式分解(décomposition en éléments simples)}.
+    Théorème \ref{thm:décomposition_en_éléments_simples}中的表示称为$F$在$\bbK$上的
+    \textbf{部分分式分解(décomposition en éléments simples)}.
 \end{rqq}
 
 \begin{rqq}
@@ -124,15 +160,42 @@
     称$\sum\limits_{j = 1}^{r_i} \dfrac{P_{ij}}{(x - a_i)^j}$为$F$关于极点$a_i$的\textbf{级部(partie polaire)}.
 \end{rqq}
 
+\begin{rqq}
+    多项式本身即为其部分分式分解.
+\end{rqq}
+
 \begin{prop}
     设$F$为有理分式,有单极点$a$,把$F$写成如下形式$$F = \dfrac{P}{Q} = \dfrac{P}{(x - a)Q_1}$$其中$Q_1$不以$a$为根.
     则$F$关于极点$a$的级部为$\dfrac{\lambda_1}{X - a}$其中$\lambda_1 = \dfrac{P(a)}{Q_1(a)} = \dfrac{P(a)}{Q'(a)}$.
 \end{prop}
 
+\begin{proof}
+    设$F$为有理分式,有单极点$a$.记$F = \dfrac{P}{(x - a)Q_1}$,其中$Q_1$为多项式,不以$a$为根.
+
+    我们想找标量$\lambda_1$使得$F = \dfrac{\lambda_1}{x - a} + F_0$,其中$F_0$为有理分式,不以$a$为极点.
+    
+    等式两边同乘$x - a$得$\dfrac{P}{Q_1} = \lambda_1 + (x - a)F_0$.
+    将$a$代入$x$得$\lambda_1 = \dfrac{P(a)}{Q_1(a)}$.
+
+    由$Q = (x - a)Q_1$,两边同时求导得$Q' = (x - a)Q_1' + Q_1$,将$a$代入$a$得$Q_1(a) = Q'(a)$,
+    故$\lambda_1 = \dfrac{P(a)}{Q'(a)}$.
+\end{proof}
+
 \begin{prop}
     设$F$为有理分式,有双极点$a$,把$F$写成如下形式$$F = \dfrac{P}{Q} = \dfrac{P}{(x - a)^2 Q_2}$$其中$Q_2$不以$a$为根.
-    则$F$关于极点$a$的级部为$\dfrac{\lambda_1}{x - a} + \dfrac{\lambda_2}{(x - a)^2}$其中$\lambda_2 = \dfrac{P(a)}{Q_2(a)}, \lambda_1 \in \bbK$.
+    则$F$关于极点$a$的级部为$\dfrac{\lambda_1}{x - a} + \dfrac{\lambda_2}{(x - a)^2}$
+    其中$\lambda_2 = \dfrac{P(a)}{Q_2(a)}, \lambda_1 \in \bbK$.
 \end{prop}
+
+\begin{proof}
+    设$F$为有理分式,有双极点$a$.记$F = \dfrac{P}{(x - a)^2Q_2}$,其中$Q_2$为多项式,不以$a$为根.
+
+    我们想找标量$\lambda_1, \lambda_2$使得$F = \dfrac{\lambda_2}{(x - a)^2} + \dfrac{\lambda_1}{x - a} + F_0$,
+    其中$F_0$为有理分式,不以$a$为极点.
+
+    等式两边同乘$(x - a)^2$得$\dfrac{P}{Q_2} = \lambda_2 + \lambda_1 (x - a) + (x - a)^2F_0$.
+    将$a$代入$x$得$\lambda_2 = \dfrac{P(a)}{Q_2(a)}$.
+\end{proof}
 
 \begin{rqq}
     这个方法容易推广.设$a$为$n$重极点,把$F$写成$F = \dfrac{P}{(x - a)^n Q_n}$其中$Q_n(a) \neq 0$.
@@ -141,12 +204,12 @@
 
 \begin{thm}
     设$F \in \bbC(x)$,其极点为两两不同的复数$a_1, a_2, \cdots, a_n$,其重数分别为$r_1, r_2, \cdots, r_n$.
-    则存在唯一$E \in \bbC[x]$与复数族$(P_{kl})_{\substack{1 \leqslant k \leqslant n \\ 1 \leqslant l \leqslant r_i}}$
-    使得$$F = E + \sum\limits_{k = 1}^n \sum\limits_{l = 1}^{r_k} \dfrac{P_{kl}}{(x - a_k)^l}$$
+    则存在唯一$E \in \bbC[x]$与复数族$(\lambda_{kl})_{\substack{1 \leqslant k \leqslant n \\ 1 \leqslant l \leqslant r_i}}$
+    使得$$F = E + \sum\limits_{k = 1}^n \sum\limits_{l = 1}^{r_k} \dfrac{\lambda_{kl}}{(x - a_k)^l}$$
 \end{thm}
 
 \begin{thm}
-    设$F \in \bbR(x)$,其首一不可约形式为$\dfrac{A}{B}$,$B$分解为$\bbR[x]$中不可约因式的积
+    设$F \in \bbR(x)$,其首一不可约形式为$\dfrac{A}{B}$,将$B$分解为$\bbR[x]$中不可约因式的积
     $$B = \prod\limits_{k = 1}^n (x - a_k)^{r_k} \prod\limits_{l = 1}^m (x^2 + p_l x + q_l)^{t_l}$$
     其中$a_1, a_2, \cdots, a_n$为$B$的两两不同的根,重数分别为$r_1, r_2, \cdots, r_n$;
     $x^2 + p_1 x + q_1, \cdots, x^2 + p_m x + q_m$为两两不同,无实根的二次多项式,$t_1, t_2, \cdots, t_m$为正整数.
@@ -158,7 +221,47 @@
 
 \subsection*{部分分式分解的求法}
 
-待整理.
+我们找非多项式的有理分式的分解.考虑复系数有理分式$F = \dfrac{P}{Q}$,其极点为$a_1, a_2, \cdots, a_n$,重数分别为$r_1, r_2, \cdots, r_n$.
+$F$的部分分式分解形式为$$F = E + \sum\limits_{i = 1}^n \sum\limits_{j = 1}^{r_i} \dfrac{\lambda_{ij}}{(x - a_i)^j}$$
+
+\begin{itemize}
+    \item 通过$P$除以$Q$的Euclide除法得出整部$E$.
+    \item 系数$\lambda_{ir_i}$通过公式$$\lambda_{ir_i} = \dfrac{P(a_i)}{Q_i(a_i)}$$计算,其中$Q = (x - a_i)^r_i Q_i$.
+    \item 若每个极点都是单的,那么直接得到$F$的部分分式分解.否则,在$F$中减去每个分式$\dfrac{\lambda_{ir_i}}{(x - a_i)^{r_i}}$
+        并对剩余分式重复这个过程.
+\end{itemize}
+
+但使用以下方法确定剩下的系数通常更快.
+
+\paragraph*{实系数的情形}
+
+若$F$为实系数有理分式,$a$为$F$的非实数$r$重极点,则$\overline{a}$也为$r$重极点,且关于$a$与$\overline{a}$的极部的系数两两共轭.
+
+\begin{itemize}
+    \item 当$a$为$Q$的非实根时,$\overline{a}$也为$Q$的根,且重数相同.
+    \item 若$F = \sum\limits_{i = 1}^{r} \dfrac{\lambda_i}{(x - a)^i} + F_1$,其中$a$不为$F$的极点.
+        那么对于每个复数$z$不为$F$的极点,都有
+        $$F(\overline{z}) = \overline{F(z)} = \sum\limits_{i = 1}^r \dfrac{r_i}{(\overline{z} - \overline{a})^i} + \overline{F_1(z)}$$
+        且有理分式$\overline{F_1}$不以$\overline{a}$为极点.
+        可得$$F = \sum\limits_{i = 1}^r \dfrac{\overline{\lambda_i}}{(x - \overline{a})^i} + F_2$$
+        其中$F_2$为有理分式,且不以$a$为极点.
+\end{itemize}
+
+因此,由极部的唯一性知,关于极点$\overline{a}$的极部为$\sum\limits_{i = 1}^r \dfrac{\overline{\lambda_i}}{(x - \overline{a})^i}$.
+
+\paragraph*{奇或偶的情形}
+
+若有理分式$F$是奇的或偶的,$a$为$F$的$n$重极点,则$-a$也为$F$的$n$重极点.
+比较$F(x)$与$F(-x) = \pm F(x)$的部分分式分解,可以得出系数之间的关系.
+
+\paragraph*{严格负次数的情形}
+
+设$F$为次数严格负的有理分式,$f$为与$F$相伴的有理函数限制$\bbR$上除去极点外的函数,则$x^{-\deg F} f(x)$在$+\infty$处有极限.
+我们也可以找出$F$的部分分式分解的项$\dfrac{1}{x - a_i}$的系数之间的关系.
+
+\paragraph*{剩余一两个系数的情形}
+
+当剩下一两个系数需要确定时,可以将$x$替换为一两个简单的数值.
 
 \section{有理分式的原函数}
 
@@ -180,12 +283,56 @@
     $\dfrac{1}{2} \ln \left( (x - \alpha)^2 + \beta^2 \right) + i \arctan \dfrac{x - \alpha}{\beta}$.
 \end{prop}
 
+\begin{proof}
+    $a$为实数的情形是显然的.对于另一种情况,只需求导验证公式.但我们也可以使用以下方法.
+
+    \begin{align*}
+        \dfrac{1}{x - a} & = \dfrac{x - \overline{a}}{(x - a)(x - \overline{a})} \\
+        & = \dfrac{x - \alpha}{(x - \alpha)^2 + \beta^2} + i \dfrac{\beta}{(x - \alpha)^2 + \beta^2} \\
+        & = \dfrac{x - \alpha}{(x - \alpha)^2 + \beta^2} + i \dfrac{1}{\beta} \dfrac{1}{(\frac{x - \alpha}{\beta})^2 + 1}
+    \end{align*}
+
+    由常用积分知$\dfrac{1}{x - a}$的一个原函数为
+    $\dfrac{1}{2} \ln \left( (x - \alpha)^2 + \beta^2 \right) + i \arctan \dfrac{x - \alpha}{\beta}$.
+\end{proof}
+
 \begin{prop}
     设$b, c \in \bbR$满足$b^2 - 4c < 0$,则函数$\dfrac{2x + b}{x^2 + bx + c}$的一个原函数为$\ln (x^2 + bx +c)$.
 \end{prop}
 
+\begin{proof}
+    注意到$\dfrac{2x + b}{x^2 + bx + c}$具有形式$\dfrac{u'(x)}{u(x)}$,其中$u(x) = x^2 + bx + c$.
+    故$$\int \dfrac{2x + b}{x^2 + bx + c} \dif x = \int \dfrac{1}{u} \dif u = \ln u(x) = \ln (x^2 + bx + c) \qedhere$$
+\end{proof}
+
 \begin{prop}
     设$b, c \in \bbR$满足$b^2 - 4c < 0$,则函数$\dfrac{1}{x^2 + bx + c}$的一个原函数为
-    $\dfrac{1}{\omega} \arctan \dfrac{x + \dfrac{b}{2}}{\omega}$,其中$\omega = \sqrt{c - \dfrac{b^2}{4}}$.
+    $\dfrac{1}{\omega} \arctan \dfrac{x + \frac{b}{2}}{\omega}$,其中$\omega = \sqrt{c - \dfrac{b^2}{4}}$.
 \end{prop}
+
+\begin{proof}
+    配方得$\dfrac{1}{x^2 - bx + c} = \dfrac{1}{(x - \frac{b}{2})^2 + \omega^2}$,其中$\omega = \sqrt{c - \dfrac{b^2}{4}}$.
+
+    对$a \in \bbR^*$,通过求导可以验证$$\int_0^x \dfrac{\dif t}{t^2 + a^2} = \dfrac{1}{a} \arctan \dfrac{x}{a}$$
+
+    令$t = x - \dfrac{b}{2}$,得$$\int \dfrac{\dif x}{x^2 - bx + c} = \int \dfrac{\dif t}{t^2 + \omega^2} =
+    \dfrac{1}{\omega} \arctan \dfrac{t}{\omega} = \dfrac{1}{\omega} \arctan \dfrac{x - \frac{b}{2}}{\omega} \qedhere$$
+\end{proof}
+
+\begin{rqq}
+    为了求$\dfrac{\lambda x + \mu}{x^2 + bx + c}$在$\bbR$上的原函数,其中$b, c \in \bbR$满足$b^2 - 4c < 0$,我们可以
+
+    \begin{itemize}
+        \item 在分子中表示分母的导数$$\int \dfrac{\lambda t + \mu}{t^2 + bt + c} \dif t =
+            \dfrac{\lambda}{2} \int \dfrac{2t + b}{t^2 + bt + c} \dif t -
+            \left( \dfrac{b \lambda}{2} - \mu \right) \int \dfrac{1}{t^2 + bt + c} \dif t$$
+            再使用前面的结论即可.
+        \item 注意到原函数形如$\alpha f + \beta g$,其中$f(x) = \ln (x^2 + bx + c), g(x) = \arctan \dfrac{2x + b}{\sqrt{4c - b^2}}$.
+            通过求导解出$\alpha, \beta$即可.
+    \end{itemize}
+\end{rqq}
+
+\begin{rqq}
+    对于某些有理分式,事先进行换元可以避免繁琐的部分分式分解.
+\end{rqq}
 
