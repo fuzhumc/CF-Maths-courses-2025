@@ -5,13 +5,14 @@
 \section{向量空间}
 
 \begin{deff}
-    设$E$为非空集合,称映射$$\cdot: \begin{array}[t]{ccc} \bbK \times E & \to & E \\ (\alpha, x) & \mapsto &
+    设$E$为非空集合,称映射$$\begin{array}[t]{ccc} \bbK \times E & \to & E \\ (\alpha, x) & \mapsto &
     \alpha \cdot x \end{array}$$为$E$上的一个\textbf{外部法则(loi externe)}.
 \end{deff}
 
 \begin{deff}
     设$E$为非空集合,具有一个内部合成法则$+$与一个外部法则$\cdot$.
     称$(E, +, \cdot)$为一个\textbf{$\boldsymbol{\bbK}$-向量空间($\boldsymbol{\bbK}$-espace vectoriel)},若
+
     \begin{itemize}
         \item $(E, +)$为交换群.
         \item 对任意$x, y \in E, \alpha, \beta \in \bbK$,
@@ -22,6 +23,7 @@
                 \item $\alpha \cdot (x + y) = \alpha \cdot x + \alpha \cdot y$.
             \end{enumerate}
     \end{itemize}
+
     此时称$E$的元素为\textbf{向量(vecteur)},称$\bbK$的元素为\textbf{标量(scalaire)}.
 \end{deff}
 
@@ -35,17 +37,31 @@
 \end{rqq}
 
 \begin{prop}
-    设$\alpha \in \bbK, x \in E$,
+    设$\alpha \in \bbK, x \in E$,则
     \begin{enumerate}
-        \item $0_{\bbK} x = 0_E$.
-        \item $\alpha 0_E = 0_E$.
+        \item $0_{\bbK} x = \alpha 0_E = 0_E$.
         \item $\alpha (- x) = - (\alpha x) = (-\alpha) x$.
     \end{enumerate}
 \end{prop}
 
+\begin{proof}
+    设$\alpha \in \bbK, x \in E$.
+    \begin{enumerate}
+        \item 由于$0_\bbK = 0_\bbK + 0_\bbK$,知\[ 0_\bbK x = (0_\bbK + 0_\bbK) x = 0_\bbK x + 0_\bbK x \]故$0_\bbK x = 0_E$.
+            类似地有$\alpha 0_E = \alpha 0_E + \alpha 0_E$,故$\alpha 0_E = 0_E$.
+        \item 由\[ \alpha x + (-\alpha)x = (\alpha - \alpha)x = 0_\bbK x = 0_E \]知$(-\alpha)x$为$\alpha x$的逆元.
+            类似地有\[ \alpha x + \alpha (-x) = \alpha (x - x) = \alpha 0_E = 0_E \]知$\alpha (-x)$为$\alpha x$的逆元.
+            故\[ \alpha (- x) = - (\alpha x) = (-\alpha) x \qedhere \]
+    \end{enumerate}
+\end{proof}
+
 \begin{prop}
     设$\alpha \in \bbK, x \in E, \alpha x = 0_E$,则$\alpha = 0_{\bbK}$或$x = 0_E$.
 \end{prop}
+
+\begin{proof}
+    设$\alpha \neq 0_\bbK$,则$\alpha$在域$\bbK$中可逆,我们有\[ x = \alpha^{-1} (\alpha x) = \alpha^{-1} 0_E = 0_E \qedhere \]
+\end{proof}
 
 \begin{deff}
     设$E, F$为$\bbK$-向量空间,则集合$E \times F$配备运算
@@ -58,12 +74,34 @@
 
 \begin{prop}
     设$E$为$\bbK$-向量空间,$X$为集合.则集合$\calF(X, E)$配备运算
+
     \begin{itemize}
         \item $f + g: \begin{array}[t]{ccc} X & \to & E \\ x & \mapsto & f(x) + g(x) \end{array}$
         \item $\alpha f: \begin{array}[t]{ccc} X & \to & E \\ x & \mapsto & \alpha f(x) \end{array}$
     \end{itemize}
+
     成为一个$\bbK$-向量空间.
 \end{prop}
+
+\begin{proof} $\ $
+    \begin{itemize}
+        \item 配备加法运算后,$E \times F$为交换群,因为
+            \begin{itemize}
+                \item 由于$E$与$F$上的加法是结合的,对于$x, x', x'' \in E, y, y', y'' \in F$,我们有
+                    \begin{align*}
+                        ((x, y) + (x', y')) +(x'', y'') & = (x + x', y + y') + (x'', y'') \\
+                        & = ((x + x') + x'', (y + y') + y'') \\
+                        & = (x + (x' + x''), y + (y' + y'')) \\
+                        & = (x, y) + ((x', y') + (x'', y''))
+                    \end{align*}
+                    因此$E \times F$上的加法是结合的
+                \item 类似地,可以证明$E \times F$上的加法是结合的.
+                \item $(0_E, 0_F)$对$+$是中性的.
+                \item $(x, y)$的逆元为$(-x, -y)$.
+            \end{itemize}
+        \item 其余性质可由$E$与$F$上的相应性质得出.
+    \end{itemize}
+\end{proof}
 
 \section{向量子空间}
 
@@ -74,7 +112,7 @@
 
 \begin{deff}
     设$E$为$\bbK$-向量空间,$F$为$E$的非空子集.称$F$为$E$的\textbf{向量子空间(sous-espace vectoriel)},
-    若$0_E \in F$且$$\forall x, y \in F, \lambda, \mu \in \bbK, \lambda x + \mu y \in F$$
+    若$0_E \in F$且\[ \forall x, y \in F, \lambda, \mu \in \bbK, \lambda x + \mu y \in F \]
 \end{deff}
 
 \begin{rqq}
@@ -85,36 +123,106 @@
     $E$的每个向量子空间均为$\bbK$-向量空间.
 \end{prop}
 
-\begin{prop}
-    设$E$为$\bbK$-向量空间,$(F_i)_{i \in I}$为$E$的一族向量子空间,则$\bigcup\limits_{i \in I} F_i$也为$E$的向量子空间.
+\begin{proof} $\ $
+    \begin{enumerate}
+        \item $F$为$E$的子群,因为其包含$0$,在加法下稳定,且$\forall x \in F, -x = (-1) \cdot x \in F$.
+        \item 其余对于$x, y \in E$成立的性质,对$x, y \in F$当然也成立.
+    \end{enumerate}
+\end{proof}
+
+\begin{prop} \label{prop:intersection_of_subspaces}
+    设$E$为$\bbK$-向量空间,$(F_i)_{i \in I}$为$E$的一族向量子空间,则$\bigcap\limits_{i \in I} F_i$也为$E$的向量子空间.
 \end{prop}
 
-\begin{prop}
-    设$\calA$为$E$的子集,则存在包含$\calA$的最小向量子空间,
-    称为\textbf{$\boldsymbol{\calA}$生成的向量子空间(sous-espace vectoriel engendré par $\boldsymbol{\calA}$)},
+\begin{proof}
+    设$F = \bigcap\limits_{i \in I} F_i$.
+
+    \begin{itemize}
+        \item 每个子空间$F_i$均包含0,因此$F$也包含0.
+        \item 设$x, y \in F, \alpha, \beta \in \bbK$,则有$\forall i \in I, x, y \in F_i$.
+            那么$\forall i \in I, \alpha x + \beta y \in F_i$.
+            因此$\alpha x + \beta y \in F$.
+    \end{itemize}
+
+    故$F$为$E$的向量子空间.
+\end{proof}
+
+\begin{prop} \label{prop:smallest_linear_subspace_existence}
+    设$\calA$为$E$的子集,则存在包含$\calA$的最小向量子空间.
+\end{prop}
+
+\begin{proof}
+    设$(F_i)_{i \in I}$为包含$\calA$的向量子空间的全体.则其非空,因为$E$为其元素.
+    设$G = \bigcap\limits_{i \in I} F_i$.
+
+    \begin{itemize}
+        \item $G$包含$\calA$,因为每个$F_i$均包含$\calA$.
+        \item 由 Proposition \ref{prop:intersection_of_subspaces} 知$G$为$E$的向量子空间.
+        \item 设$H$为包含$\calA$的向量子空间,则由$(F_i)_{i \in I}$的定义知$\exists i_0 \in I, H = F_i$.
+            因此$G = \bigcap\limits_{i \in I} F_i \subseteq H$.
+    \end{itemize}
+
+    故$G$为包含$\calA$的最小向量子空间.
+\end{proof}
+
+\begin{rqq}
+    Proposition \ref{prop:smallest_linear_subspace_existence} 中的向量子空间称为
+    \textbf{$\boldsymbol{\calA}$生成的向量子空间(sous-espace vectoriel engendré par $\boldsymbol{\calA}$)},
     记为$\vect \calA$.
-\end{prop}
+\end{rqq}
 
-\begin{deff}
+\begin{deff} \label{def:linear_span_of_family}
     设$A = (a_i)_{i \in I}$为$E$中一族元素,称$\calA = \{ a_i \mid i \in I \}$生成的向量子空间为
-    \textbf{$\boldsymbol{A}$生成的向量子空间(sous-espace vectoriel engendré par $\boldsymbol{A}$)},
+    \textbf{$\bsA$生成的向量子空间(sous-espace vectoriel engendré par $\bsA$)},
     记为$\vect A, \vect \calA, \vect (a_i)_{i \in I}$,
     或$\vect \{ a_i \mid i \in I \}$.
 \end{deff}
 
-\begin{prop}\label{prop:sous_espace_engendré}
+\begin{rqq}
+    Définition \ref{def:linear_span_of_family} 对$\calA$的描述中,$a_i$不一定两两不同.
+    因此,当$I$有限时,$\calA$的元素个数可以严格小于$I$的元素个数.
+\end{rqq}
+
+\begin{prop}\label{prop:description_of_linear_span}
     设$E$为$\bbK$-向量空间,$n \in \bbN^*, A = (a_1, a_2, \cdots, a_n)$为$E$中一族元素,
-    则$\vect A = \left\{ \sum\limits_{i=1}^n \lambda_i a_i \mid \lambda_i \in \bbK \right\}$.
+    则\[ \vect A = \left\{ \sum\limits_{i=1}^n \lambda_i a_i \mid \lambda_1, \lambda_2, \cdots, \lambda_n \in \bbK \right\} \]
+    即\[ \vect A = \left\{ x \in E \mid \exists \lambda_1, \lambda_2, \cdots, \lambda_n \in \bbK,
+    x = \sum\limits_{i = 1}^n \lambda_i a_i \right\} \]
 \end{prop}
+
+\begin{proof}
+    设$B = \left\{ \sum\limits_{i = 1}^n \lambda_i a_i \mid \lambda_1, \lambda_2, \cdots, \lambda_n \in \bbK \right\}$,
+    易知$B \subseteq E$.
+
+    \begin{itemize}
+        \item 零向量属于$B$(取每个$\lambda_i = 0$).
+        \item 设$x, y \in B, \alpha, \beta \in \bbK$,则存在$\lambda_i, \mu_i \in \bbK$,
+            使得$x = \sum\limits_{i = 1}^n \lambda_i a_i, y = \sum\limits_{i = 1}^n \mu_i a_i$.
+            因此\[ \alpha \sum\limits_{i = 1}^n \lambda_i a_i + \beta \sum\limits_{i = 1}^n \mu_i a_i =
+            \sum\limits_{i = 1}^n (\alpha \lambda_i + \beta \mu_i) a_i \]
+            于是$\alpha x + \beta y \in B$,那么$B$为$E$的向量子空间.
+        \item 对任意$p = 1, 2, \cdots, n$,取$\lambda_p = 1$,其余$\lambda_i = 0$,知$a_p \in B$.
+        \item 设$F$为包含$\calA$的向量子空间,由于$F$在$E$的两运算下稳定,且包含每个$a_i$,
+            归纳可知$F$包含$B$中每个元素,因此$B \subseteq F$.
+    \end{itemize}
+
+    故$B$为包含$\calA$中每个元素的最小向量子空间,即向量子空间$\vect \calA$.
+\end{proof}
+
+\begin{rqq}
+    设$a$为$E$中的非零元,则$a$生成的向量子空间为$\vect \{ a \} = \{ \lambda a \mid \lambda \in \bbK \} = \bbK a$.
+    称其为$a$生成的\textbf{向量直线(droite vectorielle)}.
+\end{rqq}
 
 \begin{deff}
     设$E$为$\bbK$-向量空间,$n \in \bbN^*, x_1, x_2, \cdots, x_n \in E$.
-    称$\sum\limits_{i = 1}^n \lambda_i x_i, \lambda_i \in \bbK$为$x_1, x_2, \cdots, x_n$或
-    族$(x_1, x_2, \cdots, x_n)$的\textbf{线性组合(combinaison linéaire)}.
+    称$\sum\limits_{i = 1}^n \lambda_i x_i$为$x_1, x_2, \cdots, x_n$或
+    族$(x_1, x_2, \cdots, x_n)$的\textbf{线性组合(combinaison linéaire)},
+    其中$\lambda_1, \lambda_2, \cdots \lambda_n \in \bbK$.
 \end{deff}
 
 \begin{rqq}
-    Proposition \ref{prop:sous_espace_engendré}也可表述为:
+    Proposition \ref{prop:description_of_linear_span}也可表述为:
     向量$x_1, x_2, \cdots, x_n$生成的向量子空间为它们的线性组合的全体.
 \end{rqq}
 
@@ -124,7 +232,7 @@
 
 \begin{deff}
     设$u \in \calF(E, F)$,称$u$为线性映射,
-    若$$\forall x, y \in E, \alpha, \beta \in \bbK, u(\alpha x + \beta y) = \alpha u(x) + \beta u(y)$$
+    若\[ \forall x, y \in E, \alpha, \beta \in \bbK, u(\alpha x + \beta y) = \alpha u(x) + \beta u(y) \]
 
     $u$也称为\textbf{向量空间的同态(morphisme d'espaces vectoriels)}.
 
@@ -150,8 +258,8 @@
 
 \begin{rqq}
     设$u \in \calL(E, F), n \in \bbN^*, x_1, x_2, \cdots, x_n \in E, \lambda_1, \lambda_2, \cdots,
-    \lambda_n \in \bbK$,则$$u \left( \sum\limits_{i = 1}^n \lambda_i x_i \right) = \sum\limits_{i = 1}^n
-    \lambda_i u(x_i)$$
+    \lambda_n \in \bbK$,则\[ u \left( \sum\limits_{i = 1}^n \lambda_i x_i \right) = \sum\limits_{i = 1}^n
+    \lambda_i u(x_i) \]
 
     上述结论翻译为:\textit{线性映射下,线性组合的像为像的线性组合}.
 \end{rqq}
@@ -163,6 +271,29 @@
         \item 设$F'$为$F$的向量子空间,则$u^{-1}(F')$为$E$的向量子空间.
     \end{itemize}
 \end{prop}
+
+\begin{proof} $\ $
+    \begin{itemize}
+        \item 设$E'$为$E$的向量子空间,$F' = u(E')$.
+            \begin{itemize}
+                \item 易知$F' \subseteq F$.
+                \item 由$0 \in E'$知$0 = u(0) \in F'$.
+                \item 设$\alpha_1, \alpha_2 \in \bbK, y_1, y_2 \in F'$.则存在$x_1, x_2 \in E'$,使得$y_1 = u(x_1), y_2 = u(x_2)$.
+                    于是\[ \alpha_1 y_1 + \alpha_2 y_2 = \alpha_1 u(x_1) + \alpha_2 u(x_2) = u(\alpha_1 x_1 + \alpha_2 x_2) \]
+                    由于$E'$为向量子空间,知$\alpha_1 x_1 + \alpha_2 x_2 \in E'$,因此$\alpha_1 y_1 + \alpha_2 y_2 \in F'$.
+            \end{itemize}
+            因此$F' = u(E')$为$F$的向量子空间.
+        \item 设$F'$为$F$的向量子空间,$E' = u^{-1}(F') = \{ x \in E \mid u(x) \in F' \}$.
+            \begin{itemize}
+                \item 易知$E' \subseteq E$.
+                \item 由$u(0) = 0 \in F'$知$0 \in E'$.
+                \item 设$x_1, x_2 \in E', \alpha_1, \alpha_2 \in \bbK$.
+                    则\[ u(\alpha_1 x_1 + \alpha_2 x_2) = \alpha_1 u(x_1) + \alpha_2 u(x_2) \in F' \]
+                    因此$\alpha_1 x_1 + \alpha_2 x_2 \in E'$.
+            \end{itemize}
+            因此$E' = u^{-1}(F')$为$E$的向量子空间.
+    \end{itemize}
+\end{proof}
 
 \begin{deff}
     设$u \in \calL(E, F)$.
@@ -176,19 +307,51 @@
     设$u \in \calL(E, F)$,则$u$为单射当且仅当$\ker u = \{ 0_E \}$.
 \end{thm}
 
-\begin{prop}
+\begin{prop} \label{prop:linear_combination_of_linear_maps}
     设$u, v \in \calL(E, F), \lambda, \mu \in \bbK$,则$\lambda u + \mu v$为线性映射.
 \end{prop}
 
-\begin{prop}
+\begin{proof}
+    设$x, y \in E, \alpha, \beta \in \bbK$,则
+
+    \begin{align*}
+        (\lambda u + \mu v)(\alpha x + \beta y) & = \lambda u(\alpha x + \beta y) + \mu v(\alpha x + \beta y) \\
+        & = \lambda (\alpha u(x) + \beta u(y)) + \mu (\alpha v(x) + \beta v(y)) \\
+        & = \alpha (\lambda u(x) + \mu v(x)) + \beta (\lambda u(y) + \mu v(y)) \\
+        & = \alpha (\lambda u + \mu v)(x) + \beta (\lambda u + \mu v)(y) \qedhere
+    \end{align*}
+
+    故$\lambda u + \mu v$为线性映射.
+\end{proof}
+
+\begin{prop} \label{prop:linear_space_of_linear_maps}
     $\calL(E, F)$为$\calF(E, F)$的向量子空间.
 \end{prop}
 
-\begin{prop}
+\begin{proof}
+    易知零映射是线性的.
+    由 Proposition \ref{prop:linear_combination_of_linear_maps} 知$\calL(E, F)$在线性组合下稳定.
+    故$\calL(E, F)$为$\calF(E, F)$的向量子空间.
+\end{proof}
+
+\begin{prop} \label{prop:composition_of_linear_maps}
     设$u \in \calL(E, F), v \in \calL(F, G)$,则$v \circ u \in \calL(E, G)$.
 \end{prop}
 
-\begin{prop}
+\begin{proof}
+    设$x, y \in E, \alpha, \beta \in \bbK$,则
+
+    \begin{align*}
+        (v \circ u)(\alpha x + \beta y) & = v(u(\alpha x + \beta y)) \\
+        & = v(\alpha u(x) + \beta u(y)) \\
+        & = \alpha v(u(x)) + \beta v(u(x)) \\
+        & = \alpha (v \circ u)(x) + \beta (v \circ u)(y)
+    \end{align*}
+
+    故$v \circ u \in \calL(E, G)$.
+\end{proof}
+
+\begin{prop} \label{prop:bilinear_map_of_composition_of_linear_maps}
     映射$\begin{array}[t]{ccc} \calL(F, G) \times \calL(E, F) & \to & \calL(E, G) \\
     (v, u) & \mapsto & v \circ u \end{array}$是双线性的.
 
@@ -197,19 +360,61 @@
     \to & \calL(E, G) \\ \varphi & \mapsto & v \circ \varphi \end{array}$均是线性的.
 \end{prop}
 
+\begin{proof}
+    设$u \in \calL(E, F), v \in \calL(F, G), \alpha, \beta \in \bbK$.
+
+    \begin{enumerate}
+        \item 设$\psi_1, \psi_2 \in \calL(F, G)$,则\[ (\alpha \psi_1 + \beta \psi_2) \circ u =
+            \alpha (\psi_1 \circ u) + \beta (\psi_2 \circ v) \]
+        \item 设$\varphi_1, \varphi_2 \in \calL(E, F)$,则\[ v \circ (\alpha \varphi_1 + \beta \varphi_2) =
+            \alpha (v \circ \varphi_1) + \beta (v \circ \varphi_2) \qedhere \]
+    \end{enumerate}
+\end{proof}
+
 \begin{prop}
     $(\calL(E, E), +, \circ)$为环.
 \end{prop}
+
+\begin{proof} $\ $
+    \begin{itemize}
+        \item 由 Proposition \ref{prop:linear_space_of_linear_maps} 知$\calL(E, E)$为向量空间,因此其对加法成群.
+        \item 由 Proposition \ref{prop:composition_of_linear_maps} 知$\calL(E, E)$在映射复合下稳定.
+        \item 恒等映射为运算$\circ$的中性元.
+        \item 映射的复合是结合的,因此线性映射也是.
+        \item 由 Proposition \ref{prop:bilinear_map_of_composition_of_linear_maps}知$\circ$对$+$是分配的,即
+            \[ \forall u, v, w \in \calL(E, E), (u + v) \circ w = (u \circ w) + (v \circ w), u \circ (v + w) =
+            (u \circ v) + (u \circ w) \qedhere \]
+    \end{itemize}
+\end{proof}
 
 \begin{prop}
     设$u \in \calL(E, F)$为同构,则逆映射$u^{-1}$是线性的.
 \end{prop}
 
-记$\mathcal{GL}(E)$为$E$上的自同构的全体.
+\begin{proof}
+    由$u$为双射知$u^{-1}$也为双射.
+    设$\lambda_1, \lambda_2 \in \bbK, y_1, y_2 \in F, x_1 = u^{-1}(y_1), x_2 = u^{-1}(y_2)$,则
+
+    \begin{align*}
+        u^{-1}(\lambda_1 y_1 + \lambda_2 y_2) & =u^{-1}(\lambda_1 u(x_1) + \lambda_2 u(x_2)) \\
+        & = u^{-1}(u(\lambda_1 x_1 + \lambda_2 x_2)) \\
+        & = (u^{-1} \circ u)(\lambda_1 x_1 + \lambda_2 x_2) \\
+        & = \lambda_1 x_1 + \lambda_2 x_2 \\
+        & = \lambda_1 u^{-1}(x_1) + \lambda_2 u^{-1}(x_2) \qedhere
+    \end{align*}
+\end{proof}
+
+\begin{deff}
+    记$\mathcal{GL}(E)$为$E$上的自同构的全体.
+\end{deff}
 
 \begin{prop}
     $(\mathcal{GL}(E), \circ)$为群,称为$E$的线性群.
 \end{prop}
+
+\begin{proof}
+    这是环$\calL(E, E)$的单位群.
+\end{proof}
 
 \section{向量空间的仿射子空间}
 
@@ -221,16 +426,26 @@
     $t_a \in \calL(E, E) \iff a = 0$.
 \end{rqq}
 
-\begin{prop}
+\begin{prop} $\ $
     \begin{itemize}
         \item 对任意$a, b \in E$,有$t_a \circ t_b = t_{a + b} = t_b \circ t_a$.
         \item 对任意$a \in E$,平移$t_a$为双射且$t_a^{-1} = t_{-a}$.
     \end{itemize}
 \end{prop}
 
-对$a \in E$及$E$的向量子空间$F$,我们记$a + F = \{ a + x \mid x \in F \} = t_a(F)$.
+\begin{proof} $\ $
+    \begin{itemize}
+        \item 注意到$t_a \circ t_b(x) = a + (b + x), t_{a + b}(x) = (a + b) + x, t_b \circ t_a(x) = b + (a + x)$,
+            由$+$运算的结合性与交换性即得.
+        \item 平移$t_a$的逆为平移$t_{-a}$,因为\[ t_a \circ t_{-a} = t_{-a} \circ t_a = t_0 = \id_E \]
+    \end{itemize}
+\end{proof}
 
 \begin{rqq}
+    对$a \in E$及$E$的向量子空间$F$,我们记$a + F = \{ a + x \mid x \in F \} = t_a(F)$.
+\end{rqq}
+
+\begin{rqq} $\ $
     \begin{enumerate}
         \item 集合$\calF = a + F$非空,因为$a \in a + F$.
         \item 对$x \in E$,$x \in a + F$当且仅当$x - a \in F$.
@@ -241,12 +456,27 @@
     设$a, a' \in E$, $F, F'$为$E$的向量子空间,则$a + F = a' + F'$当且仅当$F = F'$且$a' - a \in F$.
 \end{lem}
 
-\begin{deff}
+\begin{proof} $\ $
+    \begin{enumerate}
+        \item 设$a + F = a' + F'$.
+            \begin{itemize}
+                \item 由$a' \in a' + F' = a + F$知$a' - a \in F$,同理$a -  a' \in F'$.
+                \item 设$x' \in F'$,则$a' + x' \in a' + F' = a + F$,因此$x \in F$使得$a + x = a' + x'$,
+                    于是$x' = a - a' + x$.由于$a - a', x \in F$,知$x' \in F$.因此$F' \subseteq F$.
+                    同理$F \subseteq F'$,因此$F = F'$.
+            \end{itemize}
+        \item 设$F = F'$且$a' - a \in F$.设$x \in a + F$,则存在$y \in F$使得$x = a + y$.
+            因此$x' = a' + (a - a' + y)$.由于$a' - a, y \in F = F'$,知$x \in a' + F'$.
+            因此$a + F \subseteq a' + F'$.同理$a' + F' \subseteq a + F$,因此$a + F = a' + F'$. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{deff} $\ $
     \begin{itemize}
         \item 设$\calF \subseteq E$,称$\calF$为$E$的\textbf{仿射子空间(sous-espace affine)},
             若存在$a \in E$及$E$的向量子空间$F$,使得$\calF = a + F$.
-        \item 设$\calF \subseteq E$,称$\calF$为\textbf{过点$\boldsymbol{a}$,方向为$\boldsymbol{F}$的仿射子空间
-            (sous-espace affine passant par $\boldsymbol{a}$ et dirigé par $\boldsymbol{F}$)},若有$x \in \calF \iff x - a \in F$.
+        \item 设$\calF \subseteq E$,称$\calF$为\textbf{过点$\bsa$,方向为$\bsF$的仿射子空间
+            (sous-espace affine passant par $\bsa$ et dirigé par $\bsF$)},若有$x \in \calF \iff x - a \in F$.
         \item 向量子空间$F$称为$\calF$的\textbf{方向(direction)}.
     \end{itemize}
 \end{deff}
@@ -263,22 +493,46 @@
     设$F$为$E$的向量子空间,$\calF$为$E$的仿射子空间,过点$a$,方向为$F$.则对任意$a' \in \calF$,都有$\calF = a' + F$.
 \end{prop}
 
+\begin{deff}
+    设$\calF$为$E$的仿射子空间,称$\calF$为\textbf{仿射直线(droite affine)},
+    若$\calF$的方向$F$为向量直线,即存在非零向量$a$使得$F = \vect \{ a \}$.
+\end{deff}
+
 \begin{prop}
     设$\calF, \calG$为$E$的仿射子空间,方向分别为$F, G$,则
+    
     \begin{itemize}
-        \item $\calF \cap \calG$非空.
-        \item $\calF \cap \calG$为$E$的仿射子空间,其方向为$F \cap G$.
+        \item 要么$\calF \cap \calG$为空.
+        \item 要么$\calF \cap \calG$为$E$的仿射子空间,其方向为$F \cap G$.
     \end{itemize}
 \end{prop}
+
+\begin{proof}
+    若$\calF \cap \calG = \varnothing$,则存在$a \in \calF \cap \calG$.对任意$x \in E$,我们有
+    \[ x \in \calF \iff x - a \in F \text{且} x \in \calG \iff x - a \in G \]
+    因此$x \in \calF \cap \calG \iff x - a \in F \cap G$,即$x = a + F \cap G$.
+\end{proof}
+
+\begin{prop}
+    设$u \in \calL(E, F), b \in F$.若方程$u(x) = b$的解集$\calF_b$非空,则其为$E$的仿射子空间,方向为$\ker u$.
+\end{prop}
+
+\begin{proof}
+    设$\calF_b$非空,$a$为方程的一个解.设$x \in E$,则$x \in \calF_b$当且仅当$u(x) = b = u(a)$.
+    由于$u$为线性映射,知其即为$u(x - a) = 0$.因此\[ x \in \calF_b \iff x - a \in \ker u \]
+    因此$\calF_b = a + \ker u$.
+\end{proof}
 
 \section{任意族生成的子空间}
 
 \begin{deff}
-    设$X$为$E$中任意子集或族,称一个向量为$X$中元素的线性组合,若其为$X$中有限元素的线性组合.
+    设$X$为$E$中任意子集或族,称一个向量为\textbf{$\bsX$中元素的线性组合(combinaison linéaire des éléments de $\bsX$)},
+    若其为$X$中有限元素的线性组合.
 \end{deff}
 
 \begin{rqq}
     设$x \in E$,则
+
     \begin{itemize}
         \item 若$A$为$E$中一族元素,则$x$为$A$中元素的线性组合,当且仅当存在$A$的有限子族$A'$使得$x \in \vect(A')$.
         \item 若$\calA$为$E$中子集,则$x$为$\calA$中元素的线性组合,当且仅当存在$\calA$的有限子集$\calA'$使得$x \in \vect \calA'$.
@@ -289,8 +543,33 @@
     设$\calA$为$E$的非空子集,则向量子空间$\vect \calA$为$\calA$中元素的线性组合的全体.
 \end{prop}
 
+\begin{proof}
+    设$B$为$\calA$中元素的线性组合的全体,易知有$B \subseteq E$.
+
+    \begin{itemize}
+        \item 零向量属于$B$(取$n = 1, a_1 \in \calA, \lambda_1 = 0$).
+        \item 设$x', x'' \in B, \alpha', \alpha'' \in \bbK$.则存在$n', n'' \in \bbN^*$,
+            $(a'_i)_{i \in \llbracket 1, n' \rrbracket} \in \calA^{n'}$,
+            $(a''_i)_{i \in \llbracket 1, n'' \rrbracket} \in \calA^{n''}$,
+            $(\lambda'_i)_{i \in \llbracket 1, n' \rrbracket} \in \calK^{n'}$,
+            $(\lambda''_i)_{i\in \llbracket 1, n'' \rrbracket} \in \calK^{n''}$使得
+            \[ x' = \sum\limits_{i = 1}^{n'} \lambda'_i a'_i \text{且} x'' = \sum\limits_{i = 1}^{n''} \lambda''_i a''_i \]
+            通过补充零系数得\[ \{ a'_i \mid i \in \llbracket 1, n' \rrbracket \} \cap
+            \{ a''_i \mid i \in \llbracket 1, n'' \rrbracket \} = \{ a_i \mid i \in \llbracket 1, n \rrbracket \} \]
+            因此存在$(\mu'_i)_{i \in \llbracket 1, n \rrbracket}, (\mu''_i)_{i \in \llbracket 1, n \rrbracket} \in \bbK^n$使得
+            \[ x' = \sum\limits_{i = 1}^n \mu'_i  a_i, x'' = \sum\limits_{i = 1}^n \mu''_i a_i \]
+            那么\[ \alpha' x' + \alpha'' x'' = \sum\limits_{i = 1}^n (\alpha' \mu'_i + \alpha'' \mu''_i) a_i \in B \]
+            因此$B$为$E$的向量子空间.
+        \item 每个$a \in \calA$为$B$的元素(取$n = 1, a_1 = a, \lambda_1 = 1$).
+        \item 最后,任何包含$\calA$的子空间必定包含$B$,因为子空间在线性组合下稳定.
+    \end{itemize}
+
+    故$B$为包含$\calA$中元素的最小向量子空间,即向量子空间$\vect \calA$.
+\end{proof}
+
 \begin{prop}
-    设$A = (a_i)$为$E$中序列,则$$\vect A = \left\{ \sum\limits_{i = 0}^n \lambda_i a_i \mid \lambda_i \in \bbK \right\}$$
+    设$A = (a_i)_{i \in \bbN}$为$E$中序列,则\[ x \in E \mid \exists n \in \bbN, (\lambda_i)_{i \in \llbracket 0, n \rrbracket}
+    \in \bbK^{n + 1}, x = \sum\limits_{k = 0}^n \lambda_i a_i \]
 \end{prop}
 
 \begin{deff}
@@ -298,7 +577,7 @@
     \begin{itemize}
         \item 称集合$\{ j \in I \mid \lambda_j \neq 0 \}$为族$(\lambda_i)_{i \in I}$的\textbf{支集(support)}.
         \item 称族$(\lambda_i)_{i \in I}$是\textbf{几乎处处为0的(presque nulle)},若其支集为有限集,
-            此时称该族是\textbf{有限支撑的(ɑ̀ support fini)}.
+            此时称该族是\textbf{有限支撑的(à support fini)}.
     \end{itemize}
 \end{deff}
 
