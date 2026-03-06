@@ -1,0 +1,139 @@
+\chapter{矩阵}
+
+在本章中,设$K$为域.
+
+\begin{deff}
+    称由$\llbracket 1, n \rrbracket \times \llbracket 1, p \rrbracket$标记的$K$中的族为$n$行$p$列
+    系数在$K$中的\textbf{矩阵(matrice)},或$n \times p$矩阵.$n \times p$矩阵的全体记为$\calM_{n, p}(K)$.
+\end{deff}
+
+\begin{rqq}
+    设$A$为$n \times p$矩阵,则记
+    \[ A = (a_{i, j})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant p}} \]
+
+    以及
+    \[ A = \begin{pmatrix}
+        a_{1, 1} & a_{1, 2} & \cdots & a_{1, j} & \cdots & a_{1, p} \\
+        a_{2,1} & a_{2,2} & \cdots & a_{2,j} & \cdots & a_{2,p} \\
+        \vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+        a_{i, 1} & a_{i,2} & \cdots & a_{i,j} & \cdots & a_{i,p} \\
+        \vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+        a_{n,1} & a_{n,2} & \cdots & a_{n,j} & \cdots & a_{n,p}
+    \end{pmatrix} \]
+\end{rqq}
+
+\begin{rqq}
+    设$A$为$n \times p$矩阵,$i \in \llbracket 1, n \rrbracket, j \in \llbracket 1, p \rrbracket$.
+    称$(a_{i, 1}, a_{i, 2}, \cdots, a_{i, p}) \in K^p$为$A$的第$i$个行向量,
+    称$(a_{1, j}, a_{2, j}, \cdots, a_{n, j}) \in K^n$为$A$的第$j$个列向量.
+\end{rqq}
+
+\begin{deff}
+    设$A$为$n \times p$矩阵,称$A$为$n$阶\textbf{方阵(matrice carrée)},若$n = p$,
+    此时记$A = (a_{i, j})_{1 \leqslant i, j \leqslant n}$.$n$阶方阵的全体记为$\calM_n(K)$.
+\end{deff}
+
+\begin{deff}
+    设$A$为$n$阶方阵,称$A$为$n$阶\textbf{上三角矩阵(matrice triangulaire supérieure)},若$i > j$时$a_{i, j} = 0$.
+    $n$阶上三角矩阵的全体记为$\calT_n(K)$.类似地可定义$n$阶\textbf{下三角矩阵(matrice triangulaire inférieure)}
+\end{deff}
+
+\begin{deff}
+    设$A$为$n$阶方阵,称$A$为$n$阶\textbf{对角阵(matrice diagonale)},若$A$既为$n$阶上三角矩阵,又为$n$阶下三角矩阵.
+    $n$阶对角阵的全体记为$\calD_n(K)$.
+\end{deff}
+
+\begin{rqq}
+    若$A$为$n$阶对角阵,则有
+    \[ A = \begin{pmatrix}
+        \lambda_{1} & 0 & \cdots & 0 \\
+        0 & \lambda_{2} & \cdots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \cdots & \lambda_{n}
+    \end{pmatrix} \]
+
+    其中$\lambda_i \in K$.此时记$A = \diag(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n})$.
+\end{rqq}
+
+\begin{deff}
+    设$A$为$n$阶对角阵,称$A$为$n$阶\textbf{数量矩阵(matrice scalaire)},
+    若$\lambda_{1} = \lambda_{2} = \cdots = \lambda_{n} = \lambda$.
+\end{deff}
+
+\begin{deff}
+    设$A$为$n$阶数量矩阵,称$A$为$n$阶\textbf{单位矩阵(matrice identité)},若$\lambda = 1$,记为$I_n$.
+\end{deff}
+
+\begin{deff}
+    设$A = (a_{i, j})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant p}} \in M_{n, p}(K)$,
+    称矩阵$(a'_{i, j})_{\substack{1 \leqslant i \leqslant p \\ 1 \leqslant j \leqslant n}}$为$A$的
+    \textbf{转置矩阵(matrice transposée)},其中$a'_{i, j} = a_{j, i}$.记为$\prescript{t}{}{A}, \prescript{T}{}{A}, A^t$,或$A^T$.
+\end{deff}
+
+\begin{prop}
+    设$A \in \calM_{n, p}(K)$,则$\transpose{(\transpose{A})} = A$.
+\end{prop}
+
+\begin{deff}
+    设$A$为$n$阶方阵.
+    \begin{itemize}
+        \item 称$A$为$n$阶\textbf{对称矩阵(matrice symétrique)},若$\transpose{A} = A$.$n$阶对称矩阵的全体记为$\calS_n(K)$.
+        \item 称$A$为$n$阶\textbf{反对称矩阵(matrice antisymétrique)},若$\transpose{A} = -A$.$n$阶反对称矩阵的全体记为$\calA_n(K)$.
+    \end{itemize}
+\end{deff}
+
+\begin{prop}
+    $\calS_n(K) \cap \calT_n(K) = \calD_n(K)$.
+\end{prop}
+
+\begin{prop}
+    $\calM_n(K) = \calS_n(K) \oplus \calA_n(K)$.
+\end{prop}
+
+\begin{deff}
+    设$A = (a_{i, j})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant p}},
+    B = (b_{i, j})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant p}} \in \calM_{n, p}(K), \lambda \in K$.
+    \begin{itemize}
+        \item 称$S = (s_{i, j})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant p}} \in \calM_{n, p}(K)$
+            为$A$与$B$的和,其中$s_{i, j} = a_{i, j} + b{i, j}$.记为$A + B$.
+        \item 称$P = (p_{i, j})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant p}} \in \calM_{n, p}(K)$
+            为$\lambda$与$A$的积,其中$p_{i, j} = \lambda a{i, j}$.记为$\lambda A$
+    \end{itemize}
+\end{deff}
+
+\begin{thm}
+    $\calM_{n, p}(K)$为$K$-向量空间,且$\dim \calM_{n, p}(K) = np$.
+\end{thm}
+
+\begin{rqq}
+    记$E_{i, j} \in \calM_{n, p}(K)$为第$i$行第$j$列的项为1,其余全为0的矩阵,
+    则$(E_{i, j})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant p}}$为$\calM_{n, p}(K)$的一组基,
+    称为其\textbf{典范基(base canonique)}.
+\end{rqq}
+
+\begin{rqq}
+    \begin{itemize}
+        \item $\calT_n(K)$为$(E_{i, j})_{1 \leqslant i \leqslant j \leqslant n}$生成的$\calM_n(K)$的向量子空间,
+            且$\dim \calT_n(K) = \dfrac{n(n + 1)}{2}$.
+        \item $\calD_n(K)$为$(E_{i, i})_{1 \leqslant i \leqslant n}$生成的$\calM_n(K)$的向量子空间,
+            且$\dim \calD_n(K) = n$.
+    \end{itemize}
+\end{rqq}
+
+\begin{exer}
+    \begin{enumerate}
+        \item $\dim \calS_n(K) = \dfrac{n(n + 1)}{2}$.
+        \item $\dim \calA_n(K) = \dfrac{n(n - 1)}{2}$.
+    \end{enumerate}
+\end{exer}
+
+\begin{prop}
+    转置映射$A \mapsto \transpose{A}$为$\calM_{n, p}(K)$到$\calM_{p, n}(K)$的线性映射,同构.
+\end{prop}
+
+\begin{deff}
+    设$A = (a_{i, j})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant p}} \in \calM_{n, p}(K),
+    B = (b_{i, j})_{\substack{1 \leqslant i \leqslant p \\ 1 \leqslant j \leqslant q}} \in \calM_{p, q}(K)$
+    称$M = (m_{i, j})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant q}} \in \calM{n, q}(K)$为$A$与$B$的基,
+    其中$m_{i, j} = \sum\limits_{k = 1}^p a_{i, k}b_{k,j}$.记为$AB$.
+\end{deff}
