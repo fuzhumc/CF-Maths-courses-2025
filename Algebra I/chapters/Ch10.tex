@@ -150,11 +150,11 @@
     故该族为$F + G$的生成族.
 
     另一方面,设$\lambda_1, \lambda_2, \cdots, \lambda_p, \mu_1, \mu_2, \cdots, \mu_r, \nu_1, \nu_2, \cdots, \nu_s \in \bbK$使得
-    $$\sum\limits_{k = 1}^p \lambda_k e_k + \sum\limits_{k = 1}^r \mu_k u_k + \sum\limits_{k = 1}^s \nu_k v_k = 0$$即
+    \[ \sum\limits_{k = 1}^p \lambda_k e_k + \sum\limits_{k = 1}^r \mu_k u_k + \sum\limits_{k = 1}^s \nu_k v_k = 0 \]即
     $$\sum_{k = 1}^p \lambda_k e_k + \underbrace{\sum_{k = 1}^r \mu_k u_k}_{\text{属于} F} = 
     -\underbrace{\sum_{k = 1}^s \nu_k v_k}_{\text{属于} G}$$
     因此,上式两边均在$F \cap G$中.那么存在$\alpha_1, \alpha_2, \cdots, \alpha_p \in \bbK$使得
-    $$\sum\limits_{k = 1}^s \nu_k v_k = \sum\limits_{k = 1}^p \alpha_k e_k$$
+    \[ \sum\limits_{k = 1}^s \nu_k v_k = \sum\limits_{k = 1}^p \alpha_k e_k \]
     由$(e_1, e_2, \cdots, e_p, v_1, v_2, \cdots, v_s)$为自由族,知$\nu_1 = \nu_2 = \cdots = \nu_s = 0$.\\
     因此$(e_1, e_2, \cdots, e_p, u_1, u_2, \cdots, u_r, v_1, v_2, \cdots, v_s)$为自由族.
 
@@ -192,7 +192,7 @@
             则向量子空间$E_1, E_2, \cdots, E_p$满足$\bigoplus\limits_{i = 1}^p E_i = E$.
         \item 设向量子空间$E_1, E_2, \cdots, E_p$满足$\bigoplus\limits_{i = 1}^p E_i = E$.
             对$1 \leqslant i \leqslant p$,$\bfe^i = (e_1^i, e_2^i, \cdots, e_{d_i}^i)$为$E_i$的基,其中$d_i = \dim E_i$.
-            则$$\bfe = (e_1^1, \cdots, e_{d_1}^1, e_1^2, \cdots, e_{d_2}^2, \cdots, e_1^p, \cdots, e_{d_p}^p)$$
+            则\[ \bfe = (e_1^1, \cdots, e_{d_1}^1, e_1^2, \cdots, e_{d_2}^2, \cdots, e_1^p, \cdots, e_{d_p}^p) \]
             为$E$的基
     \end{enumerate}
 \end{prop}
@@ -203,7 +203,7 @@
 
 \begin{prop}
     设$E$为向量空间,$E_1, E_2, \cdots, E_p$为$E$的有限维向量子空间,则其和是有限维的,且
-    $$\dim (E_1 + E_2 + \cdots + E_p) \leqslant \sum\limits_{i = 1}^p \dim E_i$$
+    \[ \dim (E_1 + E_2 + \cdots + E_p) \leqslant \sum\limits_{i = 1}^p \dim E_i \]
     取等当且仅当$E_1, E_2, \cdots, E_p$成直和.
 \end{prop}
 
@@ -257,7 +257,7 @@
 \end{prop}
 
 \begin{proof}
-    考虑映射$v: \begin{array}[t]{ccc} E_0 & \to & \im u \\ x & \mapsto & u(x) \end{array}$.
+    考虑映射$v: \begin{array}[t]{ccc} E_0 & \to & \im u \\ x & \tp & u(x) \end{array}$.
     显然$v$为线性映射,我们证明$v$为双射.
 
     \begin{itemize}
@@ -272,14 +272,14 @@
 \end{proof}
 
 \begin{thm}
-    设$E$为有限维向量空间,$F$为向量空间,$u \in \calL(E, F)$.则$u$是有限秩的,且$$\dim E = \rang u + \dim \ker u$$
+    设$E$为有限维向量空间,$F$为向量空间,$u \in \calL(E, F)$.则$u$是有限秩的,且\[ \dim E = \rang u + \dim \ker u \]
 \end{thm}
 
 \begin{proof} $\ $
     \begin{itemize}
         \item 由$E$是有限维的知$u$是有限秩的.
         \item 设$E_0$为$\ker u$的补向量子空间,由前面的性质知$E_0$与$\im u$同构.
-        因此$E_0$是有限维的,且$$\dim E = \dim E_0 + \dim \ker u = \dim \im u + \dim \ker u = \rang u + \dim \ker u$$
+        因此$E_0$是有限维的,且\[ \dim E = \dim E_0 + \dim \ker u = \dim \im u + \dim \ker u = \rang u + \dim \ker u \]
     \end{itemize}
 \end{proof}
 
@@ -309,7 +309,7 @@
 
 \begin{thm}
     设$E, F$为有限维$\bbK$-向量空间,则$\calL(E, F)$为有限维$\bbK$-向量空间,且
-    $$\dim \calL(E, F) = \dim E \times \dim F$$
+    \[ \dim \calL(E, F) = \dim E \times \dim F \]
 \end{thm}
 
 \section{线性型和超平面}
@@ -324,26 +324,26 @@
 \end{prop}
 
 \begin{cor}
-    子集$H$为$E$的超平面当且仅当存在$a_1, a_2, \cdots, a_n \in \bbK$使得$$x \in H \iff \sum\limits_{i = 1}^n a_i x_i = 0$$
+    子集$H$为$E$的超平面当且仅当存在$a_1, a_2, \cdots, a_n \in \bbK$使得\[ x \in H \iff \sum\limits_{i = 1}^n a_i x_i = 0 \]
 \end{cor}
 
 \begin{cor}
     设$a_1, a_2, \cdots, a_n, b_1, b_2, \cdots, b_n \in \bbK^*$,则方程分别为
-    $$\sum\limits_{i = 1}^n a_i x_i = 0, \sum\limits_{i = 1}^n b_i x_i = 0$$
+    \[ \sum\limits_{i = 1}^n a_i x_i = 0, \sum\limits_{i = 1}^n b_i x_i = 0 \]
     的两个超平面相等当且仅当存在$\lambda \in \bbK^*$使得$(b_1, b_2, \cdots, b_n) = \lambda (a_1, a_2, \cdots, a_n)$.
 \end{cor}
 
 \begin{prop}
-    设$H_1, H_2, \cdots, H_m$为$E$的超平面,则$$\dim \bigcap\limits_{i = 1}^m H_i \geqslant \dim E - m$$
+    设$H_1, H_2, \cdots, H_m$为$E$的超平面,则\[ \dim \bigcap\limits_{i = 1}^m H_i \geqslant \dim E - m \]
 \end{prop}
 
 \begin{proof}
     设$\varphi_i \in E^*$使得$H_i = \ker \varphi_i$.考虑映射$$u:\begin{array}[t]{ccc}
-    E \to \bbK^m \\ x \mapsto \left( \varphi_1(x), \varphi_2(x), \cdots, \varphi_m(x) \right) \end{array}$$
+    E \to \bbK^m \\ x \tp \left( \varphi_1(x), \varphi_2(x), \cdots, \varphi_m(x) \right) \end{array}$$
     易知$u$是线性的且$\ker u = \bigcap\limits_{i = 1}^m H_i$.
 
     由$\im u \subseteq \bbK^m$知$\rang u \leqslant m$.
-    因此$$\dim \bigcap\limits_{i = 1}^m H_i = \dim \ker u = \dim E - \rang u \geqslant \dim E - m$$
+    因此\[ \dim \bigcap\limits_{i = 1}^m H_i = \dim \ker u = \dim E - \rang u \geqslant \dim E - m \]
 \end{proof}
 
 \begin{prop}
@@ -355,6 +355,6 @@
     于是我们可以构造出坐标线性型族$(e_1^*, e_2^*, \cdots, e_n^*)$.
 
     对于$x = \sum\limits_{i = 1}^n x_i e_i \in E$,有$x \in F$当且仅当
-    $$\forall i \in \{ m + 1, \cdots, n \}, x_i = 0$$即$$\forall i \in \{ m + 1, \cdots, n \}, e_i^*(x) = 0$$
+    \[ \forall i \in \{ m + 1, \cdots, n \}, x_i = 0 \]即\[ \forall i \in \{ m + 1, \cdots, n \}, e_i^*(x) = 0 \]
     因此$F = \bigcap\limits_{i = m + 1}^n \ker e_i^*$.
 \end{proof}

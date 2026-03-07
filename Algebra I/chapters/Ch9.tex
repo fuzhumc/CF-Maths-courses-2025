@@ -21,9 +21,9 @@
     根据上一章,我们有
     \begin{itemize}
         \item $\bfg = (g_1, g_2, \cdots, g_n)$为$E$的生成族当且仅当
-            $$\forall x \in E, \exists \lambda_i \in \bbK, x = \sum\limits_{i = 1}^n \lambda_i g_i$$
+            \[ \forall x \in E, \exists \lambda_i \in \bbK, x = \sum\limits_{i = 1}^n \lambda_i g_i \]
         \item $\calG = \{ g_1, g_2, \cdots, g_n \}$为$E$的生成子集当且仅当
-            $$\forall x \in E, \exists \lambda_i \in \bbK, x = \sum\limits_{i = 1}^n \lambda_i g_i$$
+            \[ \forall x \in E, \exists \lambda_i \in \bbK, x = \sum\limits_{i = 1}^n \lambda_i g_i \]
     \end{itemize}
 \end{rqq}
 
@@ -44,7 +44,7 @@
     设$x_1, x_2, \cdots, x_n \in E$.
     \begin{itemize}
         \item 称$(x_1, x_2, \cdots, x_n)$为$E$的\textbf{自由族(famille libre)},
-            若$$\sum\limits_{i = 1}^n \lambda_i x_i = 0 \implies \lambda_1 = \lambda_2 = \cdots = \lambda_n = 0$$
+            若\[ \sum\limits_{i = 1}^n \lambda_i x_i = 0 \implies \lambda_1 = \lambda_2 = \cdots = \lambda_n = 0 \]
         \item 否则,称$(x_1, x_2, \cdots, x_n)$为$E$的\textbf{相关族(famille liée)},
         即存在不全为0的标量$(\lambda_1, \lambda_2, \cdots, \lambda_n)$使得$\sum\limits_{i = 1}^n \lambda_i x_i = 0$.
     \end{itemize}
@@ -64,7 +64,7 @@
 
 \begin{deff}
     设$x, y \in E$,称$x$与$y$\textbf{成比例(proportionnels)}或\textbf{共线(colinéaires)},若
-    $$\exists \lambda \in \bbK, y = \lambda x \text{或} x = \lambda y$$
+    \[ \exists \lambda \in \bbK, y = \lambda x \text{或} x = \lambda y \]
 \end{deff}
 
 \begin{prop}
@@ -79,17 +79,17 @@
 \end{prop}
 
 \begin{rqq}
-    若$(x_1, x_2, \cdots, x_n)$为自由族,则其中没有两个相同的向量,即映射$i \mapsto x_i$为单射.
+    若$(x_1, x_2, \cdots, x_n)$为自由族,则其中没有两个相同的向量,即映射$i \tp x_i$为单射.
 \end{rqq}
 
 \begin{prop}
     设$(x_1, x_2, \cdots, x_n)$为$E$的自由族,$x \in E$,则$(x_1, x_2, \cdots, x_n, x)$为相关族当且仅当
-    $$x \in \vect(x_1, x_2, \cdots, x_n)$$即$x$为$x_1, x_2, \cdots, x_n$的线性组合.
+    \[ x \in \vect(x_1, x_2, \cdots, x_n) \]即$x$为$x_1, x_2, \cdots, x_n$的线性组合.
 \end{prop}
 
 \begin{rqq}
     设$(x_1, x_2, \cdots, x_n)$为$E$中一族元素,若$x_1 \neq 0$且
-    $$\forall k \in \{ 2, \cdots, n \}, x_k \notin \vect(x_1, x_2, \cdots, x_{k-1})$$
+    \[ \forall k \in \{ 2, \cdots, n \}, x_k \notin \vect(x_1, x_2, \cdots, x_{k-1}) \]
     则$(x_1, x_2, \cdots, x_n)$为自由族.
 \end{rqq}
 
@@ -241,11 +241,11 @@
 \begin{deff}
     设$F,G$为$E$的互补向量子空间,称自同态$p \in \calL(E, E)$为
     \textbf{平行于$\boldsymbol{G}$向$\boldsymbol{F}$的投影(projection sur $\boldsymbol{F}$ parallèlement à $\boldsymbol{G}$)},
-    若$$\forall x \in F, p(x) = x, \forall x \in G, p(x) = 0$$
+    若\[ \forall x \in F, p(x) = x, \forall x \in G, p(x) = 0 \]
 \end{deff}
 
 \begin{prop}
-    设$p$为平行于$G$向$F$的投影,则$p^2 = p \circ p = p$,且$$G = \ker p, F = \im p = \{ x \in E \mid p(x) = x \}$$
+    设$p$为平行于$G$向$F$的投影,则$p^2 = p \circ p = p$,且\[ G = \ker p, F = \im p = \{ x \in E \mid p(x) = x \} \]
 \end{prop}
 
 \begin{proof}
@@ -300,7 +300,7 @@
 \begin{deff}
     设$F,G$为$E$的互补向量子空间,称自同态$s \in \calL(E, E)$为
     \textbf{平行于$\boldsymbol{G}$关于$\boldsymbol{F}$的对称(symétrie par rapport à $\boldsymbol{F}$ parallèlement à $\boldsymbol{G}$)},
-    若$$\forall x \in F, s(x) = x, \forall x \in G, s(x) = -x$$
+    若\[ \forall x \in F, s(x) = x, \forall x \in G, s(x) = -x \]
 \end{deff}
 
 \begin{rqq}
@@ -316,7 +316,7 @@
 \end{prop}
 
 \begin{proof}
-    自同态$s$满足$$\forall x \in F, s(s(x)) = s(x) = x, \forall x \in G, s(s(x)) = -s(x) = x$$
+    自同态$s$满足\[ \forall x \in F, s(s(x)) = s(x) = x, \forall x \in G, s(s(x)) = -s(x) = x \]
     又$F, G$为$E$的互补向量子空间,故$s \circ s = \id_E$.
 \end{proof}
 
@@ -340,7 +340,7 @@
 
     设$F = \ker(s - \id_E), G = \ker(s + \id_E)$分别为自同态$s - \id_E, s + \id_E$的核,因此其为$E$的向量子空间.
 
-    我们有$$F = \{ x \mid s(x) = x \}, G = \{ x \mid s(x) = -x \}$$
+    我们有\[ F = \{ x \mid s(x) = x \}, G = \{ x \mid s(x) = -x \} \]
 
     为了证明$s$为对称,只要证明$E = F \oplus G$.
 
@@ -361,7 +361,7 @@
 
 \begin{deff}
     设$\bfe = (e_i)_{i \in I}$,对$i \in I$,称$e_i^*$为基$\bfe$下的第$i$个\textbf{坐标线性型(forme linéaire coordonnée)},
-    若$$e_i^*(e_i) = 1, \forall j \in I \setminus \{ i \}, e_i^*(e_j) = 0$$
+    若\[ e_i^*(e_i) = 1, \forall j \in I \setminus \{ i \}, e_i^*(e_j) = 0 \]
 \end{deff}
 
 \begin{rqq}

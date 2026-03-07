@@ -8,7 +8,7 @@
     \tau_a(f):
     \begin{array}[t]{ccc}
         I \setminus \{a\} & \to & \mathbb{R} \\
-        x & \mapsto & \frac{f(x)-f(a)}{x-a}
+        x & \tp & \frac{f(x)-f(a)}{x-a}
     \end{array}
     $$
     为$f$在$a$处的\textbf{增长率}.
@@ -19,7 +19,7 @@
 \end{deff}
 
 \begin{rqq}
-    $$f'(a)=\lim\limits_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim\limits_{h\to0}\frac{f(a+h)-f(a)}{h}$$
+    \[ f'(a)=\lim\limits_{x\to a}\frac{f(x)-f(a)}{x-a}=\lim\limits_{h\to0}\frac{f(a+h)-f(a)}{h} \]
 \end{rqq}
 
 \begin{prop}
@@ -38,7 +38,7 @@
 \end{deff}
 
 \begin{deff}
-    称映射$f':\begin{array}[t]{ccc} I & \to & \mathbb{R} \\ x & \mapsto & f'(x) \end{array}$
+    称映射$f':\begin{array}[t]{ccc} I & \to & \mathbb{R} \\ x & \tp & f'(x) \end{array}$
     为$f$的\textbf{导函数}.
 \end{deff}
 
@@ -55,12 +55,12 @@
     设$f:I\to\mathbb{R},g:J\to\mathbb{R},f(I)\subseteq I$.
 
     若$f$在$a$处可导,$g$在$f(a)$处可导,则$g \circ f$在$a$处可导,且
-    $$(g \circ f)'(a)=g'(f(a))f'(a)$$
+    \[ (g \circ f)'(a)=g'(f(a))f'(a) \]
 \end{thm}
 
 \begin{thm}[反函数导数]
     设$f:I\to\mathbb{R}$为连续双射,$a\in I,b=f(a)\neq0$.则$f^{-1}在$b$处$可导,且
-    $$(f^{-1})'(b)=\dfrac{1}{f'(a)}=\dfrac{1}{f'(f^{-1}(b))}$$
+    \[ (f^{-1})'(b)=\dfrac{1}{f'(a)}=\dfrac{1}{f'(f^{-1}(b))} \]
 \end{thm}
 
 \begin{deff}[左右导数]
@@ -103,7 +103,7 @@
 
 \begin{thm}[Cauchy]
     设$f,g:[a,b]\to\mathbb{R}$在$[a,b]$上连续,在$(a,b)$上可导,且$g'(x) \neq 0$,则存在$c\in(a,b)$,使得
-    $$\dfrac{f'(c)}{g'(c)}=\dfrac{f(b)-f(a)}{g(b)-g(a)}$$
+    \[ \dfrac{f'(c)}{g'(c)}=\dfrac{f(b)-f(a)}{g(b)-g(a)} \]
 \end{thm}
 
 \begin{thm}[L'Hôpital]
@@ -191,12 +191,12 @@
 \begin{thm}
     设$f,g\in\mathcal{C}^n(I,\mathbb{R}),\lambda,\mu\in\mathbb{R}$,
     则$\lambda f+\mu g\in\mathcal{C}^n(I,\mathbb{R})$,
-    且$$(\lambda f+\mu g)^{(n)}=\lambda f^{(n)}+\mu g^{(n)}$$
+    且\[ (\lambda f+\mu g)^{(n)}=\lambda f^{(n)}+\mu g^{(n)} \]
 \end{thm}
 
 \begin{thm}[Leibniz]
     设$f,g\in\mathcal{C}^n(I,\mathbb{R})$,则$fg\in\mathcal{C}(I,\mathbb{R})$,
-    且$$(fg)^{(n)}=\sum\limits_{k=0}^n\binom{n}{k}f^{(k)}g^{(n-k)}$$
+    且\[ (fg)^{(n)}=\sum\limits_{k=0}^n\binom{n}{k}f^{(k)}g^{(n-k)} \]
 \end{thm}
 
 \begin{thm}
@@ -331,7 +331,7 @@
 
 \begin{prop}
     设$f$为$I$上凸函数,$x,y,z\in I$满足$x<y<z$,则
-    $$\dfrac{f(y)-f(x)}{y-x}\leqslant\dfrac{f(z)-f(x)}{z-x}\leqslant\frac{f(z)-f(y)}{z-y}$$
+    \[ \dfrac{f(y)-f(x)}{y-x}\leqslant\dfrac{f(z)-f(x)}{z-x}\leqslant\frac{f(z)-f(y)}{z-y} \]
 \end{prop}
 
 \begin{prop}

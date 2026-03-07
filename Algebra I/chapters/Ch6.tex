@@ -100,7 +100,7 @@
     称$\sum\limits_{k = 0} ^ n a_k \alpha ^ k \in K$为将$\alpha$\textbf{代入(substitue)}$x$,
     或$A$在$\alpha$处的\textbf{取值(évalue)},记为$A(\alpha)$.
 
-    记$ev_{\alpha}: \begin{array}[t]{ccc} K[x] & \to & K \\ A & \mapsto & A(\alpha) \end{array}$.
+    记$ev_{\alpha}: \begin{array}[t]{ccc} K[x] & \to & K \\ A & \tp & A(\alpha) \end{array}$.
 \end{deff}
 
 \begin{prop}\label{prop:ev_operation}
@@ -232,7 +232,7 @@
 \begin{thm}[Lagrange插值公式]\label{thm:lagrange_interpolation}
     设$K$为域,$x_i, \alpha_i \in K (i = 0, 1, \ldots, n)$.
     则存在唯一多项式$L \in K_n[x]$满足$L(x_i) = \alpha_i$.
-    其中$$L(x) = \sum\limits_{i = 0}^n \prod\limits_{j \neq i} \dfrac{x - x_j}{x_i - x_j} \alpha_i$$
+    其中\[ L(x) = \sum\limits_{i = 0}^n \prod\limits_{j \neq i} \dfrac{x - x_j}{x_i - x_j} \alpha_i \]
 \end{thm}
 
 \begin{rqq}
@@ -249,7 +249,7 @@
 \end{prop}
 
 \begin{prop}\label{prop2}
-    设$K$为域,则$$\varPhi: \begin{array}[t]{ccc} K[x] & \to & \calF(K, K) \\ A & \mapsto & \tilde{A} \end{array}$$为环同态.
+    设$K$为域,则\[ \varPhi: \begin{array}[t]{ccc} K[x] & \to & \calF(K, K) \\ A & \tp & \tilde{A} \end{array} \]为环同态.
 \end{prop}
 
 \begin{rqq}
@@ -338,7 +338,7 @@
 \end{prop}
 
 \begin{rqq}
-    ``求导''为一个群同态$\begin{array}[t]{ccc} K[x] & \to & K[x] \\ A & \mapsto & A' \end{array}$.
+    ``求导''为一个群同态$\begin{array}[t]{ccc} K[x] & \to & K[x] \\ A & \tp & A' \end{array}$.
 \end{rqq}
 
 \begin{prop}
@@ -353,16 +353,16 @@
 
 \begin{prop}
     设$K$为域,$A, B \in K[x], \lambda, \mu \in K, n \in \bbN$,
-    则$$(\lambda A + \mu B)^{(n)} = \lambda A^{(n)} + \mu B^{(n)}$$.
+    则\[ (\lambda A + \mu B)^{(n)} = \lambda A^{(n)} + \mu B^{(n)} \]
 \end{prop}
 
 \begin{prop}
-    设$K$为域,则$\begin{array}[t]{ccc} K[x] & \to & K[x] \\ A & \mapsto & A^{(n)} \end{array}$
+    设$K$为域,则$\begin{array}[t]{ccc} K[x] & \to & K[x] \\ A & \tp & A^{(n)} \end{array}$
     为$K$上的线性映射.
 \end{prop}
 
 \begin{thm}[Leibniz]\label{thm:leibniz}
-    设$K$为域,$A, B \in K[x]$,则$$(AB)^{(n)} = \sum\limits_{k=0}^n \binom{n}{k} A^{(k)} B^{(n-k)}$$.
+    设$K$为域,$A, B \in K[x]$,则\[ (AB)^{(n)} = \sum\limits_{k=0}^n \binom{n}{k} A^{(k)} B^{(n-k)} \]
 \end{thm}
 
 \begin{thm}[Taylor]
@@ -529,12 +529,12 @@
 
 \begin{prop}
     设$A, B \in K[x]^*$,$M$为$A, B$的PPCM,
-    则$$\forall P \in K[x], (A \mid P \text{且} B \mid P) \iff  M \mid P$$.
+    则\[ \forall P \in K[x], (A \mid P \text{且} B \mid P) \iff  M \mid P \]
 \end{prop}
 
 \begin{thm}\label{thm:ppcm_existence}
     设$A, B \in K[x]^*$,则存在唯一首一多项式$M$使得
-    $$\forall P \in K[x], (A \mid P \text{且} B \mid P) \iff  M \mid P$$.
+    \[ \forall P \in K[x], (A \mid P \text{且} B \mid P) \iff  M \mid P \]
 \end{thm}
 
 \begin{deff}
@@ -614,10 +614,10 @@ $$\lvert A(z) \rvert \geqslant \left\lvert a_p z^p \right\rvert - \left\lvert
 可以找到一个复序列$(u_n)$使得$\lim\limits_{n \to \infty} \lvert A(u_n) \rvert = \alpha$.
 因此,从某一项起,该序列全在$D$中,从而它是有界的.于是存在一个子列$(u_{\varphi(n)})$收敛于复数$z_0$.
 
-由于$$A(u_{\varphi(n)}) = \sum\limits_{k = 0}^p a_k u_{\varphi(n)}^k$$
+由于\[ A(u_{\varphi(n)}) = \sum\limits_{k = 0}^p a_k u_{\varphi(n)}^k \]
 
 得出$\lim\limits_{n \to \infty} A(u_{\varphi(n)}) = A(z_0)$,
-这给出$$\alpha = \lim\limits_{n \to \infty} \lvert A(u_n) \rvert = \lvert A(z_0) \rvert$$
+这给出\[ \alpha = \lim\limits_{n \to \infty} \lvert A(u_n) \rvert = \lvert A(z_0) \rvert \]
 
 用反证法证明$\lvert A(z_0) \rvert = 0$,假设$\alpha > 0$.
 考虑多项式$\dfrac{A(z_0 + x)}{A(z_0)}$,不妨设$\alpha = 1, z_0 = 0$.
@@ -627,14 +627,14 @@ $$\lvert A(z) \rvert \geqslant \left\lvert a_p z^p \right\rvert - \left\lvert
 
 设$a_q = \rho e^{- i \theta}$,其中$\rho \in \bbR_+^*, \theta \in \bbR$.
 对于$z = r e^{\frac{i \theta}{q}}, r > 0$,
-我们有$$A(z) = 1 - \rho r^q + \sum\limits_{k = q + 1}^p a_k r^k e^{\frac{ik \theta}{q}}$$
+我们有\[ A(z) = 1 - \rho r^q + \sum\limits_{k = q + 1}^p a_k r^k e^{\frac{ik \theta}{q}} \]
 
 因此$$\lvert A(z) \rvert \leqslant \left\lvert 1 - \rho r^q \right\rvert +
 \sum\limits_{k = q + 1}^p \left\lvert a_k \right\rvert r^k$$
 
 如果我们假设$r \leqslant \sqrt[q]{\dfrac{1}{p}}$,
 则$\left\lvert 1 - \rho r^q \right\rvert = 1 - \rho r^q$,因此
-$$\lvert A(z) \rvert - 1 \leqslant - \rho r^q + \sum\limits_{k = q + 1}^p \lvert a_k \rvert r^k$$
+\[ \lvert A(z) \rvert - 1 \leqslant - \rho r^q + \sum\limits_{k = q + 1}^p \lvert a_k \rvert r^k \]
 
 该上界定义了一个关于$r$的多项式函数,它在0处与$- \rho r^q$等价,在0附近为负.
 

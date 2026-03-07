@@ -5,7 +5,7 @@
 \section{向量空间}
 
 \begin{deff}
-    设$E$为非空集合,称映射$$\begin{array}[t]{ccc} \bbK \times E & \to & E \\ (\alpha, x) & \mapsto &
+    设$E$为非空集合,称映射$$\begin{array}[t]{ccc} \bbK \times E & \to & E \\ (\alpha, x) & \tp &
     \alpha \cdot x \end{array}$$为$E$上的一个\textbf{外部法则(loi externe)}.
 \end{deff}
 
@@ -76,8 +76,8 @@
     设$E$为$\bbK$-向量空间,$X$为集合.则集合$\calF(X, E)$配备运算
 
     \begin{itemize}
-        \item $f + g: \begin{array}[t]{ccc} X & \to & E \\ x & \mapsto & f(x) + g(x) \end{array}$
-        \item $\alpha f: \begin{array}[t]{ccc} X & \to & E \\ x & \mapsto & \alpha f(x) \end{array}$
+        \item $f + g: \begin{array}[t]{ccc} X & \to & E \\ x & \tp & f(x) + g(x) \end{array}$
+        \item $\alpha f: \begin{array}[t]{ccc} X & \to & E \\ x & \tp & \alpha f(x) \end{array}$
     \end{itemize}
 
     成为一个$\bbK$-向量空间.
@@ -353,11 +353,11 @@
 
 \begin{prop} \label{prop:bilinear_map_of_composition_of_linear_maps}
     映射$\begin{array}[t]{ccc} \calL(F, G) \times \calL(E, F) & \to & \calL(E, G) \\
-    (v, u) & \mapsto & v \circ u \end{array}$是双线性的.
+    (v, u) & \tp & v \circ u \end{array}$是双线性的.
 
     也就是说,映射$R_u: \begin{array}[t]{ccc} \calL(F, G) & \to & \calL(E, G) \\
-    \psi & \mapsto & \psi \circ u \end{array}$与$L_v: \begin{array}[t]{ccc} \calL(E, F) &
-    \to & \calL(E, G) \\ \varphi & \mapsto & v \circ \varphi \end{array}$均是线性的.
+    \psi & \tp & \psi \circ u \end{array}$与$L_v: \begin{array}[t]{ccc} \calL(E, F) &
+    \to & \calL(E, G) \\ \varphi & \tp & v \circ \varphi \end{array}$均是线性的.
 \end{prop}
 
 \begin{proof}
@@ -419,7 +419,7 @@
 \section{向量空间的仿射子空间}
 
 \begin{deff}
-    设$a \in E$,称从$E$到$E$的映射$t_a: x \mapsto x + a$为沿$a$的\textbf{平移(translation)},记为$t_a$.
+    设$a \in E$,称从$E$到$E$的映射$t_a: x \tp x + a$为沿$a$的\textbf{平移(translation)},记为$t_a$.
 \end{deff}
 
 \begin{rqq}

@@ -47,13 +47,13 @@
 \begin{prop}
     设$f\in\mathcal{E}([a,b],\mathbb{R}),\lambda\in\mathbb{R}$,则:
     \begin{enumerate}
-        \item $$\int_{[a,b]}\lambda f=\lambda\int_{[a,b]}f$$
-        \item $$\int_{[a,b]}f+g=\int_{[a,b]}f+\int_{[a,b]}g$$
+        \item \[ \int_{[a,b]}\lambda f=\lambda\int_{[a,b]}f \]
+        \item \[ \int_{[a,b]}f+g=\int_{[a,b]}f+\int_{[a,b]}g \]
     \end{enumerate}
 \end{prop}
 
 \begin{rqq}
-    $$\int_{[a,b]}:\begin{array}[t]{ccc}\mathcal{E}([a,b],\mathbb{R}) & \to &\mathbb{R} \\ f & \mapsto & \int_{[a,b]}f \end{array}$$
+    \[ \int_{[a,b]}:\begin{array}[t]{ccc}\mathcal{E}([a,b],\mathbb{R}) & \to &\mathbb{R} \\ f & \tp & \int_{[a,b]}f \end{array} \]
     可以看作$\mathcal{E}([a,b],\mathbb{R})$上的一个``函数''.
 \end{rqq}
 
@@ -67,7 +67,7 @@
 
 \begin{prop}
     设$f\in\mathcal{E}([a,b],\mathbb{R}),c\in[a,b]$,则
-    $$\int_{[a,b]}f=\int_{[a,c]}f\vert_{[a,c]}+\int_{[c,b]}f\vert_{[c,b]}$$
+    \[ \int_{[a,b]}f=\int_{[a,c]}f\vert_{[a,c]}+\int_{[c,b]}f\vert_{[c,b]} \]
 \end{prop}
 
 \section{分段连续函数}
@@ -116,8 +116,8 @@
 \begin{prop}
     设$f,g\in\mathcal{CM}([a,b],\mathbb{R}),\lambda\in\mathbb{R}$,则:
     \begin{enumerate}
-        \item $$\int_{[a,b]}\lambda f=\lambda\int_{[a,b]}f$$
-        \item $$\int_{[a,b]}f+g=\int_{[a,b]}f+\int_{[a,b]}g$$
+        \item \[ \int_{[a,b]}\lambda f=\lambda\int_{[a,b]}f \]
+        \item \[ \int_{[a,b]}f+g=\int_{[a,b]}f+\int_{[a,b]}g \]
     \end{enumerate}
 \end{prop}
 
@@ -140,12 +140,12 @@
 
 \begin{prop}
     设$f\in\mathcal{CM}([a,b],\mathbb{R}),\left\lvert f \right\rvert \leqslant k$,
-    则$$\int_{[a,b]}f\leqslant k(b-a)$$
+    则\[ \int_{[a,b]}f\leqslant k(b-a) \]
 \end{prop}
 
 \begin{prop}
     设$f\in\mathcal{CM}([a,b],\mathbb{R}),c\in[a,b]$,则
-    $$\int_{[a,b]}f=\int_{[a,c]}f\vert_{[a,c]}+\int_{[c,b]}f\vert_{[c,b]}$$
+    \[ \int_{[a,b]}f=\int_{[a,c]}f\vert_{[a,c]}+\int_{[c,b]}f\vert_{[c,b]} \]
 \end{prop}
 
 \begin{thm}
@@ -170,12 +170,12 @@
 
 \begin{thm}[Cauchy不等式]
     设$f,g\in\mathcal{CM}([a,b],\mathbb{R})$,则
-    $$\int_{[a,b]}f^2\int_{[a,b]}g^2\geqslant\left(\int_{[a,b]}fg\right)^2$$
+    \[ \int_{[a,b]}f^2\int_{[a,b]}g^2\geqslant\left(\int_{[a,b]}fg\right)^2 \]
 \end{thm}
 
 \begin{thm}[Hölder不等式]
     设$f,g\in\mathcal{CM}{[a,b],\mathbb{R}_+},p,q>1$满足$\frac{1}{p}+\frac{1}{q}=1$,则
-    $$\left(\int_{[a,b]}f^p\right)^{\frac{1}{p}}\left(\int_{[a,b]}g^q\right)^{\frac{1}{q}}\geqslant\int_{[a,b]}fg$$
+    \[ \left(\int_{[a,b]}f^p\right)^{\frac{1}{p}}\left(\int_{[a,b]}g^q\right)^{\frac{1}{q}}\geqslant\int_{[a,b]}fg \]
 \end{thm}
 
 \section{Riemann可积函数}
@@ -236,15 +236,15 @@
 \end{prop}
 
 \begin{deff}
-    记$$\int_a^b f(x)\mathrm{d}x=\begin{cases} \int_{[a,b]}f, & a<b \\ 0, & a=b \\ -\int_{[b,a]}f, & a>b \end{cases}$$
+    记\[ \int_a^b f(x)\mathrm{d}x=\begin{cases} \int_{[a,b]}f, & a<b \\ 0, & a=b \\ -\int_{[b,a]}f, & a>b \end{cases} \]
 \end{deff}
 
 \begin{prop}
-    $$\int_a^b f(x)\mathrm{d}x=-\int_b^a f(x)\mathrm{d}x$$
+    \[ \int_a^b f(x)\mathrm{d}x=-\int_b^a f(x)\mathrm{d}x \]
 \end{prop}
 
 \begin{prop}
-    $$\int_a^b f(x)\mathrm{d}x=\int_a^c f(x)\mathrm{d}x+\int_c^b f(x)\mathrm{d}x$$
+    \[ \int_a^b f(x)\mathrm{d}x=\int_a^c f(x)\mathrm{d}x+\int_c^b f(x)\mathrm{d}x \]
 \end{prop}
 
 \begin{prop}
@@ -261,7 +261,7 @@
 
 \begin{thm}
     设$f\in\mathcal{C}([a,b],\mathbb{R})$,则
-    $F:\begin{array}[t]{ccc} [a,b] & \to & \mathbb{R} \\ x & \mapsto & \displaystyle\int_a^x f(t)\mathrm{d}t \end{array}$
+    $F:\begin{array}[t]{ccc} [a,b] & \to & \mathbb{R} \\ x & \tp & \displaystyle\int_a^x f(t)\mathrm{d}t \end{array}$
     为$f$的一个原函数.
 \end{thm}
 
@@ -270,7 +270,7 @@
 \end{rqq}
 
 \begin{thm}[Newton-Leibniz]
-    设$f\in\mathcal{C}([a,b],\mathbb{R})$,$F$为$f$的原函数,则$$\int_a^b f(x)\mathrm{d}x=F(b)-F(a)$$
+    设$f\in\mathcal{C}([a,b],\mathbb{R})$,$F$为$f$的原函数,则\[ \int_a^b f(x)\mathrm{d}x=F(b)-F(a) \]
 \end{thm}
 
 \begin{rqq}
@@ -278,7 +278,7 @@
 \end{rqq}
 
 \begin{thm}
-    设$f\in\mathcal{R}([a,b],\mathbb{R})$,若$f$有原函数$F$,则$$\int_a^b f(x)\mathrm{d}x=F(b)-F(a)$$
+    设$f\in\mathcal{R}([a,b],\mathbb{R})$,若$f$有原函数$F$,则\[ \int_a^b f(x)\mathrm{d}x=F(b)-F(a) \]
 \end{thm}
 
 \begin{prop}
@@ -288,12 +288,12 @@
 \end{prop}
 
 \begin{prop}
-    设$u,v\in\mathcal{C}^1(I,\mathbb{R})$,则$$\int u'(x)v(x)\mathrm{d}x=u(x)v(x)-\int u(x)v'(x)\mathrm{d}x$$
+    设$u,v\in\mathcal{C}^1(I,\mathbb{R})$,则\[ \int u'(x)v(x)\mathrm{d}x=u(x)v(x)-\int u(x)v'(x)\mathrm{d}x \]
 \end{prop}
 
 \begin{prop}
     设$f\in\mathcal{C}(I,\mathbb{R}),u\in\mathcal{C}^1(J,I),a,b\in J$,则
-    $$\int_{u(a)}^{u(b)}f(x)\mathrm{d}x=\int_a^b f(u(t))u'(t)$$
+    \[ \int_{u(a)}^{u(b)}f(x)\mathrm{d}x=\int_a^b f(u(t))u'(t) \]
 \end{prop}
 
 \begin{prop}
@@ -417,7 +417,7 @@
 得到曲线长度。
 
 \subsubsection*{弧长参数}
-我们希望找到一个特殊的参数 $s=s(t)$ ，使得 $$\int_0^s\sqrt{x'(\tau)^2+y'(\tau)^2}\mathrm d\tau=s$$
+我们希望找到一个特殊的参数 $s=s(t)$ ，使得 \[ \int_0^s\sqrt{x'(\tau)^2+y'(\tau)^2}\mathrm d\tau=s \]
 求导，即需要
 \begin{align*}
     1&=\sqrt{x'(s)^2+y'(s)^2}\\

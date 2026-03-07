@@ -67,7 +67,7 @@
 \begin{deff}
     \textbf{映射}是指一个三元组$u = (E, F, \Gamma)$,其中$E, F$为集合,$\Gamma \subseteq E \times F$满足:对于任意$x \in E$,存在唯一$y \in F$使得$(x, y) \in \Gamma$.
 
-    此时记$u:\begin{array}[t]{ccc} E & \to & F \\ x & \mapsto & y \end{array}$,也记$u(x)=y$.
+    此时记$u:\begin{array}[t]{ccc} E & \to & F \\ x & \tp & y \end{array}$,也记$u(x)=y$.
 
     称$E$为\textbf{出发集},$F$为\textbf{到达集},$y$为$x$的\textbf{像},$x$为$y$的\textbf{原像},$u$为$E$到$F$的映射.
 
@@ -109,7 +109,7 @@
 \end{exer}
 
 \begin{prop}
-    设$u: E \to F$,则$u \circ u^{-1} = \mathrm{id}_F, u^{-1} \circ u = \mathrm{id}_E$.
+    设$u: E \to F$,则$u \circ u^{-1} = \id_F, u^{-1} \circ u = \id_E$.
 \end{prop}
 
 \begin{rqq}
@@ -117,13 +117,13 @@
 \end{rqq}
 
 \begin{lem}
-    设$u: E \to F, v: F \to E$,若$u \circ v = \mathrm{id}_F, v \circ u = \mathrm{id}_E$,则$u, v$均为双射且互为逆映射.
+    设$u: E \to F, v: F \to E$,若$u \circ v = \id_F, v \circ u = \id_E$,则$u, v$均为双射且互为逆映射.
 \end{lem}
 
 \begin{proof}
-    由$u \circ v = \mathrm{id}_F$为双射知$u$为单射且$v$为满射,
+    由$u \circ v = \id_F$为双射知$u$为单射且$v$为满射,
 
-    由$v \circ u = \mathrm{id}_E$为双射知$v$为单射且$u$为满射.
+    由$v \circ u = \id_E$为双射知$v$为单射且$u$为满射.
 
     故$u,v$为双射且互为逆映射.
 \end{proof}
@@ -137,7 +137,7 @@
 \end{prop}
 
 \begin{deff}
-    设$u: E \to E$,称$u$为\textbf{对合},若$u \circ u = \mathrm{id}_E$.
+    设$u: E \to E$,称$u$为\textbf{对合},若$u \circ u = \id_E$.
 \end{deff}
 
 \begin{deff}
@@ -163,11 +163,11 @@
 \end{prop}
 
 \begin{deff}
-    设$A \subseteq E$,称$$\bbI_A(x) = \begin{cases} 1, & x \in A \\ 0, & x \notin A \end{cases}$$为$A$的\textbf{特征函数}.
+    设$A \subseteq E$,称\[ \bbI_A(x) = \begin{cases} 1, & x \in A \\ 0, & x \notin A \end{cases} \]为$A$的\textbf{特征函数}.
 \end{deff}
 
 \begin{prop}
-    设$E$为集合,则映射$$\begin{array}[t]{ccc} \calP(E) & \to & \calF(E, \{ 0, 1 \}) \\ A & \mapsto & \bbI_A \end{array}$$为双射.
+    设$E$为集合,则映射\[ \begin{array}[t]{ccc} \calP(E) & \to & \calF(E, \{ 0, 1 \}) \\ A & \tp & \bbI_A \end{array} \]为双射.
 \end{prop}
 
 \begin{prop}
@@ -196,23 +196,23 @@
 \begin{deff}
     设$I_1, I_2 \subseteq I, A_i \subseteq E (i \in I)$,则
     \begin{enumerate}
-        \item $$\left( \bigcap\limits_{i \in I_1} A_i \right) \cap \left( \bigcap\limits_{i \in I_2} A_i \right) = \bigcap\limits_{i \in I_1 \cap I_2} A_i$$
-        \item $$\left( \bigcup\limits_{i \in I_1} A_i \right) \cup \left( \bigcup\limits_{i \in I_2} A_i \right) = \bigcup\limits_{i \in I_1 \cup I_2} A_i$$
-        \item $$\complement_E \left( \bigcup\limits_{i \in I} A_i \right) = \bigcap\limits_{i \in I} \complement_E A_i$$
-        \item $$\complement_E \left( \bigcap\limits_{i \in I} A_i \right) = \bigcup\limits_{i \in I} \complement_E A_i$$
+        \item \[ \left( \bigcap\limits_{i \in I_1} A_i \right) \cap \left( \bigcap\limits_{i \in I_2} A_i \right) = \bigcap\limits_{i \in I_1 \cap I_2} A_i \]
+        \item \[ \left( \bigcup\limits_{i \in I_1} A_i \right) \cup \left( \bigcup\limits_{i \in I_2} A_i \right) = \bigcup\limits_{i \in I_1 \cup I_2} A_i \]
+        \item \[ \complement_E \left( \bigcup\limits_{i \in I} A_i \right) = \bigcap\limits_{i \in I} \complement_E A_i \]
+        \item \[ \complement_E \left( \bigcap\limits_{i \in I} A_i \right) = \bigcup\limits_{i \in I} \complement_E A_i \]
     \end{enumerate}
 \end{deff}
 
 \begin{prop}
     设$u: E \to F$,$(B_i)_{i \in I}$为$F$的一族子集,则
     \begin{enumerate}
-        \item $$u^{-1} \left( \bigcup\limits_{i \in I} B_i \right) = \bigcup\limits_{i \in I} u^{-1}(B_i)$$
-        \item $$u^{-1} \left( \bigcap\limits_{i \in I} B_i \right) = \bigcap\limits_{i \in I} u^{-1}(B_i)$$
+        \item \[ u^{-1} \left( \bigcup\limits_{i \in I} B_i \right) = \bigcup\limits_{i \in I} u^{-1}(B_i) \]
+        \item \[ u^{-1} \left( \bigcap\limits_{i \in I} B_i \right) = \bigcap\limits_{i \in I} u^{-1}(B_i) \]
     \end{enumerate}
 \end{prop}
 
 \begin{deff}
-    设$u: E \to F, A \subseteq E$,称$u \vert_A: \begin{array}[t]{ccc} A & \to & F \\ x & \mapsto & u(x) \end{array}$为$u$在$A$上的\textbf{限制}.
+    设$u: E \to F, A \subseteq E$,称$u \vert_A: \begin{array}[t]{ccc} A & \to & F \\ x & \tp & u(x) \end{array}$为$u$在$A$上的\textbf{限制}.
 \end{deff}
 
 \begin{deff}
@@ -245,7 +245,7 @@
 \end{deff}
 
 \begin{rqq}
-    存在从$E$到$E / \calR$的满射$\pi: \begin{array}[t]{ccc} E & \to & E / \calR \\ x & \mapsto & \bar{x} \end{array}$.
+    存在从$E$到$E / \calR$的满射$\pi: \begin{array}[t]{ccc} E & \to & E / \calR \\ x & \tp & \bar{x} \end{array}$.
 \end{rqq}
 
 \begin{rqq}
@@ -330,7 +330,7 @@
     \item 直到19世纪,人们才处理$\bbN$的构造问题.对全体整数的严格构造超出了本课程的范围,我们将遵循数学家Kronecker所说:``上帝赐予我们整数,人类完成其余.''然而,在本书中列出详尽的公认性质必不可少的,这使得我们能构建后续内容.
 \end{itemize}
 
-自然数集$\bbN$是一个非空集合,配上一个全序关系,以及与该序关系相容的一个加法运算和一个乘法运算,即:$$\forall x, y ,z \in \bbN, (x \leqslant y \Rightarrow x + z \leqslant y + z \land x \leqslant y \Rightarrow xz \leqslant yz)$$
+自然数集$\bbN$是一个非空集合,配上一个全序关系,以及与该序关系相容的一个加法运算和一个乘法运算,即:\[ \forall x, y ,z \in \bbN, (x \leqslant y \Rightarrow x + z \leqslant y + z \land x \leqslant y \Rightarrow xz \leqslant yz) \]
 
 此外:
 \begin{itemize}
@@ -345,14 +345,14 @@
     \item 设$n \in \bbN$,则严格大于$n$的自然数构成的集合非空(否则$n$为$\bbN$的最大元);称其最小元为$n$的\textbf{后继};
         \begin{itemize}
             \item 记1为0的后继.
-            \item $n$的后继也为$n+1$,因此$$\forall m \in \bbN, (m > n \Rightarrow m \geqslant n + 1)$$
+            \item $n$的后继也为$n+1$,因此\[ \forall m \in \bbN, (m > n \Rightarrow m \geqslant n + 1) \]
         \end{itemize}
-    \item 同理,若$n \in \bbN^*$,则严格小于$n$的自然数构成的集合非空(它包含0)且以$n$为上界;称其最大元为$n$的\textbf{前驱},等于$n - 1$,且$$\forall m \in \bbN, (m < n \Rightarrow m \leqslant n - 1)$$
+    \item 同理,若$n \in \bbN^*$,则严格小于$n$的自然数构成的集合非空(它包含0)且以$n$为上界;称其最大元为$n$的\textbf{前驱},等于$n - 1$,且\[ \forall m \in \bbN, (m < n \Rightarrow m \leqslant n - 1) \]
 \end{itemize}
 
 作为$\bbN$的定义的应用,我们给出下面的定理.
 \begin{thm}[Eucilde除法]
-    设$a \in \bbN, b \in \bbN^*$,则存在唯一$q, r \in \bbN$使得$$a = bq + r, r < b$$
+    设$a \in \bbN, b \in \bbN^*$,则存在唯一$q, r \in \bbN$使得\[ a = bq + r, r < b \]
     \begin{itemize}
         \item $q$称为$a$对$b$的Euclide除法商.
         \item $r$称为$a$对$b$的Euclide除法余数.
@@ -363,7 +363,7 @@
 
 我们上面列出的$\bbN$的性质的一个重要应用是\textbf{归纳原理},它断言:
 \begin{thm}[归纳原理]
-    若$\bbN$的子集$A$包含0,且满足$$\forall n \in \bbN, (n \in A \Rightarrow n + 1 \in A)$$则$A = \bbN$
+    若$\bbN$的子集$A$包含0,且满足\[ \forall n \in \bbN, (n \in A \Rightarrow n + 1 \in A) \]则$A = \bbN$
 \end{thm}
 我们通常通过下面的定理来运用这一原理,从而进行\textbf{归纳推理}.
 \begin{thm}
@@ -463,7 +463,7 @@
 \end{thm}
 
 \begin{thm}[超限归纳法]
-    设$(A, \leqslant)$为良序集,$A$的非空子集$B$满足$$\forall a \in A ( \{ c \in A \mid c < a \} \subseteq B \Rightarrow a \in B )$$则$A = B$.
+    设$(A, \leqslant)$为良序集,$A$的非空子集$B$满足\[ \forall a \in A ( \{ c \in A \mid c < a \} \subseteq B \Rightarrow a \in B ) \]则$A = B$.
 \end{thm}
 
 \section{线性方程组}
