@@ -2,6 +2,8 @@
 
 在本章中,设$K$为域.
 
+\section{矩阵计算}
+
 \begin{deff}
     称由$\llbracket 1, n \rrbracket \times \llbracket 1, p \rrbracket$标记的$K$中的族为$n$行$p$列
     系数在$K$中的\textbf{矩阵(matrice)},或$n \times p$矩阵.$n \times p$矩阵的全体记为$\calM_{n, p}(K)$.
@@ -111,7 +113,7 @@
     称为其\textbf{典范基(base canonique)}.
 \end{rqq}
 
-\begin{rqq}
+\begin{rqq} $\ $
     \begin{itemize}
         \item $\calT_n(K)$为$(E_{i, j})_{1 \leqslant i \leqslant j \leqslant n}$生成的$\calM_n(K)$的向量子空间,
             且$\dim \calT_n(K) = \dfrac{n(n + 1)}{2}$.
@@ -128,7 +130,7 @@
 \end{exer}
 
 \begin{prop}
-    转置映射$A \mapsto \transpose{A}$为$\calM_{n, p}(K)$到$\calM_{p, n}(K)$的线性映射,同构.
+    转置映射$A \tp \transpose{A}$为$\calM_{n, p}(K)$到$\calM_{p, n}(K)$的线性映射,同构.
 \end{prop}
 
 \begin{deff}
@@ -137,3 +139,289 @@
     称$M = (m_{i, j})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant q}} \in \calM{n, q}(K)$为$A$与$B$的基,
     其中$m_{i, j} = \sum\limits_{k = 1}^p a_{i, k}b_{k,j}$.记为$AB$.
 \end{deff}
+
+\begin{prop}
+    设$A = \diag(\alpha_1, \alpha_2, \cdots, \alpha_n), B = \diag(\beta_1, \beta_2, \cdots, \beta_n)$.
+\end{prop}
+
+\begin{prop}
+    设$A \in \calM_{n, p}(K)$,则$I_nA = A, AI_p = A$.
+\end{prop}
+
+\begin{prop} \label{prop:bilinearity_multiplication} $\ $
+    \begin{itemize}
+        \item 设$A \in \calM_{n, p}(K), B, C \in \calM_{p, q}(K), \lambda, \mu \in K$,则
+            \[ A(\lambda B + \mu C) = \lambda AB + \mu AC \]
+        \item 设$A, B \in \calM_{n, p}(K), C \in \calM_{p, q}(K), \lambda, \mu \in K$,则
+            \[ (\lambda A + \mu B)C = \lambda AC + \mu BC \]
+    \end{itemize}
+\end{prop}
+
+\begin{rqq}
+    Proposition \ref{prop:bilinearity_multiplication} 说明映射$(A, B) \tp AB$是双线性的.
+\end{rqq}
+
+\begin{rqq}
+    设$A, B \in \calM_{n, p}(K), \lambda \in K$,则
+    \[ (\lambda A)B = \lambda(AB) = A(\lambda B) \]
+\end{rqq}
+
+\begin{prop}
+    设$A \in \calM_{n, p}(K), B \in \calM_{p, q}(K), C \in \calM_{q, r}(K)$,则$A(BC) = A(BC)$.
+\end{prop}
+
+\begin{prop}
+    设$A \in \calM_{n, p}(K), B \in \calM_{p, q}(K)$,则$\transpose{(AB)} = \transpose{B} \transpose{A}$.
+\end{prop}
+
+\begin{deff}
+    设$A \in \calM_n(K)$,称$A$为\textbf{幂零矩阵(matrice nilpotente)},若存在$k \in \bbN^*$使得$A^k = 0$.
+\end{deff}
+
+\begin{prop}
+    两个$n$阶上(下)三角阵的积为$n$阶上(下)三角阵.
+\end{prop}
+
+\begin{prop}
+    设$A, B \in \calM_n(K)$满足$AB = BA$,$p \in \bbN^*$,则
+    \begin{itemize}
+        \item $(A + B)^p = \sum\limits_{k = 0}^p \binom{p, k} A^kB^{p - k}$.
+        \item $A^p - B^p = (A - B)\sum\limits_{k = 0}^{p - 1} A^kB^{p - 1 - k}$.
+    \end{itemize}
+\end{prop}
+
+\begin{deff} \label{def:inversible_matrix}
+    设$A \in \calM_{n}(K)$,称$A$为$n$阶\textbf{可逆矩阵(matrice inversible)},若存在矩阵$B$使得$AB = BA = I_n$.
+    $n$阶可逆矩阵的全体记为$\mathcal{GL}_n(K)$.
+\end{deff}
+
+\begin{rqq}
+    Définition \ref{def:inversible_matrix} 中的矩阵$B$称为\textbf{$\bsA$的逆(l'inverse de $\bsA$)},记为$A^{-1}$.
+\end{rqq}
+
+\begin{prop}
+    设$A \in \mathcal{GL}_n(K)$,则$(\transpose{A})^{-1} = \transpose{(A^{-1})}$.
+    今后我们记其为$\transpose{A^{-1}}$.
+\end{prop}
+
+\section{矩阵表示}
+
+在本节中,设$F$为$K$-向量空间,$\dim F = n$,$f = (f_1, f_2, \cdots, f_n)$为其基.
+
+\begin{deff}
+    设$v \in F, v = \sum\limits_{k = 1}^n x_k f_k$,称$\transpose{(x_1, x_2, \cdots, x_n)}$为$v$在基$f$下的(列)矩阵,记为$\mat_f(v)$.
+\end{deff}
+
+\begin{deff}
+    设$g = (g_1, g_2, \cdots, g_p)$为$F$中的族,称第$j$列为$\mat_f(g_j)$的$n \times p$矩阵为$g$在基$f$下的矩阵,
+    记为$\mat_f(g)$或$\mat_f(g_1, g_2, \cdots, g_p)$.
+\end{deff}
+
+\begin{rqq}
+    设$\mat_f(g_1, g_2, \cdots, g_p) = A = (a_{i, j})_{\substack{1 \leqslant i \leqslant n \\ 1 \leqslant j \leqslant p}}$,
+    则$g_j = \sum\limits_{i = 1}^n a_{i, j} f_i$.
+\end{rqq}
+
+\begin{rqq}
+    $\mat_f(f) = I_n$.
+\end{rqq}
+
+接下来设$E, F$为$K$-向量空间,$\dim E = p, \dim F = n$,$e = (e_1, e_2, \cdots, e_p)$为$E$的基,$f = (f_1, f_2, \cdots, f_n)$为$F$的基.
+$u$为$E$到$F$的线性映射,基的像为$(u(e_1), u(e_2), \cdots, u(e_p))$.
+
+\begin{deff}
+    称$\mat_f(e)$为$u$在基$e$和$f$下的矩阵,记为$\mat_{e,f}(u)$.
+\end{deff}
+
+\begin{rqq}
+    设$(u(e_i))_{1 \leqslant i \leqslant p}$与$(f_j)_{1 \leqslant j \leqslant n}$满足线性方程组
+    \[ \begin{cases}
+        u(e_1) = a_{1, 1}f_1 + a_{2, 1}f_2 + \cdots + a_{n, 1}f_n \\
+        u(e_2) = a_{1, 2}f_1 + a_{2, 2}f_2 + \cdots + a_{n, 2}f_n \\
+        \vdots \\
+        u(e_p) = a_{1, p}f_1 + a_{2, p}f_2 + \cdots + a_{n, p}f_n
+    \end{cases} \]
+
+    则$\mat_{e, f}(u)$为其系数矩阵的转置.
+\end{rqq}
+
+\begin{prop}
+    设$x \in E, y = u(x) \in F, X = \mat_e(x) \in \calM_{p, 1}(K), Y = \mat_f(y) \in \calM_{n, 1}(K),
+    A = \mat_{e, f}(u) \in \calM_{n, p}(K)$,则$Y = AX$.
+\end{prop}
+
+\begin{prop}
+    设$E = K^p, F = K^n, A \in \calM_{n, p}(K),u: \begin{array}[t]{ccc} E & \to & F \\ X & \tp & Y = AX \end{array}$,
+    则$\mat_{e, f}(u) = A$.
+\end{prop}
+
+\begin{deff}
+    设$A \in \calM_{n, p}(K)$,称$A$表示一个线性映射,若存在$u \in \calL(E, F)$使得$\mat_{e, f}(u) = A$.
+\end{deff}
+
+\begin{prop}
+    映射$\varphi: \begin{array}[t]{ccc} \calL(E, F) & \to & \calM_{n, p}(K) \\ u & \tp & \mat_{e, f}(u) \end{array}$
+    为向量空间的同构.
+\end{prop}
+
+\begin{cor}
+    $\dim \calL(E, F) = \dim \calM_{n, p}(K) = np$.
+\end{cor}
+
+\begin{prop}
+    设$u \in \calL(E, F), v \in \calL(F, G)$,则
+    \[ \mat_{e, g}(v \circ u) = \mat_{f, g}(v) \mat_{e, f}(u) \]
+\end{prop}
+
+\begin{rqq}
+    若$u, v \in \calL(E)$,则
+    \[ \mat_e(v \circ u) = \mat_e(v) \mat_e(u) \]
+\end{rqq}
+
+\begin{prop}
+    设$E, F$为$n$维向量空间,$u \in \calL(E, F)$.则$u$为双射当且仅但$\mat_{e, f}(u)$可逆.
+    且$\mat_{e, f}(u)^{-1} = \mat_{e, f}(u^{-1})$.
+\end{prop}
+
+\begin{prop}
+    $(x_1, x_2, \cdots, x_n)$为$E$的基$\iff \mat_e(x_1, x_2, \cdots, x_n)$可逆.
+\end{prop}
+
+\begin{deff}
+    设$A \in \calM_{n, p}(K)$,称$u: \begin{array}[t]{ccc} K^p & \to & K^n \\ X & \tp & Y = AX \end{array}$
+    为\textbf{规范相伴于$\bsA$的线性映射(l'application linéaire canoniquement associée à $\bsA$)}.
+\end{deff}
+
+\begin{deff}
+    设$A \in \calM_{n, p}(K)$,$u$为规范相伴于$A$的线性映射.
+    \begin{itemize}
+        \item 称$\ker u \subseteq K^p$为$A$的核,记为$\ker A$.
+        \item 称$\im u \subseteq K^n$为$A$的像,记为$\im A$.
+    \end{itemize}
+\end{deff}
+
+\begin{rqq}
+    设$A \in \calM_n(K)$,则$A$可逆$\iff \transpose{A}$可逆.且$(\transpose{A})^{-1} = \transpose{(A^{-1})}$.
+\end{rqq}
+
+\begin{prop}
+    设$A, B \in \calM_n(K)$,若$AB = I_n$,则$A, B$均可逆且$BA = I_n$.
+\end{prop}
+
+\begin{prop} $\ $
+    \begin{itemize}
+        \item 三角阵可逆当且仅当其对角线上元素非零.
+        \item 上(下)三角阵的逆为上(下)三角阵.
+    \end{itemize}
+\end{prop}
+
+\begin{cor}
+    对角阵$\diag(\lambda_1, \lambda_2, \cdots, \lambda_n)$可逆当且仅当$\lambda_i \neq 0$.
+    且其逆为$\diag(\lambda_1^{-1}, \lambda_2^{-1}, \cdots, \lambda_n^{-1})$.
+\end{cor}
+
+\begin{deff}
+    设$A \in \calM_{n, p}(K)$,称$A$的列向量族的秩为$A$的(列)秩,记为$\rang A$.
+\end{deff}
+
+\begin{deff}
+    设$A \in \calM_{n, p}(K)$,称$A$(列)满秩,若$\rang A = \min \{ n, p \}$.
+\end{deff}
+
+\begin{deff}
+    设$e, e'$为$E$的基,称$\mat_e(e') \in \calM_n(K)$为
+    \textbf{$\bse$到$\bse'$的过渡矩阵(matrice de passage de la base $\bse$ à la base $\bse'$)},
+    记为$P_e^{e'}$.
+\end{deff}
+
+\begin{prop}
+    设$x \in E, X = \mat_e(x), X' = \mat_{e'}(X)$,则$X = P_e^{e'}X', P^{-1}X = X'$.
+\end{prop}
+
+\begin{lem}
+    若$A \in \calM_n(K)$满足
+    \[ \forall x \in E, \mat_e(X) = A \mat_e'(X) \]
+
+    则$A = P_e^{e'}$.
+\end{lem}
+
+\begin{prop}
+    $P_e^{e'}$的逆为$P_{e'}^e$.
+\end{prop}
+
+\begin{rqq}
+    设$e$为$E$的基,$A \in \mathcal{GL}_N{K}$,则$e' = eA$也为$E$的基,且$P_e^{e'} = A$.
+\end{rqq}
+
+\begin{prop}
+    设$u \in \calL(E, F)$,$e, e'$为$E$的基,$f, f'$为$F$的基,$P = P_e^{e'} \in \calM_p(K), Q = P_f^{f'} \in \calM_n(K),
+    A = \mat_{e, f}(u), A' = \mat_{e', f'}(u)$,则$A' = Q^{-1}AP, QA'P^{-1} = A$.
+\end{prop}
+
+\begin{deff} \label{def:matrix_equivalence}
+    设$A, B \in \calM_{n, p}(K)$,称$A$与$B$\textbf{等价(équivalentes)},若存在$M \in \mathcal{GL}_n(K), N \in \mathcal{GL}_p(K)$
+    使得$B = MAN$.
+\end{deff}
+
+\begin{rqq}
+    Définition \ref{def:matrix_equivalence} 中的关系为$\calM_{n, p}$上的等价关系.
+\end{rqq}
+
+\begin{prop}
+    设$A, B \in \calM_{n, p}(K), u \in \calL(E, F)$.若$A$表示线性映射$u$,$A$与$B$等价,则$B$也表示线性映射$u$.
+\end{prop}
+
+\begin{cor}
+    设$u \in \calL(E)$,$e, e'$为$E$的基,$A = \mat_e(u), A' = \mat_{e'}(u), P = P_e^{e'}$,则$A' = P^{-1}AP, A = PA'P^{-1}$.
+\end{cor}
+
+\begin{deff} \label{def:matrix_similarity}
+    设$A, B \in \calM_n(K)$,称$A$与$B$\textbf{相似(semblables)},若存在$P \in \mathcal{GL}_n(K)$使得$B = P^{-1}AP$.
+\end{deff}
+
+\begin{rqq}
+    Définition \label{def:matrix_similarity} 中的关系为$\calM_n$上的等价关系.
+\end{rqq}
+
+\begin{prop}
+    设$A, A' \in \calM_n(K), u \in \calL(E)$,$e$为$E$的基,满足$A = \mat_e(u)$.若$A$与$A'$相似,则存在基$r'$使得$A' = \mat_{e'}(u)$.
+\end{prop}
+
+\begin{deff}
+    设$A = (a_{i, j})_{1 \leqslant i, j \leqslant n} \in \calM_n(K)$,称$\sum\limits_{i = 1}^n a_{i, i}$为$A$的\textbf{迹(trace)}.
+    记为$\tr A$.
+\end{deff}
+
+\begin{prop}
+    映射$tr: \begin{array}[t]{ccc} \calM_n(K) & \to & K \\ A & \tp & \tr A \end{array}$为$\calM_n(K)$上的线性型.
+\end{prop}
+
+\begin{prop} $\ $
+    \begin{itemize}
+        \item 设$A \in \calM_{n, p}(K), B \in \calM_{p, n}(K)$,则$\tr AB = \tr BA$.
+        \item 设$A \in \calM_{n}(K), P \in \mathcal{GL}_n(K)$,则$\tr P^{-1}AP = \tr A$.
+    \end{itemize}
+\end{prop}
+
+\section{分块矩阵}
+
+\begin{prop}
+    设$e = (e_1, e_2, \cdots, e_n)$为$E$的基,$u \in \calL(E), \mat_e(u) = \begin{pmatrix} A & C \\ B & D \end{pmatrix},
+    A \in \calM_r(K), F = \vect(e_1, e_2, \cdots, e_r), G = \vect(e_{r + 1}, e_{r + 2}, \cdots, e_n)$,则
+    \begin{itemize}
+        \item $F$在$u$下稳定$\iff B = 0$.
+        \item $G$在$u$下稳定$\iff C = 0$.
+    \end{itemize}
+\end{prop}
+
+\begin{rqq}
+    $E = F \oplus G$.
+\end{rqq}
+
+\begin{prop}
+    设$M \in \calM_{n, p}(K), M' \in \calM_{p, q}(K)$,且
+    \[ M = \begin{pmatrix} A & C \\ B & D \end{pmatrix}, M' = \begin{pmatrix} A' & C' \\ B' & D' \end{pmatrix} \]
+
+    若$AA'$存在,则
+    \[ MM' = \begin{pmatrix} AA' + CB' & AC' + CD' \\ BA' + DB' & BC' + DD' \end{pmatrix} \]
+\end{prop}
