@@ -425,3 +425,62 @@ $u$为$E$到$F$的线性映射,基的像为$(u(e_1), u(e_2), \cdots, u(e_p))$.
     若$AA'$存在,则
     \[ MM' = \begin{pmatrix} AA' + CB' & AC' + CD' \\ BA' + DB' & BC' + DD' \end{pmatrix} \]
 \end{prop}
+
+\section{矩阵的秩}
+
+\begin{deff}
+    设$A \in \calM_{n, p}(K)$,称$A$的列向量族的秩为$A$的\textbf{秩(rang)},记为$\rang A$.
+\end{deff}
+
+\begin{prop} $\ $
+    \begin{enumerate}
+        \item 设$e$为$E$的基,$x_1, x_2, \cdots, x_p \in E$,则$\rang \mat_e(x_1, x_2, \cdots, x_p) = \rang (x_1, x_2, \cdots, x_p)$.
+        \item 设$e, f$为$E$的基,$u \in \calL(E, F)$,则$\rang u = \rang \mat_{e, f}(u)$.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}
+    设$A \in \calM_n(K)$,则$A \in \mathcal{GL}_n(K) \iff \rang A = n$.
+\end{prop}
+
+\begin{prop}
+    设$A \in \calM_{n, p}(K)$,则$\rang A \leqslant \min \{ n, p \}$.
+\end{prop}
+
+对于$n, p \in \bbN^*, r \leqslant \min \{ n, p \}$,记
+\[ J_r = \begin{pmatrix} I_r & 0 \\ 0 & 0 \end{pmatrix} \].
+
+\begin{prop}
+    设$M \in \calM_{n, p}(K)$,则$\rang M = r$当且仅当$M$与$J_r$等价,
+    即存在$P \in \mathcal{GL}_p(K), Q \in \mathcal{GL}_n(K)$使得$M = QJ_rP$.
+\end{prop}
+
+\begin{cor}
+    两矩阵等价当且仅当它们秩相等.
+\end{cor}
+
+\begin{cor}
+    矩阵与其转置的秩相等.
+\end{cor}
+
+\begin{prop}
+    设$A \in \calM_{n, p}(K)$,则$\rang A$与以下相等
+    \begin{itemize}
+        \item 其列向量族的秩.
+        \item 其行向量族的秩.
+        \item 其表示的任何线性映射的秩.
+        \item 其表示的任何向量族的秩.
+    \end{itemize}
+\end{prop}
+
+\begin{prop}
+    设$A \in \calM_{n, p}(K)$,$B$为$A$的子矩阵,则$\rang B \leqslant \rang A$.
+\end{prop}
+
+\begin{prop}
+    设$A \in \calM_{n, p}(K)$,则$\rang A = r$当且仅当
+    \begin{enumerate}
+        \item $A$有一个$r$阶可逆子方阵.
+        \item 若$s > r$,则$A$的任意$s$阶子方阵均不可逆.
+    \end{enumerate}
+\end{prop}
