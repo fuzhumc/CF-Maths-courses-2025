@@ -1,0 +1,49 @@
+\chapter{初等变换}
+
+\section{初等变换}
+
+矩阵有如下三种行初等变换:
+\begin{itemize}
+    \item 把一行的若干倍加到另一行上.
+    \item 把一行变为非零倍.
+    \item 交换两行.
+\end{itemize}
+
+这些初等变换记为:
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        把$\lambda L_j$加到$L_i$上 & $L_i \leftarrow L_i + \lambda L_j$ \\
+        \hline
+        把$L_i$乘$\lambda \neq 0$ & $L_i \leftarrow \lambda L_i$ \\
+        \hline
+        交换$L_i$和$L_j$ & $L_i \leftrightarrow L_j$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{prop}
+    通过有限次初等变换互相导出的两个矩阵秩相等.
+\end{prop}
+
+\begin{prop} $\ $
+    \begin{itemize}
+        \item 设$A'$由$A$通过有限次列初等变换得到,则$A'$与$A$的像相同.
+        \item 设$A'$由$A$通过有限次行初等变换得到,则$A'$与$A$的核相同.
+    \end{itemize}
+\end{prop}
+
+\begin{prop} $\ $
+    \begin{itemize}
+        \item 设$A \in \calM_{n, p}(K)$,通过初等行变换得到$A'$,则存在$P \in \mathcal{GL}_n(K)$使得$A' = PA$.
+        \item 设$A \in \calM_{n, p}(K)$,通过初等列变换得到$A'$,则存在$Q \in \mathcal{GL}_p(K)$使得$A' = AQ$.
+    \end{itemize}
+\end{prop}
+
+\begin{lem}
+    设$n, p \geqslant 2, A \in \calM_{n, p}(K)$,则存在$A' \in \calM_{n - 1, p - 1}(K)$使得
+    \[ A = \begin{pmatrix} a_{1, 1} & L \\ 0 & A' \end{pmatrix} \]
+
+    其中$a_{1, 1} \neq 0$,因此$\rang A = 1 + \rang A'$.
+\end{lem}

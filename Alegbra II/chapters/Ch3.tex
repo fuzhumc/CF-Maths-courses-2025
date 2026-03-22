@@ -1,0 +1,88 @@
+\chapter{行列式}
+
+\section{对称群}
+
+设$n \in \bbN^*$,记$\calO_n$为$\llb 1, n \rrb$上的置换的全体,即$\llb 1, n \rrb$到其自身的双射的全体.
+
+\begin{prop}
+    赋予映射的复合运算后,$\calO_n$为$n!$阶群,称为对称群.若$n \geqslant 3$,则$\calO_n$不交换.
+\end{prop}
+
+\begin{deff}
+    设$p \geqslant 2, a_1, a_2, \cdots, a_p \in \llb 1, n \rrb$.如下映射
+    \[ \begin{array}{rl}
+        \forall x \notin \{ a_1, a_2, \cdots, a_p \} & \sigma(x) = x \\
+        \forall i \in \llb 1, p - 1 \rrb & \sigma(a_i) = a_{i + 1} \\
+        & \sigma(a_p) = a_1
+    \end{array} \]
+
+    为$\llb 1, n \rrb$的一个置换,记为$(a_1, a_2, \cdots, a_p)$.
+    称为\textbf{$\bsp$-轮换($\bsp$-cycle)},称$\{ a_1, a_2, \cdots, a_p \}$为$\sigma$的\textbf{支集(support)}.
+\end{deff}
+
+\begin{deff}
+    $\calO_n$的2-轮换$\tau$称为\textbf{对换(transposition)}.存在$i, j \in \llb 1, n \rrb$使得
+    \[ \tau(i) = j, \tau(j) = i, \text{且} \forall x \neq i, j, \tau(x) = x \]
+\end{deff}
+
+\begin{rqq}
+    对换$\tau$满足$\tau^2 = \id_{\llb 1, n \rrb}, \tau^{-1} = \tau$,也就是说,$\tau$为对合.
+\end{rqq}
+
+\begin{rqq}
+    有多种方式表示同一个$p$-轮换,如下轮换是相同的
+    \[ (a_1, a_2, \cdots, a_p), (a_2, a_3, \cdots, a_p, a_1), \cdots, (a_p, a_1, a_2, \cdots, a_{p - 1}) \]
+\end{rqq}
+
+\begin{rqq}
+    轮换的支集为$\{ x \in \llb 1, n \rrb \mid \sigma(x) \neq x \}$.
+\end{rqq}
+
+\begin{prop}
+    两个支集不相交的循环交换.
+\end{prop}
+
+\begin{prop}
+    设$\sigma$为$\llb 1, n \rrb$上的置换,则如下$\llb 1, n \rrb$上的关系
+    \[ x \calR_{\sigma} x \iff \exists k \in \bbZ, y = \sigma^k(x) \]
+
+    为$\llb 1, k \rrb$上的等价关系.
+\end{prop}
+
+\begin{prop}
+    设$\sigma$为$\llb 1, n \rrb$上的置换,$x \in \llb 1, n \rrb$.
+    存在$p \in \bbN^*$使得$x, \sigma(x), \sigma^2(x), \cdots, \sigma^{p - 1}(x)$互不相同且$\sigma^p(x) = x$.
+    $x$关于等价关系$\calR_{\sigma}$的等价类就是集合$\{ x, \sigma(x), \sigma^2(x), \cdots, \sigma^{p - 1}(x) \}$,
+    称为$x$的\textbf{轨道(orbite)}.
+\end{prop}
+
+\begin{thm}
+    任何不同于恒等的置换,在忽略因子顺序的情况下,都可以唯一地分解为支集两两不交的轮换的复合.
+\end{thm}
+
+\begin{prop}
+    $\llb 1, n \rrb$上的置换为对换的复合.
+\end{prop}
+
+\begin{thm}
+    存在唯一的映射$\varepsilon: \calO_n \to \{ -1, 1 \}$使得:
+    \begin{itemize}
+        \item 对于任何对换$\tau$,有$\varepsilon(\tau) = -1$.
+        \item 对于任何置换$\sigma, \sigma'$,有$\varepsilon(\sigma \sigma') = \varepsilon(\sigma) \varepsilon(\sigma')$.
+    \end{itemize}
+
+    称此映射为(置换的)\textbf{符号(signature)}.
+\end{thm}
+
+\begin{cor}
+    设$\sigma = \tau_1 \tau_2 \cdots \tau_p$为置换分解为对换,则$\varepsilon(\sigma) = (-1)^p$.
+\end{cor}
+
+\begin{rqq}
+    对于一个置换$\sigma$,将其分解为若干个对换的复合的方式并非唯一.然而,此类复合中对换个数的奇偶性与分解方式无关.
+\end{rqq}
+
+\begin{cor}
+    设$c_1, c_2, \cdots, c_p$为支集两两不交的轮换,其长度分别为$l_1, l_2, \cdots, l_p$.
+    置换$\sigma = c_1c_2 \cdots c_p$,则其符号\[ \varepsilon(\sigma) = (-1)^{\sum\limits_{i = 1}^p (l_i - 1)} \]
+\end{cor}
