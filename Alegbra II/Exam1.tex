@@ -1,0 +1,164 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  a4paper,
+]{article}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\usepackage{ctex}
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Serif CJK SC}[BoldFont=Noto Sans CJK SC,ItalicFont=LXGW WenKai]
+
+\DeclareMathOperator{\tr}{tr}
+
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+\usepackage{iftex}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\usepackage{lmodern}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{hidelinks,pdfcreator={cjx}}
+
+
+\usepackage{titling}
+\title{期中考试}
+\author{}
+\date{2026年5月14日}
+
+\usepackage{geometry}
+\geometry{a4paper,left=1.27cm,right=1.27cm,top=1.7cm,bottom=1.7cm}
+
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\AtBeginEnvironment{enumerate}{
+  \apptocmd{\tightlist}{\def\labelenumii{(\arabic{enumii})}}{}{}
+}
+
+
+\usepackage{fancyhdr}
+
+\begin{document}
+\maketitle
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{2026年5月14日}
+\chead{期中考试}
+
+\renewcommand{\headrulewidth}{1pt}
+\rfoot{\thepage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  判断\(\mathbb{R}\)上的矩阵\(A\)和\(B\)是否可以对角化. \[
+   A = \begin{pmatrix}
+   1 & 6 & & \\
+   & 1 & 7 & \\
+   & & 5 & \\
+   & & & 5
+   \end{pmatrix},
+   B = \begin{pmatrix}
+   1 & 6 & & \\
+   & 1 & 7 & \\
+   & & 5 & 7 \\
+   & & & 5
+   \end{pmatrix}
+   \]
+\item
+  计算以下矩阵的行列式. \[
+   \begin{pmatrix}
+   1 & 1 & 1 & 1 \\
+   2 & 1 & 1 & -3 \\
+   1 & 2 & 2 & 5 \\
+   4 & 3 & 2 & 1 
+   \end{pmatrix}
+   \]
+\item
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    陈述方阵\(A\)的特征多项式(以下均指首一特征多项式)\(\chi_A\)的定义.
+  \item
+    陈述方阵\(A\)的极小多项式(以下均指首一极小多项式)\(\pi_A\)的定义.
+  \item
+    利用上述两个多项式陈述 Cayley-Hamilton 定理.
+  \item
+    令\(A\)为\(\mathbb{Q}\)系数方阵.
+    假设\(A\)的特征多项式\(\chi_A = T^7 - 2T^6 + 3T^5 - 4T^4 + 5T^3 - 6T^2 + 7T - 8\).
+    求\(\det A\)和\(A^{-1}\)的特征多项式\(\chi_{A^{-1}}\).
+  \item
+    令\(A\)为方阵.
+    求证极小多项式\(\pi_A\)的常数项\(\pi_A(0)\)非零当且仅当\(A\)可逆.
+  \item
+    令\(A\)为可逆方阵,
+    且极小多项式为\(\pi_A = T^5 + 137T^3 - 47T^2 + 2\),
+    求\(A^{-1}\)的极小多项式\(\pi_{A^{-1}}\)(只需给出答案不要求证明).
+  \item
+    令\(A\)为可逆方阵.
+    从上题中总结出\(A\)的极小多项式\(\pi_A\)与\(A^{-1}\)的极小多项式\(\pi_{A^{-1}}\)之间的一个关系式,
+    并给出证明.
+  \end{enumerate}
+\item
+  令\(K\)为一个域且包含于\(\mathbb{C}\)之中.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    令\(A \in \mathcal{M}_n(K)\).
+    说明\(\exp A = \sum\limits_{k = 0}^{+\infty} \frac{1}{k!} A^k \in \mathcal{M}_n(\mathbb{C})\)是良好定义的.
+    即说明为什么这个无穷级数是收敛到一个矩阵(但要注意矩阵的元素不一定仍然在\(K\)中).
+  \item
+    令\(A \in \mathcal{M}_n(K)\). 求证: \(\det \exp A = \exp \tr A\).
+  \item
+    令\(A \in \mathcal{M}_n(\mathbb{R})\)以及\(M = \exp A\), 求证:
+    \(M \in \mathcal{M}_n(\mathbb{R})\)且\(\det M > 0\).
+    并举例说明存在\(M \in \mathcal{M}_2(\mathbb{R})\) (即\(n = 2\))
+    使得\(\det M > 0\)但是对任意\(A \in \mathcal{M}_2(\mathbb{R})\)均有\(M \neq \exp A\).
+    提示: \(\exp A\)总是可以''开平方''的.
+  \item
+    令\(M \in \mathcal{M}_n(\mathbb{C})\)为幂零矩阵,
+    是否存在\(A \in \mathcal{M}_n(\mathbb{C})\)使得\(M = \exp A\).
+    为什么? 若存在则给出例子, 若不存在则给出证明.
+  \item
+    求出矩阵\(A = \begin{pmatrix} 4 & -14 & 8 \\ 1 & -5 & 4 \\ 2 & -5 & 1 \end{pmatrix}\)的
+    Jordan 标准型, 并给出过渡矩阵以及其逆.
+  \item
+    上述矩阵\(A\)的极小多项式是什么?
+  \item
+    \(A\)同上题, 给出\(A^n\)关于\(n\)的公式.
+  \item
+    \(A\)同上题, 求出\(\exp A\).
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
